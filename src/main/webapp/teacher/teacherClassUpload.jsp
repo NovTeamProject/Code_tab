@@ -13,6 +13,11 @@
     <link href="${pageContext.request.contextPath}/teacher/css/styles.css?ver=1" rel="stylesheet">
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
+    <!-- jquery cdn-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+    <!-- custom js-->
+    <script src="${pageContext.request.contextPath}/teacher/js/teacherClassUpload.js?ver=1"></script>
 </head>
 <body>
 
@@ -40,9 +45,10 @@
                                 <textarea class="form-control" id="class-explain" name="class-explain" type="text" style="height: 10rem"></textarea>
                                 <label for="class-explain">간단한 강의 설명을 입력하세요</label>
                             </div>
-                            <div class="form-floating mb-3">
+                            <div class="mb-3">
                                 <p>강의 대표 사진을 선택하세요</p>
-                                <input type="file" name="class-image" id="class-image" />
+                                <input class="form-control" id="class-image" name="class-image" type="file" id="class-image">
+                                <img id="class-image-thumbnail" />
                             </div>
                             <div class="lesson-container">
                                 <input type="hidden" name="class-total-lesson-count" id="class-total-lesson-count" value="1" /><br>
