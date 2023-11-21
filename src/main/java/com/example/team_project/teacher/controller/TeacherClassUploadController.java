@@ -1,5 +1,6 @@
 package com.example.team_project.teacher.controller;
 
+import com.example.team_project.teacher.dto.ClassDTO;
 import com.example.team_project.teacher.fileuploadutil.TeacherFileUtil;
 import lombok.extern.slf4j.Slf4j;
 
@@ -34,6 +35,8 @@ public class TeacherClassUploadController extends HttpServlet {
         HttpSession session = req.getSession();
         session.setAttribute("teacher_idx", 1);
 
+        int teacherIdx = (Integer) session.getAttribute("teacher_idx");
+
         String className = req.getParameter("class-name");
         String classExplain = req.getParameter("class-explain");
         int classTotalLessonCount = Integer.parseInt(req.getParameter("class-total-lesson-count"));
@@ -41,13 +44,34 @@ public class TeacherClassUploadController extends HttpServlet {
 
         // 강의 대표 사진 업로드
         String classImageUploadPath = req.getServletContext().getRealPath("/teacher/class-image");
+        String classImageOriginalNameWithoutPath = null;
+        String classImageSavedNameWithoutPath = null;
         try {
-            String classImageOriginalNameWithoutPath = TeacherFileUtil.uploadFile(req, classImageUploadPath);
-            
+            classImageOriginalNameWithoutPath = TeacherFileUtil.uploadFile(req, classImageUploadPath);
+            classImageSavedNameWithoutPath =
+                    TeacherFileUtil.renameFile(classImageUploadPath, classImageOriginalNameWithoutPath);
         } catch (Exception e) {
             log.warn("선생님 강의 등록 - 강의 대표 이미지 업로드 오류 발생");
             alertLocation(resp, "강의 대표 사진 업로드 중 오류가 발생했습니다", req.getContextPath() + "/index.jsp");
             return;
+        }
+
+        // 일단 강의를 먼저 등록해야 수업에서 강의의 pk를 참조할 수 있다. 강의 먼저 등록
+        ClassDTO classDTO = ClassDTO.builder()
+                                    .className(className)
+                                    .classExplain(classExplain)
+                                    .teacherIdx(teacherIdx)
+                                    .classTotalTime(classTotalTime)
+                                    .classTotalLessonCount(classTotalLessonCount)
+                                    .classPrice(0)
+                                    .classImageOriginalFilename(classImageOriginalNameWithoutPath)
+                                    .classImageSavedFilename(classImageSavedNameWithoutPath)
+                                    .build();
+
+
+        // 각각의 수업 업로드
+        for (int i = 1; i <= classTotalLessonCount; i++) {
+
         }
     }
 

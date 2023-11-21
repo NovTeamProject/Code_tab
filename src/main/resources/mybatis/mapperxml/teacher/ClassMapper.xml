@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.team_project.teacher.mapper.ClassMapper">
+    <select id="getAllTeacher" resultType="com.example.team_project.teacher.dto.TeacherDTO">
+        select *
+        from teacher
+    </select>
+
+    <insert id="insertNewClass" parameterType="com.example.team_project.teacher.dto.TeacherDTO">
+        INSERT
+        INTO class(class_name, class_explain, teacher_idx, class_total_time, class_total_lesson_count,
+                   class_price, class_image_original_filename, class_image_saved_filename)
+        VALUES(#{className}, #{classExplain}, #{teacherIdx}, #{classTotalTime}, #{classTotalLessonCount},
+               #{classPrice}, #{classImageOriginalFilename}, #{classImageSavedFilename})
+    </insert>
+</mapper>

@@ -1,16 +1,15 @@
 package com.example.team_project.teacher.dto;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
+@Getter @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @ToString
 public class TeacherDTO {
-
     private int teacherIdx; // primary key
     private String teacherId; // like naver id
     private String teacherPassword; // password

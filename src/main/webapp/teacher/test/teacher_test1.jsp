@@ -1,6 +1,6 @@
 <%@ page import="com.example.team_project.mybatis.factory.MyBatisSessionFactory" %>
 <%@ page import="org.apache.ibatis.session.SqlSession" %>
-<%@ page import="com.example.team_project.teacher.mapper.TeacherMapper" %>
+<%@ page import="com.example.team_project.teacher.mapper.ClassMapper" %>
 <%@ page import="com.example.team_project.teacher.dto.TeacherDTO" %>
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
@@ -17,7 +17,7 @@
 <body>
 <%
     SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
-    TeacherMapper mapper = sqlSession.getMapper(TeacherMapper.class);
+    ClassMapper mapper = sqlSession.getMapper(ClassMapper.class);
     List<TeacherDTO> allTeacher = mapper.getAllTeacher();
     for (TeacherDTO dto : allTeacher) {
 %>
