@@ -16,8 +16,6 @@
     <!-- jquery cdn-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
             crossorigin="anonymous"></script>
-    <!-- custom js-->
-    <script src="${pageContext.request.contextPath}/teacher/js/teacherClassUpload.js?ver=1"></script>
 </head>
 <body>
 
@@ -38,21 +36,43 @@
                     <form name="class-form" id="class-form">
                         <div class="class-information">
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="class-name" name="class-name" type="text">
+                                <input class="form-control" id="class-name" name="class-name" type="text"><!--서버 전송 강의 제목-->
                                 <label for="class-name">강의 제목을 입력하세요</label>
                             </div>
                             <div class="form-floating mb-3">
+                                <!--서버 전송 강의 설명-->
                                 <textarea class="form-control" id="class-explain" name="class-explain" type="text" style="height: 10rem"></textarea>
                                 <label for="class-explain">간단한 강의 설명을 입력하세요</label>
                             </div>
                             <div class="mb-3">
                                 <p>강의 대표 사진을 선택하세요</p>
-                                <input class="form-control" id="class-image" name="class-image" type="file" id="class-image">
-                                <img id="class-image-thumbnail" />
+                                <!--서버 전송 강의 대표 사진-->
+                                <input class="form-control" id="class-image" name="class-image" type="file" id="class-image" onchange="showThumbnail(event);">
+                                <br />
+                                <img id="class-image-thumbnail" width="100%" height="300px" style="border: 1px dashed grey"/>
                             </div>
                             <div class="lesson-container">
+                                <!--서버 전송 강의 총 개수(수업 개수의 총 합)-->
                                 <input type="hidden" name="class-total-lesson-count" id="class-total-lesson-count" value="1" /><br>
+                                <!--서버 전송 강의 총 시간(수업 시간의 총 합)-->
                                 <input type="hidden" name="class-total-time" id="class-total-time" value="0" />
+                                <div>
+                                    <!--보여지는 강의 (수업)의 총 개수랑 강의 (수업)의 총 시간/길이-->
+                                    <h5>총 <span id="span-class-total-lesson-count">1</span>개 수업(<span id="span-class-total-time">0</span>&nbsp;초)</h5>
+                                </div>
+                                <div class="lesson__item lesson__item-1" id="lesson__item-1">
+                                    <input type="text" class="form-control lesson-name lesson-name-1" name="lesson-name-1" id="lesson-name-1"
+                                           placeholder="수업 제목을 입력해 주세요" /> <!--서버에 전송될 한 개 수업의 제목-->
+                                    <!--서버에 전송될 한 개 수업의 동영상 파일-->
+                                    <input type="file" class="form-control lesson-video lesson-video-1" name="lesson-video-1" id="lesson-video-1" />
+                                    <!--보여질 한 개 수업의 동영상 길이 초-->
+                                    <span id="span-lesson-time-1" class="span-lesson-time span-lesson-time-1"></span>(초)
+                                    <!--서버에 전송될 한 개 수업의 동영상 길이 초-->
+                                    <input type="hidden" id="lesson-time-1" class="lesson-time lesson-time-1" name="lesson-time-1" />
+                                </div>
+                                <br>
+                                <button type="button" class="btn btn-outline-primary lesson-plus-button" name="lesson-plus-button" id="lesson-plus-button">
+                                    수업 추가하기</button>
                             </div>
                         </div>
                     </form>
@@ -63,6 +83,8 @@
     </div>
 </section> <%--end </section>--%>
 </body>
+<!-- custom js-->
+<script src="${pageContext.request.contextPath}/teacher/js/teacherClassUpload.js?ver=1"></script>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </html>
