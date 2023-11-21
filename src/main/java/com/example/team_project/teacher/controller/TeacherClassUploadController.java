@@ -1,5 +1,6 @@
 package com.example.team_project.teacher.controller;
 
+import com.example.team_project.teacher.dao.ClassDAO;
 import com.example.team_project.teacher.dto.ClassDTO;
 import com.example.team_project.teacher.fileuploadutil.TeacherFileUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -16,6 +17,8 @@ import java.io.PrintWriter;
 @WebServlet(name = "TeacherClassUploadController", value = "/teacher/class/upload")
 @Slf4j
 public class TeacherClassUploadController extends HttpServlet {
+
+    private ClassDAO classDAO = new ClassDAO();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -68,6 +71,13 @@ public class TeacherClassUploadController extends HttpServlet {
                                     .classImageSavedFilename(classImageSavedNameWithoutPath)
                                     .build();
 
+        boolean result = classDAO.insertNewClass(classDTO);
+
+        if (result) {
+            log.info("TeacherClassUploadController - 새로운 강의 업로드 완료");
+        } else {
+            log.info("TeacherClassUploadController - 새로운 강의 업로드 실패");
+        }
 
         // 각각의 수업 업로드
         for (int i = 1; i <= classTotalLessonCount; i++) {

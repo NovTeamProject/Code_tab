@@ -76,6 +76,18 @@
                                     수업 추가하기</button>
                             </div>
                         </div>
+                        <br />
+                        <div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="class-price" name="class-price" type="number"><!--서버 전송 강의 가격-->
+                                <label for="class-price">강의 수업료를 입력하세요(원)</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="d-flex flex-row-reverse bd-highlight">
+                                <button class="btn btn-primary" id="submit-button">강의 등록하기</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
