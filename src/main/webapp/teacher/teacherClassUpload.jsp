@@ -33,7 +33,8 @@
 
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6">
-                    <form name="class-form" id="class-form">
+                    <form name="class-form" id="class-form" method="post" enctype="multipart/form-data"
+                          action="${pageContext.request.contextPath}/teacher/class/upload">
                         <div class="class-information">
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="class-name" name="class-name" type="text"><!--서버 전송 강의 제목-->
