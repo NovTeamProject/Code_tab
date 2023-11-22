@@ -13,12 +13,14 @@ public class ClassDAO {
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
         ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
         int result = classMapper.insertNewClass(classDTO);
-        sqlSession.close();
-        if (result == 1) {
-            log.info("새로운 클래스 데이터베이스 저장 성공 - 클래스 PK: {}", classDTO.getClassIdx());
+        if (result > 0) {
+            log.info("새로운 강의 저장 성공 - 강의 PK: {}", classDTO.getClassIdx());
+            sqlSession.commit();
+            sqlSession.close();
             return true;
         } else {
-            log.info("새로운 클래스 데이터베이스 저장 실패");
+            log.info("새로운 강의 저장 실패");
+            sqlSession.close();
             return false;
         }
     }

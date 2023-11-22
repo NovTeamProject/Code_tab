@@ -15,15 +15,9 @@
     <title>teacher_test1.jsp</title>
 </head>
 <body>
-<%
-    SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
-    ClassMapper mapper = sqlSession.getMapper(ClassMapper.class);
-    List<TeacherDTO> allTeacher = mapper.getAllTeacher();
-    for (TeacherDTO dto : allTeacher) {
-%>
-<p><%=dto.getTeacherName()%></p>
-<%
-    }
-%>
+<form method="post" action="${pageContext.request.contextPath}/teacher/class/upload.do" enctype="multipart/form-data">
+    <input name="title-content" type="text" />
+    <button type="submit">접수</button>
+</form>
 </body>
 </html>

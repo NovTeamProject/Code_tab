@@ -15,5 +15,4 @@ public class TeacherDTO {
     private String teacherPassword; // password
     private String teacherName; // real name
     private LocalDateTime teacherJoinDate; // register date
-    private int teacherMoney; // income
 }

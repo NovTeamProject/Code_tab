@@ -20,5 +20,6 @@
     <mappers>
         <mapper resource="mybatis/mapperxml/teacher/TeacherMapper.xml" />
         <mapper resource="mybatis/mapperxml/teacher/ClassMapper.xml" />
+        <mapper resource="mybatis/mapperxml/teacher/LessonMapper.xml" />
     </mappers>
 </configuration>

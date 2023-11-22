@@ -9,7 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>선생님 - 새 강의 등록</title>
     <link href="${pageContext.request.contextPath}/teacher/css/styles.css?ver=1" rel="stylesheet">
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
@@ -33,8 +33,7 @@
 
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6">
-                    <form name="class-form" id="class-form" method="post" enctype="multipart/form-data"
-                          action="${pageContext.request.contextPath}/teacher/class/upload">
+                    <form name="class-form" id="class-form" method="post" action="${pageContext.request.contextPath}/teacher/class/upload.do" enctype="multipart/form-data">
                         <div class="class-information">
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="class-name" name="class-name" type="text"><!--서버 전송 강의 제목-->
@@ -78,14 +77,8 @@
                         </div>
                         <br />
                         <div>
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="class-price" name="class-price" type="number"><!--서버 전송 강의 가격-->
-                                <label for="class-price">강의 수업료를 입력하세요(원)</label>
-                            </div>
-                        </div>
-                        <div>
                             <div class="d-flex flex-row-reverse bd-highlight">
-                                <button class="btn btn-primary" id="submit-button">강의 등록하기</button>
+                                <button class="btn btn-primary" id="submit-button" type="submit">강의 등록하기</button>
                             </div>
                         </div>
                     </form>
