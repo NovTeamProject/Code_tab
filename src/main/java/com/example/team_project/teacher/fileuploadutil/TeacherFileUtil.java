@@ -18,8 +18,8 @@ import java.util.Date;
 import java.util.Locale;
 
 public class TeacherFileUtil {
-    //파일 업로드
-    public static String uploadFile(HttpServletRequest req, String sDirectory)
+    // 일반 사진 파일 업로드
+    public static String uploadLessonVideoFile(HttpServletRequest req, String sDirectory)
             throws ServletException, IOException {
         // 이 경로가 없으면 만들어줌. 상위 directory까지 전부...
         Path saveDirectoryPath = Paths.get(sDirectory);
@@ -41,15 +41,33 @@ public class TeacherFileUtil {
         return originalFileName;
     }
 
-    public static String renameFile(String sDirectory, String fileName) {
-        String originalNameWithoutExtension = fileName.substring(0, fileName.lastIndexOf("."));
-        String ext = fileName.substring(fileName.lastIndexOf("."));
+    public static String uploadLessonVideoFile(Part part, String sDirectory)
+            throws ServletException, IOException {
+        // 이 경로가 없으면 만들어줌. 상위 directory까지 전부...
+        Path saveDirectoryPath = Paths.get(sDirectory);
+        Files.createDirectories(saveDirectoryPath);
+
+        String partHeader = part.getHeader("content-disposition");
+        System.out.println("partHeader=" + partHeader);
+
+        String[] phArr = partHeader.split("filename=");
+        String originalFileName = phArr[1].trim().replace("\"", "");
+
+        if (!originalFileName.isEmpty()) {
+            part.write(sDirectory + File.separator + originalFileName);
+        }
+        return originalFileName;
+    }
+
+    public static String renameFile(String sDirectory, String originalFileName) {
+        String originalNameWithoutExtension = originalFileName.substring(0, originalFileName.lastIndexOf("."));
+        String ext = originalFileName.substring(originalFileName.lastIndexOf("."));
         String now = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.KOREA).format(new Date());
 
         String newFileName = now + "__" + originalNameWithoutExtension + ext;
 
         //기존 파일명을 새로운 파일명으로 변경
-        File oldFile = new File(sDirectory + File.separator + fileName);
+        File oldFile = new File(sDirectory + File.separator + originalFileName);
         File newFile = new File(sDirectory + File.separator + newFileName);
         oldFile.renameTo(newFile);
 

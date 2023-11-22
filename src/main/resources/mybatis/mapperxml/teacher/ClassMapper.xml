@@ -4,12 +4,12 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.team_project.teacher.mapper.ClassMapper">
 
-    <insert id="insertNewClass" parameterType="com.example.team_project.teacher.dto.TeacherDTO"
-            keyProperty="classIdx" keyColumn="class_idx">
+    <insert id="insertNewClass" parameterType="com.example.team_project.teacher.dto.ClassDTO"
+            useGeneratedKeys="true" keyColumn="class_idx" keyProperty="classIdx">
         INSERT
         INTO class(class_name, class_explain, teacher_idx, class_total_time, class_total_lesson_count,
-                   class_price, class_image_original_filename, class_image_saved_filename)
+                   class_image_original_filename, class_image_saved_filename)
         VALUES(#{className}, #{classExplain}, #{teacherIdx}, #{classTotalTime}, #{classTotalLessonCount},
-               #{classPrice}, #{classImageOriginalFilename}, #{classImageSavedFilename})
+               #{classImageOriginalFilename}, #{classImageSavedFilename})
     </insert>
 </mapper>

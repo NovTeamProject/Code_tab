@@ -3,6 +3,7 @@ package com.example.team_project.teacher.dto;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter @Setter
 @NoArgsConstructor
@@ -17,8 +18,9 @@ public class ClassDTO {
     private LocalDateTime classRegisterDate;
     private int classTotalTime;
     private int classTotalLessonCount;
-    private int classPrice;
     private String classImageOriginalFilename;
     private String classImageSavedFilename;
     private int listenStudent;
+
+    private List<LessonDTO> lessonDTOList;
 }

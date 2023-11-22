@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.team_project.teacher.mapper.LessonMapper">
+
+    <insert id="insertNewLesson" parameterType="com.example.team_project.teacher.dto.LessonDTO"
+            useGeneratedKeys="true" keyColumn="lesson_idx" keyProperty="lessonIdx">
+        INSERT
+        INTO lesson(lesson_name, lesson_sequence, class_idx,
+                    lesson_time, lesson_original_filename, lesson_saved_filename)
+        VALUES(#{lessonName}, #{lessonSequence}, #{classIdx},
+               #{lessonTime}, #{lessonOriginalFilename}, #{lessonSavedFilename})
+    </insert>
+</mapper>
