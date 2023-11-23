@@ -33,7 +33,7 @@ public class TeacherClassUploadController extends HttpServlet {
         HttpSession session = req.getSession();
         session.setAttribute("teacher_idx", 1);
 
-        req.getRequestDispatcher("/teacher/teacherClassUpload.jsp").forward(req, resp);
+        req.getRequestDispatcher("/teacher/views/teacherClassUpload.jsp").forward(req, resp);
     }
 
     @Override
@@ -110,14 +110,15 @@ public class TeacherClassUploadController extends HttpServlet {
                 } else {
                     log.info("TeacherClassUploadController - 강의번호 {}번에 대한 수업 저장 실패",
                             classDTO.getClassIdx());
+                    alertBack(response, "새로운 강의 등록 중 오류 발생");
                 }
             }
-        } catch (IllegalStateException e) {
-            log.info(e.getMessage());
-            log.info("파일 용량이 초과 되어 업로드할 수 없습니다");
+            // 모든 수업 정상적으로 등록 완료 시
+            alertLocation(response, "새로운 강의를 등록했습니다", request.getContextPath() + "/teacher/class/list.do");
         } catch (Exception e) {
+            log.info("강의 번호: {} - 수업 업로드 중 오류 발생", classDTO.getClassIdx());
             log.info(e.getMessage());
-            log.info("파일 업로드 중 오류 발생");
+            alertBack(response, "새로운 강의 등록 중 오류 발생");
         }
     }
 
@@ -128,6 +129,21 @@ public class TeacherClassUploadController extends HttpServlet {
             String script = "<script>"
                     + "    alert('" + msg + "');"
                     + "    location.href='" + url + "';"
+                    + "</script>";
+            writer.print(script);
+            writer.flush();
+            writer.close();
+        }
+        catch (Exception e) {}
+    }
+
+    public static void alertBack(HttpServletResponse resp, String msg) {
+        try {
+            resp.setContentType("text/html;charset=UTF-8");
+            PrintWriter writer = resp.getWriter();
+            String script = "<script>"
+                    + "    alert('" + msg + "');"
+                    + "    history.back();"
                     + "</script>";
             writer.print(script);
             writer.flush();

@@ -12,4 +12,19 @@
         VALUES(#{className}, #{classExplain}, #{teacherIdx}, #{classTotalTime}, #{classTotalLessonCount},
                #{classImageOriginalFilename}, #{classImageSavedFilename})
     </insert>
+
+    <select id="getAllUploadedClassesCountFilteredByTeacherIdx">
+        SELECT count(*)
+        FROM class
+        WHERE teacher_idx = #{teacherIdx}
+    </select>
+
+    <select id="getAllUploadedClassListFilteredByTeacherIdxWithPaging" parameterType="map"
+            resultType="com.example.team_project.teacher.dto.ClassDTO">
+        SELECT *
+        FROM class
+        WHERE teacher_idx = #{teacherIdx}
+        ORDER BY teacher_idx DESC
+        LIMIT #{pageNum}, 10
+    </select>
 </mapper>

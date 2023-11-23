@@ -22,5 +22,5 @@ public class ClassDTO {
     private String classImageSavedFilename;
     private int listenStudent;
 
-    private List<LessonDTO> lessonDTOList;
+    private List<LessonDTO> lessonList;
 }

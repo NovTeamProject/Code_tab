@@ -6,6 +6,10 @@ import com.example.team_project.teacher.mapper.ClassMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSession;
 
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+
 @Slf4j
 public class ClassDAO {
 
@@ -23,5 +27,21 @@ public class ClassDAO {
             sqlSession.close();
             return false;
         }
+    }
+
+    public int getAllUploadedClassesCountFilteredByTeacherIdx(int teacherIdx) {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        int uploadedCount = classMapper.getAllUploadedClassesCountFilteredByTeacherIdx(teacherIdx);
+        sqlSession.close();
+        return uploadedCount;
+    }
+
+    public List<ClassDTO> getAllUploadedClassesListFilteredByTeacherIdx(Map<String, Object> map) {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        List<ClassDTO> classList = classMapper.getAllUploadedClassListFilteredByTeacherIdxWithPaging(map);
+        sqlSession.close();
+        return classList;
     }
 }
