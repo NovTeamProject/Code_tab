@@ -1,4 +1,4 @@
-package com.example.team_project.teacher.dto;
+package com.example.team_project.lesson_sueop.dto;
 
 import lombok.*;
 

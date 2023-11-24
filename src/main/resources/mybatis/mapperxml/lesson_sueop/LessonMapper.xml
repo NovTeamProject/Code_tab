@@ -2,9 +2,10 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.team_project.teacher.mapper.LessonMapper">
+<mapper namespace="com.example.team_project.lesson_sueop.mapper.LessonMapper">
 
-    <insert id="insertNewLesson" parameterType="com.example.team_project.teacher.dto.LessonDTO"
+    <!--    변재혁님 여기 아래부터 작성 시작-->
+    <insert id="insertNewLesson" parameterType="com.example.team_project.lesson_sueop.dto.LessonDTO"
             useGeneratedKeys="true" keyColumn="lesson_idx" keyProperty="lessonIdx">
         INSERT
         INTO lesson(lesson_name, lesson_sequence, class_idx,
@@ -12,4 +13,13 @@
         VALUES(#{lessonName}, #{lessonSequence}, #{classIdx},
                #{lessonTime}, #{lessonOriginalFilename}, #{lessonSavedFilename})
     </insert>
+
+
+    <!--    남원우님 여기 아래부터 작성 시작-->
+
+
+    <!--   차소영님 여기 아래부터 작성 시작-->
+
+
+    <!--   유지호님 여기 아래부터 작성 시작-->
 </mapper>

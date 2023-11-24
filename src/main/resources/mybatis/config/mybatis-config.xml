@@ -19,7 +19,7 @@
     </environments>
     <mappers>
         <mapper resource="mybatis/mapperxml/teacher/TeacherMapper.xml" />
-        <mapper resource="mybatis/mapperxml/teacher/ClassMapper.xml" />
-        <mapper resource="mybatis/mapperxml/teacher/LessonMapper.xml" />
+        <mapper resource="mybatis/mapperxml/class_gangui/ClassMapper.xml" />
+        <mapper resource="mybatis/mapperxml/lesson_sueop/LessonMapper.xml" />
     </mappers>
 </configuration>
