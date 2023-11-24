@@ -1,8 +1,11 @@
 package com.example.team_project.teacher.dao;
 
+import com.example.team_project.mybatis.factory.MyBatisSessionFactory;
 import com.example.team_project.teacher.dto.TeacherDTO;
 import com.example.team_project.teacher.mapper.TeacherMapper;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.session.SqlSession;
+
 @Slf4j
 public class TeacherDAO {
 
