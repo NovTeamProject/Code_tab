@@ -1,12 +1,10 @@
-package com.example.team_project.teacher.mapper;
+package com.example.team_project.student.dao;
 
-import com.example.team_project.teacher.dto.TeacherDTO;
+import lombok.extern.slf4j.Slf4j;
 
-import java.util.List;
-
-public interface TeacherMapper {
+@Slf4j
+public class StudentDAO {
     // 변재혁님 여기 아래부터 작성 시작
-    List<TeacherDTO> getAllTeacher();
 
 
     // 남원우님 여기 아래부터 작성 시작
@@ -16,5 +14,6 @@ public interface TeacherMapper {
 
 
     // 유지호님 여기 아래부터 작성 시작
+
 
 }
