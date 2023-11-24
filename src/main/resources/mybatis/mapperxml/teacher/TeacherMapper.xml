@@ -12,7 +12,11 @@
 
 
     <!--    남원우님 여기 아래부터 작성 시작-->
-
+    <!-- 회원가입(선생님) -->
+    <insert id="joinTeacher" parameterType="com.example.team_project.teacher.dto.TeacherDTO">
+        INSERT INTO teacher (teacher_id, teacher_password,teacher_name )
+        VALUES (  #{teacher_id}, #{teacher_password}, #{teacher_name})
+    </insert>
 
     <!--    차소영님 여기 아래부터 작성 시작-->
 

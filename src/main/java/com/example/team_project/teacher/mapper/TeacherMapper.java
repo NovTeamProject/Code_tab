@@ -11,7 +11,8 @@ public interface TeacherMapper {
 
     // 남원우님 여기 아래부터 작성 시작
 
-
+     int joinTeacher (TeacherDTO dto);
+    
     // 차소영님 여기 아래부터 작성 시작
 
 
