@@ -10,7 +10,11 @@
 
     <!--    남원우님 여기 아래부터 작성 시작-->
 
-
+        <!-- 회원가입(학생) -->
+    <insert id="joinStudent" parameterType="com.example.team_project.student.dto.StudentDTO">
+    INSERT INTO student (student_id, student_password,student_name )
+    VALUES (  #{student_id}, #{student_password}, #{student_name})
+    </insert>
 
     <!--    차소영님 여기 아래부터 작성 시작-->
 
