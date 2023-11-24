@@ -1,18 +1,18 @@
-package com.example.team_project.teacher.dao;
+package com.example.team_project.class_gangui.dao;
 
 import com.example.team_project.mybatis.factory.MyBatisSessionFactory;
-import com.example.team_project.teacher.dto.ClassDTO;
-import com.example.team_project.teacher.mapper.ClassMapper;
+import com.example.team_project.class_gangui.dto.ClassDTO;
+import com.example.team_project.class_gangui.mapper.ClassMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 @Slf4j
 public class ClassDAO {
 
+    // 변재혁님 여기 아래부터 시작
     public boolean insertNewClass(ClassDTO classDTO) {
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
         ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
@@ -44,4 +44,12 @@ public class ClassDAO {
         sqlSession.close();
         return classList;
     }
+
+    // 남원우님 여기 아래부터 작성 시작
+
+
+    // 차소영님 여기 아래부터 작성 시작
+
+
+    // 유지호님 여기 아래부터 작성 시작
 }

@@ -1,5 +1,6 @@
-package com.example.team_project.teacher.dto;
+package com.example.team_project.class_gangui.dto;
 
+import com.example.team_project.lesson_sueop.dto.LessonDTO;
 import lombok.*;
 
 import java.time.LocalDateTime;

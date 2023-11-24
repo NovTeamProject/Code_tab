@@ -1,9 +1,9 @@
 package com.example.team_project.teacher.controller;
 
-import com.example.team_project.teacher.dao.ClassDAO;
-import com.example.team_project.teacher.dao.LessonDAO;
-import com.example.team_project.teacher.dto.ClassDTO;
-import com.example.team_project.teacher.dto.LessonDTO;
+import com.example.team_project.class_gangui.dao.ClassDAO;
+import com.example.team_project.lesson_sueop.dao.LessonDAO;
+import com.example.team_project.class_gangui.dto.ClassDTO;
+import com.example.team_project.lesson_sueop.dto.LessonDTO;
 import com.example.team_project.teacher.fileuploadutil.TeacherFileUtil;
 import lombok.extern.slf4j.Slf4j;
 

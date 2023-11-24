@@ -2,9 +2,10 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.team_project.teacher.mapper.ClassMapper">
+<mapper namespace="com.example.team_project.class_gangui.mapper.ClassMapper">
 
-    <insert id="insertNewClass" parameterType="com.example.team_project.teacher.dto.ClassDTO"
+<!--    변재혁님 여기 아래부터 작성 시작-->
+    <insert id="insertNewClass" parameterType="com.example.team_project.class_gangui.dto.ClassDTO"
             useGeneratedKeys="true" keyColumn="class_idx" keyProperty="classIdx">
         INSERT
         INTO class(class_name, class_explain, teacher_idx, class_total_time, class_total_lesson_count,
@@ -20,11 +21,21 @@
     </select>
 
     <select id="getAllUploadedClassListFilteredByTeacherIdxWithPaging" parameterType="map"
-            resultType="com.example.team_project.teacher.dto.ClassDTO">
+            resultType="com.example.team_project.class_gangui.dto.ClassDTO">
         SELECT *
         FROM class
         WHERE teacher_idx = #{teacherIdx}
         ORDER BY teacher_idx DESC
         LIMIT #{pageNum}, 10
     </select>
+
+    <!--    남원우님 여기 아래부터 작성 시작-->
+
+
+    <!--    차소영님 여기 아래부터 작성 시작-->
+
+
+    <!--    유지호님 여기 아래부터 작성 시작-->
+
+
 </mapper>

@@ -1,7 +1,7 @@
 package com.example.team_project.teacher.controller;
 
-import com.example.team_project.teacher.dao.ClassDAO;
-import com.example.team_project.teacher.dto.ClassDTO;
+import com.example.team_project.class_gangui.dao.ClassDAO;
+import com.example.team_project.class_gangui.dto.ClassDTO;
 import com.example.team_project.teacher.paging.Criteria;
 import com.example.team_project.teacher.paging.PageMaker;
 import lombok.extern.slf4j.Slf4j;
