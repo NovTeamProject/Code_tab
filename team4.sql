@@ -58,8 +58,8 @@ CREATE TABLE student_lesson (
     FOREIGN KEY(class_idx) REFERENCES class(class_idx),
     FOREIGN KEY(lesson_idx) REFERENCES lesson(lesson_idx));
     
-CREATE TABLE question (
-	question_idx INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE board (
+	board_idx INT PRIMARY KEY AUTO_INCREMENT,
     class_idx INT,
     student_idx INT,
     title VARCHAR(200),
@@ -69,11 +69,11 @@ CREATE TABLE question (
     FOREIGN KEY(class_idx) REFERENCES class(class_idx),
     FOREIGN KEY(student_idx) REFERENCES student(student_idx));
     
-CREATE TABLE question_comment (
+CREATE TABLE comment (
 	comment_idx INT PRIMARY KEY AUTO_INCREMENT,
-    question_idx INT,
+    board_idx INT,
     person_idx INT, # 누가(학생or선생) 댓글을 달았는지 그 사람의 pk 값
     person_type TINYINT, # if student then 0, if teacher then 1
     content VARCHAR(500),
     register_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY(question_idx) REFERENCES question(question_idx));
+    FOREIGN KEY(board_idx) REFERENCES board(board_idx));
