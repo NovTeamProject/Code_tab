@@ -64,6 +64,7 @@ CREATE TABLE question (
     student_idx INT,
     title VARCHAR(200),
     content TEXT,
+    visitcount int default 0, # 조회수
     register_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY(class_idx) REFERENCES class(class_idx),
     FOREIGN KEY(student_idx) REFERENCES student(student_idx));
