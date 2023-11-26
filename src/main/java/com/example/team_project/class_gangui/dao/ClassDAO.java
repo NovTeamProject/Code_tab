@@ -6,6 +6,7 @@ import com.example.team_project.class_gangui.mapper.ClassMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSession;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -51,7 +52,37 @@ public class ClassDAO {
 
     // 차소영님 여기 아래부터 작성 시작
 
+    public boolean registerClass(int classIdx, int studentIdx) {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        Map<String, Integer> map = new HashMap<>();
+        map.put("classIdx", classIdx);
+        map.put("studentIdx", studentIdx);
+        int result = classMapper.registerClass(map);
+        sqlSession.commit();
+        sqlSession.close();
+        return result > 0;
+    }
 
+    public boolean cancelClass(int classIdx, int studentIdx) {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        Map<String, Integer> map = new HashMap<>();
+        map.put("classIdx", classIdx);
+        map.put("studentIdx", studentIdx);
+        int result = classMapper.cancelClass(map);
+        sqlSession.commit();
+        sqlSession.close();
+        return result > 0;
+    }
+
+    public List<ClassDTO> getRegisteredClasses(int studentIdx) {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        List<ClassDTO> classList = classMapper.getRegisteredClasses(studentIdx);
+        sqlSession.close();
+        return classList;
+    }
 
     // 유지호님 여기 아래부터 작성 시작
     
