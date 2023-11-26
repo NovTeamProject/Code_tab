@@ -78,7 +78,7 @@
                         <br />
                         <div>
                             <div class="d-flex flex-row-reverse bd-highlight">
-                                <button class="btn btn-primary" id="submit-button" type="submit">강의 등록하기</button>
+                                <button type="button" class="btn btn-primary" id="submit-button">강의 등록하기</button>
                             </div>
                         </div>
                     </form>

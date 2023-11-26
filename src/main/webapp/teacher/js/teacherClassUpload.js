@@ -158,7 +158,6 @@ const loadVideoMetadata = (file, targetLessonNumber) => {
             console.log(`video duration: ${videoDuration}`);
             const videoDurationInt = parseInt(videoDuration);
 
-
             // 동영상이 변경되었으니, 보여지는 강의 총 시간 및 전송되는 강의 총 시간에서 빼줘야 한다
             // 현재 동영상 시간 갖고오기
             const currentLessonTime = parseInt($("#span-lesson-time-" + targetLessonNumber).text());
@@ -170,7 +169,6 @@ const loadVideoMetadata = (file, targetLessonNumber) => {
                 $("#class-total-time").attr('value', spanClassTotalTime - inputClassTotalTime);
             }
 
-
             // 보여지는 총 수업 시간에 더하기
             $("#span-class-total-time").text(
                 parseInt($("#span-class-total-time").text()) + videoDurationInt
@@ -178,16 +176,33 @@ const loadVideoMetadata = (file, targetLessonNumber) => {
             // 서버에 전송할 총 수업 시간에 더하기
             $("#class-total-time").attr("value", $("#span-class-total-time").text());
 
-
-
             // 보여지는 현재 lesson의 수업시간 값 변경
             $("#span-lesson-time-" + targetLessonNumber).text(videoDurationInt);
             // 서버에 전송될 현재 lesson의 수업시간 값 변경
             $("#lesson-time-" + targetLessonNumber).attr("value", videoDurationInt);
-
-
         }
     }
     video.src = window.URL.createObjectURL(file);
     console.log("loadVideoMetadata last line"); // 먼저 실행
 }
+
+function checkValidate() {
+    // 강의 제목에 값이 있는지 확인
+    let className = $("#class-name").val().trim();
+    if (className == null || className == '' || className.length == 0) {
+        alert("강의 제목을 입력해주세요");
+        return;
+    }
+    // 강의 설명에 값이 있는지 확인
+    let classExplain = $("#class-explain").val().trim();
+    if (classExplain == null || classExplain == '' || classExplain.length == 0) {
+        alert("강의 설명을 입력해주세요");
+        return;
+    }
+    // 강의 대표 이미지가 업로드 되었는지 확인
+}
+
+$("body").on("click", "#submit-button", function() {
+    console.log("submit button click");
+    checkValidate();
+});
