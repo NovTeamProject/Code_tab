@@ -58,6 +58,12 @@
         WHERE c.class_idx = #{classIdx}
     </select>
 
+    <select id="checkIfSpecificTeacherIdxUploadedSpecificClassIdx">
+        SELECT count(class_idx)
+        FROM class
+        WHERE class_idx = #{classIdx} AND teacher_idx = #{teacherIdx}
+    </select>
+
 
     <!--    남원우님 여기 아래부터 작성 시작-->
 

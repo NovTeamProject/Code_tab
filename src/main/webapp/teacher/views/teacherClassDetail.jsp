@@ -83,10 +83,14 @@
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <p>강의 재생 시간: ${lesson.lessonTime}(초)</p>
-                                    <video id="lesson-video-${loop.index + 1}" playsinline controls data-poster="${pageContext.request.contextPath}/teacher/lesson-video/playbutton-thumbnail/play-button.png">
-                                        <source src="${pageContext.request.contextPath}/teacher/lesson-video/${lesson.lessonSavedFilename}" type="video/mp4" />
-                                    </video>
+                                    <div class="d-flex justify-content-center">
+                                        <div style="width: 70%">
+                                            <p>강의 재생 시간: ${lesson.lessonTime}(초)</p>
+                                            <video id="lesson-video-${loop.index + 1}" playsinline controls data-poster="">
+                                                <source src="${pageContext.request.contextPath}/teacher/lesson-video/${lesson.lessonSavedFilename}" type="video/mp4" />
+                                            </video>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -100,10 +104,14 @@
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <p>강의 재생 시간: ${lesson.lessonTime}(초)</p>
-                                    <video id="lesson-video-${loop.index + 1}" playsinline controls data-poster="${pageContext.request.contextPath}/teacher/lesson-video/playbutton-thumbnail/play-button.png">
-                                        <source src="${pageContext.request.contextPath}/teacher/lesson-video/${lesson.lessonSavedFilename}" type="video/mp4" />
-                                    </video>
+                                    <div class="d-flex justify-content-center">
+                                        <div style="width: 70%">
+                                            <p>강의 재생 시간: ${lesson.lessonTime}(초)</p>
+                                            <video id="lesson-video-${loop.index + 1}" playsinline controls data-poster="">
+                                                <source src="${pageContext.request.contextPath}/teacher/lesson-video/${lesson.lessonSavedFilename}" type="video/mp4" />
+                                            </video>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
