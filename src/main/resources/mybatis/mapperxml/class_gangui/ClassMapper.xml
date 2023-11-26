@@ -35,16 +35,24 @@
 
     <!--    차소영님 여기 아래부터 작성 시작-->
 
+<!--    학생이 수업을 등록하는 기능
+학생의 ID(studentIdx)와 수업의 ID(classIdx)를 이용해 class_registration 테이블에 새로운 레코드를 추가한다.-->
         <insert id="registerClass" parameterType="map">
             INSERT INTO class_registration (class_idx, student_idx)
             VALUES (#{classIdx}, #{studentIdx})
         </insert>
 
+<!--    학생이 수업을 취소하는 기능
+학생의 ID(studentIdx)와 수업의 ID(classIdx)를 이용해 class_registration 테이블에서 특정 레코드를 삭제한다. -->
         <delete id="cancelClass" parameterType="map">
             DELETE FROM class_registration
             WHERE class_idx = #{classIdx} AND student_idx = #{studentIdx}
         </delete>
 
+
+<!--    학생이 현재까지 등록한 수업을 조회하는 기능
+학생의 ID(studentIdx)를 이용해 class_registration 테이블에서 해당 학생에게 연결된 수업의 ID(classIdx)를 찾고,
+class 테이블에서 해당 수업의 정보를 모두 가져온다.-->
         <select id="getRegisteredClasses" resultType="com.example.dto.ClassDTO">
             SELECT * FROM class
             WHERE idx IN (SELECT class_idx FROM class_registration WHERE student_idx = #{studentIdx})
