@@ -69,41 +69,56 @@
             </div>
         </section>
 
-        <div class="accordion" id="accordionExample">
-            <div id="accordion-item-1" class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        강의이름-1
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <p>강의 재생 시간: 10(초)</p>
-                        <video id="player11" playsinline controls data-poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg">
-                            <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" />
-                        </video>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        강의이름-2
-                    </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        두 번째 강의입니다.
-                    </div>
-                </div>
-            </div>
+        <h3 style="text-align: center">강의 수업 리스트</h3>
+        <div class="d-flex justify-content-center">
+        <div class="accordion" id="accordionExample" style="width: 70%">
+            <c:forEach items="${classDTO.lessonList}" var="lesson" varStatus="loop">
+                <c:choose>
+                    <c:when test="${loop.index + 1 == 1}">
+                        <div class="accordion-item accordion-item-${loop.index + 1}">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    ${lesson.lessonName}
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>강의 재생 시간: ${lesson.lessonTime}(초)</p>
+                                    <video id="lesson-video-${loop.index + 1}" playsinline controls data-poster="${pageContext.request.contextPath}/teacher/lesson-video/playbutton-thumbnail/play-button.png">
+                                        <source src="${pageContext.request.contextPath}/teacher/lesson-video/${lesson.lessonSavedFilename}" type="video/mp4" />
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </c:when>
+                    <c:otherwise>
+                        <div class="accordion-item accordion-item-${loop.index + 1}">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    ${lesson.lessonName}
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>강의 재생 시간: ${lesson.lessonTime}(초)</p>
+                                    <video id="lesson-video-${loop.index + 1}" playsinline controls data-poster="${pageContext.request.contextPath}/teacher/lesson-video/playbutton-thumbnail/play-button.png">
+                                        <source src="${pageContext.request.contextPath}/teacher/lesson-video/${lesson.lessonSavedFilename}" type="video/mp4" />
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
+        </div>
         </div>
     </main>
-
 <script>
     const playerList = {};
-    playerList['${"player1"}'] = new Plyr("#player1${1}");
-
+    let index = 1;
+    <c:forEach items="${classDTO.lessonList}" varStatus="loop">
+        playerList["lesson-video-" + (index++)] = new Plyr("#lesson-video-${loop.index + 1}");
+    </c:forEach>
 </script>
 </body>
 <!-- Bootstrap core JS-->
