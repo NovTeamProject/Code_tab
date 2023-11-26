@@ -15,6 +15,8 @@ public interface ClassMapper {
 
     List<ClassDTO> getAllUploadedClassListFilteredByTeacherIdxWithPaging(Map<String, Object> map);
 
+    ClassDTO getOneClassInformationWithRelatedLessons(int classIdx);
+
     // 남원우님 여기 아래부터 작성 시작
 
 

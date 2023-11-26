@@ -29,6 +29,35 @@
         LIMIT #{pageNum}, 10
     </select>
 
+    <resultMap id="oneClassWithLessons" type="com.example.team_project.class_gangui.dto.ClassDTO">
+        <id column="class_idx" jdbcType="INTEGER" property="classIdx" />
+        <result column="class_name" jdbcType="VARCHAR" property="className" />
+        <result column="class_explain" jdbcType="CLOB" property="classExplain" />
+        <result column="teacher_idx" jdbcType="INTEGER" property="teacherIdx" />
+        <result column="class_register_date" jdbcType="TIMESTAMP" property="classRegisterDate" />
+        <result column="class_total_time" jdbcType="INTEGER" property="classTotalTime" />
+        <result column="class_total_lesson_count" jdbcType="INTEGER" property="classTotalLessonCount" />
+        <result column="class_image_original_filename" jdbcType="VARCHAR" property="classImageOriginalFilename" />
+        <result column="class_image_saved_filename" jdbcType="VARCHAR" property="classImageSavedFilename" />
+        <result column="listen_student" jdbcType="INTEGER" property="listenStudent" />
+        <collection property="lessonList" ofType="com.example.team_project.lesson_sueop.dto.LessonDTO">
+            <id column="lesson_idx" jdbcType="INTEGER" property="lessonIdx" />
+            <result column="lesson_name" jdbcType="VARCHAR" property="lessonName" />
+            <result column="lesson_sequence" jdbcType="INTEGER" property="lessonSequence" />
+            <result column="class_idx" jdbcType="INTEGER" property="classIdx" />
+            <result column="lesson_time" jdbcType="INTEGER" property="lessonTime" />
+            <result column="lesson_original_filename" jdbcType="VARCHAR" property="lessonOriginalFilename" />
+            <result column="lesson_saved_filename" jdbcType="VARCHAR" property="lessonSavedFilename" />
+        </collection>
+    </resultMap>
+
+    <select id="getOneClassInformationWithRelatedLessons" resultMap="oneClassWithLessons">
+        SELECT *
+        FROM class c INNER JOIN lesson l
+            ON c.class_idx = l.class_idx
+        WHERE c.class_idx = #{classIdx}
+    </select>
+
 
     <!--    남원우님 여기 아래부터 작성 시작-->
 
