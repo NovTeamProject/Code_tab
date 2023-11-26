@@ -1,5 +1,6 @@
 package com.example.team_project.student.mapper;
 
+import com.example.team_project.student.dto.StudentDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

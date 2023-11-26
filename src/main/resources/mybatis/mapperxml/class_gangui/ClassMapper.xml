@@ -35,6 +35,21 @@
 
     <!--    차소영님 여기 아래부터 작성 시작-->
 
+        <insert id="registerClass" parameterType="map">
+            INSERT INTO class_registration (class_idx, student_idx)
+            VALUES (#{classIdx}, #{studentIdx})
+        </insert>
+
+        <delete id="cancelClass" parameterType="map">
+            DELETE FROM class_registration
+            WHERE class_idx = #{classIdx} AND student_idx = #{studentIdx}
+        </delete>
+
+        <select id="getRegisteredClasses" resultType="com.example.dto.ClassDTO">
+            SELECT * FROM class
+            WHERE idx IN (SELECT class_idx FROM class_registration WHERE student_idx = #{studentIdx})
+        </select>
+
 
     <!--    유지호님 여기 아래부터 작성 시작-->
 
