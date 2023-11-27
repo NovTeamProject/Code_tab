@@ -5,6 +5,8 @@ import com.example.team_project.teacher.dto.TeacherDTO;
 import com.example.team_project.teacher.mapper.TeacherMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSession;
+import java.util.List;
+import java.util.Map;
 
 @Slf4j
 public class TeacherDAO {
