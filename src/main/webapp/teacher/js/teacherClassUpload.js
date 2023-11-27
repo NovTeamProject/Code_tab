@@ -200,9 +200,37 @@ function checkValidate() {
         return;
     }
     // 강의 대표 이미지가 업로드 되었는지 확인
+    let classImageValue = $("#class-image").val().trim();
+    if (classImageValue == null || classImageValue == '' || classImageValue.lastIndexOf('.') == -1) {
+        alert("강의 대표 이미지를 선택해 주세요");
+        return;
+    }
+    // 강의 대표 이미지가 제대로된 이미지 확장자 파일인지 확인
+    const imageExtensionSet = new Set(['jpg', 'jpeg', 'png', 'JPG', 'JPEG', 'PNG']);
+    if (imageExtensionSet.has(classImageValue.substring(classImageValue.lastIndexOf(".") + 1, classImageValue.length)) == false) {
+        alert("강의 대표 이미지의 파일은 [jpg, jpeg, png] 확장자만 가능합니다");
+        return;
+    }
+
+    // 각 수업에 대한 수업 제목이 입력되었는지, video 파일이 선택되었는지 유효성 검사
+    for (let i = 1; i <= currentLessonCount; i++) {
+        // 수업 제목이 입력 됐는지 확인
+        let lessonNameValue = $("#lesson-name-" + i).val();
+        let lessonVideoValue = $("#lesson-video-" + i).val(); // C:\fakepath\create.mp4
+        let lessonTime = $("#lesson-time-" + i).val();
+        console.log(`${i}번째 수업: lessonName = ${lessonNameValue}, lessonVideo = ${lessonVideoValue}, lessonTime = ${lessonTime}`);
+
+        if (lessonNameValue == null || lessonNameValue.trim().length == 0) {
+            alert("수업 제목을 입력해주세요\n필요 없는 수업이면 '수업삭제'를 클릭해주세요 (최소 한 개 이상 수업 필수)");
+        }
+        if (lessonVideoValue == null || lessonVideoValue.trim().length == 0) {
+            alert("수업 동영상을 등록해주세요\n필요 없는 수업이면 '수업삭제'를 클릭해주세요 (최소 한 개 이상 수업 필수)")
+        }
+    }
 }
 
 $("body").on("click", "#submit-button", function() {
     console.log("submit button click");
+    console.log(`전체 수업 개수: ${currentLessonCount}`);
     checkValidate();
 });
