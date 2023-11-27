@@ -22,7 +22,14 @@ public class StudentDAO {
     sqlSession.close();
     return result;
   }
-
+    // 로그인(학생)
+    public List<StudentDTO> loginStudent(Map<String, String> map) {
+    SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+    StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+    List<StudentDTO> result = mapper.loginStudent(map);
+    sqlSession.close();
+    return result;
+    }
     // 차소영님 여기 아래부터 작성 시작
 
 
