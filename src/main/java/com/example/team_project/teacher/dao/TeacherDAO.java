@@ -29,6 +29,15 @@ public class TeacherDAO {
     return result;
   }
 
+    // 로그인(선생님)
+  public List<TeacherDTO> loginTeacher(Map<String, String> map) {
+    SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+    TeacherMapper mapper = sqlSession.getMapper(TeacherMapper.class);
+    List<TeacherDTO> result = mapper.loginTeacher(map);
+    sqlSession.close();
+    return result;
+  }
+
   // 차소영님 여기 아래부터 작성 시작
 
 
