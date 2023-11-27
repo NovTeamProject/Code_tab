@@ -64,6 +64,7 @@ $("#class-form").on("click", ".delete-lesson", function(event) {
         console.log(`${thisLessonNumber} 수업의 강의 시간이 숫자가 아니기에 총 시간에서 뺄 수 없습니다.`);
     }
 
+    $("#lesson__item-" + thisLessonNumber).next().remove(); // <br />태그 제거
     $("#lesson__item-" + thisLessonNumber).remove();
 
     if (thisLessonNumber == currentLessonCount) {
@@ -256,6 +257,9 @@ function checkValidate() {
             return;
         }
     }
+
+    // 유효성 검사 통과
+    $("#class-form").submit();
 }
 
 $("body").on("click", "#submit-button", function() {
