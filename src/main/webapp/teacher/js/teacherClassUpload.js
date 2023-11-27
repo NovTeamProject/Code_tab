@@ -5,7 +5,7 @@ const showThumbnail = (event) => {
     reader.onload = (event) => {
         const imgTag = $("#class-image-thumbnail");
         imgTag.attr("src", event.target.result);
-        alert("강의 대표 사진 등록");
+        //alert("강의 대표 사진 등록");
     }
     reader.readAsDataURL(event.target.files[0]);
 }
@@ -19,7 +19,8 @@ $("#lesson-plus-button").on("click", function(event) {
     addLessonElement();
     addMinusButton();
     lessonCountHiddenElement.val(currentLessonCount);
-    alert("새로운 수업이 추가되었습니다");
+    $("#span-class-total-lesson-count").text(currentLessonCount);
+    //alert("새로운 수업이 추가되었습니다");
 })
 
 const addLessonElement = () => {
@@ -73,7 +74,7 @@ $("#class-form").on("click", ".delete-lesson", function(event) {
     } else {
         decreaseNumberByOne(thisLessonNumber);
     }
-    alert("수업이 삭제되었습니다");
+    //alert("수업이 삭제되었습니다");
 });
 
 const decreaseNumberByOne = (deleteTargetNum) => {
@@ -139,18 +140,36 @@ $("#class-form").on("change", ".lesson-video", function(e) {
     //console.log(`thisLessonNumber = ${thisLessonNumber}`);
     //console.dir(this);
     const file = this.files[0];
+    if (!file.type.toLowerCase().includes("video")) {
+        alert("동영상 형식의 파일만 등록할 수 있습니다.");
+        $(this).val("");
+        let spanLessonTime = $("#span-lesson-time-" + thisLessonNumber).text();
+        if (!isNaN(spanLessonTime)) {
+            let spanClassTotalTime = Number($("#span-class-total-time").text());
+            let reCalculatedTotalTime = spanClassTotalTime - spanLessonTime;
+            $("#span-class-total-time").text(reCalculatedTotalTime); // 사용자에게 보여질 총 강의 시간
+            $("#class-total-time").val(reCalculatedTotalTime); // 서버로 전송될 총 강의 시간
+            $("#span-lesson-time-" + thisLessonNumber).text(0);
+            $("#lesson-time-" + thisLessonNumber).val(0);
+        }
+        return;
+    }
     loadVideoMetadata(file, thisLessonNumber);
-
-    alert("수업 동영상이 추가되었습니다");
+    //alert("수업 동영상이 추가되었습니다");
 })
 
 const loadVideoMetadata = (file, targetLessonNumber) => {
+    console.log("----- start file type -----");
+    console.log(file.type);
+    console.log("----- end file type -----");
+    console.log("loadVideoMetadata called");
     const video = document.createElement("video");
     video.preload = "metadata";
     video.onloadedmetadata = () => {
         console.log("onloadedmetadata first line"); // 나중 실행
         window.URL.revokeObjectURL(video.src);
         const videoDuration = video.duration;
+        console.log(`videoDuration = ${videoDuration}`);
         if (videoDuration < 1) {
             alert("수업 동영상의 길이는 1초 이상이어야 합니다.");
             return;
@@ -202,7 +221,7 @@ function checkValidate() {
     // 강의 대표 이미지가 업로드 되었는지 확인
     let classImageValue = $("#class-image").val().trim();
     if (classImageValue == null || classImageValue == '' || classImageValue.lastIndexOf('.') == -1) {
-        alert("강의 대표 이미지를 선택해 주세요");
+        alert("강의 대표 사진을 등록해 주세요");
         return;
     }
     // 강의 대표 이미지가 제대로된 이미지 확장자 파일인지 확인
@@ -221,10 +240,20 @@ function checkValidate() {
         console.log(`${i}번째 수업: lessonName = ${lessonNameValue}, lessonVideo = ${lessonVideoValue}, lessonTime = ${lessonTime}`);
 
         if (lessonNameValue == null || lessonNameValue.trim().length == 0) {
-            alert("수업 제목을 입력해주세요\n필요 없는 수업이면 '수업삭제'를 클릭해주세요 (최소 한 개 이상 수업 필수)");
+            alert("'" + i + "' 번 수업 제목을 입력해 주세요\n필요 없는 수업이면 '수업삭제'를 클릭해 주세요 (최소 한 개 이상 수업 필수)");
+            return;
         }
         if (lessonVideoValue == null || lessonVideoValue.trim().length == 0) {
-            alert("수업 동영상을 등록해주세요\n필요 없는 수업이면 '수업삭제'를 클릭해주세요 (최소 한 개 이상 수업 필수)")
+            alert("'" + i + "' 번 수업 동영상을 등록해 주세요\n필요 없는 수업이면 '수업삭제'를 클릭해 주세요 (최소 한 개 이상 수업 필수)")
+            return;
+        }
+        if (isNaN(lessonTime)) {
+            alert("'" + i + "' 번 수업 동영상이 등록되지 않았거나 영상 파일 형식이 아닙니다");
+            return;
+        }
+        if (Number(lessonTime) <= 0) {
+            alert("'" + i + "' 번 수업 동영상은 1초 이상이어야 합니다");
+            return;
         }
     }
 }
