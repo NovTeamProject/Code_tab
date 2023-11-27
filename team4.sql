@@ -62,6 +62,7 @@ CREATE TABLE board (
     board_idx INT PRIMARY KEY AUTO_INCREMENT,
     class_idx INT,
     student_idx INT,
+    student_name VARCHAR(100),
     title VARCHAR(200),
     content TEXT,
     visitcount INT DEFAULT 0, # 조회수
