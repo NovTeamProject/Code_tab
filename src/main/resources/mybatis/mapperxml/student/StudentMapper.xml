@@ -10,8 +10,19 @@
 
     <!--    남원우님 여기 아래부터 작성 시작-->
 
+        <!-- 회원가입(학생) -->
+    <insert id="joinStudent" parameterType="com.example.team_project.student.dto.StudentDTO">
+    INSERT INTO student (student_id, student_password,student_name )
+    VALUES (  #{student_id}, #{student_password}, #{student_name})
+    </insert>
 
-
+        <!--     로그인(학생)  -->
+    <select id="loginStudent" parameterType="map" >
+    select count(*)
+    from student
+    where student_password = #{studentPassword} and student_id = #{studentId}
+    </select>
+        
     <!--    차소영님 여기 아래부터 작성 시작-->
 
 
