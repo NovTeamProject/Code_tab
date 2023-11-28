@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 .wrapper {
     display: flex;
     align-items: center;
@@ -207,3 +206,5 @@ input[type=password2]::placeholder {
 .underlineHover{
     text-decoration : none;
 }
+
+

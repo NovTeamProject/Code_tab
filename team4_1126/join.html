@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>ChunJae-Study</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/로고.png" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+
+        <script src="//code.jquery.com/jquery-1.11.0.min.js">
+        </script>
+<link rel="stylesheet" href="../../css/join.css" />
+<script type="text/javascript">   
+	$(document).ready( function() {
+						$("#headers").load("nav.html");  //헤더 인클루드
+						$("#footers").load("footer.html");  //푸터부분 인클루드
+									}
+						);
+	</script> 
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script>
+    function join() {
+		var form = document.joinForm;
+
+		if (!form.userID.value) {
+			alert("아이디를 입력해주세요.");
+			form.userID.focus();
+			return;
+		}
+		if (form.userID.value.length < 4 || form.userID.value.length > 16) {
+			alert("아이디는 4자 이상, 16자 이하로 입력해주세요.");
+			form.userID.focus();
+			return;
+		}
+		if (!form.userPW.value) {
+			alert("비밀번호를 입력해주세요.");
+			form.userPW.focus();
+			return;
+		}
+
+		// 비밀번호 유효성 검사 로직 추가
+		var passwordRegex = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/;
+		if (!passwordRegex.test(form.userPW.value)) {
+			alert("비밀번호는 8자리 이상이어야 하며, 영문/숫자 모두 포함해야 합니다.");
+			form.userPW.focus();
+			return;
+		}
+
+		if (form.userPW.value !== form.userPW2.value) {
+			alert("비밀번호를 확인해주세요.");
+			form.userPW2.focus();
+			return;
+		}
+
+		if (!form.name.value) {
+			alert("이름을 입력해주세요.");
+			form.name.focus();
+			return;
+		}
+		
+
+		form.submit();
+	}
+
+	function CheckDup() {
+		var form = document.joinForm;
+
+		if (!form.userID.value) {
+			alert("아이디를 입력해주세요.");
+			form.userID.focus();
+			return;
+		}
+
+		$.ajax({
+			url:"/member/checkId.do",		// servlet 
+			type: "post",
+			datatype:"text",
+			data: {"userId" : form.userID.value},
+			success:function(data){
+
+				if(data === 'success'){
+					$('input[name=checkID]').val("ok");
+					alert("사용 가능한 아이디입니다.")
+					$('#message').text('사용할 수 있는 ID입니다.')   
+					$('#message').css('color','green')
+					
+				}
+				else {
+					alert("사용 불가능한 아이디입니다.")
+					$('#message').text('이미 사용 중인 아이디입니다.')
+					$('#message').css('color','red')
+					
+				}
+			},
+			error:function(){
+				alert("error");
+			}
+		})
+	}
+</script>
+<style>
+	.joinForm {
+  position:absolute;
+  width:400px;
+  height:400px;
+  padding: 30px, 20px;
+  background-color:#FFFFFF;
+  text-align:center;
+  top:40%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  border-radius: 15px;
+}
+
+.joinForm h2 {
+  text-align: center;
+  margin: 30px;
+}
+
+.textForm {
+  border-bottom: 2px solid #adadad;
+  margin: 30px;
+  padding: 10px 10px;
+}
+
+
+.id {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
+.pw {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
+.name {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
+.email {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
+.btn {
+  position:relative;
+  left:40%;
+  transform: translateX(-50%);
+  margin-bottom: 40px;
+  width:80%;
+  height:40px;
+  background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
+  background-position: left;
+  background-size: 200%;
+  color:white;
+  font-weight: bold;
+  border:none;
+  cursor:pointer;
+  transition: 0.4s;
+  display:inline;
+}
+
+.btn:hover {
+  background-position: right;
+}
+</style>
+</head>
+<body class="d-flex flex-column h-100">	
+	<!-- Navigation-->
+	<div id="headers"></div>
+
+	<div class="textForm">
+		<form action="doJoin" method="POST" class="##">
+			<h1 class="title">회원가입</h1>	
+			<table class="table_row W100P MAT10">
+				<tr>
+					<th><span class="blet"></span> 아이디</th>
+					<td>
+						<input type="text" name="id" size="20" maxlength="16" />
+						<input type="button" value="중복 검사" onClick="CheckDup();" class="btnDup">
+						<div id='message'></div>	
+					</td>
+				</tr>
+				<tr>
+					<th><span class="blet"></span> 비밀번호</th>
+					<td><input type="password" name="userPW" size="20" maxlength="16" />
+						<span class="f12 fC666">※ 8~16글자의 영어, 숫자 혼용</span>
+					</td>
+				</tr>
+				<tr>
+					<th><span class="blet"></span> 비밀번호 확인</th>
+					<td><input type="password" name="userPW2" size="20" maxlength="16" /></td>
+				</tr>
+				<tr>
+					<th><span class="blet"></span> 이름</th>
+					<td><input type="text" name="name" size="15" maxlength="6" /></td>
+				</tr>
+			</table>
+			<div class="checkType">
+             <label><input type="radio" name="joins" value="student"> 학생</label>
+            	<label><input type="radio" name="joins" value="teacher">선생님</label>
+			</div>
+			<div class="btnZone">
+				<input type="button" onClick="join();" class="btnOk" value="확인">
+				<input type="button" onClick="history.go(-1);" class="btnC" value="뒤로">
+			</div>
+		</form>
+	</div>
+	
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="../../js/bootstrap.js"></script>
+	<!-- Footer-->
+	<div id="footers"></div>
+</body>
+</html>

@@ -1,51 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<jsp:include page="/common/views/nav.jsp" />
+
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <title>ChunJae-Study</title>
-  <link rel="icon" type="image/x-icon" href="assets/로고.png" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-  <link href="css/styles.css" rel="stylesheet" />
-  <script src="//code.jquery.com/jquery-1.11.0.min.js">
-  </script>
-  <script type="text/javascript">
-    $(document).ready( function() {
-              $("#headers").load("nav.html");  //헤더 인클루드
-              $("#footers").load("footer.html");  //푸터부분 인클루드
-            }
-    );
-  </script>
-  <title>ChunJae - Study </title>
+  <title>index.html</title>
+  <link href="${pageContext.request.contextPath}/common/css/style.css?ver=1" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body class="d-flex flex-column h-100">
 <main class="flex-shrink-0">
-  <div id="headers"></div>
-  <div class="">
-    <div class="main-header pt-lg-3 pt-2 position-absolute container-fluid">
-      <nav class="d-flex justify-content-between align-items-center px-md-4 px-2">
-        <div class="d-none d-sm-block">
-          <ul class="nav justify-content-end mt-0"></ul>
-        </div>
-        <div class="mobile-menu d-block d-sm-none">
-          <a class="nav-link link-light" href="#"><i class="fa-solid fa-bars"></i></a>
-        </div>
-      </nav>
-    </div>
     <div id="mainBanner" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
       <div class="carousel-inner">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#mainBanner" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#mainBanner" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#mainBanner" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#mainBanner" data-bs-slide-to="3" aria-label="Slide 4"></button>
-          <button type="button" data-bs-target="#mainBanner" data-bs-slide-to="4" aria-label="Slide 5"></button>
-        </div>
-        <div class="carousel-item active" data-bs-interval="7000">
+            <div class="carousel-item active" data-bs-interval="7000">
+
           <img src="https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
           <div class="carousel-caption px-md-5">
             <h5>진심을 담은 강의</h5>
@@ -217,8 +186,6 @@
     </div>
   </section>
 </main>
-<!-- Footer-->
-<div id="footers"></div>
-
 </body>
 </html>
+<jsp:include page="/common/views/footer.jsp" />
