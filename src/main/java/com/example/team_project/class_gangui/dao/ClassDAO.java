@@ -46,6 +46,24 @@ public class ClassDAO {
         return classList;
     }
 
+    public ClassDTO getOneClassInformationWithRelatedLessons(int classIdx) {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        ClassDTO result = classMapper.getOneClassInformationWithRelatedLessons(classIdx);
+        log.info("한 개의 Class에 대한 information 조회. class_idx: ({})", result.getClassIdx());
+        log.info("강의 번호 ({}) 에 대한 수업의 개수: ({})", result.getClassIdx(), result.getLessonList().size());
+        sqlSession.close();
+        return result;
+    }
+
+    public int checkIfSpecificTeacherIdxUploadedSpecificClassIdx(int classIdxInt, int teacherIdx) {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        int validCount = classMapper.checkIfSpecificTeacherIdxUploadedSpecificClassIdx(classIdxInt, teacherIdx);
+        sqlSession.close();
+        return validCount;
+    }
+
     // 남원우님 여기 아래부터 작성 시작
 
 
