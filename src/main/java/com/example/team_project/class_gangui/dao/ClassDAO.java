@@ -64,6 +64,22 @@ public class ClassDAO {
         return validCount;
     }
 
+    public int getTotalUploadedClassesCount() {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        int count = classMapper.getTotalUploadedClassesCount();
+        sqlSession.close();
+        return count;
+    }
+
+    public List<ClassDTO> getAllUploadedClassesList(Map<String, Object> map) {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        List<ClassDTO> classList = classMapper.getAllUploadedClassesList(map);
+        sqlSession.close();
+        return classList;
+    }
+
     // 남원우님 여기 아래부터 작성 시작
 
 

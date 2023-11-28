@@ -46,10 +46,7 @@
                         <tbody>
                             <tr>
                                 <th scope="row">등록일시</th>
-                                <fmt:parseDate pattern="yyyy-MM-dd'T'HH:mm"
-                                        var="parsedDateTime" value="${classDTO.classRegisterDate}" type="both" />
-                                <fmt:formatDate pattern="yyyy-MM-dd HH:mm" var="registeredDate" value="${parsedDateTime}" />
-                                <td><c:out value="${registeredDate}" /></td>
+                                <td><c:out value="${classDTO.classRegisterDateWithYearMonthDayHourMinute}" /></td>
                             </tr>
                             <tr>
                                 <th scope="row">강의길이</th>
