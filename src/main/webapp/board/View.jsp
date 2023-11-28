@@ -128,9 +128,9 @@
                     </p>
                     <!-- 수정하기, 뒤로가기 버튼 -->
                     <div class="d-flex justify-content-end">
-                        <a href="#" class="btn btn-primary me-2">수정하기</a>
+                        <a href="${pageContext.request.contextPath}/board/edit.do?classIdx=${classIdx}&boardIdx=${boardIdx}" class="btn btn-primary me-2">수정하기</a>
+                        <a href="#" class="btn btn-primary me-2">삭제하기</a>
                         <a href="../board/list.do?classIdx=${classIdx}" class="btn btn-secondary">목록바로가기</a>
-
                     </div>
                     <!-- 답변 목록 -->
                     <div class="mt-5">

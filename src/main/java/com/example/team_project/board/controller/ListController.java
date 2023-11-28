@@ -29,7 +29,7 @@ public class ListController extends HttpServlet {
         Map<String, Object> map = new HashMap<>();
 
         // 쿼리 스트링으로 강의 번호 받기 (차소영님이 주는 값)
-        String classIdx = req.getParameter("classIdx");
+        String classIdx = req.getParameter("classIdx"); // 어떠한 강의에 대한 질문 게시판인지 알기 위해 clasIdx 값이 필요하다.
         String searchField = req.getParameter("searchField"); // null or content or title
         String searchWord = req.getParameter("searchWord"); // null or user input value
         if (searchWord != null && !searchWord.trim().equals("")) {

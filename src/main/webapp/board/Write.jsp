@@ -14,7 +14,6 @@
             crossorigin="anonymous"></script>
     <script type="text/javascript">
         function validateForm(form) {  // 필수 항목 입력 확인
-
             if (form.title.value == "") {
                 alert("제목을 입력하세요.");
                 form.title.focus();
@@ -27,7 +26,6 @@
             }
         }
     </script>
-
 </head>
 <body class="d-flex flex-column">
 <main class="flex-shrink-0">
@@ -101,13 +99,11 @@
                         >
                             <li>
                                 <a class="dropdown-item" href="portfolio-overview.html"
-                                >Portfolio Overview</a
-                                >
+                                >Portfolio Overview</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="portfolio-item.html"
-                                >Portfolio Item</a
-                                >
+                                >Portfolio Item</a>
                             </li>
                         </ul>
                     </li>
@@ -121,18 +117,18 @@
                 <h1 class="fw-bolder">질문하기</h1>
             </div>
             <br class="row gx-5 justify-content-center">
-            <form name="writeFrm" method="post" enctype="multipart/form-data"
-                  action="../board/write.do" onsubmit="return validateForm(this);">
+            <form name="writeFrm" method="post" action="${pageContext.request.contextPath}/board/write.do" onsubmit="return validateForm(this);">
+                <input type="hidden" name="classIdx" value="${param.classIdx}" />
                 <div class="row mb-3">
                     <label for="postTitle" class="col-sm-1 col-form-label">제목</label>
                     <div class="col-sm-8">
-                        <input type="text" name="title" class="form-control" id="postTitle" placeholder="제목을 입력하세요">
+                        <input type="text" name="title" class="form-control" id="postTitle" placeholder="질문 제목을 입력하세요">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="postContent" class="col-sm-1 col-form-label">내용</label>
                     <div class="col-sm-10">
-                        <textarea name="content" class="form-control" id="postContent" rows="10" placeholder="내용을 작성하세요"></textarea>
+                        <textarea name="content" class="form-control" id="postContent" rows="10" placeholder="질문 내용을 작성하세요"></textarea>
                     </div>
                 </div>
                 <div class="row">
@@ -147,21 +143,8 @@
             </form>
         </div>
     </section>
-
-    <script>
-        $(".page-link").on('click', function (event) {
-            event.preventDefault(); // a 태그의 기본 동작을 하지 마라.
-            //console.log($(this).attr('href'));
-            let destination = $(this).attr('href');
-            destination += ('&searchField=' + $('#select-option option:selected').val() + "&searchWord=" + $("#searchWord").val());
-            console.log(destination);
-            location.href = destination;
-        })
-    </script>
 </main>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="js/scripts.js"></script>
 </body>
 </html>

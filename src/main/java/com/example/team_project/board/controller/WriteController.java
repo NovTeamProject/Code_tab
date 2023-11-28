@@ -1,14 +1,10 @@
 package com.example.team_project.board.controller;
 
-
 import com.example.team_project.board.dao.BoardDAO;
 import com.example.team_project.board.dto.BoardDTO;
 import com.example.team_project.utils.JSFunction;
 
-
-
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,12 +13,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-
 @WebServlet("/board/write.do")
-@MultipartConfig(
-        maxFileSize = 1024 * 1024 * 1,
-        maxRequestSize = 1024 * 1024 * 10
-)
 public class WriteController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -30,7 +21,7 @@ public class WriteController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        int classIdx = 1; /*req.getParameter("classIdx");*/
+        int classIdx = Integer.parseInt(req.getParameter("classIdx")); /*req.getParameter("classIdx");*/
         req.setAttribute("classIdx", classIdx);
 
         req.getRequestDispatcher("/board/Write.jsp").forward(req, resp);
@@ -42,10 +33,9 @@ public class WriteController extends HttpServlet {
 
         Map<String, Object> map1 = new HashMap<>();
 
-        int classIdx = 1; /*req.getParameter("classIdx");*/
+        int classIdx = Integer.parseInt(req.getParameter("classIdx"));
         int studentIdx = 1; /*session.getParameter("studentIdx");*/
         String studentName = "권진철"; /*session.getParameter("studentName");*/
-
 
         BoardDTO dto = new BoardDTO();
         dto.setClassIdx(classIdx);
@@ -53,7 +43,6 @@ public class WriteController extends HttpServlet {
         dto.setStudentName(studentName);
         dto.setTitle(req.getParameter("title"));
         dto.setContent(req.getParameter("content"));
-
 
         // DAO를 통해 DB에 게시 내용 저장
         BoardDAO dao = new BoardDAO();
@@ -63,8 +52,7 @@ public class WriteController extends HttpServlet {
         if (result == 1) {  // 글쓰기 성공
             /*resp.sendRedirect("../board/list.do");*/
             resp.sendRedirect("../board/list.do?classIdx=" + classIdx);
-        }
-        else {  // 글쓰기 실패
+        } else {  // 글쓰기 실패
             JSFunction.alertLocation(resp, "질문하기에 실패했습니다.",
                     "../board/write.do");
         }

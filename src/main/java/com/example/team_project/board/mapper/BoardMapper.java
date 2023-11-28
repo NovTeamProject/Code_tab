@@ -12,7 +12,11 @@ public interface BoardMapper {
 
     int insertWrite(BoardDTO dto);
 
-    BoardDTO selectView(String idx);
+    BoardDTO selectView(String boardIdx);
 
-    int updateVisitCount(String idx);
+    int updateVisitCount(String boardIdx);
+
+    int deletePost(String boardIdx);
+
+    int updatePost(BoardDTO dto);
 }

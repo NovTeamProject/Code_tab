@@ -1,10 +1,9 @@
 package com.example.team_project.board.dao;
 
+import com.example.team_project.board.dto.BoardDTO;
 import com.example.team_project.board.mapper.BoardMapper;
-import com.example.team_project.class_gangui.mapper.ClassMapper;
 import com.example.team_project.mybatis.factory.MyBatisSessionFactory;
 import org.apache.ibatis.session.SqlSession;
-import com.example.team_project.board.dto.BoardDTO;
 
 import java.util.List;
 import java.util.Map;
@@ -60,5 +59,30 @@ public class BoardDAO {
             System.out.println("조회수 증가 중 오류 발생");
         }
         sqlSession.close();
+    }
+
+    public int deletePost(String idx) {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
+        int result = mapper.deletePost(idx);
+        if (result == 1) {
+            sqlSession.commit();
+        } else {
+            System.out.println("board 삭제 중 오류 발생");
+        }
+        return result;
+    }
+
+    public int updatePost(BoardDTO dto) {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
+        int result = mapper.updatePost(dto);
+        if (result == 1) {
+            sqlSession.commit();
+        } else {
+            System.out.println("board update 중 오류 발생");
+        }
+        sqlSession.commit();
+        return result;
     }
 }
