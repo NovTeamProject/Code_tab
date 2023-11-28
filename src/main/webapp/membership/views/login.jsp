@@ -16,6 +16,7 @@
     <title>login.jsp</title>
 </head>
 <body>
+
 <div class="wrapper fadeInDown">
     <div id="formContent">
         <label class="fadeIn third"><h2 class="active">로그인</h2></label>

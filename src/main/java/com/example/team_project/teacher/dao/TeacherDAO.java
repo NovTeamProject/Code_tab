@@ -5,6 +5,8 @@ import com.example.team_project.teacher.dto.TeacherDTO;
 import com.example.team_project.teacher.mapper.TeacherMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSession;
+import java.util.List;
+import java.util.Map;
 
 @Slf4j
 public class TeacherDAO {
@@ -25,6 +27,15 @@ public class TeacherDAO {
     } else {
       System.out.println("새로운 Teacher 저장 실패");
     }
+    sqlSession.close();
+    return result;
+  }
+
+    // 로그인(선생님)
+  public List<TeacherDTO> loginTeacher(Map<String, String> map) {
+    SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+    TeacherMapper mapper = sqlSession.getMapper(TeacherMapper.class);
+    List<TeacherDTO> result = mapper.loginTeacher(map);
     sqlSession.close();
     return result;
   }

@@ -7,6 +7,7 @@
   <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/common/image/로고.png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+
 </head>
 <body>
 <div>

@@ -1,6 +1,13 @@
 package com.example.team_project.student.dao;
 
+import com.example.team_project.mybatis.factory.MyBatisSessionFactory;
+import com.example.team_project.student.dto.StudentDTO;
+import com.example.team_project.student.mapper.StudentMapper;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.session.SqlSession;
+
+import java.util.List;
+import java.util.Map;
 
 @Slf4j
 public class StudentDAO {
@@ -22,7 +29,14 @@ public class StudentDAO {
     sqlSession.close();
     return result;
   }
-
+    // 로그인(학생)
+    public List<StudentDTO> loginStudent(Map<String, String> map) {
+    SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+    StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+    List<StudentDTO> result = mapper.loginStudent(map);
+    sqlSession.close();
+    return result;
+    }
     // 차소영님 여기 아래부터 작성 시작
 
 

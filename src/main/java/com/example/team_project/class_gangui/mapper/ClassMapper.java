@@ -19,7 +19,9 @@ public interface ClassMapper {
 
 
     // 차소영님 여기 아래부터 작성 시작
-
+    int registerClass(Map<String, Integer> map);
+    int cancelClass(Map<String, Integer> map);
+    List<ClassDTO> getRegisteredClasses(int studentIdx);
 
     // 유지호님 여기 아래부터 작성 시작
 
