@@ -15,6 +15,8 @@ public interface ClassMapper {
 
     List<ClassDTO> getAllUploadedClassListFilteredByTeacherIdxWithPaging(Map<String, Object> map);
 
+
+
     // 남원우님 여기 아래부터 작성 시작
 
 
@@ -22,5 +24,6 @@ public interface ClassMapper {
 
 
     // 유지호님 여기 아래부터 작성 시작
+    String getClassNameByClassIdx(String classIdx);
 
 }

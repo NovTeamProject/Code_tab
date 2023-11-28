@@ -54,5 +54,11 @@ public class ClassDAO {
 
 
     // 유지호님 여기 아래부터 작성 시작
+    public String getClassNameByClassIdx(String classIdx) {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper mapper = sqlSession.getMapper(ClassMapper.class);
+        String className = mapper.getClassNameByClassIdx(classIdx);
+        return className;
+    }
     
 }

@@ -22,5 +22,6 @@
         <mapper resource="mybatis/mapperxml/class_gangui/ClassMapper.xml" />
         <mapper resource="mybatis/mapperxml/lesson_sueop/LessonMapper.xml" />
         <mapper resource="mybatis/mapperxml/student/StudentMapper.xml" />
+        <mapper resource="mybatis/mapperxml/board/BoardMapper.xml" />
     </mappers>
 </configuration>
