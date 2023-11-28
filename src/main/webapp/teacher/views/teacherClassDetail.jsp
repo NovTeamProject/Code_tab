@@ -66,11 +66,14 @@
                         </tbody>
                     </table>
                 </div>
+                <div style="text-align: right">
+                    <button type="button" class="btn btn-outline-warning" id="classModifyBtn">강의 수정하기</button>
+                </div>
             </div>
         </section>
 
-        <h3 style="text-align: center">강의 수업 리스트</h3>
-        <div class="d-flex justify-content-center">
+        <h3 style="text-align: center; margin-top: 50px;">강의 수업 리스트</h3>
+        <div class="d-flex justify-content-center" style="margin-bottom: 50px;">
         <div class="accordion" id="accordionExample" style="width: 70%">
             <c:forEach items="${classDTO.lessonList}" var="lesson" varStatus="loop">
                 <c:choose>
@@ -129,6 +132,11 @@
     </c:forEach>
 </script>
 </body>
+<script>
+    $("#classModifyBtn").on("click", function() {
+        location.href = '${pageContext.request.contextPath}' + "/teacher/class/modify.do?classIdx=" + '${param.classIdx}';
+    })
+</script>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </html>
