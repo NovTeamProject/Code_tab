@@ -94,12 +94,14 @@
 </details>
 
 ## 📝 기능 설명 📝
+
 > 클릭시 코드로 이동합니다. 
 
 <details><summary>#
 </summary>
 <br/>
-
+</details>
+ 
 
 ## 📹 시연 영상 📹
 
