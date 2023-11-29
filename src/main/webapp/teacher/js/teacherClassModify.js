@@ -1,13 +1,24 @@
 console.log("teacherClassUpload.js successfully loaded");
 
 const showThumbnail = (event) => {
+    $("#class-image-modified").attr("value", "true");
+
     const reader = new FileReader();
     reader.onload = (event) => {
         const imgTag = $("#class-image-thumbnail");
         imgTag.attr("src", event.target.result);
         //alert("강의 대표 사진 등록");
     }
-    reader.readAsDataURL(event.target.files[0]);
+    // 이미지 파일이 맞는지 검사
+    console.log(event.target.files[0]);
+    if (!event.target.files[0].type.toLowerCase().includes("image")) {
+        alert("사진 형식의 파일만 등록할 수 있습니다.");
+        $("#class-image").attr("value", "");
+        $("#class-image-thumbnail").attr("src", "");
+        return;
+    } else {
+        reader.readAsDataURL(event.target.files[0]);
+    }
 }
 
 // let currentLessonCount = 1;
@@ -95,6 +106,7 @@ const decreaseNumberByOne = (deleteTargetNum) => {
         let inputLessonTime = $("#lesson-time-" + startElementNum); // 서버로 전송될 수업의 길이 태그
         let lessonModified = $("#lesson-modified-" + startElementNum);
         let divLessonTime = $("#div-lesson-time-" + startElementNum);
+        let lessonVideoName = $("#lesson-video-name-" + startElementNum);
 
         let newNum = startElementNum - 1;
 
@@ -131,6 +143,9 @@ const decreaseNumberByOne = (deleteTargetNum) => {
 
         divLessonTime.attr("id", "div-lesson-item-" + newNum);
 
+        lessonVideoName.attr("id", "lesson-video-name-" + newNum);
+        lessonVideoName.attr("name", "lesson-video-name-" + newNum);
+
         startElementNum++;
 
         if (i == (totalIterationTimes - 1)) {
@@ -149,7 +164,12 @@ $("#class-form").on("change", ".lesson-video", function(e) {
     //console.log(`thisLessonNumber = ${thisLessonNumber}`);
     //console.dir(this);
     const file = this.files[0];
+
+    $("#lesson-modified-" + thisLessonNumber).attr("value", thisLessonNumber);
+
     if (!file.type.toLowerCase().includes("video")) {
+        let lessonVideoName = $("#lesson-video-name-" + thisLessonNumber).text("");
+
         alert("동영상 형식의 파일만 등록할 수 있습니다.");
         $(this).val("");
         let spanLessonTime = $("#span-lesson-time-" + thisLessonNumber).text();
