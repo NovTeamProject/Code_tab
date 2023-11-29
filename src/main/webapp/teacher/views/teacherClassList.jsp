@@ -32,6 +32,9 @@
                     <h1 class="fw-bolder">내가 등록한 강의 목록</h1>
                     <p class="lead fw-normal text-muted mb-5">등록한 강의: (${pageMaker.totalCount})개</p>
                 </div>
+                <div style="text-align: right; margin-bottom: 20px;">
+                    <button type="button" class="btn btn-primary btn-group-sm" id="goto-upload-class-btn">새로운 강의 등록하기</button>
+                </div>
                 <c:choose>
                     <c:when test="${pageMaker.totalCount > 0 and not empty classList}">
                         <c:set var="no" value="${pageMaker.totalCount - ((pageMaker.cri.pageNum - 1) * 10)}" />
@@ -41,7 +44,8 @@
                                     <div class="position-relative mb-5">
                                         <div>
                                             <img class="img-fluid rounded-3 mb-3" src="${pageContext.request.contextPath}/teacher/class-image/${item.classImageSavedFilename}" />
-                                            <br /><a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">${item.className}</a>
+                                            <br /><a class="h3 fw-bolder text-decoration-none link-dark stretched-link"
+                                                     href="${pageContext.request.contextPath}/teacher/class/detail.do?classIdx=${item.classIdx}">${item.className}</a>
                                         </div><br />
                                         <p class="fw-light">등록일: ${item.classRegisterDate}</p>
                                     </div>
@@ -90,4 +94,9 @@
 </body>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    $("#goto-upload-class-btn").on("click", function() {
+        location.href = '${pageContext.request.contextPath}' + "/teacher/class/upload.do";
+    })
+</script>
 </html>

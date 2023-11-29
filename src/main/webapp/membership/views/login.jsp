@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-<%@ include file="../css/join.css"%>
+<jsp:include page="/common/views/nav.jsp" />
 <html>
 <head>
     <meta charset="utf-8" />
@@ -8,25 +8,15 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>ChunJae-Study</title>
-    <link rel="icon" type="image/x-icon" href="../common/image/로고.png" />
+    <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/common/image/로고.png" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
-    <script src="//code.jquery.com/jquery-1.11.0.min.js">
-    </script>
-
-    <script type="text/javascript">
-        $(document).ready( function() {
-                $("#headers").load("nav.html");  //헤더 인클루드
-                $("#footers").load("footer.html");  //푸터부분 인클루드
-            }
-        );
-    </script>
+    <link href="${pageContext.request.contextPath}/common/css/style.css?ver=1" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath}/membership/css/join.css?ver=1" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <title>login.jsp</title>
-
 </head>
 <body>
-<div id="headers">
-</div>
+
 <div class="wrapper fadeInDown">
     <div id="formContent">
         <label class="fadeIn third"><h2 class="active">로그인</h2></label>
@@ -45,6 +35,6 @@
         </div>
     </div>
 </div>
-<div id="footers"></div>
 </body>
 </html>
+<jsp:include page="/common/views/footer.jsp" />
