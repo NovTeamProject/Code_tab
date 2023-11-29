@@ -42,7 +42,7 @@
                                         <div>
                                             <img class="img-fluid rounded-3 mb-3" src="${pageContext.request.contextPath}/teacher/class-image/${item.classImageSavedFilename}" />
                                             <br /><a class="h3 fw-bolder text-decoration-none link-dark stretched-link"
-                                                     href="${pageContext.request.contextPath}/teacher/class/detail.do?classIdx=${item.classIdx}">${item.className}</a>
+                                                     href="${pageContext.request.contextPath}/class/detail.do?classIdx=${item.classIdx}">${item.className}</a>
                                         </div><br />
                                         <p class="fw-light">등록일: ${item.classRegisterDateWithYearMonthDay}</p>
                                     </div>

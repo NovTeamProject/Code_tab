@@ -10,7 +10,7 @@ const showThumbnail = (event) => {
     reader.readAsDataURL(event.target.files[0]);
 }
 
-let currentLessonCount = 1;
+// let currentLessonCount = 1;
 
 // 서버에 전송될 강의의 총 수업 개수
 let lessonCountHiddenElement = $("#class-total-lesson-count");
@@ -26,13 +26,14 @@ $("#lesson-plus-button").on("click", function(event) {
 const addLessonElement = () => {
     let afterThis = $("#lesson__item-" + currentLessonCount);
     currentLessonCount++;
-    let newElement = "<br /><div class='lesson__item lesson__item-" + currentLessonCount + "' id='lesson__item-" + currentLessonCount + "'>&#10;&#13;";
+    let newElement = "<br /><div class='lesson__item lesson__item-" + currentLessonCount + "' id='lesson__item-" + currentLessonCount + "' name='lesson__item-" + currentLessonCount + "' >&#10;&#13;";
     newElement += "<input type='text' class='form-control lesson-name lesson-name-" + currentLessonCount + "' name='lesson-name-" + currentLessonCount + "' id='lesson-name-" + currentLessonCount + "' placeholder='수업 제목을 입력해 주세요' />&#10;&#13;";
     newElement += "<input type='file' class='form-control lesson-video lesson-video-" + currentLessonCount + "' name='lesson-video-" + currentLessonCount + "' id='lesson-video-" + currentLessonCount +"' />&#10;&#13;";
     newElement += "<div id='div-lesson-time-" + currentLessonCount + "'>"
     newElement += "<span id='span-lesson-time-" + currentLessonCount + "' class='span-lesson-time span-lesson-time-" + currentLessonCount + "'></span>(초)";
     newElement += "</div>";
     newElement += "<input type='hidden' id='lesson-time-" + currentLessonCount + "' class='lesson-time lesson-time-" + currentLessonCount + "' name='lesson-time-" + currentLessonCount + "' />" ;
+    newElement += "<input type='hidden' id='lesson-modified-" + currentLessonCount + "'  value='true' />";
     newElement += "</div>";
     afterThis.after(newElement);
 }
@@ -92,6 +93,7 @@ const decreaseNumberByOne = (deleteTargetNum) => {
         let buttonDeleteLessonItem = $("#delete-lesson-" + startElementNum); // 현 lesson 삭제 태그
         let spanLessonTime = $("#span-lesson-time-" + startElementNum); // 보여질(서버X) 수업의 길이 태그
         let inputLessonTime = $("#lesson-time-" + startElementNum); // 서버로 전송될 수업의 길이 태그
+        let lessonModified = $("#lesson-modified-" + startElementNum);
 
         let newNum = startElementNum - 1;
 
@@ -122,6 +124,9 @@ const decreaseNumberByOne = (deleteTargetNum) => {
         buttonDeleteLessonItem.attr("name", "delete-lesson-" + newNum);
         spanLessonTime.attr("name", "span-lesson-time-" + newNum);
         inputLessonTime.attr("name", "lesson-time-" + newNum);
+
+        lessonModified.attr("id", "lesson-modified-" + newNum);
+        lessonModified.attr("name", "lesson-modified-" + newNum);
 
         startElementNum++;
 
