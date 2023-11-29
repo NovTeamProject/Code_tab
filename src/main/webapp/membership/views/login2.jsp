@@ -19,9 +19,11 @@
 <div class="wrapper fadeInDown">
     <div id="formContent">
         <label class="fadeIn third"><h2 class="active">로그인</h2></label>
-        <form action="${contextPath}/member/login.do" method="post">
-            <input type="text" id="login" class="fadeIn second" name="userID" placeholder="아이디">
-            <input type="text" id="password" class="fadeIn third" name="userPW" placeholder="비밀번호" autocomplete="off">
+<
+        <form action="${pageContext.request.contextPath}/loginstudent.do" method="post">
+            <input type="text" id="login"  name="studentId" placeholder="아이디">
+            <input type="text" id="password"  name="studentPassword" placeholder="비밀번호" autocomplete="off">
+
             <div class="checkType">
                 <label class="fadeIn third"><input type="radio" name="joins" value="student"> 학생</label>
                 <label class="fadeIn third"><input type="radio" name="joins" value="teacher">선생님</label>
@@ -30,7 +32,9 @@
             <input type="submit" class="fadeIn fourth" value="로그인">
         </form>
         <div id="formFooter">
-            <label  class="fadeIn third"><a class="underlineHover" href="${pageContext.request.contextPath}/membership/css/join.jsp">처음 이신가요</a></label>
+
+            <label  class="fadeIn third"><a class="underlineHover" href="${pageContext.request.contextPath}/membership/views/join.jsp">처음 이신가요</a></label>
+
         </div>
     </div>
 </div>
