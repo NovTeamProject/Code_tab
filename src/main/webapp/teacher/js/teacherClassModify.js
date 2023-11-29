@@ -94,6 +94,7 @@ const decreaseNumberByOne = (deleteTargetNum) => {
         let spanLessonTime = $("#span-lesson-time-" + startElementNum); // 보여질(서버X) 수업의 길이 태그
         let inputLessonTime = $("#lesson-time-" + startElementNum); // 서버로 전송될 수업의 길이 태그
         let lessonModified = $("#lesson-modified-" + startElementNum);
+        let divLessonTime = $("#div-lesson-time-" + startElementNum);
 
         let newNum = startElementNum - 1;
 
@@ -127,6 +128,8 @@ const decreaseNumberByOne = (deleteTargetNum) => {
 
         lessonModified.attr("id", "lesson-modified-" + newNum);
         lessonModified.attr("name", "lesson-modified-" + newNum);
+
+        divLessonTime.attr("id", "div-lesson-item-" + newNum);
 
         startElementNum++;
 
