@@ -125,13 +125,13 @@
                 <div class="row mb-3">
                     <label for="postTitle" class="col-sm-1 col-form-label">제목</label>
                     <div class="col-sm-8">
-                        <input type="hiden" name="title" class="form-control" id="postTitle" value="${dto.title}">
+                        <input type="text" name="title" class="form-control" id="postTitle" value="${dto.title}">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="postContent" class="col-sm-1 col-form-label">내용</label>
                     <div class="col-sm-10">
-                        <textarea type="hiden" name="content" class="form-control" id="postContent" rows="10"><c:out value="${dto.content}" /></textarea>
+                        <textarea type="hidden" name="content" class="form-control" id="postContent" rows="10"><c:out value="${dto.content}" /></textarea>
                     </div>
                 </div>
                 <div class="row">

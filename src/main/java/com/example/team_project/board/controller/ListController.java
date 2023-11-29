@@ -20,7 +20,7 @@ import java.util.Map;
 public class ListController extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
         //DAO 생성
         BoardDAO dao = new BoardDAO();
         ClassDAO classDAO = new ClassDAO();
@@ -29,15 +29,15 @@ public class ListController extends HttpServlet {
         Map<String, Object> map = new HashMap<>();
 
         // 쿼리 스트링으로 강의 번호 받기 (차소영님이 주는 값)
-        String classIdx = req.getParameter("classIdx"); // 어떠한 강의에 대한 질문 게시판인지 알기 위해 clasIdx 값이 필요하다.
-        String searchField = req.getParameter("searchField"); // null or content or title
-        String searchWord = req.getParameter("searchWord"); // null or user input value
+        String classIdx = request.getParameter("classIdx"); // 어떠한 강의에 대한 질문 게시판인지 알기 위해 clasIdx 값이 필요하다.
+        String searchField = request.getParameter("searchField"); // null or content or title
+        String searchWord = request.getParameter("searchWord"); // null or user input value
         if (searchWord != null && !searchWord.trim().equals("")) {
             map.put("searchField", searchField);
             map.put("searchWord", searchWord);
         }
 
-        map.put("classIdx", classIdx);
+        map.put("classIdx", classIdx); // classIdx -> 1 (key-value 쌍)
 
         String className = classDAO.getClassNameByClassIdx(classIdx);
         map.put("className", className);
@@ -51,10 +51,12 @@ public class ListController extends HttpServlet {
 
         // 현재 페이지 확인
         int pageNum = 1;  // 기본값
-        String pageTemp = req.getParameter("pageNum");
-        if (pageTemp != null && !pageTemp.equals(""))
+        String pageTemp = request.getParameter("pageNum");
+        if (pageTemp != null && !pageTemp.equals("")) {
             pageNum = Integer.parseInt(pageTemp); // 요청받은 페이지로 수정
-
+            // query string의 value 값은 String type인데, 그 String type의 값을 정수형(int)로 변환하기 위해서
+            // Integer.parseInt(pageTemp); 메서드를 호출해서, String type을 int 타입으로 변경.
+        }
         // 목록에 출력할 게시물 범위 계산
         int start = (pageNum - 1) * pageSize + 1;  // 첫 게시물 번호
         int end = pageNum * pageSize; // 마지막 게시물 번호
@@ -74,8 +76,8 @@ public class ListController extends HttpServlet {
         map.put("pageNum", pageNum);
 
         // 전달할 데이터를 request 영역에 저장 후 List.jsp로 포워드
-        req.setAttribute("boardLists", boardLists);
-        req.setAttribute("map", map);
-        req.getRequestDispatcher("/board/List.jsp").forward(req, resp);
+        request.setAttribute("boardLists", boardLists);
+        request.setAttribute("map", map);
+        request.getRequestDispatcher("/board/List.jsp").forward(request, resp);
     }
 }

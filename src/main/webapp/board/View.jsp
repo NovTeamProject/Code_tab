@@ -28,6 +28,35 @@
         }
     </script>
 
+
+    <script>
+        function deletePost(boardIdx, classIdx) {
+            if (confirm("정말로 삭제하시겠습니까?")) {
+                // AJAX를 사용하여 삭제 요청을 서버로 전송
+                $.ajax({
+                    type: "POST",
+                    url: "${pageContext.request.contextPath}/board/delete.do",
+                    data: {
+                        boardIdx: boardIdx,
+                        classIdx: classIdx
+                    },
+                    success: function (response) {
+                        if (response === "success") {
+                            alert("삭제되었습니다.");
+                            window.location.href = "${pageContext.request.contextPath}/board/list.do?classIdx=" + classIdx;
+                        } else {
+                            alert("삭제에 실패했습니다.");
+                        }
+                    },
+                    error: function () {
+                        alert("삭제 요청을 처리하는 동안 오류가 발생했습니다.");
+                    }
+                });
+            }
+        }
+    </script>
+
+
 </head>
 <body class="d-flex flex-column">
 <main class="flex-shrink-0">
@@ -129,7 +158,8 @@
                     <!-- 수정하기, 뒤로가기 버튼 -->
                     <div class="d-flex justify-content-end">
                         <a href="${pageContext.request.contextPath}/board/edit.do?classIdx=${classIdx}&boardIdx=${boardIdx}" class="btn btn-primary me-2">수정하기</a>
-                        <a href="#" class="btn btn-primary me-2">삭제하기</a>
+                        <%--<a href="#" class="btn btn-primary me-2">삭제하기</a>--%>
+                        <a href="#" class="btn btn-primary me-2" onclick="deletePost(${dto.boardIdx}, ${classIdx})">삭제하기</a>
                         <a href="../board/list.do?classIdx=${classIdx}" class="btn btn-secondary">목록바로가기</a>
                     </div>
                     <!-- 답변 목록 -->

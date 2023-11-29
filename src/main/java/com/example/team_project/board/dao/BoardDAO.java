@@ -85,4 +85,8 @@ public class BoardDAO {
         sqlSession.commit();
         return result;
     }
+
+
+
+
 }

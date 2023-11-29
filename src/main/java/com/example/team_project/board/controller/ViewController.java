@@ -15,23 +15,23 @@ public class ViewController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // 게시물 불러오기
         BoardDAO dao = new BoardDAO();
-        String boardIdx = req.getParameter("boardIdx");
-        String classIdx = req.getParameter("classIdx");
+        String boardIdx = request.getParameter("boardIdx");
+        String classIdx = request.getParameter("classIdx");
         dao.updateVisitCount(boardIdx);  // 조회수 1 증가
         BoardDTO dto = dao.selectView(boardIdx);
 
         // 줄바꿈 처리
         dto.setContent(dto.getContent().replaceAll("\r\n", "<br/>"));
 
-        req.setAttribute("classIdx", classIdx);
-        req.setAttribute("boardIdx", boardIdx);
+        request.setAttribute("classIdx", classIdx);
+        request.setAttribute("boardIdx", boardIdx);
 
         // 게시물(dto) 저장 후 뷰로 포워드
-        req.setAttribute("dto", dto);
-        req.getRequestDispatcher("/board/View.jsp").forward(req, resp);
+        request.setAttribute("dto", dto);
+        request.getRequestDispatcher("/board/View.jsp").forward(request, response);
     }
 }
