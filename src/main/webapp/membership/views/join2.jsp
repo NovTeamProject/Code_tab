@@ -25,6 +25,7 @@
             <input type="password" id="studentPassword" class="fadeIn third" name="studentPassword" placeholder="비밀번호" autocomplete="off" required>
             <input type="password" id="studentPassword2" class="fadeIn third" name="studentPassword2" placeholder="비밀번호 확인" autocomplete="off" required>
             <input type="text" id="name" class="fadeIn third" name="studentName" placeholder="이름" autocomplete="off" required>
+
             <div class="checkType">
                 <label class="fadeIn third"><input type="radio" name="joins" value="student">학생</label>
                 <label class="fadeIn third"><input type="radio" name="joins" value="teacher">선생님</label>
@@ -44,17 +45,20 @@
 </div>
 <script>
     $(document).ready(function(){
+
         $("#login").keyup(function(){
             $("#idck").val("no");
             if($(this).val()!=""){
                 $("#msg").html("<strong>아이디 입력중입니다.</strong>");
                 $("#login").focus();
+
             } else {
                 $("#msg").html("아직 아이디 중복 체크를 하지 않으셨습니다.");
             }
         });
     });
     function idCheck(){
+
 
         var studentId = document.getElementById('login').value;
 
@@ -64,11 +68,13 @@
         }
         var params = { studentId : studentId }
 
+
         $.ajax({
             url:"${pageContext.request.contextPath}/IdCheck.do",
             type:"post",
             dataType:"json",
             data:params,
+
             success:function(data){
                 var idPass = data.result
                 if(idPass == false){
@@ -79,6 +85,7 @@
                     $("#idck").val("yes");
                     $("#msg").html("<strong style='color:red'>사용 가능한 아이디입니다.</strong>");
                 } else {
+
                     $("#msg").text("<strong style='color:blue'>아이디가 확인되지 않았습니다. 다시 시도하시기 바랍니다.</strong>");
                 }
             }
@@ -87,6 +94,7 @@
 </script>
 <script>
     function joinCheck(f){
+
         if(f.studentPassword.value!=f.studentPassword2.value){
             alert("비밀번호와 비밀번호 확인이 서로 다릅니다.");
             f.studentPassword.focus();
@@ -95,6 +103,7 @@
         // if(f.idck.value!="yes"){
         //     alert("아이디 중복 체크를 하지 않으셨습니다.");
         //     return false;
+
         }
     }
 </script>
