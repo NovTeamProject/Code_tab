@@ -68,7 +68,6 @@ public class ListController extends HttpServlet {
         /* 페이지 처리 end */
 
         List<BoardDTO> boardLists = dao.selectListPage(map);  // 게시물 목록 받기
-        System.out.println(boardLists);
 
         // 뷰에 전달할 매개변수 추가
         String pagingImg = BoardPage.pagingStr(totalCount, pageSize,

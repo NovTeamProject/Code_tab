@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.team_project.comment.mapper.CommentMapper">
+
+    <insert id="insertComment" parameterType="com.example.team_project.comment.dto.CommentDTO">
+        INSERT
+        INTO comment(board_idx, person_idx, person_type, person_name, content)
+        VALUES(#{boardIdx}, #{personIdx},#{personType}, #{personName}, #{content})
+    </insert>
+
+    <select id="selectCommentsByBoardIdx" parameterType="int" resultType="com.example.team_project.comment.dto.CommentDTO">
+        select *
+        from comment
+        where board_idx = #{boardIdx}
+    </select>
+
+</mapper>
