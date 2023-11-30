@@ -74,7 +74,8 @@ CREATE TABLE comment (
     comment_idx INT PRIMARY KEY AUTO_INCREMENT,
     board_idx INT,
     person_idx INT, # 누가(학생or선생) 댓글을 달았는지 그 사람의 pk 값
-    person_type TINYINT, # 선생님은 0번, 학생은 2번
+    person_type TINYINT, # 선생님은 0번, 학생은 2번,
+    person_name VARCHAR(100), # 학생 or 선생의 이름
     content VARCHAR(500),
     register_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY(board_idx) REFERENCES board(board_idx));
