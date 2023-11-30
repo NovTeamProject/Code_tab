@@ -30,17 +30,20 @@ public class ListController extends HttpServlet {
 
         // 쿼리 스트링으로 강의 번호 받기 (차소영님이 주는 값)
         String classIdx = request.getParameter("classIdx"); // 어떠한 강의에 대한 질문 게시판인지 알기 위해 clasIdx 값이 필요하다.
+        // 쿼리스트링 값을 가져옴
         String searchField = request.getParameter("searchField"); // null or content or title
         String searchWord = request.getParameter("searchWord"); // null or user input value
         if (searchWord != null && !searchWord.trim().equals("")) {
-            map.put("searchField", searchField);
-            map.put("searchWord", searchWord);
-        }
+            map.put("searchField", searchField); // 검색 필드 값을 맵에 추가
+            map.put("searchWord", searchWord);  // 검색어 값을 맵에 추가
+        } // 처음 null 값이기 때문에 넘어감
 
-        map.put("classIdx", classIdx); // classIdx -> 1 (key-value 쌍)
+        map.put("classIdx", classIdx); // classIdx -> 1 (key-value 쌍), classIdx를 맵에 저장
 
         String className = classDAO.getClassNameByClassIdx(classIdx);
+        // 강의 이름을 조회하기 위한 class 테이블에서 가져온 값
         map.put("className", className);
+        // 강의명읠 map에 저장
 
         int totalCount = dao.selectCount(map); // total board count
 
@@ -76,8 +79,8 @@ public class ListController extends HttpServlet {
         map.put("pageNum", pageNum);
 
         // 전달할 데이터를 request 영역에 저장 후 List.jsp로 포워드
-        request.setAttribute("boardLists", boardLists);
-        request.setAttribute("map", map);
-        request.getRequestDispatcher("/board/List.jsp").forward(request, resp);
+        request.setAttribute("boardLists", boardLists); // boardLists는 게시물 목록
+        request.setAttribute("map", map); // 맵에 저장한 것을 맵이라는 값에 저장
+        request.getRequestDispatcher("/board/List.jsp").forward(request, resp); // List.jsp로 전송
     }
 }

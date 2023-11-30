@@ -118,6 +118,9 @@
                 </select>
                 <input type="text" id="searchWord"  name="searchWord" placeholder="검색어를 입력하세요" value="${not empty map.searchWord ? map.searchWord : ''}" />
                 <input type="submit" value="검색하기"/>
+                <div class="container" style="display: flex; justify-content: flex-end;">
+                    <button type="button" class="btn btn-primary" id="questionBtn">질문하기</button>
+                </div>
             </form>
             <br />
             <br />
@@ -161,12 +164,9 @@
             <c:if test="${not empty boardLists}">
                 ${ map.pagingImg }
             </c:if>
-            <div class="container" style="display: flex; justify-content: flex-end;">
-                <button type="button" class="btn btn-primary"
-                        onclick="location.href='${pageContext.request.contextPath}/board/write.do?classIdx=${param.classIdx}';">질문하기</button>
-            </div>
         </div>
     </section>
+</main>
 
     <script>
         $(".page-link").on('click', function (event) {
@@ -177,8 +177,11 @@
             console.log(destination);
             location.href = destination;
         })
+        $("#questionBtn").on("click", function (event) {
+            location.href = '${pageContext.request.contextPath}' + "/board/write.do?classIdx=" + '${param.classIdx}';
+        })
     </script>
-</main>
+
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->

@@ -22,7 +22,7 @@ public class WriteController extends HttpServlet {
             throws ServletException, IOException {
 
         int classIdx = Integer.parseInt(req.getParameter("classIdx")); /*req.getParameter("classIdx");*/
-        req.setAttribute("classIdx", classIdx);
+        req.setAttribute("classIdx", classIdx); // classIdx 값을 저장
 
         req.getRequestDispatcher("/board/Write.jsp").forward(req, resp);
     }

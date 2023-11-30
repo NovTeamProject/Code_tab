@@ -122,6 +122,7 @@
             <br class="row gx-5 justify-content-center">
             <form name="writeFrm" method="post" action="${pageContext.request.contextPath}/board/edit.do" onsubmit="return validateForm(this);">
                 <input type="hidden" name="boardIdx" value="${dto.boardIdx}" />
+                <input type="hidden" name="classIdx" value="${classIdx}" />
                 <div class="row mb-3">
                     <label for="postTitle" class="col-sm-1 col-form-label">제목</label>
                     <div class="col-sm-8">
@@ -137,7 +138,7 @@
                 <div class="row">
                     <div class="col-sm-11 d-flex justify-content-end">
                         <button type="submit" class="btn btn-primary me-2">수정완료</button>
-                        <button type="reset" class="btn btn-primary me-2">전체 지우기</button>
+                        <input type="reset" class="btn btn-primary me-2" id="resetBtn" value="전체초기화" />
                         <button type="button" class="btn btn-primary me-2" onclick="location.href='${pageContext.request.contextPath}/board/list.do?classIdx=${classIdx}';">
                             목록 바로가기
                         </button>
@@ -149,6 +150,11 @@
 </main>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
+<script>
+    $("#resetBtn").on("click", function() {
+        $("textarea[name=content]").text("");
+        $("input[name=title]").attr("value", "");
+    })
+</script>
 </body>
 </html>

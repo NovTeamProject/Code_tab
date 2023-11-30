@@ -36,6 +36,7 @@ public class EditController extends HttpServlet {
         // 수정 내용을 매개변수에서 얻어옴
         String boardIdx = req.getParameter("boardIdx");
         int parsedBoardIdx = Integer.parseInt(boardIdx); // 문자열을 정수로 변환
+        String classIdx = req.getParameter("classIdx");
 
         String title = req.getParameter("title");
         String content = req.getParameter("content");
@@ -52,11 +53,11 @@ public class EditController extends HttpServlet {
 
         // 성공 or 실패?
         if (result == 1) {  // 수정 성공
-            resp.sendRedirect("../board/view.do?boardIdx=" + boardIdx);
+            resp.sendRedirect("../board/view.do?classIdx=" + classIdx + "&boardIdx=" + boardIdx);
         }
         else {  // 수정 실패
             JSFunction.alertLocation(resp, "다시 진행해주세요.",
-                    "../board/view.do?boardIdx=" + boardIdx);
+                    req.getContextPath() + "/board/view.do?boardIdx=" + boardIdx);
         }
     }
 }
