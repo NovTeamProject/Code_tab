@@ -15,10 +15,10 @@ import java.io.IOException;
 @WebServlet("/studentjoin.do")
 
 public class StudentJoinController extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    req.getRequestDispatcher("/join/StudentJoin.jsp").forward(req, resp);
+    req.getRequestDispatcher(req.getContextPath() + "/membership/views/join2.jsp").forward(req, resp);
   }
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -28,18 +28,18 @@ public class StudentJoinController extends HttpServlet {
     String studentName = req.getParameter("studentName");
 
     StudentDTO sDto = new StudentDTO();
-    sDto.setStudentId(req.getParameter(studentId));
-    sDto.setStudentPassword(Encrypt.getEncrypt(req.getParameter(studentPassword)));
-    sDto.setStudentName(req.getParameter(studentName));
+    sDto.setStudentId(studentId);
+    sDto.setStudentPassword(Encrypt.getEncrypt(studentPassword));
+    sDto.setStudentName(studentName);
 
     StudentDAO sDao = new StudentDAO();
     int result = sDao.joinStudent(sDto);
 
     // 성공 or 실패
     if (result == 1) {
-      resp.sendRedirect("#");
-    } else { //글쓰기 실패
-      JSFunction.alertLocation(resp, "회원가입에 실패했습니다.","#");
+      JSFunction.alertLocation(resp, "회원가입에 성공했습니다.",req.getContextPath() + "/membership/views/login2.jsp");
+    } else { //회원가입 실패
+      JSFunction.alertLocation(resp, "회원가입에 실패했습니다.",req.getContextPath() +"/membership/views/join2.jsp");
     }
   }
 }
