@@ -1,6 +1,7 @@
 package com.example.team_project.utils;
 
 import com.example.team_project.student.dao.StudentDAO;
+import com.example.team_project.student.dto.StudentDTO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,15 +21,19 @@ public class IdCheck extends HttpServlet{
   }
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-/*    String studentId = req.getParameter("studentId");
+    String studentId = req.getParameter("studentId");
     StudentDAO sDao = new StudentDAO();
-    boolean result = sDao.idCheck(studentId);
-    System.out.println(result);
-    if (result == true) {
+    StudentDTO result = sDao.idCheck(studentId);
 
-      resp.getWriter().print("1");
+    if (result == null ) {
+
+      resp.setContentType("application/json");
+      resp.getWriter().print("{\"result\": true}");
     } else {
-      resp.getWriter().print("2");
-    }*/
+
+      resp.setContentType("application/json");
+      resp.getWriter().print("{\"result\": false}");
+    }
+
   }
 }
