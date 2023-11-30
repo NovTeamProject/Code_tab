@@ -14,7 +14,6 @@
     <div id="mainBanner" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
       <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="7000">
-
           <img src="https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
           <div class="carousel-caption px-md-5">
             <h5>진심을 담은 강의</h5>
