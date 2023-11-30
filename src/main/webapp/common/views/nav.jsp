@@ -7,7 +7,6 @@
   <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/common/image/로고.png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-
 </head>
 <body>
 <div>
@@ -22,14 +21,33 @@
           <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/contact.jsp">선생님</a></li>
           <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/list.jsp">명예의전당</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">마이페이지</a>
+            <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">모의채점</a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
-              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/faq.jsp">모의채점 </a></li>
-              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/portfolio-item.jsp">무엇을할까요 </a></li>
+              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/faq.jsp">모의채점 1</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/membership/views/login2.jsp">로그인</a></li>
-          <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/membership/views/join2.jsp">회원가입</a></li>
+          <% if (session.getAttribute("loginMember") == null){ %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio3" href="${pageContext.request.contextPath}/membership/views/login2.jsp" role="button" data-bs-toggle="dropdown" aria-expanded="false" >로그인</a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+          <li><a class="dropdown-item" href="${pageContext.request.contextPath}/membership/views/login2.jsp">학생로그인</a></li>
+          <li><a class="dropdown-item" href="${pageContext.request.contextPath}/membership/views/login.jsp">선생로그인</a></li>
+              </ul>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio4" href="${pageContext.request.contextPath}/membership/views/join2.jsp" role="button" data-bs-toggle="dropdown" aria-expanded="false" >회원가입</a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/membership/views/join2.jsp">학생회원가입</a></li>
+            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/membership/views/join.jsp">선생회원가입</a></li>
+          </ul>
+            <% }else { %>
+
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> ${sessionScope.name} 회원님 </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/myPage.jsp">마이페이지 </a></li></ul></li>
+          <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/common/views/logout.jsp">로그아웃</a></li>
+          <% } %>
+
         </ul>
       </div>
     </div>
