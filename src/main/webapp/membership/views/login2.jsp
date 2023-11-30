@@ -19,6 +19,7 @@
 <div class="wrapper fadeInDown">
     <div id="formContent">
         <label class="fadeIn third"><h2 class="active">학생 로그인</h2></label>
+
         <form action="${pageContext.request.contextPath}/loginstudent.do" method="post">
             <input type="text" id="login"  name="studentId" placeholder="아이디" />
             <input type="text" id="password"  name="studentPassword" placeholder="비밀번호" autocomplete="off" />
