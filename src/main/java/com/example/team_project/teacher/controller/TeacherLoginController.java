@@ -2,16 +2,17 @@ package com.example.team_project.teacher.controller;
 
 import com.example.team_project.teacher.dao.TeacherDAO;
 import com.example.team_project.teacher.dto.TeacherDTO;
+import com.example.team_project.utils.Encrypt;
+import com.example.team_project.utils.JSFunction;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 
@@ -24,27 +25,38 @@ public class TeacherLoginController extends HttpServlet {
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-    String teacherId = req.getParameter("teacherId");
-    String teacherPassword = req.getParameter("teacherPassword");
+    Map<String, Object> map = new HashMap<String, Object>();
     TeacherDAO tDao = new TeacherDAO();
+    String teacherId = req.getParameter("teacherId");
+    String teacherPassword = Encrypt.getEncrypt(req.getParameter("teacherPassword"));
+    String teacherName = req.getParameter("teacherName");
+    TeacherDTO tDto = null;
 
-    Map<String, String> teacherMap = new HashMap<>();
-    teacherMap.put("studentId", teacherId);
-    teacherMap.put("studentPassword", teacherPassword);
 
-    List<TeacherDTO> teacherlist = tDao.loginTeacher(teacherMap);
+    if (teacherId != null && teacherPassword != null) {
 
-    if (!teacherlist.isEmpty()) {
-      RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
-      dispatcher.forward(req, resp);
-    } else {
-      req.setAttribute("error", "회원정보가 없습니다..");
-      RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/login.jsp");
-      dispatcher.forward(req, resp);
+      map.put("teacherId", teacherId);
+      map.put("teacherPassword", teacherPassword);
+      map.put("teacherName", teacherName);
+
     }
-  }
+    boolean check = tDao.loginTeacher(teacherId,teacherPassword);
 
-  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    response.sendRedirect("login.jsp");
+    if (check){
+      tDto = tDao.idCheck(teacherId);
+      HttpSession session = req.getSession();
+      if(session.isNew() || session.getAttribute("loginMember")==null) {
+        session.setAttribute("loginMember", tDto);
+        session.setAttribute("teacherIdx", tDto.getTeacherIdx());
+        session.setAttribute("teacherId",  tDto.getTeacherId());
+        session.setAttribute("name", tDto.getTeacherName());
+        session.setAttribute("personType",0); // 학생이면 2번, 선생이면 0번
+//        if(session.isNew())
+        JSFunction.alertLocation(resp, "로그인에 성공했습니다.", req.getContextPath() + "/index.jsp");
+      }
+    }
+    else {
+      JSFunction.alertBack(resp, "아이디 또는 비밀번호가 틀립니다.");
+    }
   }
 }
