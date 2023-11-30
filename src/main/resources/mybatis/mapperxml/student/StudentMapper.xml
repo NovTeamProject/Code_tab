@@ -29,6 +29,13 @@
         from student
         where student_id = #{studentId}
     </select>
+
+    <select id="infoStudent" parameterType="String" resultType="com.example.team_project.student.dto.StudentDTO">
+        select *
+        from student
+        where student_id = #{studentId}
+    </select>
+
     <!--    차소영님 여기 아래부터 작성 시작-->
 
 
