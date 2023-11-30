@@ -15,15 +15,25 @@
     <!-- 회원가입(선생님) -->
     <insert id="joinTeacher" parameterType="com.example.team_project.teacher.dto.TeacherDTO">
         INSERT INTO teacher (teacher_id, teacher_password,teacher_name )
-        VALUES (  #{teacher_id}, #{teacher_password}, #{teacher_name})
+        VALUES (  #{teacherId}, #{teacherPassword}, #{teacherName})
     </insert>
     <!--     로그인(선생님)  -->
-    <select id="loginTeacher" parameterType="map" >
+    <select id="loginTeacher" parameterType="map" resultType="int" >
         select count(*)
         from teacher
         where teacher_password = #{teacherPassword} and teacher_id = #{teacherId}
     </select>
-        
+    <select id="idCheck" parameterType="String" resultType="com.example.team_project.teacher.dto.TeacherDTO">
+        select *
+        from teacher
+        where teacher_id = #{teacherId}
+    </select>
+
+    <select id="infoTeacher" parameterType="String" resultType="com.example.team_project.teacher.dto.TeacherDTO">
+        select *
+        from teacher
+        where teacher_id = #{teacherId}
+    </select>
     <!--    차소영님 여기 아래부터 작성 시작-->
 
 

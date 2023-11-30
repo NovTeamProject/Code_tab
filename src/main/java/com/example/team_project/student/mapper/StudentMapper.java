@@ -14,7 +14,7 @@ public interface StudentMapper {
     int joinStudent (StudentDTO dto);
     int loginStudent(Map <String, String> map);
     StudentDTO idCheck(String studentId);
-
+    StudentDTO infoStudent(String studentId);
     // 차소영님 여기 아래부터 작성 시작
 
 

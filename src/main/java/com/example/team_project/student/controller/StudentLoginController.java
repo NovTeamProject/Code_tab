@@ -25,31 +25,41 @@ public class StudentLoginController extends HttpServlet {
   protected void doPost (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
     Map<String, Object> map = new HashMap<String, Object>();
-    StudentDAO dao = new StudentDAO();
+    StudentDAO sDao = new StudentDAO();
     String studentId = req.getParameter("studentId");
     String studentPassword = Encrypt.getEncrypt(req.getParameter("studentPassword"));
-    System.out.println(studentPassword);
+    String studentName = req.getParameter("studentName");
     StudentDTO sDto = null;
+
 
     if (studentId != null && studentPassword != null) {
 
       map.put("studentId", studentId);
       map.put("studentPassword", studentPassword);
+      map.put("studentName", studentName);
+
 
     }
-    boolean check = dao.loginStudent(studentId,studentPassword);
+    boolean check = sDao.loginStudent(studentId,studentPassword);
 
     if (check){
-      sDto = dao.idCheck(studentId);
+      sDto = sDao.idCheck(studentId);
+      
       HttpSession session = req.getSession();
       if(session.isNew() || session.getAttribute("loginMember")==null) {
+
         session.setAttribute("loginMember", sDto);
+        session.setAttribute("studentIdx", sDto.getStudentIdx());
+        session.setAttribute("studentId", sDto.getStudentId());
+        session.setAttribute("name", sDto.getStudentName());
+        session.setAttribute("personType",2); // 학생이면 2번, 선생
+
 //        if(session.isNew())
-        resp.sendRedirect(req.getContextPath() + "/index.jsp");
+        JSFunction.alertLocation(resp, "로그인에 성공했습니다.", req.getContextPath() + "/index.jsp");
       }
     }
     else {
-      JSFunction.alertBack(resp, "비밀번호 검증에 실패했습니다.");
+      JSFunction.alertBack(resp, "아이디 또는 비밀번호가 틀립니다.");
     }
   }
 }

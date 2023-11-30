@@ -2,6 +2,8 @@ package com.example.team_project.utils;
 
 import com.example.team_project.student.dao.StudentDAO;
 import com.example.team_project.student.dto.StudentDTO;
+import com.example.team_project.teacher.dao.TeacherDAO;
+import com.example.team_project.teacher.dto.TeacherDTO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,19 +13,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet("/IdCheck.do")
-public class IdCheck extends HttpServlet{
+@WebServlet("/IdCheck2.do")
+public class IdCheck2 extends HttpServlet{
 
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //    req.getRequestDispatcher("${pageContext.request.contextPath}/membership/views/join2.jsp").forward(req, resp);
-    req.getRequestDispatcher(req.getContextPath() + "/membership/views/join2.jsp").forward(req, resp);
+    req.getRequestDispatcher(req.getContextPath() + "/membership/views/join.jsp").forward(req, resp);
   }
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-    String studentId = req.getParameter("studentId");
-    StudentDAO sDao = new StudentDAO();
-    StudentDTO result = sDao.idCheck(studentId);
+    String teacherId = req.getParameter("teacherId");
+    TeacherDAO tDao = new TeacherDAO();
+    TeacherDTO result = tDao.idCheck(teacherId);
 
     if (result == null ) {
 
