@@ -17,7 +17,7 @@ public class IdCheck extends HttpServlet{
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //    req.getRequestDispatcher("${pageContext.request.contextPath}/membership/views/join2.jsp").forward(req, resp);
-    req.getRequestDispatcher(req.getContextPath() + "/membership/views/join2.jsp").forward(req, resp);
+    req.getRequestDispatcher(req.getContextPath() + "/membership/views/joinStudent.jsp").forward(req, resp);
   }
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
