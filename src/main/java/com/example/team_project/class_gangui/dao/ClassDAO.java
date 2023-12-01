@@ -119,17 +119,25 @@ public class ClassDAO {
         return result > 0;
     }
 
-    public List<ClassDTO> getRegisteredClasses(int studentIdx) { // 학생이 등록한 클래스 목록을 가져오는 메서드
+    public List<Map<String, Object>> getRegisteredClasses(int studentIdx) { // 학생이 등록한 클래스 목록을 가져오는 메서드
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
         ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
-        List<ClassDTO> classList = classMapper.getRegisteredClasses(studentIdx);
+        List<Map<String, Object>> classList = classMapper.getRegisteredClasses(studentIdx);
         sqlSession.close();
         return classList;
         // 쿼리의 결과로 얻은 클래스 목록을 List에 담아 반환한다.
         // ClassDTO는 클래스 정보를 담는 데이터 전송 객체
     }
 
-    public boolean checkIfStudentRegisteredClass(int classIdx, int studentIdx) { // 학생이 이미 수강 신청 했는지 확인하는 클래스
+    public List<ClassDTO> getRegisteredClassesList(int studentIdx) {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        List<ClassDTO> result = classMapper.getRegisteredClassesList(studentIdx);
+        sqlSession.close();
+        return result;
+    }
+
+    public boolean checkIfStudentRegisteredClass(int classIdx, int studentIdx) { // 학생이 이미 수강 신청 했는지 확인하는 메서드
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
         ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
         Map<String, Integer> map = new HashMap<>();
@@ -140,6 +148,22 @@ public class ClassDAO {
         return result > 0;
     }
 
+    public int getStudentRegisteredClassCount(int studentIdx) {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        int studentRegisteredClassCount = classMapper.getStudentRegisteredClassCount(studentIdx);
+        sqlSession.close();
+        return studentRegisteredClassCount;
+    }
+
+    // 특정 학생이 특정 강의를 등록했는지 확인하는 메서드
+    public int checkIfSpecificStudentIdxRegisteredSpecificClassIdx(int classIdxInt, int studentIdx) {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        int validCount = classMapper.checkIfSpecificStudentIdxRegisteredSpecificClassIdx(classIdxInt, studentIdx);
+        sqlSession.close();
+        return validCount;
+    }
 
     // 유지호님 여기 아래부터 작성 시작
     
