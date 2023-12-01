@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +54,6 @@
             }
         }
     </script>
-
 
 </head>
 <body class="d-flex flex-column">
@@ -166,25 +164,40 @@
                     <div class="mt-5">
                         <h3 class="fw-bolder">답변 목록</h3>
                         <div class="card">
+                            <input type="hidden" >
                             <div class="card-body">
-                                <p>작성자1: 답변 내용 예시1</p>
-                                <p>ㄴ작성자2: 답변 내용 예시2</p>
-                                <p> &nbsp;&nbsp; ㄴ작성자3: 답변 내용 예시3</p>
-                                <!-- 답변 목록이 여기에 추가됩니다 -->
+                                <c:forEach items="${comments}" var="comment" varStatus="loop">
+                                    <c:forEach begin="1" end="${loop.index}" varStatus="innerLoop">
+                                        &nbsp;&nbsp;&nbsp;
+                                    </c:forEach>
+                                    <c:if test="${loop.index > 0}">ㄴ</c:if>
+                                    ${comment.personName} : ${comment.content}<br/>
+                                </c:forEach>
+
+                                <c:choose>
+                                    <c:when test="${comments.size() < 5}">
+                                        <!-- 답변 입력 폼 -->
+                                        <div class="mt-5">
+                                            <h3 class="fw-bolder">답변하기</h3>
+                                            <form method="post" action="${pageContext.request.contextPath}/board/comment.do">
+                                                <input type="hidden" name="boardIdx" value="${boardIdx}" />
+                                                <input type="hidden" name="classIdx" value="${classIdx}" />
+                                                <div class="mb-3">
+                                                    <textarea class="form-control" id="commentContent" name="commentContent" rows="4" placeholder="답변을 작성하세요"></textarea>
+                                                </div>
+                                                <div class="d-flex justify-content-end">
+                                                    <button type="submit" class="btn btn-primary">답변 저장</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <h3>더이상 댓글을 작성할 수 없습니다. 새로운 질문글을 작성해주세요</h3>
+                                    </c:otherwise>
+                                </c:choose>
+
                             </div>
                         </div>
-                    </div>
-                    <!-- 답변 입력 폼 -->
-                    <div class="mt-5">
-                        <h3 class="fw-bolder">답변하기</h3>
-                        <form>
-                            <div class="mb-3">
-                                <textarea class="form-control" id="commentContent" rows="4" placeholder="답변을 작성하세요"></textarea>
-                            </div>
-                            <div class="d-flex justify-content-end">
-                                <button type="submit" class="btn btn-primary">답변 저장</button>
-                            </div>
-                        </form>
                     </div>
                 </div>
             </div>

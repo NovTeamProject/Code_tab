@@ -37,8 +37,12 @@ public class CommentController extends HttpServlet {
             commentDTO.setPersonName("권진철");
         }
         int boardIdx = Integer.parseInt(req.getParameter("boardIdx"));
+        int classIdx = Integer.parseInt(req.getParameter("classIdx"));
 
-        List<CommentDTO> commentLists = commentDAO.selectCommentsByBoardIdx(boardIdx);
+        commentDTO.setBoardIdx(boardIdx);
+        commentDTO.setContent(req.getParameter("commentContent"));
+
+        //List<CommentDTO> commentLists = commentDAO.selectCommentsByBoardIdx(boardIdx);
 
         // DAO를 통해 DB에 게시 내용 저장
         int result = commentDAO.insertComment(commentDTO);
@@ -46,7 +50,7 @@ public class CommentController extends HttpServlet {
         // 성공 or 실패?
         if (result == 1) {  // 글쓰기 성공
             /*resp.sendRedirect("../board/list.do");*/
-            resp.sendRedirect("../board/comment.do?boardIdx=" + boardIdx);
+            resp.sendRedirect(req.getContextPath() + "/board/view.do?classIdx=" + classIdx + "&boardIdx=" + boardIdx);
         } else {  // 글쓰기 실패
             JSFunction.alertLocation(resp, "질문하기에 실패했습니다.",
                     "../board/comment.do?boardIdx=" + boardIdx);
