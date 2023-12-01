@@ -21,7 +21,8 @@ public class CommentController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CommentDAO commentDAO = new CommentDAO();
         CommentDTO commentDTO  = new CommentDTO();
-        int personType = (Integer) req.getSession().getAttribute("personType");
+        //int personType = (Integer) req.getSession().getAttribute("personType");
+        int personType = 2;
         if (personType == 0) {
             // 선생님
             commentDTO.setPersonType(0);
@@ -30,8 +31,10 @@ public class CommentController extends HttpServlet {
         } else if (personType == 2) {
             // 학생
             commentDTO.setPersonType(2);
-            commentDTO.setPersonIdx((Integer) req.getSession().getAttribute("studentIdx"));
-            commentDTO.setPersonName((String) req.getSession().getAttribute("name"));
+//            commentDTO.setPersonIdx((Integer) req.getSession().getAttribute("studentIdx"));
+//            commentDTO.setPersonName((String) req.getSession().getAttribute("name"));
+            commentDTO.setPersonIdx(2);
+            commentDTO.setPersonName("권진철");
         }
         int boardIdx = Integer.parseInt(req.getParameter("boardIdx"));
 
