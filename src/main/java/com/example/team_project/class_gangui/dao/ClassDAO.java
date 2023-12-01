@@ -82,12 +82,20 @@ public class ClassDAO {
         // classIdx와 studentIdx를 키-값 쌍으로 가지는 HashMap 객체를 생성
         // 이 맵은 MyBatis에 파라미터를 전달하는 역할을 함.
 
+
         int result = classMapper.registerClass(map);
         // classMapper의 registerClass 메서드를 호출하여 SQL 쿼리를 실행
         // 학생이 클래스를 등록하는 작업을 수행함.
 
-        sqlSession.commit();
-        // SQL 쿼리의 결과를 데이터베이스에 반영 : commit
+        if (result == 1) {
+            sqlSession.commit();
+            // SQL 쿼리의 결과를 데이터베이스에 반영 :
+            // commit
+            System.out.println("학생 수강신청 성공");
+        } else {
+            System.out.println("학생 수강신청 중 오류 발생");
+        }
+
 
         sqlSession.close();
         // SQL 세션을 종료
@@ -121,6 +129,16 @@ public class ClassDAO {
         // ClassDTO는 클래스 정보를 담는 데이터 전송 객체
     }
 
+    public boolean checkIfStudentRegisteredClass(int classIdx, int studentIdx) { // 학생이 이미 수강 신청 했는지 확인하는 클래스
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        Map<String, Integer> map = new HashMap<>();
+        map.put("classIdx", classIdx);
+        map.put("studentIdx", studentIdx);
+        int result = classMapper.checkIfStudentRegisteredClass(map);
+        sqlSession.close();
+        return result > 0;
+    }
 
 
     // 유지호님 여기 아래부터 작성 시작
