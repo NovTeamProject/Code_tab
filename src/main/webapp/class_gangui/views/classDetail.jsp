@@ -10,7 +10,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
-    <title>선생님 - 내 강의 상세보기</title>
+    <title>강의 상세보기</title>
     <link href="${pageContext.request.contextPath}/teacher/css/styles.css?ver=1" rel="stylesheet">
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
@@ -64,7 +64,7 @@
                     </table>
                 </div>
                 <div style="text-align: right">
-                    <button type="button" class="btn btn-outline-warning" id="classModifyBtn">강의 수정하기</button>
+                    <button type="button" class="btn btn-outline-warning" id="classRegisterBtn">수강신청하기</button>
                 </div>
             </div>
         </section>
@@ -107,9 +107,7 @@
                                     <div class="d-flex justify-content-center">
                                         <div style="width: 70%">
                                             <p>강의 재생 시간: ${lesson.lessonTime}(초)</p>
-                                            <video id="lesson-video-${loop.index + 1}" playsinline controls data-poster="">
-                                                <source src="${pageContext.request.contextPath}/teacher/lesson-video/${lesson.lessonSavedFilename}" type="video/mp4" />
-                                            </video>
+                                            <h4>수강신청 후 전체 강의 동영상을 확인할 수 있어요!</h4>
                                         </div>
                                     </div>
                                 </div>

@@ -10,7 +10,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
-    <title>선생님 - 내가 등록한 강의 목록</title>
+    <title>전체 등록된 강의 목록</title>
     <link href="${pageContext.request.contextPath}/teacher/css/styles.css?ver=1" rel="stylesheet">
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
@@ -29,23 +29,20 @@
         <section class="py-5">
             <div class="container px-5 my-5">
                 <div class="text-center mb-5">
-                    <h1 class="fw-bolder">내가 등록한 강의 목록</h1>
-                    <p class="lead fw-normal text-muted mb-5">등록한 강의: (${pageMaker.totalCount})개</p>
-                </div>
-                <div style="text-align: right; margin-bottom: 20px;">
-                    <button type="button" class="btn btn-primary btn-group-sm" id="goto-upload-class-btn">새로운 강의 등록하기</button>
+                    <h1 class="fw-bolder">전체 강의</h1>
+                    <p class="lead fw-normal text-muted mb-5">등록된 강의: (${pageMaker.totalCount})개</p>
                 </div>
                 <c:choose>
                     <c:when test="${pageMaker.totalCount > 0 and not empty classList}">
                         <c:set var="no" value="${pageMaker.totalCount - ((pageMaker.cri.pageNum - 1) * 10)}" />
                         <div class="row gx-5">
                             <c:forEach items="${classList}" var="item" varStatus="loop">
-                                <div class="col-lg-6">
+                                <div class="col-lg-4">
                                     <div class="position-relative mb-5">
                                         <div>
                                             <img class="img-fluid rounded-3 mb-3" src="${pageContext.request.contextPath}/teacher/class-image/${item.classImageSavedFilename}" />
                                             <br /><a class="h3 fw-bolder text-decoration-none link-dark stretched-link"
-                                                     href="${pageContext.request.contextPath}/teacher/class/detail.do?classIdx=${item.classIdx}">${item.className}</a>
+                                                     href="${pageContext.request.contextPath}/class/detail.do?classIdx=${item.classIdx}">${item.className}</a>
                                         </div><br />
                                         <p class="fw-light">등록일: ${item.classRegisterDateWithYearMonthDay}</p>
                                     </div>
@@ -95,8 +92,9 @@
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    $("#goto-upload-class-btn").on("click", function() {
-        location.href = '${pageContext.request.contextPath}' + "/teacher/class/upload.do";
-    })
+    $("a.page-item").on("click", function(e) {
+        e.preventDefault();
+        location.href = '${pageContext.request.contextPath}' + "/class/list.do?pageNum=" + $(this).attr("href");
+    });
 </script>
 </html>
