@@ -14,9 +14,10 @@ import java.util.List;
 import java.util.Map;
 
 
-@WebServlet(value = "/student/myclass/list.do")
+@WebServlet(value = "/student/myClass/list.do")
 public class StudentMyClassController extends HttpServlet {
     private static final long serialVersionUID = 1L;
+
     private ClassDAO classDAO = new ClassDAO();
     private static final int PAGE_SIZE = 4; // 한 페이지에 보여줄 강의 수
 
@@ -50,6 +51,6 @@ public class StudentMyClassController extends HttpServlet {
         req.setAttribute("pageNo", pageNo);
 
         // 나의 강의실 페이지로 forward
-        req.getRequestDispatcher("/student/myclass.jsp").forward(req, resp);
+        req.getRequestDispatcher("/myClass/myClass.jsp").forward(req, resp);
     }
 }
