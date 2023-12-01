@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet("/IdCheck.do")
+@WebServlet("/IdCheckStudent.do")
 public class IdCheckStudent extends HttpServlet{
 
   @Override
@@ -37,4 +37,3 @@ public class IdCheckStudent extends HttpServlet{
 
   }
 }
-
