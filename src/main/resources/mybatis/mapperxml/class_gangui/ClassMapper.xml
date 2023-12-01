@@ -29,11 +29,66 @@
         LIMIT #{pageNum}, 10
     </select>
 
+    <resultMap id="oneClassWithLessons" type="com.example.team_project.class_gangui.dto.ClassDTO">
+        <id column="class_idx" jdbcType="INTEGER" property="classIdx" />
+        <result column="class_name" jdbcType="VARCHAR" property="className" />
+        <result column="class_explain" jdbcType="CLOB" property="classExplain" />
+        <result column="teacher_idx" jdbcType="INTEGER" property="teacherIdx" />
+        <result column="class_register_date" jdbcType="TIMESTAMP" property="classRegisterDate" />
+        <result column="class_total_time" jdbcType="INTEGER" property="classTotalTime" />
+        <result column="class_total_lesson_count" jdbcType="INTEGER" property="classTotalLessonCount" />
+        <result column="class_image_original_filename" jdbcType="VARCHAR" property="classImageOriginalFilename" />
+        <result column="class_image_saved_filename" jdbcType="VARCHAR" property="classImageSavedFilename" />
+        <result column="listen_student" jdbcType="INTEGER" property="listenStudent" />
+        <collection property="lessonList" ofType="com.example.team_project.lesson_sueop.dto.LessonDTO">
+            <id column="lesson_idx" jdbcType="INTEGER" property="lessonIdx" />
+            <result column="lesson_name" jdbcType="VARCHAR" property="lessonName" />
+            <result column="lesson_sequence" jdbcType="INTEGER" property="lessonSequence" />
+            <result column="class_idx" jdbcType="INTEGER" property="classIdx" />
+            <result column="lesson_time" jdbcType="INTEGER" property="lessonTime" />
+            <result column="lesson_original_filename" jdbcType="VARCHAR" property="lessonOriginalFilename" />
+            <result column="lesson_saved_filename" jdbcType="VARCHAR" property="lessonSavedFilename" />
+        </collection>
+    </resultMap>
+
+    <select id="getOneClassInformationWithRelatedLessons" resultMap="oneClassWithLessons">
+        SELECT *
+        FROM class c INNER JOIN lesson l
+            ON c.class_idx = l.class_idx
+        WHERE c.class_idx = #{classIdx}
+    </select>
+
+    <select id="checkIfSpecificTeacherIdxUploadedSpecificClassIdx">
+        SELECT count(class_idx)
+        FROM class
+        WHERE class_idx = #{classIdx} AND teacher_idx = #{teacherIdx}
+    </select>
+
 
     <!--    남원우님 여기 아래부터 작성 시작-->
 
 
     <!--    차소영님 여기 아래부터 작성 시작-->
+
+<!--    수강 신청한 강의 등록-->
+    <insert id="registerClass" parameterType="map">
+        INSERT INTO student_class (class_idx, student_idx)
+        VALUES (#{classIdx}, #{studentIdx})
+    </insert>
+
+<!--    수강한 강의 삭제-->
+    <delete id="cancelClass" parameterType="map">
+        DELETE FROM student_class
+        WHERE class_idx = #{classIdx} AND student_idx = #{studentIdx}
+    </delete>
+
+<!--   특정 학생이 등록한 모든 수업의 정보를 조회하는 기능
+ID(studentIdx)를 이용해 student_class 테이블에서 해당 학생이 등록한 모든 수업의 ID(class_idx)를 찾은 후,
+이 ID를 이용해 class 테이블에서 해당 수업의 모든 정보를 가져옴.-->
+    <select id="getRegisteredClasses" resultType="com.example.dto.ClassDTO">
+        SELECT * FROM class
+        WHERE class_idx IN (SELECT class_idx FROM student_class WHERE student_idx = #{studentIdx})
+    </select>
 
 
     <!--    유지호님 여기 아래부터 작성 시작-->
