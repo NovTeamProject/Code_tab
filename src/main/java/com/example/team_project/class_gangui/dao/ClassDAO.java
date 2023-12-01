@@ -81,9 +81,15 @@ public class ClassDAO {
     }
 
     // 남원우님 여기 아래부터 작성 시작
+    public List<String> rankingClass() {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        List<String> rankingClass = classMapper.rankingClass();
+        System.out.println(rankingClass);
+        sqlSession.close();
+        return rankingClass;
 
-
-
+    }
     // 차소영님 여기 아래부터 작성 시작
 
     public boolean registerClass(int classIdx, int studentIdx) { //수업을 등록하는 메서드

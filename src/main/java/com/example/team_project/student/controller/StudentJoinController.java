@@ -18,7 +18,7 @@ public class StudentJoinController extends HttpServlet {
   private static final long serialVersionUID = 1L;
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    req.getRequestDispatcher(req.getContextPath() + "/membership/views/join2.jsp").forward(req, resp);
+    req.getRequestDispatcher(req.getContextPath() + "/membership/views/joinStudent.jsp").forward(req, resp);
   }
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -37,9 +37,9 @@ public class StudentJoinController extends HttpServlet {
 
     // 성공 or 실패
     if (result == 1) {
-      JSFunction.alertLocation(resp, "회원가입에 성공했습니다.",req.getContextPath() + "/membership/views/login2.jsp");
+      JSFunction.alertLocation(resp, "회원가입에 성공했습니다.",req.getContextPath() + "/membership/views/loginStudent.jsp");
     } else { //회원가입 실패
-      JSFunction.alertLocation(resp, "회원가입에 실패했습니다.",req.getContextPath() +"/membership/views/join2.jsp");
+      JSFunction.alertLocation(resp, "회원가입에 실패했습니다.",req.getContextPath() +"/membership/views/joinStudent.jsp");
     }
   }
 }
