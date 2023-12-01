@@ -20,7 +20,7 @@ public class IdCheckTeacher extends HttpServlet{
     req.getRequestDispatcher(req.getContextPath() + "/membership/views/joinTeacher.jsp").forward(req, resp);
   }
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+    System.out.println("Ajax 호출됨.");
     String teacherId = req.getParameter("teacherId");
     TeacherDAO tDao = new TeacherDAO();
     TeacherDTO result = tDao.idCheck(teacherId);
