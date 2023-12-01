@@ -22,6 +22,7 @@ public interface ClassMapper {
                                                           @Param("teacherIdx") int teacherIdx);
 
     // 남원우님 여기 아래부터 작성 시작
+    List<String> rankingClass();
 
 
     // 차소영님 여기 아래부터 작성 시작
