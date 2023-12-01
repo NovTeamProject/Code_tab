@@ -31,7 +31,7 @@ public interface ClassMapper {
     int checkIfStudentRegisteredClass(Map<String, Integer> map);
     int getStudentRegisteredClassCount(int studentIdx);
     List<ClassDTO> getRegisteredClassesList(int studentIdx);
-    int checkIfSpecificStudentIdxRegisteredSpecificClassIdx(int classIdxInt, int studentIdx);
+    int checkIfSpecificStudentIdxRegisteredSpecificClassIdx(Map<String, Object> params);
 
     // 유지호님 여기 아래부터 작성 시작
 
