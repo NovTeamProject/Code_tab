@@ -71,7 +71,7 @@
                                         <input type="file" class="form-control lesson-video lesson-video-${loop.index + 1}" name="lesson-video-${loop.index + 1}" id="lesson-video-${loop.index + 1}" />
 
 
-                                        <span name="lesson-video-name-${loop.index + 1}" id="lesson-video-name-${loop.index + 1}">동영상명: ${item.lessonOriginalFilename}<c:if test="${loop.index + 1 == 1}"><br /></c:if></span>
+                                        <span name="lesson-video-name-${loop.index + 1}" id="lesson-video-name-${loop.index + 1}">동영상 이름: ${item.lessonOriginalFilename}<c:if test="${loop.index + 1 == 1}"><br /></c:if></span>
 
                                         <c:if test="${loop.index + 1 >= 2}">
                                             <div id="div-lesson-time-${loop.index + 1}">
