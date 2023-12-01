@@ -1,8 +1,6 @@
 package com.example.team_project.student.controller;
 
 import com.example.team_project.class_gangui.dao.ClassDAO;
-import com.example.team_project.class_gangui.dto.ClassDTO;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +11,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @WebServlet(value = "/student/myClass/list.do")
 public class StudentMyClassController extends HttpServlet {
     private static final long serialVersionUID = 1L;
@@ -23,6 +20,7 @@ public class StudentMyClassController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getSession().setAttribute("studentIdx", 1);
 
         // 세션에서 학생 idx를 받아옴
         int studentIdx = (Integer) req.getSession().getAttribute("studentIdx");
@@ -39,10 +37,10 @@ public class StudentMyClassController extends HttpServlet {
         map.put("startIdx", (pageNo - 1) * PAGE_SIZE);
         map.put("pageSize", PAGE_SIZE);
 
-        List<ClassDTO> registeredClassList = classDAO.getRegisteredClasses(studentIdx);
+        List<Map<String, Object>> registeredClassList = classDAO.getRegisteredClasses(studentIdx);
 
         // 총 페이지 수를 계산
-        int totalCount = classDAO.getAllUploadedClassesCountFilteredByTeacherIdx(studentIdx);
+        int totalCount = classDAO.getStudentRegisteredClassCount(studentIdx);
         int totalPage = (totalCount % PAGE_SIZE == 0) ? totalCount / PAGE_SIZE : totalCount / PAGE_SIZE + 1;
 
         // JSP에서 사용할 수 있도록 request attribute에 저장
@@ -51,6 +49,6 @@ public class StudentMyClassController extends HttpServlet {
         req.setAttribute("pageNo", pageNo);
 
         // 나의 강의실 페이지로 forward
-        req.getRequestDispatcher("/myClass/myClass.jsp").forward(req, resp);
+        req.getRequestDispatcher("/myClass/views/myClassList.jsp").forward(req, resp);
     }
 }
