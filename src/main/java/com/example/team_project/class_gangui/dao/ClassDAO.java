@@ -158,9 +158,16 @@ public class ClassDAO {
 
     // 특정 학생이 특정 강의를 등록했는지 확인하는 메서드
     public int checkIfSpecificStudentIdxRegisteredSpecificClassIdx(int classIdxInt, int studentIdx) {
+        // 파라미터를 Map으로 묶기
+        Map<String, Object> params = new HashMap<>();
+        params.put("classIdx", classIdxInt);
+        params.put("studentIdx", studentIdx);
+
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
         ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
-        int validCount = classMapper.checkIfSpecificStudentIdxRegisteredSpecificClassIdx(classIdxInt, studentIdx);
+
+        // Map 파라미터를 메서드에 전달
+        int validCount = classMapper.checkIfSpecificStudentIdxRegisteredSpecificClassIdx(params);
         sqlSession.close();
         return validCount;
     }
