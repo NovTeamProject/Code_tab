@@ -32,15 +32,15 @@
         <div class="row gx-5">
             <c:choose>
                 <c:when test="${not empty ClassList}">
-                    <c:forEach items="${ClassList}" var="class">
+                    <c:forEach items="${ClassList}" var="item">
                         <%--    JSTL의 "c:choose", "c:when"와 "c:forEach" 태그를 사용하여 수강 중인 강의 리스트가 비어있지 않을 경우 각각의 강의 정보를 순회하며 보여주는 코드--%>
 
                         <div class="col-lg-6">
                             <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-3 mb-3" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." />
+                                <img class="img-fluid rounded-3 mb-3" src="${pageContext.request.contextPath}/teacher/class-image/${item.classImageSavedFilename}" alt="..." />
                                 <br /><a class="h3 fw-bolder text-decoration-none link-dark stretched-link"
                                          href="${pageContext.request.contextPath}/teacher/class/detail.do?classIdx=${item.classIdx}">${item.className}</a>
-                                <a class="h5 fw-bolder text-decoration-none link-dark stretched-link" href="#!">강사 : ${Teacher.teacherName}</a>
+                                <a class="h5 fw-bolder text-decoration-none link-dark stretched-link" href="#!">강사 : ${item.teacherName}</a>
                                 <button class="btn btn-primary position-absolute bottom-0 end-0 mb-4">질문하기</button>
 
                             </div>
