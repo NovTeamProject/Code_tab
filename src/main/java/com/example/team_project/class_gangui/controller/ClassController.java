@@ -59,7 +59,7 @@ public class ClassController extends HttpServlet {
             // "action" 파라미터 값이 "view"인 경우, 등록된 클래스를 조회하는 동작을 수행함.
 
             int studentIdx = Integer.parseInt(request.getParameter("studentIdx"));
-            List<ClassDTO> classList = classDAO.getRegisteredClasses(studentIdx);
+            List<ClassDTO> classList = classDAO.getRegisteredClassesList(studentIdx);
             // ClassDAO의 getRegisteredClasses 메소드를 호출해 등록된 클래스 목록을 가져옴.
             // 이 메소드의 반환 값은 ClassDTO 객체를 원소로 가지는 List이다.
 
