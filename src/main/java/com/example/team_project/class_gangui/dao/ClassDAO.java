@@ -64,10 +64,32 @@ public class ClassDAO {
         return validCount;
     }
 
+    public int getTotalUploadedClassesCount() {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        int count = classMapper.getTotalUploadedClassesCount();
+        sqlSession.close();
+        return count;
+    }
+
+    public List<ClassDTO> getAllUploadedClassesList(Map<String, Object> map) {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        List<ClassDTO> classList = classMapper.getAllUploadedClassesList(map);
+        sqlSession.close();
+        return classList;
+    }
+
     // 남원우님 여기 아래부터 작성 시작
+    public List<String> rankingClass() {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        List<String> rankingClass = classMapper.rankingClass();
+        System.out.println(rankingClass);
+        sqlSession.close();
+        return rankingClass;
 
-
-
+    }
     // 차소영님 여기 아래부터 작성 시작
 
     public boolean registerClass(int classIdx, int studentIdx) { //수업을 등록하는 메서드
@@ -173,5 +195,11 @@ public class ClassDAO {
     }
 
     // 유지호님 여기 아래부터 작성 시작
+    public String getClassNameByClassIdx(String classIdx) {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper mapper = sqlSession.getMapper(ClassMapper.class);
+        String className = mapper.getClassNameByClassIdx(classIdx);
+        return className;
+    }
     
 }

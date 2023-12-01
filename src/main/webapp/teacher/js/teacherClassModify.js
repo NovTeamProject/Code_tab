@@ -1,16 +1,28 @@
 console.log("teacherClassUpload.js successfully loaded");
 
 const showThumbnail = (event) => {
+    $("#class-image-modified").attr("value", "true");
+
     const reader = new FileReader();
     reader.onload = (event) => {
         const imgTag = $("#class-image-thumbnail");
         imgTag.attr("src", event.target.result);
         //alert("강의 대표 사진 등록");
     }
-    reader.readAsDataURL(event.target.files[0]);
+    // 이미지 파일이 맞는지 검사
+    console.log(event.target.files[0]);
+    if (!event.target.files[0].type.toLowerCase().includes("image")) {
+        alert("사진 형식의 파일만 등록할 수 있습니다.");
+        $("#class-image").attr("value", "");
+        $("#class-image").val("");
+        $("#class-image-thumbnail").attr("src", "");
+        return;
+    } else {
+        reader.readAsDataURL(event.target.files[0]);
+    }
 }
 
-let currentLessonCount = 1;
+// let currentLessonCount = 1;
 
 // 서버에 전송될 강의의 총 수업 개수
 let lessonCountHiddenElement = $("#class-total-lesson-count");
@@ -26,13 +38,17 @@ $("#lesson-plus-button").on("click", function(event) {
 const addLessonElement = () => {
     let afterThis = $("#lesson__item-" + currentLessonCount);
     currentLessonCount++;
-    let newElement = "<br /><div class='lesson__item lesson__item-" + currentLessonCount + "' id='lesson__item-" + currentLessonCount + "'>&#10;&#13;";
+    let newElement = "<br /><div class='lesson__item lesson__item-" + currentLessonCount + "' id='lesson__item-" + currentLessonCount + "' name='lesson__item-" + currentLessonCount + "' >&#10;&#13;";
     newElement += "<input type='text' class='form-control lesson-name lesson-name-" + currentLessonCount + "' name='lesson-name-" + currentLessonCount + "' id='lesson-name-" + currentLessonCount + "' placeholder='수업 제목을 입력해 주세요' />&#10;&#13;";
     newElement += "<input type='file' class='form-control lesson-video lesson-video-" + currentLessonCount + "' name='lesson-video-" + currentLessonCount + "' id='lesson-video-" + currentLessonCount +"' />&#10;&#13;";
+
+    newElement += "<span name='lesson-video-name-" + currentLessonCount + "' id='lesson-video-name-" + currentLessonCount + "'>동영상 이름: </span>";
+
     newElement += "<div id='div-lesson-time-" + currentLessonCount + "'>"
     newElement += "<span id='span-lesson-time-" + currentLessonCount + "' class='span-lesson-time span-lesson-time-" + currentLessonCount + "'></span>(초)";
     newElement += "</div>";
     newElement += "<input type='hidden' id='lesson-time-" + currentLessonCount + "' class='lesson-time lesson-time-" + currentLessonCount + "' name='lesson-time-" + currentLessonCount + "' />" ;
+    newElement += "<input type='hidden' id='lesson-modified-" + currentLessonCount + "'  value='true' />";
     newElement += "</div>";
     afterThis.after(newElement);
 }
@@ -92,6 +108,9 @@ const decreaseNumberByOne = (deleteTargetNum) => {
         let buttonDeleteLessonItem = $("#delete-lesson-" + startElementNum); // 현 lesson 삭제 태그
         let spanLessonTime = $("#span-lesson-time-" + startElementNum); // 보여질(서버X) 수업의 길이 태그
         let inputLessonTime = $("#lesson-time-" + startElementNum); // 서버로 전송될 수업의 길이 태그
+        let lessonModified = $("#lesson-modified-" + startElementNum);
+        let divLessonTime = $("#div-lesson-time-" + startElementNum);
+        let lessonVideoName = $("#lesson-video-name-" + startElementNum);
 
         let newNum = startElementNum - 1;
 
@@ -123,6 +142,14 @@ const decreaseNumberByOne = (deleteTargetNum) => {
         spanLessonTime.attr("name", "span-lesson-time-" + newNum);
         inputLessonTime.attr("name", "lesson-time-" + newNum);
 
+        lessonModified.attr("id", "lesson-modified-" + newNum);
+        lessonModified.attr("name", "lesson-modified-" + newNum);
+
+        divLessonTime.attr("id", "div-lesson-item-" + newNum);
+
+        lessonVideoName.attr("id", "lesson-video-name-" + newNum);
+        lessonVideoName.attr("name", "lesson-video-name-" + newNum);
+
         startElementNum++;
 
         if (i == (totalIterationTimes - 1)) {
@@ -141,9 +168,18 @@ $("#class-form").on("change", ".lesson-video", function(e) {
     //console.log(`thisLessonNumber = ${thisLessonNumber}`);
     //console.dir(this);
     const file = this.files[0];
+
+    console.log("----- video file -----");
+    console.log(file);
+    console.log("----------")
+
+    $("#lesson-modified-" + thisLessonNumber).attr("value", thisLessonNumber);
+
     if (!file.type.toLowerCase().includes("video")) {
+        let lessonVideoName = $("#lesson-video-name-" + thisLessonNumber).text("동영상 이름: ");
+
         alert("동영상 형식의 파일만 등록할 수 있습니다.");
-        $(this).val("");
+        //$(this).val("동영상 이름: ");
         let spanLessonTime = $("#span-lesson-time-" + thisLessonNumber).text();
         if (!isNaN(spanLessonTime)) {
             let spanClassTotalTime = Number($("#span-class-total-time").text());
@@ -156,6 +192,7 @@ $("#class-form").on("change", ".lesson-video", function(e) {
         return;
     }
     loadVideoMetadata(file, thisLessonNumber);
+    $("#lesson-video-name-" + thisLessonNumber).text("동영상 이름: " + file.name);
     //alert("수업 동영상이 추가되었습니다");
 })
 

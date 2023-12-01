@@ -10,7 +10,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
-    <title>선생님 - 내 강의 목록</title>
+    <title>선생님 - 내가 등록한 강의 목록</title>
     <link href="${pageContext.request.contextPath}/teacher/css/styles.css?ver=1" rel="stylesheet">
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
@@ -47,7 +47,7 @@
                                             <br /><a class="h3 fw-bolder text-decoration-none link-dark stretched-link"
                                                      href="${pageContext.request.contextPath}/teacher/class/detail.do?classIdx=${item.classIdx}">${item.className}</a>
                                         </div><br />
-                                        <p class="fw-light">등록일: ${item.classRegisterDate}</p>
+                                        <p class="fw-light">등록일: ${item.classRegisterDateWithYearMonthDay}</p>
                                     </div>
                                 </div>
                                 <c:set var="no" value="${no - 1}" />

@@ -44,7 +44,7 @@ public class StudentLoginController extends HttpServlet {
 
     if (check){
       sDto = sDao.idCheck(studentId);
-      
+
       HttpSession session = req.getSession();
       if(session.isNew() || session.getAttribute("loginMember")==null) {
 

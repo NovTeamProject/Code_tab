@@ -11,70 +11,70 @@
 </head>
 <body class="d-flex flex-column h-100">
 <main class="flex-shrink-0">
-    <div id="mainBanner" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
-      <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="7000">
-          <img src="https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
-          <div class="carousel-caption px-md-5">
-            <h5>진심을 담은 강의</h5>
-            <hr class="bg-light border-4 border-top border-light">
-            <p>천재스터디는 여러분의 성장을 온 마음 다해 응원합니다.</p>
-            <div class="banner-btn">
-              <button type="button" class="btn btn-secondary px-lg-5 px-md-4 px-2 py-2 rounded-0 border">천재스터디란?</button>
-              <button type="button" class="btn btn-success px-lg-5 px-md-4 px-2 py-2 rounded-0 border">인기 강의</button>
-            </div>
+  <div id="mainBanner" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="7000">
+        <img src="https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
+        <div class="carousel-caption px-md-5">
+          <h5>진심을 담은 강의</h5>
+          <hr class="bg-light border-4 border-top border-light">
+          <p>천재스터디는 여러분의 성장을 온 마음 다해 응원합니다.</p>
+          <div class="banner-btn">
+            <button type="button" class="btn btn-secondary px-lg-5 px-md-4 px-2 py-2 rounded-0 border">천재스터디란?</button>
+            <button type="button" class="btn btn-success px-lg-5 px-md-4 px-2 py-2 rounded-0 border">인기 강의</button>
           </div>
         </div>
-        <div class="carousel-item" data-bs-interval="7000">
-          <img src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
-          <div class="carousel-caption px-md-5">
-            <h5>인생에 꼭 필요한 강의</h5>
-            <hr class="bg-light border-1 border-top border-light">
-            <p>천재스터디는 여러분의 성장을 온 마음 다해 응원합니다.</p>
-            <div class="banner-btn">
-              <button type="button" class="btn btn-secondary px-lg-5 px-md-4 px-2 py-2 rounded-0 border">천재스터디란?</button>
-              <button type="button" class="btn btn-success px-lg-5 px-md-4 px-2 py-2 rounded-0 border">인기 강의</button>
-            </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="7000">
+        <img src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
+        <div class="carousel-caption px-md-5">
+          <h5>인생에 꼭 필요한 강의</h5>
+          <hr class="bg-light border-1 border-top border-light">
+          <p>천재스터디는 여러분의 성장을 온 마음 다해 응원합니다.</p>
+          <div class="banner-btn">
+            <button type="button" class="btn btn-secondary px-lg-5 px-md-4 px-2 py-2 rounded-0 border">천재스터디란?</button>
+            <button type="button" class="btn btn-success px-lg-5 px-md-4 px-2 py-2 rounded-0 border">인기 강의</button>
           </div>
         </div>
-        <div class="carousel-item" data-bs-interval="7000">
-          <img src="https://images.pexels.com/photos/933054/pexels-photo-933054.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
-          <div class="carousel-caption px-md-5">
-            <h5>평생 교육에 맞는 강의</h5>
-            <hr class="bg-light border-4 border-top border-light">
-            <p>천재스터디는 여러분의 성장을 온 마음 다해 응원합니다.</p>
-            <div class="banner-btn">
-              <button type="button" class="btn btn-secondary px-lg-5 px-md-4 px-2 py-2 rounded-0 border">천재스터디란?</button>
-              <button type="button" class="btn btn-success px-lg-5 px-md-4 px-2 py-2 rounded-0 border">인기 강의</button>
-            </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="7000">
+        <img src="https://images.pexels.com/photos/933054/pexels-photo-933054.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
+        <div class="carousel-caption px-md-5">
+          <h5>평생 교육에 맞는 강의</h5>
+          <hr class="bg-light border-4 border-top border-light">
+          <p>천재스터디는 여러분의 성장을 온 마음 다해 응원합니다.</p>
+          <div class="banner-btn">
+            <button type="button" class="btn btn-secondary px-lg-5 px-md-4 px-2 py-2 rounded-0 border">천재스터디란?</button>
+            <button type="button" class="btn btn-success px-lg-5 px-md-4 px-2 py-2 rounded-0 border">인기 강의</button>
           </div>
         </div>
-        <div class="carousel-item" data-bs-interval="7000">
-          <img src="https://images.pexels.com/photos/531602/pexels-photo-531602.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
-          <div class="carousel-caption px-md-5">
-            <h5>나의 현재를 위한 강의</h5>
-            <hr class="bg-light border-4 border-top border-light">
-            <p>천재스터디는 여러분의 성장을 온 마음 다해 응원합니다.</p>
-            <div class="banner-btn">
-              <button type="button" class="btn btn-secondary px-lg-5 px-md-4 px-2 py-2 rounded-0 border">천재스터디란?</button>
-              <button type="button" class="btn btn-success px-lg-5 px-md-4 px-2 py-2 rounded-0 border">인기 강의</button>
-            </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="7000">
+        <img src="https://images.pexels.com/photos/531602/pexels-photo-531602.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
+        <div class="carousel-caption px-md-5">
+          <h5>나의 현재를 위한 강의</h5>
+          <hr class="bg-light border-4 border-top border-light">
+          <p>천재스터디는 여러분의 성장을 온 마음 다해 응원합니다.</p>
+          <div class="banner-btn">
+            <button type="button" class="btn btn-secondary px-lg-5 px-md-4 px-2 py-2 rounded-0 border">천재스터디란?</button>
+            <button type="button" class="btn btn-success px-lg-5 px-md-4 px-2 py-2 rounded-0 border">인기 강의</button>
           </div>
         </div>
-        <div class="carousel-item" data-bs-interval="7000">
-          <img src="https://images.pexels.com/photos/2876511/pexels-photo-2876511.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
-          <div class="carousel-caption px-md-5">
-            <h5>나의 미래를 위한 강의</h5>
-            <hr class="bg-light border-4 border-top border-light">
-            <p>천재스터디는 여러분의 성장을 온 마음 다해 응원합니다.</p>
-            <div class="banner-btn">
-              <button type="button" class="btn btn-secondary px-lg-5 px-md-4 px-2 py-2 rounded-0 border">천재스터디란?</button>
-              <button type="button" class="btn btn-success px-lg-5 px-md-4 px-2 py-2 rounded-0 border">인기 강의</button>
-            </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="7000">
+        <img src="https://images.pexels.com/photos/2876511/pexels-photo-2876511.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
+        <div class="carousel-caption px-md-5">
+          <h5>나의 미래를 위한 강의</h5>
+          <hr class="bg-light border-4 border-top border-light">
+          <p>천재스터디는 여러분의 성장을 온 마음 다해 응원합니다.</p>
+          <div class="banner-btn">
+            <button type="button" class="btn btn-secondary px-lg-5 px-md-4 px-2 py-2 rounded-0 border">천재스터디란?</button>
+            <button type="button" class="btn btn-success px-lg-5 px-md-4 px-2 py-2 rounded-0 border">인기 강의</button>
           </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
   <section class="py-5" id="features">
     <div class="container px-5 my-5">

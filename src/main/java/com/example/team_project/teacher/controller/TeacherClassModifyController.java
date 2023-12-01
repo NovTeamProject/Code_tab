@@ -45,14 +45,14 @@ public class TeacherClassModifyController extends HttpServlet {
         // 실제로 본인 강의가 맞는지 확인하는 작업
         int validCount = classDAO.checkIfSpecificTeacherIdxUploadedSpecificClassIdx(classIdxInt, teacherIdx);
         if (validCount != 1) {
-            alertLocation(response, "본인이 등록한 강의만 상세 조회할 수 있습니다", request.getContextPath() + "/teacher/class/list.do");
+            alertLocation(response, "본인이 등록한 강의만 수정할 수 있습니다", request.getContextPath() + "/teacher/class/list.do");
             return;
         }
 
         // 실제 본인 강의가 맞으니 계속 작업
         ClassDTO classDTO = classDAO.getOneClassInformationWithRelatedLessons(classIdxInt);
         request.setAttribute("classDTO", classDTO);
-        request.getRequestDispatcher("/teacher/views/teacherClassDetail.jsp")
+        request.getRequestDispatcher("/teacher/views/teacherClassModify.jsp")
                 .forward(request, response);
     }
 

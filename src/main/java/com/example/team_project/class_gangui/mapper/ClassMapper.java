@@ -16,13 +16,16 @@ public interface ClassMapper {
 
     List<ClassDTO> getAllUploadedClassListFilteredByTeacherIdxWithPaging(Map<String, Object> map);
 
+
     ClassDTO getOneClassInformationWithRelatedLessons(int classIdx);
 
     int checkIfSpecificTeacherIdxUploadedSpecificClassIdx(@Param("classIdx") int classIdxInt,
                                                           @Param("teacherIdx") int teacherIdx);
+    int getTotalUploadedClassesCount();
+    List<ClassDTO> getAllUploadedClassesList(Map<String, Object> map);
 
     // 남원우님 여기 아래부터 작성 시작
-
+    List<String> rankingClass();
 
     // 차소영님 여기 아래부터 작성 시작
     int registerClass(Map<String, Integer> map);
@@ -34,5 +37,6 @@ public interface ClassMapper {
     int checkIfSpecificStudentIdxRegisteredSpecificClassIdx(Map<String, Object> params);
 
     // 유지호님 여기 아래부터 작성 시작
+    String getClassNameByClassIdx(String classIdx);
 
 }
