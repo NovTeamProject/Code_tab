@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page isELIgnored="false" %>
 <html>
 <head>
     <title>학생 - 내 강의 상세 보기</title>
@@ -74,8 +75,9 @@
                     </tbody>
                 </table>
             </div>
-            <div style="text-align: center">
-                <a class="btn btn-lg btn-primary" href="#!">질문 게시판</a>
+            <br>
+            <div style="text-align: right">
+                <a class="btn btn-lg btn-primary" href="#!">질문 게시판 바로가기</a>
             </div>
 
         </div>
