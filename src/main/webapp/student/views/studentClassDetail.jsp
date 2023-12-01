@@ -10,7 +10,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
-    <title>선생님 - 내 강의 상세보기</title>
+    <title>학생 - 내 강의 상세 보기</title>
+
     <link href="${pageContext.request.contextPath}/teacher/css/styles.css?ver=1" rel="stylesheet">
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
@@ -29,6 +30,10 @@
     <%--    <section class="py-5 bg-light" id="scroll-target">--%>
     <section class="py-5" style="background-color: #ddf3ff;" id="scroll-target">
         <div class="container px-5 my-5">
+                <div class="text-center mb-5">
+                    <h1 class="fw-bolder">강의 상세 보기</h1>
+                    <p class="lead fw-normal text-muted mb-0">강의 상세 정보를 확인하세요.</p>
+                </div>
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-6">
                     <img class="img-fluid rounded mb-5 mb-lg-0"
@@ -138,11 +143,13 @@
     </c:forEach>
 </script>
 </body>
-<script>
-    $("#classModifyBtn").on("click", function() {
-        location.href = '${pageContext.request.contextPath}' + "/teacher/class/modify.do?classIdx=" + '${param.classIdx}';
-    })
-</script>
+
+
+<%--<script>--%>
+<%--    $("#classModifyBtn").on("click", function() {--%>
+<%--        location.href = '${pageContext.request.contextPath}' + "/teacher/class/modify.do?classIdx=" + '${param.classIdx}';--%>
+<%--    })--%>
+<%--</script>--%>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </html>
