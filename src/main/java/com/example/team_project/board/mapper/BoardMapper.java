@@ -20,3 +20,5 @@ public interface BoardMapper {
 
     int updatePost(BoardDTO dto);
 }
+
+
