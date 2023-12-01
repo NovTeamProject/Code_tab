@@ -69,7 +69,19 @@
                                 <a class="page-link" href="${pageMaker.startPage - 1}" tabindex="-1" aria-disabled="true">이전</a>
                             </li>
                         </c:if>
-                        <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+                        <c:forEach var="item" items="${classList}">
+
+                            <c:forEach var="num1" begin="1" end="${item.depth}" step="1">
+                                &nbsp;
+                            </c:forEach>
+
+                            <p>${item.itemName}</p>
+
+
+
+
+
+
                             <c:choose>
                                 <c:when test="${pageMaker.cri.pageNum == num}">
                                     <li class="page-item active">
