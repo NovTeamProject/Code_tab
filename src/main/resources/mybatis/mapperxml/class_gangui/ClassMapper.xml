@@ -64,9 +64,26 @@
         WHERE class_idx = #{classIdx} AND teacher_idx = #{teacherIdx}
     </select>
 
+    <select id="getTotalUploadedClassesCount">
+        SELECT count(class_idx)
+        FROM class
+    </select>
+
+    <select id="getAllUploadedClassesList">
+        SELECT *
+        FROM class
+        ORDER BY class_idx DESC
+        LIMIT #{pageNum}, 12
+    </select>
+
 
     <!--    남원우님 여기 아래부터 작성 시작-->
-
+    <!-- 명예의 전당 -->
+    <select id="rankingClass" resultType="String">
+        SELECT class_name
+        FROM class
+        ORDER BY listen_student DESC
+    </select>
 
     <!--    차소영님 여기 아래부터 작성 시작-->
 
@@ -85,7 +102,7 @@
 <!--   특정 학생이 등록한 모든 수업의 정보를 조회하는 기능
 ID(studentIdx)를 이용해 student_class 테이블에서 해당 학생이 등록한 모든 수업의 ID(class_idx)를 찾은 후,
 이 ID를 이용해 class 테이블에서 해당 수업의 모든 정보를 가져옴.-->
-    <select id="getRegisteredClasses" resultType="com.example.dto.ClassDTO">
+    <select id="getRegisteredClasses" resultType="com.example.team_project.class_gangui.dto.ClassDTO">
         SELECT * FROM class
         WHERE class_idx IN (SELECT class_idx FROM student_class WHERE student_idx = #{studentIdx})
     </select>
