@@ -9,6 +9,7 @@
     padding: 20px;
 }
 
+
 #formContent {
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
@@ -206,5 +207,3 @@ input[type=password2]::placeholder {
 .underlineHover{
     text-decoration : none;
 }
-
-

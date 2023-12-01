@@ -14,5 +14,5 @@ public class TeacherDTO {
     private String teacherId; // like naver id
     private String teacherPassword; // password
     private String teacherName; // real name
-    private LocalDateTime teacherJoinDate; // register date
+    private LocalDateTime teacherJoinDate; //
 }

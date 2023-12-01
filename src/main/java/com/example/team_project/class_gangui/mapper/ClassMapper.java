@@ -20,9 +20,12 @@ public interface ClassMapper {
 
     int checkIfSpecificTeacherIdxUploadedSpecificClassIdx(@Param("classIdx") int classIdxInt,
                                                           @Param("teacherIdx") int teacherIdx);
+    int getTotalUploadedClassesCount();
+    List<ClassDTO> getAllUploadedClassesList(Map<String, Object> map);
 
     // 남원우님 여기 아래부터 작성 시작
 
+    List<String> rankingClass();
 
     // 차소영님 여기 아래부터 작성 시작
     int registerClass(Map<String, Integer> map);
