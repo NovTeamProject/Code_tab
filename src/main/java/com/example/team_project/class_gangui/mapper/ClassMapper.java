@@ -16,6 +16,7 @@ public interface ClassMapper {
 
     List<ClassDTO> getAllUploadedClassListFilteredByTeacherIdxWithPaging(Map<String, Object> map);
 
+
     ClassDTO getOneClassInformationWithRelatedLessons(int classIdx);
 
     int checkIfSpecificTeacherIdxUploadedSpecificClassIdx(@Param("classIdx") int classIdxInt,
@@ -33,5 +34,6 @@ public interface ClassMapper {
     List<ClassDTO> getRegisteredClasses(int studentIdx);
 
     // 유지호님 여기 아래부터 작성 시작
+    String getClassNameByClassIdx(String classIdx);
 
 }

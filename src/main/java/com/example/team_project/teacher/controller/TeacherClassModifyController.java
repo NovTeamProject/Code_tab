@@ -17,57 +17,58 @@ import java.io.PrintWriter;
 @Slf4j
 public class TeacherClassModifyController extends HttpServlet {
 
-  private ClassDAO classDAO = new ClassDAO();
+    private ClassDAO classDAO = new ClassDAO();
 
-  @Override
-  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    // 테스트를 위해 임시로 teacher_idx의 값을 1로 설정
-    HttpSession session = request.getSession();
-    session.setAttribute("teacher_idx", 1);
-    // -------------------------------------------
-    int teacherIdx = (Integer) session.getAttribute("teacher_idx");
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 테스트를 위해 임시로 teacher_idx의 값을 1로 설정
+        HttpSession session = request.getSession();
+        session.setAttribute("teacher_idx", 1);
+        // -------------------------------------------
+        int teacherIdx = (Integer) session.getAttribute("teacher_idx");
 
-    String classIdx = request.getParameter("classIdx");
-    int classIdxInt = -1;
+        String classIdx = request.getParameter("classIdx");
+        int classIdxInt = -1;
 
-    if (classIdx == null || classIdx.isEmpty()) {
-      alertLocation(response, "올바르지 않은 강의 번호입니다", request.getContextPath() + "/teacher/class/list.do");
-      return;
-    } else {
-      try {
-        classIdxInt = Integer.parseInt(classIdx.trim());
-      } catch (Exception e) {
-        alertLocation(response, "올바르지 않은 강의 번호입니다", request.getContextPath() + "/teacher/class/list.do");
-        return;
-      }
+        if (classIdx == null || classIdx.isEmpty()) {
+            alertLocation(response, "올바르지 않은 강의 번호입니다", request.getContextPath() + "/teacher/class/list.do");
+            return;
+        } else {
+            try {
+                classIdxInt = Integer.parseInt(classIdx.trim());
+            } catch (Exception e) {
+                alertLocation(response, "올바르지 않은 강의 번호입니다", request.getContextPath() + "/teacher/class/list.do");
+                return;
+            }
+        }
+
+        // 실제로 본인 강의가 맞는지 확인하는 작업
+        int validCount = classDAO.checkIfSpecificTeacherIdxUploadedSpecificClassIdx(classIdxInt, teacherIdx);
+        if (validCount != 1) {
+            alertLocation(response, "본인이 등록한 강의만 수정할 수 있습니다", request.getContextPath() + "/teacher/class/list.do");
+            return;
+        }
+
+        // 실제 본인 강의가 맞으니 계속 작업
+        ClassDTO classDTO = classDAO.getOneClassInformationWithRelatedLessons(classIdxInt);
+        request.setAttribute("classDTO", classDTO);
+        request.getRequestDispatcher("/teacher/views/teacherClassModify.jsp")
+                .forward(request, response);
     }
 
-    // 실제로 본인 강의가 맞는지 확인하는 작업
-    int validCount = classDAO.checkIfSpecificTeacherIdxUploadedSpecificClassIdx(classIdxInt, teacherIdx);
-    if (validCount != 1) {
-      alertLocation(response, "본인이 등록한 강의만 수정할 수 있습니다", request.getContextPath() + "/teacher/class/list.do");
-      return;
+    private void alertLocation(HttpServletResponse resp, String msg, String url) {
+        try {
+            resp.setContentType("text/html;charset=UTF-8");
+            PrintWriter writer = resp.getWriter();
+            String script = "<script>"
+                    + "    alert('" + msg + "');"
+                    + "    location.href='" + url + "';"
+                    + "</script>";
+            writer.print(script);
+            writer.flush();
+            writer.close();
+        }
+        catch (Exception e) {}
     }
-
-    // 실제 본인 강의가 맞으니 계속 작업
-    ClassDTO classDTO = classDAO.getOneClassInformationWithRelatedLessons(classIdxInt);
-    request.setAttribute("classDTO", classDTO);
-    request.getRequestDispatcher("/teacher/views/teacherClassModify.jsp")
-            .forward(request, response);
-  }
-
-  private void alertLocation(HttpServletResponse resp, String msg, String url) {
-    try {
-      resp.setContentType("text/html;charset=UTF-8");
-      PrintWriter writer = resp.getWriter();
-      String script = "<script>"
-              + "    alert('" + msg + "');"
-              + "    location.href='" + url + "';"
-              + "</script>";
-      writer.print(script);
-      writer.flush();
-      writer.close();
-    }
-    catch (Exception e) {}
-  }
 }
+

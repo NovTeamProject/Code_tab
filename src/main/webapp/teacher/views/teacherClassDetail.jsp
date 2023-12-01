@@ -24,53 +24,53 @@
     </style>
 </head>
 <body class="d-flex flex-column">
-<main class="flex-shrink-0">
-    <section class="py-5 bg-light" id="scroll-target">
-        <div class="container px-5 my-5">
-            <div class="row gx-5 align-items-center">
-                <div class="col-lg-6">
-                    <img class="img-fluid rounded mb-5 mb-lg-0"
-                         src="${pageContext.request.contextPath}/teacher/class-image/${classDTO.classImageSavedFilename}" />
+    <main class="flex-shrink-0">
+        <section class="py-5 bg-light" id="scroll-target">
+            <div class="container px-5 my-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6">
+                        <img class="img-fluid rounded mb-5 mb-lg-0"
+                             src="${pageContext.request.contextPath}/teacher/class-image/${classDTO.classImageSavedFilename}" />
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="fw-bolder">
+                            <c:out value="${classDTO.className}" />
+                        </h2>
+                        <p class="lead fw-normal text-muted mb-0">
+                            <c:out value="${classDTO.classExplain}" />
+                        </p>
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                    <h2 class="fw-bolder">
-                        <c:out value="${classDTO.className}" />
-                    </h2>
-                    <p class="lead fw-normal text-muted mb-0">
-                        <c:out value="${classDTO.classExplain}" />
-                    </p>
+                <div class="my-3">
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr>
+                                <th scope="row">등록일시</th>
+                                <td><c:out value="${classDTO.classRegisterDateWithYearMonthDayHourMinute}" /></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">강의길이</th>
+                                <td><c:out value="${classDTO.classTotalTime} (초)" /></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">수업개수</th>
+                                <td colspan="2"><c:out value="${classDTO.lessonList.size()} (개)" /></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">수강학생</th>
+                                <td colspan="2"><c:out value="${classDTO.listenStudent} (명)" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="text-align: right">
+                    <button type="button" class="btn btn-outline-warning" id="classModifyBtn">강의 수정하기</button>
                 </div>
             </div>
-            <div class="my-3">
-                <table class="table table-borderless">
-                    <tbody>
-                    <tr>
-                        <th scope="row">등록일시</th>
-                        <td><c:out value="${classDTO.classRegisterDateWithYearMonthDayHourMinute}" /></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">강의길이</th>
-                        <td><c:out value="${classDTO.classTotalTime} (초)" /></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">수업개수</th>
-                        <td colspan="2"><c:out value="${classDTO.lessonList.size()} (개)" /></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">수강학생</th>
-                        <td colspan="2"><c:out value="${classDTO.listenStudent} (명)" /></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div style="text-align: right">
-                <button type="button" class="btn btn-outline-warning" id="classModifyBtn">강의 수정하기</button>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <h3 style="text-align: center; margin-top: 50px;">강의 수업 리스트</h3>
-    <div class="d-flex justify-content-center" style="margin-bottom: 50px;">
+        <h3 style="text-align: center; margin-top: 50px;">강의 수업 리스트</h3>
+        <div class="d-flex justify-content-center" style="margin-bottom: 50px;">
         <div class="accordion" id="accordionExample" style="width: 70%">
             <c:forEach items="${classDTO.lessonList}" var="lesson" varStatus="loop">
                 <c:choose>
@@ -78,7 +78,7 @@
                         <div class="accordion-item accordion-item-${loop.index + 1}">
                             <h2 class="accordion-header">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        ${lesson.lessonName}
+                                    ${lesson.lessonName}
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
@@ -99,7 +99,7 @@
                         <div class="accordion-item accordion-item-${loop.index + 1}">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        ${lesson.lessonName}
+                                    ${lesson.lessonName}
                                 </button>
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -119,13 +119,13 @@
                 </c:choose>
             </c:forEach>
         </div>
-    </div>
-</main>
+        </div>
+    </main>
 <script>
     const playerList = {};
     let index = 1;
     <c:forEach items="${classDTO.lessonList}" varStatus="loop">
-    playerList["lesson-video-" + (index++)] = new Plyr("#lesson-video-${loop.index + 1}");
+        playerList["lesson-video-" + (index++)] = new Plyr("#lesson-video-${loop.index + 1}");
     </c:forEach>
 </script>
 </body>

@@ -74,20 +74,20 @@
                                         <span name="lesson-video-name-${loop.index + 1}" id="lesson-video-name-${loop.index + 1}">동영상 이름: ${item.lessonOriginalFilename}<c:if test="${loop.index + 1 == 1}"><br /></c:if></span>
 
                                         <c:if test="${loop.index + 1 >= 2}">
-                                        <div id="div-lesson-time-${loop.index + 1}">
-                                            </c:if>
-                                            <!--보여질 한 개 수업의 동영상 길이 초-->
-                                            <span id="span-lesson-time-${loop.index + 1}" class="span-lesson-time span-lesson-time-${loop.index + 1}">${item.lessonTime}</span>(초)
-                                            <c:if test="${loop.index + 1 >= 2}">
-                                        </div><br />
-                                        <button type="button" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                                            <div id="div-lesson-time-${loop.index + 1}">
+                                        </c:if>
+                                        <!--보여질 한 개 수업의 동영상 길이 초-->
+                                        <span id="span-lesson-time-${loop.index + 1}" class="span-lesson-time span-lesson-time-${loop.index + 1}">${item.lessonTime}</span>(초)
+                                        <c:if test="${loop.index + 1 >= 2}">
+                                            </div><br />
+                                            <button type="button" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
                                                 class="btn btn-outline-warning delete-lesson delete-lesson-${loop.index + 1}"
                                                 name='delete-lesson-${loop.index + 1}' id='delete-lesson-${loop.index + 1}'>수업 삭제하기</button><br>
                                         </c:if>
                                         <br />
                                         <!--서버에 전송될 한 개 수업의 동영상 길이 초-->
                                         <input type="hidden" id="lesson-time-${loop.index + 1}" class="lesson-time lesson-time-${loop.index + 1}" name="lesson-time-${loop.index + 1}" value="${item.lessonTime}" />
-                                            <%--수업이 변경됐는지 확인--%>
+                                        <%--수업이 변경됐는지 확인--%>
                                         <input type="hidden" id="lesson-modified-${loop.index + 1}" name="lesson-modified-${loop.index + 1}" value="false" />
                                     </div>
                                     <br>

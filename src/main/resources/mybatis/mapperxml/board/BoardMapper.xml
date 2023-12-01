@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.team_project.board.mapper.BoardMapper">
+    <select id="selectCount" parameterType="map" resultType="int">
+        SELECT count(*)
+        FROM board
+        <if test="searchWord != null and !searchWord.equals('')">
+            <choose>
+                <when test="searchField == 'title'">
+                    WHERE title like concat('%', #{searchWord}, '%') AND class_idx = #{classIdx}
+                </when>
+                <otherwise>
+                    WHERE student_name like concat('%', #{searchWord}, '%') AND class_idx = #{classIdx}
+                </otherwise>
+            </choose>
+        </if>
+        <if test="searchWord == null or searchWord.equals('')">
+            WHERE class_idx = #{classIdx}
+        </if>
+    </select>
+
+    <select id="selectListPage" parameterType="map" resultType="com.example.team_project.board.dto.BoardDTO">
+        SELECT *
+        FROM (
+        SELECT @ROWNUM := @ROWNUM + 1 AS ROWNUM, b.*
+        FROM board b, (SELECT @ROWNUM := 0) TMP
+        WHERE
+        <if test="searchWord != null and !searchWord.equals('')">
+            <choose>
+                <when test="searchField == 'title'">
+                    title LIKE CONCAT('%', #{searchWord}, '%')
+                </when>
+                <otherwise>
+                    student_name LIKE CONCAT('%', #{searchWord}, '%')
+                </otherwise>
+            </choose>
+            AND
+        </if>
+        class_idx = #{classIdx}
+        ORDER BY board_idx DESC
+        ) AS b
+        WHERE (ROWNUM BETWEEN #{start} AND #{end})
+    </select>
+
+    <insert id="insertWrite" parameterType="com.example.team_project.board.dto.BoardDTO">
+        INSERT
+        INTO board(class_idx, student_idx, student_name, title, content)
+        VALUES(#{classIdx}, #{studentIdx}, #{studentName}, #{title}, #{content})
+    </insert>
+
+    <select id="selectView" parameterType="String" resultType="com.example.team_project.board.dto.BoardDTO">
+        select *
+        from board
+        where board_idx = #{boardIdx}
+    </select>
+
+    <update id="updateVisitCount" parameterType="String">
+        UPDATE board
+        SET visitcount = visitcount + 1
+        where board_idx = #{boardIdx}
+    </update>
+
+    <delete id="deletePost">
+        delete
+        from board
+        where board_idx = #{boardIdx}
+    </delete>
+
+    <update id="updatePost" parameterType="com.example.team_project.board.dto.BoardDTO">
+        update board
+        set title = #{title},content = #{content}
+        where board_idx = #{boardIdx}
+    </update>
+</mapper>
