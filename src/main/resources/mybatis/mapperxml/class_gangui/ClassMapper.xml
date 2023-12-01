@@ -92,6 +92,11 @@ ID(studentIdx)를 이용해 student_class 테이블에서 해당 학생이 등�
 
 
     <!--    유지호님 여기 아래부터 작성 시작-->
+    <select id="getClassNameByClassIdx">
+        SELECT class_name
+        FROM class
+        WHERE class_idx = #{classIdx}
+    </select>
 
 
 </mapper>
