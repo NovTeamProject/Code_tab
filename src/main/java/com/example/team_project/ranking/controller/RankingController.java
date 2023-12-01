@@ -35,4 +35,3 @@ public class RankingController extends HttpServlet {
     dispatcher.forward(req, resp);
   }
 }
-
