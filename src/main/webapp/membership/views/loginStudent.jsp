@@ -19,14 +19,13 @@
 <div class="wrapper fadeInDown">
     <div id="formContent">
         <label class="fadeIn third"><h2 class="active">학생 로그인</h2></label>
-
         <form action="${pageContext.request.contextPath}/loginstudent.do" method="post">
             <input type="text" id="login"  name="studentId" placeholder="아이디" />
-            <input type="text" id="password"  name="studentPassword" placeholder="비밀번호" autocomplete="off" />
+            <input type="password" id="password"  name="studentPassword" placeholder="비밀번호" autocomplete="off" />
             <input type="submit" class="fadeIn fourth" value="로그인" />
         </form>
         <div id="formFooter">
-            <label  class="fadeIn third"><a class="underlineHover" href="${pageContext.request.contextPath}/membership/views/join2.jsp">처음 이신가요</a></label>
+            <label  class="fadeIn third"><a class="underlineHover" href="${pageContext.request.contextPath}/membership/views/joinStudent.jsp">처음 이신가요</a></label>
         </div>
     </div>
 </div>

@@ -21,11 +21,11 @@
         <label class="fadeIn third"><h2 class="active">선생님 로그인</h2></label>
         <form action="${pageContext.request.contextPath}/loginteacher.do" method="post">
             <input type="text" id="login"  name="teacherId" placeholder="아이디" />
-            <input type="text" id="password" name="teacherPassword" placeholder="비밀번호" autocomplete="off" />
+            <input type="password" id="password" name="teacherPassword" placeholder="비밀번호" autocomplete="off" />
             <input type="submit" class="fadeIn fourth" value="로그인"/>
         </form>
         <div id="formFooter">
-            <label  class="fadeIn third"><a class="underlineHover" href="${pageContext.request.contextPath}/membership/views/join.jsp">처음 이신가요</a></label>
+            <label  class="fadeIn third"><a class="underlineHover" href="${pageContext.request.contextPath}/membership/views/joinTeacher.jsp">처음 이신가요</a></label>
         </div>
     </div>
 </div>
