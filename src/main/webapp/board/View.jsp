@@ -53,7 +53,21 @@
                 });
             }
         }
+
     </script>
+
+    <script>
+        function validateCommentForm(form) {
+            if (form.commentContent.value.trim() === "") {
+                alert("답변을 입력하세요.");
+                form.commentContent.focus();
+                return false;
+            }
+        }
+    </script>
+
+
+
 
 </head>
 <body class="d-flex flex-column">
@@ -179,7 +193,7 @@
                                         <!-- 답변 입력 폼 -->
                                         <div class="mt-5">
                                             <h3 class="fw-bolder">답변하기</h3>
-                                            <form method="post" action="${pageContext.request.contextPath}/board/comment.do">
+                                            <form method="post" action="${pageContext.request.contextPath}/board/comment.do"  onsubmit="return validateCommentForm(this);">
                                                 <input type="hidden" name="boardIdx" value="${boardIdx}" />
                                                 <input type="hidden" name="classIdx" value="${classIdx}" />
                                                 <div class="mb-3">
@@ -192,7 +206,8 @@
                                         </div>
                                     </c:when>
                                     <c:otherwise>
-                                        <h3>더이상 댓글을 작성할 수 없습니다. 새로운 질문글을 작성해주세요</h3>
+                                        <br/>
+                                        <h5><strong>더이상 답변을 작성할 수 없습니다. 새로운 질문글을 작성해주세요</strong></h5>
                                     </c:otherwise>
                                 </c:choose>
 
