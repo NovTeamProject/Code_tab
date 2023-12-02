@@ -70,7 +70,7 @@
 
 <details><summary>Usecase</summary>
 
-/details>\
+</details>
 
 <details><summary>Class</summary>
   
