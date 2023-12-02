@@ -38,7 +38,7 @@ public class ListController extends HttpServlet {
             map.put("searchWord", searchWord);  // 검색어 값을 맵에 추가
         } // 처음 null 값이기 때문에 넘어감
 
-        map.put("classIdx", 1); // classIdx -> 1 (key-value 쌍), classIdx를 맵에 저장
+        map.put("classIdx",classIdx); // classIdx -> 1 (key-value 쌍), classIdx를 맵에 저장
 
         String className = classDAO.getClassNameByClassIdx(classIdx);
         // 강의 이름을 조회하기 위한 class 테이블에서 가져온 값
