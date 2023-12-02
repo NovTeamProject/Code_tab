@@ -104,12 +104,20 @@ public class ClassDAO {
         // classIdx와 studentIdx를 키-값 쌍으로 가지는 HashMap 객체를 생성
         // 이 맵은 MyBatis에 파라미터를 전달하는 역할을 함.
 
+
         int result = classMapper.registerClass(map);
         // classMapper의 registerClass 메서드를 호출하여 SQL 쿼리를 실행
         // 학생이 클래스를 등록하는 작업을 수행함.
 
-        sqlSession.commit();
-        // SQL 쿼리의 결과를 데이터베이스에 반영 : commit
+        if (result == 1) {
+            sqlSession.commit();
+            // SQL 쿼리의 결과를 데이터베이스에 반영 :
+            // commit
+            System.out.println("학생 수강신청 성공");
+        } else {
+            System.out.println("학생 수강신청 중 오류 발생");
+        }
+
 
         sqlSession.close();
         // SQL 세션을 종료
@@ -118,32 +126,77 @@ public class ClassDAO {
         // SQL 쿼리의 결과가 성공적이면 true를, 그렇지 않으면 false를 반환
     }
 
-    public boolean cancelClass(int classIdx, int studentIdx) { // 수강신청한 강의를 취소하는 메서드
+    public boolean deleteClass(int classIdx, int studentIdx) { // 강의를 삭제하는 메소드
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
         ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+
         Map<String, Integer> map = new HashMap<>();
         map.put("classIdx", classIdx);
         map.put("studentIdx", studentIdx);
-        int result = classMapper.cancelClass(map);
-        // classMapper의 cancelClass 메소드를 호출하여 SQL 쿼리를 실행
-        // 학생이 클래스를 취소하는 작업을 수행함.
+
+        int result = classMapper.deleteClass(map);
+        // classMapper의 deleteClass 메소드를 호출하여 SQL 쿼리를 실행
+        // 학생이 클래스를 삭제하는 작업을 수행함.
 
         sqlSession.commit();
         sqlSession.close();
+
         return result > 0;
     }
 
-    public List<ClassDTO> getRegisteredClasses(int studentIdx) { // 학생이 등록한 클래스 목록을 가져오는 메서드
+
+    public List<Map<String, Object>> getRegisteredClasses(int studentIdx) { // 학생이 등록한 클래스 목록을 가져오는 메서드
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
         ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
-        List<ClassDTO> classList = classMapper.getRegisteredClasses(studentIdx);
+        List<Map<String, Object>> classList = classMapper.getRegisteredClasses(studentIdx);
         sqlSession.close();
         return classList;
         // 쿼리의 결과로 얻은 클래스 목록을 List에 담아 반환한다.
         // ClassDTO는 클래스 정보를 담는 데이터 전송 객체
     }
 
+    public List<ClassDTO> getRegisteredClassesList(int studentIdx) {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        List<ClassDTO> result = classMapper.getRegisteredClassesList(studentIdx);
+        sqlSession.close();
+        return result;
+    }
 
+    public boolean checkIfStudentRegisteredClass(int classIdx, int studentIdx) { // 학생이 이미 수강 신청 했는지 확인하는 메서드
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        Map<String, Integer> map = new HashMap<>();
+        map.put("classIdx", classIdx);
+        map.put("studentIdx", studentIdx);
+        int result = classMapper.checkIfStudentRegisteredClass(map);
+        sqlSession.close();
+        return result > 0;
+    }
+
+    public int getStudentRegisteredClassCount(int studentIdx) {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        int studentRegisteredClassCount = classMapper.getStudentRegisteredClassCount(studentIdx);
+        sqlSession.close();
+        return studentRegisteredClassCount;
+    }
+
+    // 특정 학생이 특정 강의를 등록했는지 확인하는 메서드
+    public int checkIfSpecificStudentIdxRegisteredSpecificClassIdx(int classIdxInt, int studentIdx) {
+        // 파라미터를 Map으로 묶기
+        Map<String, Object> params = new HashMap<>();
+        params.put("classIdx", classIdxInt);
+        params.put("studentIdx", studentIdx);
+
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+
+        // Map 파라미터를 메서드에 전달
+        int validCount = classMapper.checkIfSpecificStudentIdxRegisteredSpecificClassIdx(params);
+        sqlSession.close();
+        return validCount;
+    }
 
     // 유지호님 여기 아래부터 작성 시작
     public String getClassNameByClassIdx(String classIdx) {
@@ -152,5 +205,5 @@ public class ClassDAO {
         String className = mapper.getClassNameByClassIdx(classIdx);
         return className;
     }
-    
+
 }
