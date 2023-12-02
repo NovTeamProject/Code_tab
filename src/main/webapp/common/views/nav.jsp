@@ -10,6 +10,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
 </head>
+
 <body>
 <div>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -43,7 +44,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> ${sessionScope.name} 님 </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
-              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/myPage.jsp">마이페이지 </a></li></ul></li>
+              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/myClass/views/myClassList.jsp">나의강의실 </a></li></ul></li>
           <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/common/views/logout.jsp">로그아웃</a></li>
           </c:if>
 
