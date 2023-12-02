@@ -118,18 +118,37 @@ public class ClassDAO {
         // SQL 쿼리의 결과가 성공적이면 true를, 그렇지 않으면 false를 반환
     }
 
-    public boolean cancelClass(int classIdx, int studentIdx) { // 수강신청한 강의를 취소하는 메서드
+//    public boolean cancelClass(int classIdx, int studentIdx) { // 수강신청한 강의를 취소하는 메서드
+//        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+//        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+//        Map<String, Integer> map = new HashMap<>();
+//        map.put("classIdx", classIdx);
+//        map.put("studentIdx", studentIdx);
+//        int result = classMapper.cancelClass(map);
+//        // classMapper의 cancelClass 메소드를 호출하여 SQL 쿼리를 실행
+//        // 학생이 클래스를 취소하는 작업을 수행함.
+//
+//        sqlSession.commit();
+//        sqlSession.close();
+//        return result > 0;
+//    }
+
+
+    public boolean deleteClass(int classIdx, int studentIdx) { // 강의를 삭제하는 메소드
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
         ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+
         Map<String, Integer> map = new HashMap<>();
         map.put("classIdx", classIdx);
         map.put("studentIdx", studentIdx);
-        int result = classMapper.cancelClass(map);
-        // classMapper의 cancelClass 메소드를 호출하여 SQL 쿼리를 실행
-        // 학생이 클래스를 취소하는 작업을 수행함.
+
+        int result = classMapper.deleteClass(map);
+        // classMapper의 deleteClass 메소드를 호출하여 SQL 쿼리를 실행
+        // 학생이 클래스를 삭제하는 작업을 수행함.
 
         sqlSession.commit();
         sqlSession.close();
+
         return result > 0;
     }
 
