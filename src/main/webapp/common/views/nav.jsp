@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
   <meta charset="utf-8" />
@@ -21,7 +23,8 @@
           <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/contact.jsp">선생님</a></li>
           <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/ranking.do">명예의전당</a></li>
           <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/exam/views/exam.jsp">모의채점 </a></li>
-          <% if (session.getAttribute("loginMember") == null){ %>
+<%--          <% if (session.getAttribute("loginMember") == null){ %>--%>
+          <c:if test="${empty sessionScope.loginMember}">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio3" href="${pageContext.request.contextPath}/membership/views/loginStudent.jsp" role="button" data-bs-toggle="dropdown" aria-expanded="false" >로그인</a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
@@ -34,14 +37,15 @@
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/membership/views/joinStudent.jsp">학생회원가입</a></li>
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/membership/views/joinTeacher.jsp">선생회원가입</a></li>
             </ul>
-              <% }else { %>
+          </c:if>
 
+          <c:if test="${not empty sessionScope.loginMember}">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> ${sessionScope.name} 님 </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/myPage.jsp">마이페이지 </a></li></ul></li>
           <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/common/views/logout.jsp">로그아웃</a></li>
-          <% } %>
+          </c:if>
 
         </ul>
       </div>
