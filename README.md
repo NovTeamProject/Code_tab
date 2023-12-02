@@ -1,4 +1,5 @@
-# Team_Project!
+# CODING TAB
+![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/df9d83fb-16de-47e8-a0dc-6380132d818e)
 
 <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/ae6f6799-c3c0-4939-b92a-80e038aaf1c5">
 
@@ -16,9 +17,8 @@
 5. [📋 개발 일지](#개발-일지)
 6. [📈  요구 명세서](#-요구-명세서-)
 7. [📊 Diagram](#-다이어그램-)
-8. [📝 기능 설명](#-기능-설명-)
-9. [📹 시연 영상](#-시연-영상-)
-10. [🔨사용 기술](#-사용-기술-)
+8. [📹 기능 설명](#-기능-설명-)
+9. [🔨개발 환경](#-개발-환경-)
 
 
 ## 📂 PPT 📂
@@ -61,7 +61,7 @@
 ## 📈 요구 명세서 📈
 
 <details><summary>요구 명세서</summary>
-
+</details>
   
 
 ## 📊 다이어그램 📊
@@ -71,16 +71,8 @@
 
 <details><summary>Class</summary>
   
-
-
-</details>
-<details><summary>Sequence(비회원)</summary>
-    
-
-
 </details>
 
-</details>
 <details><summary>Sequence(회원)</summary>
     
 </details>
@@ -98,39 +90,61 @@
     
 </details>
 
-## 📝 기능 설명 📝
+## 📹 기능 설명 📹
 
 > 클릭시 코드로 이동합니다. 
 
-<details><summary>#
+<details><summary>로그인&회원가입
 </summary>
 <br/>
 </details>
- 
 
-## 📹 시연 영상 📹
-
-<details><summary>#</summary>
-
+<details><summary>강의실
+</summary>
+<br/>
 </details>
+
+<details><summary>질의응답게시판
+</summary>
+<br/>
+</details>
+
+<details><summary>명예의전당
+</summary>
+<br/>
+</details>
+
+<details><summary>나의강의실
+</summary>
+<br/>
+</details>
+
  
 
 
-## 🔨 사용 기술 🔨
+## 🔨 개발 환경 🔨
 <div>
 <img src="https://img.shields.io/badge/JAVA-C01818?style=flat-square&logo=coffeescript&logoColor=white" />
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=fff"/>
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=fff"/>
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=000"/>
+<br>
 <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=MySQL&logoColor=white" />
 <img src="https://img.shields.io/badge/MariaDB-003545?style=flat&logo=MariaDB&logoColor=white" />
+<img src="https://img.shields.io/badge/MyBatis-000000?style=flat-square&logo=MyBatis&logoColor=blue" />
 <br>
 <img src="https://img.shields.io/badge/IntelliJ-000000?style=flat-square&logo=intellijidea&logoColor=white" />
-<img src="https://img.shields.io/badge/Slack-4A154B?style=flat-square&logo=slack&logoColor=white" />
+<img src="https://img.shields.io/badge/amazonaws-232F3E?style=flat-square&logo=amazonaws&logoColor=blue" />
 <img src="https://img.shields.io/badge/StarUML-E25A1C?style=flat-square&logo=apachespark&logoColor=white" />
 <br>
 <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white" />
 <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" />
 <img src="https://img.shields.io/badge/Sourcetree-0052CC?style=flat-square&logo=Sourcetree&logoColor=blue" />
+<img src="https://img.shields.io/badge/gitkraken-179287?style=flat-square&logo=gitkraken&logoColor=white">
 <br>
+<img src="https://img.shields.io/badge/Slack-4A154B?style=flat-square&logo=slack&logoColor=white" />
 
+<img src="https://img.shields.io/badge/notion-000000?style=flat-square&logo=notion&logoColor=blue" />  
 </div>
 
 
