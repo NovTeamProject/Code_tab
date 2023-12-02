@@ -24,6 +24,9 @@
     </style>
 </head>
 <body class="d-flex flex-column">
+
+<jsp:include page="/common/views/nav.jsp"></jsp:include>
+
     <main class="flex-shrink-0">
         <section class="py-5 bg-light" id="scroll-target">
             <div class="container px-5 my-5">
@@ -64,7 +67,8 @@
                     </table>
                 </div>
                 <div style="text-align: right">
-                    <button type="button" class="btn btn-outline-warning" id="classModifyBtn">강의 수정하기</button>
+                    <button type="button" class="btn btn-outline-warning" id="classModifyBtn">강의 수정하기</button><br /><br />
+                    <button type="button" class="btn btn-outline-primary" id="classQuestionBtn">이 강의 질문 게시판</button>
                 </div>
             </div>
         </section>
@@ -132,7 +136,11 @@
 <script>
     $("#classModifyBtn").on("click", function() {
         location.href = '${pageContext.request.contextPath}' + "/teacher/class/modify.do?classIdx=" + '${param.classIdx}';
-    })
+    });
+
+    $("#classQuestionBtn").on("click", function() {
+        location.href = '${pageContext.request.contextPath}' + "/board/list.do?classIdx=" + '${param.classIdx}';
+    });
 </script>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
