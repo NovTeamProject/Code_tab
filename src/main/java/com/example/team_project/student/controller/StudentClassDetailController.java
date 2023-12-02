@@ -58,13 +58,13 @@ public class StudentClassDetailController extends HttpServlet {
 
         // 강의 인덱스 유효성 검사
         if (classIdx == null || classIdx.isEmpty()) {
-            alertLocation(resp, "올바르지 않은 강의 번호입니다", req.getContextPath() + "/student/class/list.do");
+            alertLocation(resp, "올바르지 않은 강의 번호입니다", req.getContextPath() + "/class/list.do");
             return;
         } else {
             try {
                 classIdxInt = Integer.parseInt(classIdx.trim());
             } catch (Exception e) {
-                alertLocation(resp, "올바르지 않은 강의 번호입니다", req.getContextPath() + "/student/class/list.do");
+                alertLocation(resp, "올바르지 않은 강의 번호입니다", req.getContextPath() + "/class/list.do");
                 return;
             }
         }
@@ -80,7 +80,7 @@ public class StudentClassDetailController extends HttpServlet {
         // 학생이 신청한 강의인지 확인
         int validCount = classDAO.checkIfSpecificStudentIdxRegisteredSpecificClassIdx(classIdxInt, studentIdx);
         if (validCount != 1) {
-            alertLocation(resp, "수강 신청한 강의만 상세 조회할 수 있습니다", req.getContextPath() + "/student/class/list.do");
+            alertLocation(resp, "수강 신청한 강의만 상세 조회할 수 있습니다", req.getContextPath() + "/student/myClass/list.do");
             return;
         }
 
