@@ -93,24 +93,52 @@
 
     <!--    차소영님 여기 아래부터 작성 시작-->
 
-<!--    수강 신청한 강의 등록-->
+    <!--    수강 신청한 강의 등록-->
     <insert id="registerClass" parameterType="map">
         INSERT INTO student_class (class_idx, student_idx)
         VALUES (#{classIdx}, #{studentIdx})
     </insert>
 
-<!--    수강한 강의 삭제-->
-    <delete id="cancelClass" parameterType="map">
+    <!--    수강한 강의 삭제-->
+    <delete id="deleteClass" parameterType="map">
         DELETE FROM student_class
-        WHERE class_idx = #{classIdx} AND student_idx = #{studentIdx}
+        WHERE student_idx = #{studentIdx} AND class_idx = #{classIdx}
     </delete>
 
-<!--   특정 학생이 등록한 모든 수업의 정보를 조회하는 기능
-ID(studentIdx)를 이용해 student_class 테이블에서 해당 학생이 등록한 모든 수업의 ID(class_idx)를 찾은 후,
-이 ID를 이용해 class 테이블에서 해당 수업의 모든 정보를 가져옴.-->
-    <select id="getRegisteredClasses" resultType="com.example.team_project.class_gangui.dto.ClassDTO">
-        SELECT * FROM class
+    <!--   특정 학생이 등록한 모든 수업의 정보를 조회하는 기능
+    ID(studentIdx)를 이용해 student_class 테이블에서 해당 학생이 등록한 모든 수업의 ID(class_idx)를 찾은 후,
+    이 ID를 이용해 class 테이블에서 해당 수업의 모든 정보를 가져옴.-->
+    <select id="getRegisteredClasses" resultType="java.util.Map">
+        SELECT class_idx as classIdx, class_name as className, class_explain as classExplain,
+               class_image_saved_filename as classImageSavedFilename, teacher_name as teacherName
+        FROM
+        class c INNER JOIN teacher t on c.teacher_idx = t.teacher_idx
         WHERE class_idx IN (SELECT class_idx FROM student_class WHERE student_idx = #{studentIdx})
+    </select>
+
+    <select id="getRegisteredClassesList" resultType="com.example.team_project.class_gangui.dto.ClassDTO">
+        select *
+        from class
+        where class_idx in (select class_idx from student_class where student_idx = #{studentIdx})
+    </select>
+
+    <!--    학생의 수강신청 여부 체크-->
+    <select id="checkIfStudentRegisteredClass" parameterType="map" resultType="int">
+        select count(*)
+        from student_class
+        where class_idx = #{classIdx} and student_idx = #{studentIdx}
+    </select>
+
+    <select id="getStudentRegisteredClassCount">
+        select count(*)
+        from student_class
+        where student_idx = #{studentIdx}
+    </select>
+
+    <select id="checkIfSpecificStudentIdxRegisteredSpecificClassIdx" parameterType="map" resultType="int">
+        select count(*)
+        from student_class
+        where class_idx = #{classIdx} and student_idx = #{studentIdx}
     </select>
 
 

@@ -34,8 +34,10 @@ public class WriteController extends HttpServlet {
         Map<String, Object> map1 = new HashMap<>();
 
         int classIdx = Integer.parseInt(req.getParameter("classIdx"));
-        int studentIdx = 1; /*session.getParameter("studentIdx");*/
-        String studentName = "권진철"; /*session.getParameter("studentName");*/
+        int studentIdx = (int) req.getSession().getAttribute("studentIdx");
+        /*int studentIdx = 1;*/
+        String studentName = (String) req.getSession().getAttribute("name");
+        /*String studentName = "권진철"; */
 
         BoardDTO dto = new BoardDTO();
         dto.setClassIdx(classIdx);

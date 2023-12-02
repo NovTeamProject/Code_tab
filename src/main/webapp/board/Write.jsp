@@ -28,89 +28,8 @@
     </script>
 </head>
 <body class="d-flex flex-column">
+<jsp:include page="/common/views/nav.jsp"></jsp:include>
 <main class="flex-shrink-0">
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container px-5">
-            <a class="navbar-brand" href="index.html">Start Bootstrap</a>
-            <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pricing.html">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="faq.html">FAQ</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a
-                                class="nav-link dropdown-toggle"
-                                id="navbarDropdownBlog"
-                                href="#"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                        >Blog</a
-                        >
-                        <ul
-                                class="dropdown-menu dropdown-menu-end"
-                                aria-labelledby="navbarDropdownBlog"
-                        >
-                            <li>
-                                <a class="dropdown-item" href="blog-home.html">Blog Home</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="blog-post.html">Blog Post</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a
-                                class="nav-link dropdown-toggle"
-                                id="navbarDropdownPortfolio"
-                                href="#"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                        >Portfolio</a
-                        >
-                        <ul
-                                class="dropdown-menu dropdown-menu-end"
-                                aria-labelledby="navbarDropdownPortfolio"
-                        >
-                            <li>
-                                <a class="dropdown-item" href="portfolio-overview.html"
-                                >Portfolio Overview</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="portfolio-item.html"
-                                >Portfolio Item</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
     <section class="bg-light py-5">
         <div class="container px-5 my-5">
             <div class="text-center mb-5">
@@ -134,7 +53,7 @@
                 <div class="row">
                     <div class="col-sm-11 d-flex justify-content-end">
                         <button type="submit" class="btn btn-primary me-2">저장</button>
-                        <button type="reset" class="btn btn-primary me-2">전체 지우기</button>
+                        <button type="reset" class="btn btn-primary me-2" onclick="return confirmReset()">전체지우기</button>
                         <button type="button" class="btn btn-primary me-2" onclick="location.href='../board/list.do?classIdx=${classIdx}';">
                             목록 바로가기
                         </button>
@@ -144,6 +63,15 @@
         </div>
     </section>
 </main>
+
+<script>
+    // form 요소의 reset 버튼 클릭 시 실행되는 함수
+    function confirmReset() {
+        // 확인 대화상자 표시
+        const isConfirmed = confirm("모든 내용을 지우시겠습니까?");
+        return isConfirmed; // 사용자가 확인을 눌렀으면 true 반환, 아니면 false 반환
+    }
+</script>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

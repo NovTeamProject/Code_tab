@@ -12,6 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+/*
+*
+* 사용하지 않음!
+*
+* */
+
 @WebServlet("/ClassController")
 // 서블릿을 정의하는 어노테이션
 // 클라이언트가 "/ClassController" URL로 요청을 보내면 이 서블릿이 처리한다.
@@ -26,6 +32,8 @@ public class ClassController extends HttpServlet {
 
         String action = request.getParameter("action");
         // HttpServletRequest의 getParameter 메서드를 사용해 "action" 파라미터 값을 가져옴.
+
+
 
         ClassDAO classDAO = new ClassDAO();
         // ClassDAO 객체 생성. 객체를 통해 데이터베이스 연산을 수행
@@ -44,33 +52,37 @@ public class ClassController extends HttpServlet {
             // 이 메소드의 반환 값은 boolean 타입이므로, 등록이 성공하면 true, 실패하면 false
 
             request.setAttribute("result", result ? "Registration Successful" : "Registration Failed");
+            System.out.println("강의 성공적으로 수강신청 완료");
             // HttpServletRequest의 setAttribute 메소드를 사용해 "result"라는 이름으로 결과 메시지를 저장
             // 이 메시지는 JSP 페이지에서 사용된다.
 
-        } else if ("cancel".equals(action)) {
-            // "action" 파라미터 값이 "cancel"인 경우, 클래스를 취소하는 동작을 수행함.
-
+        } else if ("delete".equals(action)) {
+            // "action" 파라미터 값이 "delete"인 경우, 클래스를 삭제하는 동작을 수행함.
             int classIdx = Integer.parseInt(request.getParameter("classIdx"));
             int studentIdx = Integer.parseInt(request.getParameter("studentIdx"));
-            boolean result = classDAO.cancelClass(classIdx, studentIdx);
-            request.setAttribute("result", result ? "Cancellation Successful" : "Cancellation Failed");
+            boolean result = classDAO.deleteClass(classIdx, studentIdx);
+            request.setAttribute("result", result ? "Deletion Successful" : "Deletion Failed");
+            System.out.println("강의 성공적으로 수강삭제(취소) 완료");
 
-        } else if ("view".equals(action)) {
-            // "action" 파라미터 값이 "view"인 경우, 등록된 클래스를 조회하는 동작을 수행함.
-
-            int studentIdx = Integer.parseInt(request.getParameter("studentIdx"));
-            List<ClassDTO> classList = classDAO.getRegisteredClasses(studentIdx);
-            // ClassDAO의 getRegisteredClasses 메소드를 호출해 등록된 클래스 목록을 가져옴.
-            // 이 메소드의 반환 값은 ClassDTO 객체를 원소로 가지는 List이다.
-
-            request.setAttribute("classList", classList);
         }
+//        else if ("view".equals(action)) {
+//            // "action" 파라미터 값이 "view"인 경우, 등록된 클래스를 조회하는 동작을 수행함.
+//
+//            int studentIdx = Integer.parseInt(request.getParameter("studentIdx"));
+//            List<ClassDTO> classList = classDAO.getRegisteredClassesList(studentIdx);
+//            // ClassDAO의 getRegisteredClasses 메소드를 호출해 등록된 클래스 목록을 가져옴.
+//            // 이 메소드의 반환 값은 ClassDTO 객체를 원소로 가지는 List이다.
+//
+//            request.setAttribute("classList", classList);
+//        }
         // HttpServletRequest의 setAttribute 메소드를 사용해 "classList"라는 이름으로 클래스 목록을 저장
         // 이 클래스 목록은 JSP 페이지에서 사용된다.
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("result.jsp");
-        // RequestDispatcher를 사용해 요청을 JSP 페이지로 전달함.
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("/myClass/views/myClassList.jsp");
+//        // RequestDispatcher를 사용해 요청을 JSP 페이지로 전달함.
+//
+//        dispatcher.forward(request, response);
 
-        dispatcher.forward(request, response);
+        response.sendRedirect("/student/myClass/list.do");
     }
 }
