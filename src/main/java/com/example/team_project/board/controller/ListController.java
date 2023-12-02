@@ -38,15 +38,16 @@ public class ListController extends HttpServlet {
             map.put("searchWord", searchWord);  // 검색어 값을 맵에 추가
         } // 처음 null 값이기 때문에 넘어감
 
-        map.put("classIdx", classIdx); // classIdx -> 1 (key-value 쌍), classIdx를 맵에 저장
+        map.put("classIdx", 1); // classIdx -> 1 (key-value 쌍), classIdx를 맵에 저장
 
         String className = classDAO.getClassNameByClassIdx(classIdx);
         // 강의 이름을 조회하기 위한 class 테이블에서 가져온 값
         map.put("className", className);
         // 강의명을 map에 저장
 
-        // int personType = (int) request.getSession().getAttribute("PersonType");
-        map.put("personType", 2);    //  map.put("personType", personType);
+        int personType = (int) request.getSession().getAttribute("personType");
+        //map.put("personType", 2);    //테스트용
+        map.put("personType", personType);
 
         int totalCount = dao.selectCount(map); // total board count
 
