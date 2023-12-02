@@ -70,15 +70,14 @@
 
 <details><summary>Usecase</summary>
 
+/details>\
 
 <details><summary>Class</summary>
   
 </details>
 
-<details><summary>Sequence(회원)</summary>
+<details><summary>Sequence</summary>
     
-</details>
-
 </details>
 
 
