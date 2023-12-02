@@ -44,7 +44,7 @@
 | **남원우** | **변재혁** | **유지호** | **차소영** |
 | :------: |  :------: | :------: | :------: | 
 | [<img src="https://avatars.githubusercontent.com/u/145524959?v=4" height=150 width=150> <br/> @wwnoov](https://github.com/wwnoov) | [<img src="https://avatars.githubusercontent.com/u/145942491?v=4" height=150 width=150> <br/> @jaehyukpyon2](https://github.com/jaehyukpyon2) | [<img src="https://avatars.githubusercontent.com/u/145963790?v=4" height=150 width=150> <br/> @jiho-96](https://github.com/jiho-96) | [<img src="https://avatars.githubusercontent.com/u/145963611?v=4" height=150 width=150> <br/> @Eumnya415](https://github.com/Eumnya415) |
-| 상품전체보기<br>상품상세조회<br>관리자 로그인<br>기능 구현 | 관리자 기능 구현<br>구현 기능 연결| DB 구축 및 Query 작성<br>주문/배송 조회<br>내정보확인<br>기능 구현 | 회원가입<br>로그인<br>Top10상품보기<br> 기능 구현 | 장바구니 기능 구현<br>발표 |
+| 로그인<br>회원가입<br>명예의전당<br>기능 구현 | 선생님 강의 시스템 <br>구현 기능 연결| DB 구축 및 Query 작성<br> 질의응답 게시판<br>기능 구현 | 나의 강의실<br> 마이페이지<br> 기능 구현 | 
 
 </div>
 
