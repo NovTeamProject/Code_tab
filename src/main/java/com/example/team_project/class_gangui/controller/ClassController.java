@@ -47,13 +47,12 @@ public class ClassController extends HttpServlet {
             // HttpServletRequest의 setAttribute 메소드를 사용해 "result"라는 이름으로 결과 메시지를 저장
             // 이 메시지는 JSP 페이지에서 사용된다.
 
-        } else if ("cancel".equals(action)) {
-            // "action" 파라미터 값이 "cancel"인 경우, 클래스를 취소하는 동작을 수행함.
-
+        } else if ("delete".equals(action)) {
+            // "action" 파라미터 값이 "delete"인 경우, 클래스를 삭제하는 동작을 수행함.
             int classIdx = Integer.parseInt(request.getParameter("classIdx"));
             int studentIdx = Integer.parseInt(request.getParameter("studentIdx"));
-            boolean result = classDAO.cancelClass(classIdx, studentIdx);
-            request.setAttribute("result", result ? "Cancellation Successful" : "Cancellation Failed");
+            boolean result = classDAO.deleteClass(classIdx, studentIdx);
+            request.setAttribute("result", result ? "Deletion Successful" : "Deletion Failed");
 
         } else if ("view".equals(action)) {
             // "action" 파라미터 값이 "view"인 경우, 등록된 클래스를 조회하는 동작을 수행함.

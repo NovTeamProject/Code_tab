@@ -89,9 +89,9 @@
     </insert>
 
     <!--    수강한 강의 삭제-->
-    <delete id="cancelClass" parameterType="map">
+    <delete id="deleteClass" parameterType="map">
         DELETE FROM student_class
-        WHERE class_idx = #{classIdx} AND student_idx = #{studentIdx}
+        WHERE student_idx = #{studentIdx} AND class_idx = #{classIdx}
     </delete>
 
     <!--   특정 학생이 등록한 모든 수업의 정보를 조회하는 기능

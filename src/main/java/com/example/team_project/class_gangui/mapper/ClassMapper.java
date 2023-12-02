@@ -29,7 +29,7 @@ public interface ClassMapper {
 
     // 차소영님 여기 아래부터 작성 시작
     int registerClass(Map<String, Integer> map);
-    int cancelClass(Map<String, Integer> map);
+    int deleteClass(Map<String, Integer> map);
     List<Map<String, Object>> getRegisteredClasses(int studentIdx);
     int checkIfStudentRegisteredClass(Map<String, Integer> map);
     int getStudentRegisteredClassCount(int studentIdx);
@@ -38,5 +38,6 @@ public interface ClassMapper {
 
     // 유지호님 여기 아래부터 작성 시작
     String getClassNameByClassIdx(String classIdx);
+
 
 }
