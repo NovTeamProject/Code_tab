@@ -68,7 +68,7 @@ public class ClassController extends HttpServlet {
         // HttpServletRequest의 setAttribute 메소드를 사용해 "classList"라는 이름으로 클래스 목록을 저장
         // 이 클래스 목록은 JSP 페이지에서 사용된다.
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("result.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("myClassList.jsp");
         // RequestDispatcher를 사용해 요청을 JSP 페이지로 전달함.
 
         dispatcher.forward(request, response);
