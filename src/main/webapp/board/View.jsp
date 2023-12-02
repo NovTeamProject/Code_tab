@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,96 +53,23 @@
                 });
             }
         }
+
     </script>
 
-
+    <script>
+        function validateCommentForm(form) {
+            if (form.commentContent.value.trim() === "") {
+                alert("답변을 입력하세요.");
+                form.commentContent.focus();
+                return false;
+            }
+        }
+    </script>
 </head>
+
 <body class="d-flex flex-column">
+<jsp:include page="/common/views/nav.jsp"></jsp:include>
 <main class="flex-shrink-0">
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container px-5">
-            <a class="navbar-brand" href="index.html">Start Bootstrap</a>
-            <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pricing.html">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="faq.html">FAQ</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a
-                                class="nav-link dropdown-toggle"
-                                id="navbarDropdownBlog"
-                                href="#"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                        >Blog</a
-                        >
-                        <ul
-                                class="dropdown-menu dropdown-menu-end"
-                                aria-labelledby="navbarDropdownBlog"
-                        >
-                            <li>
-                                <a class="dropdown-item" href="blog-home.html">Blog Home</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="blog-post.html">Blog Post</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a
-                                class="nav-link dropdown-toggle"
-                                id="navbarDropdownPortfolio"
-                                href="#"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                        >Portfolio</a
-                        >
-                        <ul
-                                class="dropdown-menu dropdown-menu-end"
-                                aria-labelledby="navbarDropdownPortfolio"
-                        >
-                            <li>
-                                <a class="dropdown-item" href="portfolio-overview.html"
-                                >Portfolio Overview</a
-                                >
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="portfolio-item.html"
-                                >Portfolio Item</a
-                                >
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
     <section class="bg-light py-5">
         <div class="container px-5 my-5">
             <div class="row gx-5 justify-content-center">
@@ -157,34 +83,54 @@
                     </p>
                     <!-- 수정하기, 뒤로가기 버튼 -->
                     <div class="d-flex justify-content-end">
-                        <a href="${pageContext.request.contextPath}/board/edit.do?classIdx=${classIdx}&boardIdx=${boardIdx}" class="btn btn-primary me-2">수정하기</a>
-                        <%--<a href="#" class="btn btn-primary me-2">삭제하기</a>--%>
-                        <a href="#" class="btn btn-primary me-2" onclick="deletePost(${dto.boardIdx}, ${classIdx})">삭제하기</a>
+
+                        <c:if test="${sessionScope.personType eq 2 and sessionScope.studentIdx eq dto.studentIdx}">
+                            <a href="${pageContext.request.contextPath}/board/edit.do?classIdx=${classIdx}&boardIdx=${boardIdx}" class="btn btn-primary me-2">수정하기</a>
+                            <a href="#" class="btn btn-primary me-2" onclick="deletePost(${dto.boardIdx}, ${classIdx})">삭제하기</a>
+                        </c:if>
+                        <%--<a href="${pageContext.request.contextPath}/board/edit.do?classIdx=${classIdx}&boardIdx=${boardIdx}" class="btn btn-primary me-2">수정하기</a>
+                        <a href="#" class="btn btn-primary me-2" onclick="deletePost(${dto.boardIdx}, ${classIdx})">삭제하기</a>--%>
                         <a href="../board/list.do?classIdx=${classIdx}" class="btn btn-secondary">목록바로가기</a>
                     </div>
                     <!-- 답변 목록 -->
                     <div class="mt-5">
                         <h3 class="fw-bolder">답변 목록</h3>
                         <div class="card">
+                            <input type="hidden" >
                             <div class="card-body">
-                                <p>작성자1: 답변 내용 예시1</p>
-                                <p>ㄴ작성자2: 답변 내용 예시2</p>
-                                <p> &nbsp;&nbsp; ㄴ작성자3: 답변 내용 예시3</p>
-                                <!-- 답변 목록이 여기에 추가됩니다 -->
+                                <c:forEach items="${comments}" var="comment" varStatus="loop">
+                                    <c:forEach begin="1" end="${loop.index}" varStatus="innerLoop">
+                                        &nbsp;&nbsp;&nbsp;
+                                    </c:forEach>
+                                    <c:if test="${loop.index > 0}">ㄴ</c:if>
+                                    ${comment.personName} : ${comment.content}<br/>
+                                </c:forEach>
+
+                                <c:choose>
+                                    <c:when test="${comments.size() < 5}">
+                                        <!-- 답변 입력 폼 -->
+                                        <div class="mt-5">
+                                            <h3 class="fw-bolder">답변하기</h3>
+                                            <form method="post" action="${pageContext.request.contextPath}/board/comment.do"  onsubmit="return validateCommentForm(this);">
+                                                <input type="hidden" name="boardIdx" value="${boardIdx}" />
+                                                <input type="hidden" name="classIdx" value="${classIdx}" />
+                                                <div class="mb-3">
+                                                    <textarea class="form-control" id="commentContent" name="commentContent" rows="4" placeholder="답변을 작성하세요"></textarea>
+                                                </div>
+                                                <div class="d-flex justify-content-end">
+                                                    <button type="submit" class="btn btn-primary">답변 저장</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <br/>
+                                        <h5><strong>더이상 답변을 작성할 수 없습니다. 새로운 질문글을 작성해주세요</strong></h5>
+                                    </c:otherwise>
+                                </c:choose>
+
                             </div>
                         </div>
-                    </div>
-                    <!-- 답변 입력 폼 -->
-                    <div class="mt-5">
-                        <h3 class="fw-bolder">답변하기</h3>
-                        <form>
-                            <div class="mb-3">
-                                <textarea class="form-control" id="commentContent" rows="4" placeholder="답변을 작성하세요"></textarea>
-                            </div>
-                            <div class="d-flex justify-content-end">
-                                <button type="submit" class="btn btn-primary">답변 저장</button>
-                            </div>
-                        </form>
                     </div>
                 </div>
             </div>

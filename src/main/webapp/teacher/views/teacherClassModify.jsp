@@ -19,6 +19,8 @@
 </head>
 <body>
 
+<jsp:include page="/common/views/nav.jsp"></jsp:include>
+
 <section class="py-5">
     <div class="container px-5">
         <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">

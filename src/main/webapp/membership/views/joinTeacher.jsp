@@ -54,7 +54,7 @@
         var params = { teacherId : teacherId }
 
         $.ajax({
-            url:"${pageContext.request.contextPath}/IdCheck2.do",
+            url:"${pageContext.request.contextPath}/IdCheckTeacher.do",
             type:"post",
             dataType:"json",
             data:params,

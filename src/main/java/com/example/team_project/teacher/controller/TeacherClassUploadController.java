@@ -41,9 +41,9 @@ public class TeacherClassUploadController extends HttpServlet {
         log.info("TeacherClassUploadController doPost 호출");
         // 테스트 용으로 teacher_idx 값을 세션에 저장
         HttpSession session = request.getSession();
-        session.setAttribute("teacher_idx", 1);
+        //session.setAttribute("teacher_idx", 1);
 
-        int teacherIdx = (Integer) session.getAttribute("teacher_idx");
+        int teacherIdx = (Integer) session.getAttribute("teacherIdx");
 
         String className = request.getParameter("class-name");
         String classExplain = request.getParameter("class-explain");

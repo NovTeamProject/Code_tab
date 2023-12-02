@@ -27,9 +27,9 @@ public class TeacherClassListController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 테스트를 위해 임시로 teacher_idx의 값을 1로 설정
         HttpSession session = request.getSession();
-        session.setAttribute("teacher_idx", 1);
+        //session.setAttribute("teacher_idx", 1);
         // -------------------------------------------
-        int teacherIdx = (Integer) session.getAttribute("teacher_idx");
+        int teacherIdx = (Integer) session.getAttribute("teacherIdx");
 
         Map<String, Object> map = new HashMap<>();
         // 현재 선생님이 등록한 강의 총 개수 가져오기

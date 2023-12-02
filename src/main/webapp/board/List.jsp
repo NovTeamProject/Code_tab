@@ -12,96 +12,39 @@
     <link href="${pageContext.request.contextPath}/css/styles.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
             crossorigin="anonymous"></script>
-    <style>
+    <script>
+        function validateSearchForm(form) {
+            if (form.searchWord.value.trim() === "") {
+                alert("검색어를 입력하세요.");
+                form.searchWord.focus();
+                return false;
+            }
+        }
+    </script>
 
-    </style>
+    <%--personType에 따른 질문하기 버튼 구현--%>
+    <script>
+        $(document).ready(function (){
+            // ${map.personType} 값 확인
+            var personType = ${map.personType};
+
+            // personType이 0이면 질문하기 버튼을 숨깁니다.
+            if(personType === 0) {
+                $("#questionBtn").hide();
+            } else if (personType === 2) {
+                // personType이 2이면 질문하기 버튼을 보여줍니다.
+                $("#questionBtn").show();
+            }
+        });
+    </script>
+
+
 </head>
+
+
 <body class="d-flex flex-column">
+<jsp:include page="/common/views/nav.jsp"></jsp:include>
 <main class="flex-shrink-0">
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container px-5">
-            <a class="navbar-brand" href="index.html">Start Bootstrap</a>
-            <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pricing.html">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="faq.html">FAQ</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a
-                                class="nav-link dropdown-toggle"
-                                id="navbarDropdownBlog"
-                                href="#"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                        >Blog</a
-                        >
-                        <ul
-                                class="dropdown-menu dropdown-menu-end"
-                                aria-labelledby="navbarDropdownBlog"
-                        >
-                            <li>
-                                <a class="dropdown-item" href="blog-home.html">Blog Home</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="blog-post.html">Blog Post</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a
-                                class="nav-link dropdown-toggle"
-                                id="navbarDropdownPortfolio"
-                                href="#"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                        >Portfolio</a
-                        >
-                        <ul
-                                class="dropdown-menu dropdown-menu-end"
-                                aria-labelledby="navbarDropdownPortfolio"
-                        >
-                            <li>
-                                <a class="dropdown-item" href="portfolio-overview.html"
-                                >Portfolio Overview</a
-                                >
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="portfolio-item.html"
-                                >Portfolio Item</a
-                                >
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
     <section class="bg-light py-5">
         <div class="container px-5 my-5">
             <div class="text-center mb-5">
@@ -109,7 +52,7 @@
                 <p class="lead fw-normal text-muted mb-0">${map.className}</p>
             </div>
             <br class="row gx-5 justify-content-center">
-            <form method="get">
+            <form method="get" onsubmit="return validateSearchForm(this);">
                 <input type="hidden" name="classIdx" value=${map.classIdx}>
                 <select name="searchField" id="select-option">
 <%--                    map.searchField 가 null과 공백문자가 아니고, map.searchField가 title이랑 동일하면 selected를 출력해라--%>
@@ -165,6 +108,7 @@
                 ${ map.pagingImg }
             </c:if>
         </div>
+
     </section>
 </main>
 
@@ -181,6 +125,30 @@
             location.href = '${pageContext.request.contextPath}' + "/board/write.do?classIdx=" + '${param.classIdx}';
         })
     </script>
+
+<script>
+    $(document).ready(function (){
+        // 첫 번째 페이지의 1번 페이징을 선택하고 클릭 이벤트를 막고 경고창을 표시합니다.
+        $(".page-item:first-child .page-link").on('click', function(event) {
+            event.preventDefault(); // 기본 클릭 동작을 막습니다.
+            alert('첫 번째 페이지입니다.'); // 경고창을 표시합니다.
+        });
+    });
+</script>
+
+
+<script>
+    $(document).ready(function() {
+        $(".page-item:last-child .page-link").on('click', function(event) {
+            event.preventDefault(); // 기본 클릭 동작을 막습니다.
+            alert('마지막 페이지입니다.'); // 경고창을 표시합니다.
+        });
+    });
+
+</script>
+
+
+
 
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
