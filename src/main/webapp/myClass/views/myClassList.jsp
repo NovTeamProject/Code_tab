@@ -15,17 +15,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
-
-    <style>
-        img {
-            width: 500px!important;
-            height: 300px!important;
-        }
-    </style>
-
 </head>
 <body>
-
+<jsp:include page="/common/views/nav.jsp"></jsp:include>
 <section class="py-5">
     <div class="container px-5 my-5">
         <div class="text-center mb-5">
@@ -40,7 +32,7 @@
                         <%--    JSTL의 "c:choose", "c:when"와 "c:forEach" 태그를 사용하여 수강 중인 강의 리스트가 비어있지 않을 경우 각각의 강의 정보를 순회하며 보여주는 코드--%>
 
                         <div class="position-relative mb-5">
-                            <img class="img-fluid rounded-3 mb-3" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." />
+                            <img style="width: 600px; height: 400px;" class="img-fluid rounded-3 mb-3" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." />
                             <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">${item.className}</a><br>
                             <a class="h5 fw-bolder text-decoration-none link-dark stretched-link" href="#!">강사 : ${item.teacherName}</a>
                             <div class="float-end">
@@ -94,5 +86,6 @@
     });
 </script>
 
+<jsp:include page="/common/views/footer.jsp"></jsp:include>
 </body>
 </html>

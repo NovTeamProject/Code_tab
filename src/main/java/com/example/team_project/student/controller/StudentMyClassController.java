@@ -13,6 +13,8 @@ import java.util.Map;
 
 @WebServlet(value = "/student/myClass/list.do")
 public class StudentMyClassController extends HttpServlet {
+    // 학생이 수강신청한 강의들의 전체 리스트 목록
+
     private static final long serialVersionUID = 1L;
 
     private ClassDAO classDAO = new ClassDAO();
