@@ -96,6 +96,7 @@ public class ClassDAO {
         List<String> uprankingClass = classMapper.uprankingClass();
         sqlSession.close();
         return uprankingClass;
+    }
     // 차소영님 여기 아래부터 작성 시작
 
     public boolean registerClass(int classIdx, int studentIdx) { //수업을 등록하는 메서드
