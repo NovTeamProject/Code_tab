@@ -53,7 +53,7 @@
                 <div class="row">
                     <div class="col-sm-11 d-flex justify-content-end">
                         <button type="submit" class="btn btn-primary me-2">저장</button>
-                        <button type="reset" class="btn btn-primary me-2">전체 지우기</button>
+                        <button type="reset" class="btn btn-primary me-2" onclick="return confirmReset()">전체지우기</button>
                         <button type="button" class="btn btn-primary me-2" onclick="location.href='../board/list.do?classIdx=${classIdx}';">
                             목록 바로가기
                         </button>
@@ -63,6 +63,15 @@
         </div>
     </section>
 </main>
+
+<script>
+    // form 요소의 reset 버튼 클릭 시 실행되는 함수
+    function confirmReset() {
+        // 확인 대화상자 표시
+        const isConfirmed = confirm("모든 내용을 지우시겠습니까?");
+        return isConfirmed; // 사용자가 확인을 눌렀으면 true 반환, 아니면 false 반환
+    }
+</script>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
