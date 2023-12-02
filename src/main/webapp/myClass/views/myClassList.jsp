@@ -35,17 +35,17 @@
 
         <div class="row gx-5">
             <c:choose>
-                <c:when test="${not empty ClassList}">
+                <c:when test="${ClassList != null and not empty ClassList}">
                     <c:forEach items="${ClassList}" var="item">
                         <%--    JSTL의 "c:choose", "c:when"와 "c:forEach" 태그를 사용하여 수강 중인 강의 리스트가 비어있지 않을 경우 각각의 강의 정보를 순회하며 보여주는 코드--%>
 
                         <div class="position-relative mb-5">
                             <img class="img-fluid rounded-3 mb-3" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." />
-                            <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">${class.className}</a><br>
-                            <a class="h5 fw-bolder text-decoration-none link-dark stretched-link" href="#!">강사 : ${class.teacherName}</a>
+                            <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">${item.className}</a><br>
+                            <a class="h5 fw-bolder text-decoration-none link-dark stretched-link" href="#!">강사 : ${item.teacherName}</a>
                             <div class="float-end">
                                 <button class="btn btn-primary mb-4">질문하기</button>
-                                <button class="btn btn-danger mb-4" id="${class.classIdx}">강의 삭제하기</button>
+                                <button class="btn btn-danger mb-4" id="${item.classIdx}">강의 삭제하기</button>
                             </div>
                         </div>
 
