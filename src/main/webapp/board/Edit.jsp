@@ -24,6 +24,7 @@
                 form.content.focus();
                 return false;
             }
+            alert("수정이 완료되었습니다.");
         }
     </script>
 
@@ -55,7 +56,7 @@
                 <div class="row">
                     <div class="col-sm-11 d-flex justify-content-end">
                         <button type="submit" class="btn btn-primary me-2">수정완료</button>
-                        <input type="reset" class="btn btn-primary me-2" id="resetBtn" value="전체초기화" />
+                        <input type="reset" class="btn btn-primary me-2" id="resetBtn" value="전체지우기" />
                         <button type="button" class="btn btn-primary me-2" onclick="location.href='${pageContext.request.contextPath}/board/list.do?classIdx=${classIdx}';">
                             목록 바로가기
                         </button>
@@ -67,11 +68,25 @@
 </main>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
 <script>
-    $("#resetBtn").on("click", function() {
+    /*$("#resetBtn").on("click", function() {
         $("textarea[name=content]").text("");
         $("input[name=title]").attr("value", "");
-    })
+    })*/
+    $(document).ready(function() {
+        $("#resetBtn").on("click", function(event) {
+            if (!confirm("모든 내용을 지우시겠습니까?")) {
+                event.preventDefault(); // 취소 시 폼 제출 방지
+            } else {
+                $("textarea[name=content]").text("");
+                $("input[name=title]").attr("value", "");
+            }
+        });
+    });
 </script>
 </body>
 </html>
