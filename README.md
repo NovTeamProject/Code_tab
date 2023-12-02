@@ -56,7 +56,8 @@
 ## 📋개발 일지📋
 <details><summary>개발 일지</summary>
    
-![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/cca7e506-653b-4aee-8837-6435d65f78f6)
+![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/ad4a3bb9-919a-4fe7-a0d2-0df6863c4bcf)
+
 
 </details>
 
