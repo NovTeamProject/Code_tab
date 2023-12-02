@@ -43,7 +43,10 @@ public class ListController extends HttpServlet {
         String className = classDAO.getClassNameByClassIdx(classIdx);
         // 강의 이름을 조회하기 위한 class 테이블에서 가져온 값
         map.put("className", className);
-        // 강의명읠 map에 저장
+        // 강의명을 map에 저장
+
+        // int personType = (int) request.getSession().getAttribute("PersonType");
+        map.put("personType", 2);    //  map.put("personType", personType);
 
         int totalCount = dao.selectCount(map); // total board count
 

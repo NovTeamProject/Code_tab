@@ -12,9 +12,33 @@
     <link href="${pageContext.request.contextPath}/css/styles.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
             crossorigin="anonymous"></script>
-    <style>
+    <script>
+        function validateSearchForm(form) {
+            if (form.searchWord.value.trim() === "") {
+                alert("검색어를 입력하세요.");
+                form.searchWord.focus();
+                return false;
+            }
+        }
+    </script>
 
-    </style>
+    <%--personType에 따른 질문하기 버튼 구현--%>
+    <script>
+        $(document).ready(function (){
+            // ${map.personType} 값 확인
+            var personType = ${map.personType};
+
+            // personType이 0이면 질문하기 버튼을 숨깁니다.
+            if(personType === 0) {
+                $("#questionBtn").hide();
+            } else if (personType === 2) {
+                // personType이 2이면 질문하기 버튼을 보여줍니다.
+                $("#questionBtn").show();
+            }
+        });
+    </script>
+
+
 </head>
 <body class="d-flex flex-column">
 <main class="flex-shrink-0">
@@ -109,7 +133,7 @@
                 <p class="lead fw-normal text-muted mb-0">${map.className}</p>
             </div>
             <br class="row gx-5 justify-content-center">
-            <form method="get">
+            <form method="get" onsubmit="return validateSearchForm(this);">
                 <input type="hidden" name="classIdx" value=${map.classIdx}>
                 <select name="searchField" id="select-option">
 <%--                    map.searchField 가 null과 공백문자가 아니고, map.searchField가 title이랑 동일하면 selected를 출력해라--%>
@@ -165,6 +189,7 @@
                 ${ map.pagingImg }
             </c:if>
         </div>
+
     </section>
 </main>
 
@@ -181,6 +206,16 @@
             location.href = '${pageContext.request.contextPath}' + "/board/write.do?classIdx=" + '${param.classIdx}';
         })
     </script>
+
+<script>
+    $(document).ready(function (){
+        // 첫 번째 페이지의 1번 페이징을 선택하고 클릭 이벤트를 막고 경고창을 표시합니다.
+        $(".page-item:first-child .page-link").on('click', function(event) {
+            event.preventDefault(); // 기본 클릭 동작을 막습니다.
+            alert('첫 번째 페이지입니다.'); // 경고창을 표시합니다.
+        });
+    });
+</script>
 
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
