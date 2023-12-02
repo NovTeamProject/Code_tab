@@ -12,6 +12,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="${pageContext.request.contextPath}/common/css/style.css?ver=1" rel="stylesheet" />
     <link href="${pageContext.request.contextPath}/membership/css/join.css?ver=1" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <title>login.jsp</title>
 </head>
