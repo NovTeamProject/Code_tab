@@ -20,16 +20,16 @@
           <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/about.jsp">강의실</a></li>
           <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/contact.jsp">선생님</a></li>
           <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/ranking.do">명예의전당</a></li>
-          <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/exam/views/exam.jsp">모의채점 </a></li>
+<%--          <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/exam/views/exam.jsp">모의채점 </a></li>--%>
           <% if (session.getAttribute("loginMember") == null){ %>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio3" href="${pageContext.request.contextPath}/membership/views/loginStudent.jsp" role="button" data-bs-toggle="dropdown" aria-expanded="false" >로그인</a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >로그인</a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/membership/views/loginStudent.jsp">학생로그인</a></li>
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/membership/views/loginTeacher.jsp">선생로그인</a></li>
             </ul>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio4" href="${pageContext.request.contextPath}/membership/views/joinStudent.jsp" role="button" data-bs-toggle="dropdown" aria-expanded="false" >회원가입</a>
+            <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >회원가입</a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/membership/views/joinStudent.jsp">학생회원가입</a></li>
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/membership/views/joinTeacher.jsp">선생회원가입</a></li>
