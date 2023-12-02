@@ -54,7 +54,8 @@
 ## 📋개발 일지📋
 <details><summary>개발 일지</summary>
    
-![개발일지](#)
+![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/cca7e506-653b-4aee-8837-6435d65f78f6)
+
 </details>
 
 
