@@ -3,7 +3,7 @@
 ![256컬러](https://github.com/NovTeamProject/Team_Project/assets/145524959/3298851f-7534-4304-99b3-55106605b887)
 
 
-#  💻 에듀테크 풀스택 3기 4조 CHUNJAE STUDY💻
+#  💻 에듀테크 풀스택 3기 4조 CODE TAB💻
 ```bash
 프로젝트 기간 2023년 11월 13일 ~ 2023년 12월 08일
 ```
