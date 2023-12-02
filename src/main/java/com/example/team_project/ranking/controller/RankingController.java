@@ -25,7 +25,6 @@ public class RankingController extends HttpServlet {
     ClassDAO classDAO = new ClassDAO();
 
     List<String> rankingClass = classDAO.rankingClass();
-    System.out.println("test"+rankingClass);
 
     req.setAttribute("rankingClass", rankingClass);
 
