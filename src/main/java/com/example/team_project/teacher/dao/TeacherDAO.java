@@ -53,12 +53,6 @@ public class TeacherDAO {
   // 아이디 중복 체크
   public TeacherDTO idCheck(String teacherId) {
 
-//    SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
-//    TeacherMapper mapper = sqlSession.getMapper(TeacherMapper.class);
-//    TeacherDTO result = mapper.idCheck(teacherId);
-//    sqlSession.close();
-//    return result;
-//    ㅇㅇ
     SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
     TeacherMapper mapper = sqlSession.getMapper(TeacherMapper.class);
     TeacherDTO result = mapper.idCheck(teacherId);
