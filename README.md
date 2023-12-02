@@ -67,6 +67,9 @@
 ## 📈 요구 명세서 📈
 
 <details><summary>요구 명세서</summary>
+      
+![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/b20a4eb0-9d6f-4574-b2c1-46b726c79d25)
+      
 </details>
   
 
