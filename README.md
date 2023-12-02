@@ -1,5 +1,7 @@
 # CODE TAB
-![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/df9d83fb-16de-47e8-a0dc-6380132d818e)
+
+![256컬러](https://github.com/NovTeamProject/Team_Project/assets/145524959/3298851f-7534-4304-99b3-55106605b887)
+
 
 #  💻 에듀테크 풀스택 3기 4조 CHUNJAE STUDY💻
 ```bash
