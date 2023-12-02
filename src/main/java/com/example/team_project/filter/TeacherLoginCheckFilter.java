@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebFilter("/teacher/*")
+//@WebFilter("/teacher/*")
 @Slf4j
 public class TeacherLoginCheckFilter implements Filter {
 
