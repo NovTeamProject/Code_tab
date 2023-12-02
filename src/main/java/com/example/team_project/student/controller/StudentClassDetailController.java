@@ -16,9 +16,11 @@ import java.util.Map;
 
 import static com.example.team_project.utils.JSFunction.alertLocation;
 
-@WebServlet(name= "StudentClassDetailController", value = "/student/class/detail.do")
+@WebServlet(name= "StudentClassDetailController", value = "/student/myClass/detail.do")
 @Slf4j
 public class StudentClassDetailController extends HttpServlet {
+
+    // 학새이 수강신청한 한 개의 강의의 상세 페이지(뷰)
 
     private ClassDAO classDAO = new ClassDAO();
 
@@ -33,11 +35,11 @@ public class StudentClassDetailController extends HttpServlet {
 
 
         // 테스트용으로, 임의의 값 1을 넣어준다
-        session.setAttribute("student_idx", 1);
+        //session.setAttribute("student_idx", 1);
 
 
         // 세션에서 학생 인덱스 가져오기
-        Object studentIdxObj = session.getAttribute("student_idx");
+        Object studentIdxObj = session.getAttribute("studentIdx");
 
         // 학생 인덱스 유효성 검사
         if (studentIdxObj == null) {
