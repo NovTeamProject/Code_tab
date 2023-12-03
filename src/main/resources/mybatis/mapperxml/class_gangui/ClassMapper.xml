@@ -76,6 +76,20 @@
         LIMIT #{pageNum}, 12
     </select>
 
+    <select id="getTopThreeClassList" resultType="com.example.team_project.class_gangui.dto.ClassDTO">
+        SELECT *
+        FROM class
+        ORDER BY listen_student DESC
+        LIMIT 0, 3
+    </select>
+
+    <select id="getRecentClassList" resultType="com.example.team_project.class_gangui.dto.ClassDTO">
+        select *
+        from class
+        ORDER BY class_idx DESC
+        LIMIT 0, 3
+    </select>
+
 
     <!--    남원우님 여기 아래부터 작성 시작-->
   <!-- 인기 강의 -->
