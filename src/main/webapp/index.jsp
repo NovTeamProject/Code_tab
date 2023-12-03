@@ -47,7 +47,7 @@
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="7000">
-        <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/47b860cb-a4e0-46a5-afbb-8a8f39ba4138" class="d-block w-100" alt="...">
+        <img src="https://github.com/wwnoov/wwnoov/assets/145524959/d8944ebe-467f-4e5b-a0fc-49d9e2b8da1c" class="d-block w-100" alt="...">
         <div class="carousel-caption px-md-5">
           <h5>나의 미래를 위한 강의</h5>
           <hr class="bg-light border-4 border-top border-light">
