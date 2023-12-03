@@ -76,6 +76,10 @@
 ## 📊 다이어그램 📊
 
 <details><summary>Usecase</summary>
+      
+![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/ae7e646a-550f-4e32-bc0a-336cd1adb2fa)
+
+
 
 </details>
 
@@ -84,8 +88,26 @@
 </details>
 
 <details><summary>Sequence</summary>
+<br/>
+<details><summary>Sequence(비회원)</summary>
+      
+![비회원시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/6d3a1d4a-547d-4a6b-a564-41de9f142a9e)
+
+</details>
+<details><summary>Sequence(학생)</summary>
+
+![학생시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/0486b20f-5dc1-4e53-a383-5536d939c273)
+
+</details>
+<details><summary>Sequence(선생님)</summary>
+      
+![선생님시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/93d51941-37cf-441f-8d82-c8397f952d3e)
+
     
 </details>
+    
+</details>
+
 
 
 <details><summary>Block</summary>
@@ -94,6 +116,8 @@
 </details>
 
 <details><summary>ERD</summary>
+      
+![image](https://github.com/NovTeamProject/Team_Project/assets/145963790/0cdc6afc-4c69-4d78-b539-5bd9d740ba1f)
 
     
 </details>

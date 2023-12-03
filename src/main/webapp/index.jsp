@@ -78,7 +78,9 @@
                      src="${pageContext.request.contextPath}/teacher/class-image/${item.classImageSavedFilename}" alt="..." />
                 <div class="card-body p-4">
                   <div class="badge bg-primary bg-gradient rounded-pill mb-2">인기 강의 top-${loop.index + 1}!</div>
-                  <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">${item.className}</h5></a>
+                  <a class="text-decoration-none link-dark stretched-link" href="${pageContext.request.contextPath}/class/detail.do?classIdx=${item.classIdx}">
+                    <h5 class="card-title mb-3">${item.className}</h5>
+                  </a>
                   <p class="card-text mb-0">${item.classExplain}</p>
                 </div>
                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
@@ -118,7 +120,9 @@
                    src="${pageContext.request.contextPath}/teacher/class-image/${item.classImageSavedFilename}" alt="..." />
               <div class="card-body p-4">
                 <div class="badge bg-success bg-gradient rounded-pill mb-2">최신 강의 #${loop.index + 1}</div>
-                <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">${item.className}</h5></a>
+                <a class="text-decoration-none link-dark stretched-link" href="${pageContext.request.contextPath}/class/detail.do?classIdx=${item.classIdx}">
+                  <h5 class="card-title mb-3">${item.className}</h5>
+                </a>
                 <p class="card-text mb-0">${item.classExplain}</p>
               </div>
               <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
