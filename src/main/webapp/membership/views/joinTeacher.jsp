@@ -37,8 +37,6 @@
             <input type="hidden" id="sample4_engAddress" placeholder="영문주소"  size="60" ><br><br>
             <input type="submit" class="submit-button" value="회원가입">
             <input type="reset" class="fadeIn fourth" value="취소">
-            <input type="submit" class="submit-button" value="회원가입">
-            <input type="reset" class="fadeIn fourth" value="취소">
         </form>
     </div>
 </div>
