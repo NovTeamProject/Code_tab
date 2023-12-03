@@ -15,7 +15,7 @@
   <div id="mainBanner" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="7000">
-        <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/5e331b49-3725-4873-97e5-4d53746b6ef9" class="d-block w-100" alt="...">
+        <img src="https://github.com/wwnoov/wwnoov/assets/145524959/73bcbcfe-93d6-4a1e-b082-9348c6929019" class="d-block w-100" alt="...">
         <div class="carousel-caption px-md-5">
           <h5>진심을 담은 강의</h5>
           <hr class="bg-light border-4 border-top border-light">
@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="7000">
-        <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/faaf86c1-5e2a-486d-9631-9e51ea50748f" class="d-block w-100" alt="...">
+        <img src="https://github.com/wwnoov/wwnoov/assets/145524959/bc8c1114-4748-4516-9e12-4e5ca970d09f" class="d-block w-100" alt="...">
         <div class="carousel-caption px-md-5">
           <h5>인생에 꼭 필요한 강의</h5>
           <hr class="bg-light border-1 border-top border-light">
@@ -31,7 +31,7 @@
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="7000">
-        <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/78b996f3-4649-40dd-a412-34fcc4ff0c63" class="d-block w-100" alt="...">
+        <img src="https://github.com/wwnoov/wwnoov/assets/145524959/e19d9e96-2caf-49d2-a359-96e9a78d84eb" class="d-block w-100" alt="...">
         <div class="carousel-caption px-md-5">
           <h5>평생 교육에 맞는 강의</h5>
           <hr class="bg-light border-4 border-top border-light">
@@ -39,7 +39,7 @@
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="7000">
-        <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/0909d278-bd2c-4da6-acd8-9c94104cb2c2" class="d-block w-100" alt="...">
+        <img src="https://github.com/wwnoov/wwnoov/assets/145524959/f8beac1f-bf06-4397-9bf0-c34d43e4f4c2" class="d-block w-100" alt="...">
         <div class="carousel-caption px-md-5">
           <h5>나의 현재를 위한 강의</h5>
           <hr class="bg-light border-4 border-top border-light">
@@ -47,7 +47,7 @@
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="7000">
-        <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/47b860cb-a4e0-46a5-afbb-8a8f39ba4138" class="d-block w-100" alt="...">
+        <img src="https://github.com/wwnoov/wwnoov/assets/145524959/d8944ebe-467f-4e5b-a0fc-49d9e2b8da1c" class="d-block w-100" alt="...">
         <div class="carousel-caption px-md-5">
           <h5>나의 미래를 위한 강의</h5>
           <hr class="bg-light border-4 border-top border-light">
