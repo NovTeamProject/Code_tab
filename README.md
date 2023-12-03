@@ -98,6 +98,7 @@
 </details>
 
 <details><summary>ERD</summary>
+      ![image](https://github.com/NovTeamProject/Team_Project/assets/145963790/0cdc6afc-4c69-4d78-b539-5bd9d740ba1f)
 
     
 </details>
