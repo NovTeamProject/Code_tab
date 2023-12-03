@@ -10,17 +10,18 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet(value = "/student/class/register.do")
+@WebServlet(value = "/student/myClass/register.do")
 public class StudentClassRegisterController extends HttpServlet {
+    // 학생이 한 개의 강의를 수강신청
+
     private static final long serialVersionUID = 1L;
     private ClassDAO classDAO = new ClassDAO();
-
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         // 테스트용, 로그인기능 되면, 이 아래 부분은 삭제
-        req.getSession().setAttribute("studentIdx", 1);
+        // req.getSession().setAttribute("studentIdx", 1);
 
         //세션에서 학생 idx를 받아옴
         int studentIdx = (Integer)req.getSession().getAttribute("studentIdx");

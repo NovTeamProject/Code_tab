@@ -48,7 +48,7 @@
                     </li>
              </c:forEach>
                             </ul>
-                            <div class="d-grid"><a class="btn btn-outline-primary" href="#!">강의신청하러가기</a></div>
+                            <div class="d-grid"><a class="btn btn-outline-primary" href="#!">강의신청</a></div>
                         </div>
                     </div>
                 </div>
@@ -61,23 +61,23 @@
 
                             <ul class="list-unstyled mb-4">
 
-                                <c:forEach items="${rankingClass}" var="className" varStatus="loop" end="9">
+                                <c:forEach items="${uprankingClass}" var="upclassName" varStatus="loop" end="9">
                                     <c:set var="index" value="${loop.index}" />
                                     <li class="mb-2">
                                         <p>
                                             <c:choose>
                                                 <c:when test="${index == 0}">
-                                                    <span class="display-6 fw-bold"><img width="32" height="32" src="https://img.icons8.com/cotton/64/crown--v1.png" alt="crown--v1"/></i>  ${className}</span>
+                                                    <span class="display-6 fw-bold"><img width="32" height="32" src="https://img.icons8.com/cotton/64/crown--v1.png" alt="crown--v1"/></i>  ${upclassName}</span>
                                                 </c:when>
                                                 <c:otherwise>
-                                                    <img width="16" height="16" src="https://img.icons8.com/pastel-glyph/64/thumb-up--v2.png" alt="thumb-up--v2"/> ${index + 1} &nbsp ${className}
+                                                    <img width="16" height="16" src="https://img.icons8.com/pastel-glyph/64/thumb-up--v2.png" alt="thumb-up--v2"/> ${index + 1} &nbsp ${upclassName}
                                                 </c:otherwise>
                                             </c:choose>
                                         </p>
                                     </li>
                                 </c:forEach>
                             </ul>
-                            <div class="d-grid"><a class="btn btn-primary" href="#!">Choose plan</a></div>
+                            <div class="d-grid"><a class="btn btn-primary" href="#!">강의 신청</a></div>
                         </div>
                     </div>
                 </div>
