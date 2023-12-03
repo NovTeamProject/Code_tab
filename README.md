@@ -132,9 +132,11 @@
 https://github.com/NovTeamProject/Team_Project/assets/145524959/3fd54d42-ac16-4a1f-9944-8bb17cc0a6ab
 </details>
 
-<details><summary>로그인
-</summary>
+<details><summary>로그인</summary>
 <br/>
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/a24ade71-e906-47cc-8d73-bd24eafe6e87
+    
 </details>
 
 <details><summary>회원가입</summary>
