@@ -27,7 +27,7 @@
             <input type="hidden" name="idck" id="idck" value="no">
             <input type="password" id="studentPassword" class="fadeIn third" name="studentPassword" placeholder="비밀번호" autocomplete="off" required>
             <input type="password" id="studentPassword2" class="fadeIn third" name="studentPassword2" placeholder="비밀번호 확인" autocomplete="off" required>
-            <input type="text" id="name" class="fadeIn third" name="studentName" placeholder="이름" autocomplete="off" required> <br/><br/>
+            <input type="text" id="name" class="fadeIn third" name="studentName" placeholder="이름" autocomplete="off" required>
             <input type="text" name="postCode" id="sample4_postcode" placeholder="우편번호">
             <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
             <input type="text" name="roadAddr" id="sample4_roadAddress" placeholder="도로명주소" size="60" ><br>
