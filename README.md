@@ -88,8 +88,25 @@
 </details>
 
 <details><summary>Sequence</summary>
+<br/>
+<details><summary>Sequence(비회원)</summary>
+      
+![비회원시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/23f88acf-3a28-417f-be4d-9d53b65b08b4)    
+
+</details>
+<details><summary>Sequence(학생)</summary>
+      
+![학생시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/412047b8-ec9f-471d-8e9f-e6d93acb2c13)
+
+</details>
+<details><summary>Sequence(선생님)</summary>
+      
+![선생님시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/c33262a3-7065-4a7c-815b-eb047f3736b5)
     
 </details>
+    
+</details>
+
 
 
 <details><summary>Block</summary>
