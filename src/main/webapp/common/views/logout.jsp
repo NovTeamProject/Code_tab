@@ -9,7 +9,7 @@
     session.invalidate();
 
     //속성 상제 후 페이지이동
-    response.sendRedirect(request.getContextPath() +"/index.jsp");
+    response.sendRedirect(request.getContextPath() +"/redirect_to_index.jsp");
 %>
 <html>
 <head>

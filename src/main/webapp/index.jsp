@@ -84,7 +84,7 @@
                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                   <div class="d-flex align-items-end justify-content-between">
                     <div class="d-flex align-items-center">
-                      <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
+                      <img style="width: 40px; height: 40px" class="rounded-circle me-3" src="${pageContext.request.contextPath}/programming.png" alt="..." />
                       <div class="small">
                         <div class="fw-bold">수강생: ${item.listenStudent}(명)</div>
                         <div class="text-muted">${item.classRegisterDateWithYearMonthDay}</div>
@@ -117,14 +117,14 @@
               <img style="width: 100%; height: 300px;" class="card-img-top"
                    src="${pageContext.request.contextPath}/teacher/class-image/${item.classImageSavedFilename}" alt="..." />
               <div class="card-body p-4">
-                <div class="badge bg-primary bg-gradient rounded-pill mb-2">최신 강의 #${loop.index + 1}</div>
+                <div class="badge bg-success bg-gradient rounded-pill mb-2">최신 강의 #${loop.index + 1}</div>
                 <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">${item.className}</h5></a>
                 <p class="card-text mb-0">${item.classExplain}</p>
               </div>
               <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                 <div class="d-flex align-items-end justify-content-between">
                   <div class="d-flex align-items-center">
-                    <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
+                    <img style="width: 40px; height: 40px" class="rounded-circle me-3" src="${pageContext.request.contextPath}/programming.png" alt="..." />
                     <div class="small">
                       <div class="fw-bold">수강생: ${item.listenStudent}(명)</div>
                       <div class="text-muted">${item.classRegisterDateWithYearMonthDay}</div>
