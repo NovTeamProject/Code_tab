@@ -32,11 +32,14 @@
                         <%--    JSTL의 "c:choose", "c:when"와 "c:forEach" 태그를 사용하여 수강 중인 강의 리스트가 비어있지 않을 경우 각각의 강의 정보를 순회하며 보여주는 코드--%>
 
                         <div class="position-relative mb-5">
-                            <img style="width: 600px; height: 400px;" class="img-fluid rounded-3 mb-3" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." />
+                            <img style="width: 600px; height: 400px;" class="img-fluid rounded-3 mb-3"
+                                 src="${pageContext.request.contextPath}/teacher/class-image/${item.classImageSavedFilename}" alt="..." />
                             <a class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">${item.className}</a><br>
                             <a class="h5 fw-bolder text-decoration-none link-dark stretched-link" href="#!">강사 : ${item.teacherName}</a>
                             <div class="float-end">
-                                <button class="btn btn-primary mb-4">질문하기</button>
+                                <button class="btn btn-primary mb-4 questionBtn" data-link="${item.classIdx}">
+                                    질문하기
+                                </button>
                                 <button class="btn btn-danger mb-4" id="${item.classIdx}">강의 삭제하기</button>
                             </div>
                         </div>
@@ -84,6 +87,12 @@
             });
         });
     });
+
+    $(".questionBtn").on("click", function () {
+        let classIdx = $(this).attr("link");
+        console.log(classIdx);
+        location.href = '${pageContext.request.contextPath}' + "/board/list.do?classIdx=" + classIdx;
+    })
 </script>
 
 <jsp:include page="/common/views/footer.jsp"></jsp:include>
