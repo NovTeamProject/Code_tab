@@ -17,12 +17,7 @@
     <!-- jquery cdn-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
             crossorigin="anonymous"></script>
-    <style>
-        img {
-            width: 500px!important;
-            height: 300px!important;
-        }
-    </style>
+
 </head>
 <body class="d-flex flex-column h-100">
 
@@ -46,7 +41,7 @@
                                 <div class="col-lg-6">
                                     <div class="position-relative mb-5">
                                         <div>
-                                            <img class="img-fluid rounded-3 mb-3" src="${pageContext.request.contextPath}/teacher/class-image/${item.classImageSavedFilename}" />
+                                            <img style="width: 500px; height: 300px;" class="img-fluid rounded-3 mb-3" src="${pageContext.request.contextPath}/teacher/class-image/${item.classImageSavedFilename}" />
                                             <br /><a class="h3 fw-bolder text-decoration-none link-dark stretched-link"
                                                      href="${pageContext.request.contextPath}/teacher/class/detail.do?classIdx=${item.classIdx}">${item.className}</a>
                                         </div><br />

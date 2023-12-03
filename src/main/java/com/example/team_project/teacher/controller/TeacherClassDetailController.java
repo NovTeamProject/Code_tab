@@ -21,6 +21,10 @@ public class TeacherClassDetailController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if (!TeacherLoginCheck.checkIfTeacherLogined(request)) {
+            alertLocation(response, "먼저 선생님으로 로그인 해주세요", request.getContextPath() + "/membership/loginTeacher.jsp");
+        }
+
         // 테스트를 위해 임시로 teacher_idx의 값을 1로 설정
         HttpSession session = request.getSession();
         //session.setAttribute("teacher_idx", 1);
