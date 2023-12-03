@@ -77,8 +77,11 @@
             </div>
             <br>
             <div style="text-align: right">
-                <a class="btn btn-lg btn-primary" href="#!">질문 게시판 바로가기</a>
+                <button class="btn btn-lg btn-primary questionBtn" data-link="${item.classIdx}">
+                    질문 게시판 바로가기
+                </button>
             </div>
+
 
         </div>
     </section>
@@ -143,6 +146,12 @@
     <c:forEach items="${classDTO.lessonList}" varStatus="loop">
     playerList["lesson-video-" + (index++)] = new Plyr("#lesson-video-${loop.index + 1}");
     </c:forEach>
+
+    $(".questionBtn").on("click", function () {
+        let classIdx = $(this).attr("data-link");
+        console.log(classIdx);
+        location.href = '${pageContext.request.contextPath}' + "/board/list.do?classIdx=" + classIdx;
+    })
 </script>
 </body>
 
