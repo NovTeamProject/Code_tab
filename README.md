@@ -125,7 +125,12 @@
 
 ## 📹 기능 설명 📹
 
-> 클릭시 코드로 이동합니다. 
+
+<details><summary>메인화면</summary>
+<br/>
+      
+https://github.com/NovTeamProject/Team_Project/assets/145524959/3fd54d42-ac16-4a1f-9944-8bb17cc0a6ab
+</details>
 
 <details><summary>로그인&회원가입
 </summary>
