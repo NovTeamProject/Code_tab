@@ -1,6 +1,7 @@
 package com.example.team_project.student.controller;
 
 import com.example.team_project.class_gangui.dao.ClassDAO;
+import com.example.team_project.utils.JSFunction;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -34,7 +35,9 @@ public class StudentClassRegisterController extends HttpServlet {
         boolean successfullyRegistered = false;
         if (isAlreadyRegistered) {
             // 만약 이미 해당 강의를 수강신청 했다면, 전체 강의 리스트 화면으로 이동
-            resp.sendRedirect("/class/list.do");
+            System.out.println("이미 수강신청 완료로 인해 전체 강의 리스트로 이동!");
+            JSFunction.alertLocation(resp, "이미 수강신청이 완료된 강의입니다", req.getContextPath() + "/class/list.do");
+            return;
 
         } else {
             // 수강신청 하지 않았다면 DAO에 접근해서
