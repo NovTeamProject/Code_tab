@@ -91,17 +91,18 @@
 <br/>
 <details><summary>Sequence(비회원)</summary>
       
-![비회원시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/23f88acf-3a28-417f-be4d-9d53b65b08b4)    
+![비회원시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/6d3a1d4a-547d-4a6b-a564-41de9f142a9e)
 
 </details>
 <details><summary>Sequence(학생)</summary>
-      
-![학생시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/412047b8-ec9f-471d-8e9f-e6d93acb2c13)
+
+![학생시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/0486b20f-5dc1-4e53-a383-5536d939c273)
 
 </details>
 <details><summary>Sequence(선생님)</summary>
       
-![선생님시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/c33262a3-7065-4a7c-815b-eb047f3736b5)
+![선생님시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/93d51941-37cf-441f-8d82-c8397f952d3e)
+
     
 </details>
     
