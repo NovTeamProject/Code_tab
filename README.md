@@ -76,6 +76,10 @@
 ## 📊 다이어그램 📊
 
 <details><summary>Usecase</summary>
+      
+![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/ae7e646a-550f-4e32-bc0a-336cd1adb2fa)
+
+
 
 </details>
 
