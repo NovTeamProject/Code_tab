@@ -24,6 +24,9 @@
     </style>
 </head>
 <body class="d-flex flex-column">
+
+<jsp:include page="/common/views/nav.jsp"></jsp:include>
+
     <main class="flex-shrink-0">
         <section class="py-5 bg-light" id="scroll-target">
             <div class="container px-5 my-5">
@@ -63,9 +66,23 @@
                         </tbody>
                     </table>
                 </div>
-                <div style="text-align: right">
-                    <button type="button" class="btn btn-outline-warning" id="classRegisterBtn">수강신청하기</button>
-                </div>
+                <c:choose>
+                    <c:when test="${not empty sessionScope.loginMember and not empty sessionScope.personType and sessionScope.personType eq 2}">
+                        <div style="text-align: right">
+                            <button type="button" class="btn btn-outline-warning" id="classRegisterBtn">수강 신청하기</button>
+                        </div>
+                    </c:when>
+                    <c:when test="${not empty sessionScope.loginMember and not empty sessionScope.personType and sessionScope.personType eq 0 and sessionScope.teacherIdx eq classDTO.teacherIdx}">
+                        <div style="text-align: right">
+                            <button type="button" class="btn btn-outline-success" disabled>내가 등록한 강의</button>
+                        </div>
+                    </c:when>
+                    <c:otherwise>
+                        <div style="text-align: right">
+                            <button type="button" class="btn btn-outline-danger" id="goToStudentLoginBtn">학생으로 로그인 후 수강신청할 수 있어요!</button>
+                        </div>
+                    </c:otherwise>
+                </c:choose>
             </div>
         </section>
 
@@ -98,11 +115,11 @@
                     <c:otherwise>
                         <div class="accordion-item accordion-item-${loop.index + 1}">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${loop.index + 1}" aria-expanded="false" aria-controls="collapse${loop.index + 1}">
                                     ${lesson.lessonName}
                                 </button>
                             </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div id="collapse${loop.index + 1}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <div class="d-flex justify-content-center">
                                         <div style="width: 70%">
@@ -128,13 +145,12 @@
 </script>
 </body>
 <script>
-    $("#classModifyBtn").on("click", function() {
-        location.href = '${pageContext.request.contextPath}' + "/teacher/class/modify.do?classIdx=" + '${param.classIdx}';
-    })
-
+    $("#goToStudentLoginBtn").on("click", function() {
+        location.href = '${pageContext.request.contextPath}' + "/membership/views/loginStudent.jsp";
+    });
     $("#classRegisterBtn").on("click", function() {
-        location.href = '${pageContext.request.contextPath}' + "/student/myClass/register.do?classIdx=" + '${param.classIdx}';
-    })
+        location.href = '${pageContext.request.contextPath}' + "/student/myClass/register.do?classIdx=" + '${classDTO.classIdx}';
+    });
 </script>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -25,9 +25,12 @@ public class RankingController extends HttpServlet {
     ClassDAO classDAO = new ClassDAO();
 
     List<String> rankingClass = classDAO.rankingClass();
-    System.out.println("test"+rankingClass);
 
     req.setAttribute("rankingClass", rankingClass);
+
+    List<String> uprankingClass = classDAO.uprankingClass();
+
+    req.setAttribute("uprankingClass", uprankingClass);
 
     RequestDispatcher dispatcher = req.getRequestDispatcher("/ranking/views/ranking.jsp");
 

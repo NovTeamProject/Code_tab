@@ -1,7 +1,9 @@
 # CODE TAB
-![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/df9d83fb-16de-47e8-a0dc-6380132d818e)
 
-#  💻 에듀테크 풀스택 3기 4조 CHUNJAE STUDY💻
+![256컬러](https://github.com/NovTeamProject/Team_Project/assets/145524959/3298851f-7534-4304-99b3-55106605b887)
+
+
+#  💻 에듀테크 풀스택 3기 4조 CODE TAB💻
 ```bash
 프로젝트 기간 2023년 11월 13일 ~ 2023년 12월 08일
 ```
@@ -54,7 +56,9 @@
 ## 📋개발 일지📋
 <details><summary>개발 일지</summary>
    
-![개발일지](#)
+![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/ad4a3bb9-919a-4fe7-a0d2-0df6863c4bcf)
+
+
 </details>
 
 
@@ -63,12 +67,20 @@
 ## 📈 요구 명세서 📈
 
 <details><summary>요구 명세서</summary>
+      
+![요구사항](https://github.com/NovTeamProject/Team_Project/assets/145524959/6c25935e-e78a-45af-88e0-d0e4be82cdc4)
+
+      
 </details>
   
 
 ## 📊 다이어그램 📊
 
 <details><summary>Usecase</summary>
+      
+![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/ae7e646a-550f-4e32-bc0a-336cd1adb2fa)
+
+
 
 </details>
 
@@ -77,8 +89,26 @@
 </details>
 
 <details><summary>Sequence</summary>
+<br/>
+<details><summary>Sequence(비회원)</summary>
+      
+![비회원시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/6d3a1d4a-547d-4a6b-a564-41de9f142a9e)
+
+</details>
+<details><summary>Sequence(학생)</summary>
+
+![학생시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/0486b20f-5dc1-4e53-a383-5536d939c273)
+
+</details>
+<details><summary>Sequence(선생님)</summary>
+      
+![선생님시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/93d51941-37cf-441f-8d82-c8397f952d3e)
+
     
 </details>
+    
+</details>
+
 
 
 <details><summary>Block</summary>
@@ -87,6 +117,8 @@
 </details>
 
 <details><summary>ERD</summary>
+      
+![image](https://github.com/NovTeamProject/Team_Project/assets/145963790/0cdc6afc-4c69-4d78-b539-5bd9d740ba1f)
 
     
 </details>

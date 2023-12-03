@@ -58,7 +58,6 @@ public class TeacherDAO {
     TeacherDTO result = mapper.idCheck(teacherId);
     sqlSession.close();
     return result;
-
   }
   public TeacherDTO infoTeacher(String teacherId) {
     SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();

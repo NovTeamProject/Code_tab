@@ -28,7 +28,7 @@ public class ListController extends HttpServlet {
         // 뷰에 전달할 매개변수 저장용 맵 생성
         Map<String, Object> map = new HashMap<>();
 
-        // 쿼리 스트링으로 강의 번호 받기 (차소영님이 주는 값)
+        // 쿼리 스트링으로 강의 번호 받기
         String classIdx = request.getParameter("classIdx"); // 어떠한 강의에 대한 질문 게시판인지 알기 위해 clasIdx 값이 필요하다.
         // 쿼리스트링 값을 가져옴
         String searchField = request.getParameter("searchField"); // null or content or title

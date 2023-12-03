@@ -35,9 +35,9 @@ public class WriteController extends HttpServlet {
 
         int classIdx = Integer.parseInt(req.getParameter("classIdx"));
         int studentIdx = (int) req.getSession().getAttribute("studentIdx");
-        /*int studentIdx = 1;*/
+
         String studentName = (String) req.getSession().getAttribute("name");
-        /*String studentName = "권진철"; */
+
 
         BoardDTO dto = new BoardDTO();
         dto.setClassIdx(classIdx);
