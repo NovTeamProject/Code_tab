@@ -77,5 +77,4 @@ CREATE TABLE comment (
     person_type TINYINT, # 선생님은 0번, 학생은 2번,
     person_name VARCHAR(100), # 학생 or 선생의 이름
     content VARCHAR(500),
-    register_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY(board_idx) REFERENCES board(board_idx));
+    register_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
