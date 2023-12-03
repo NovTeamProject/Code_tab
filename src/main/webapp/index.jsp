@@ -15,43 +15,43 @@
   <div id="mainBanner" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="7000">
-        <img src="https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
+        <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/5e331b49-3725-4873-97e5-4d53746b6ef9" class="d-block w-100" alt="...">
         <div class="carousel-caption px-md-5">
           <h5>진심을 담은 강의</h5>
           <hr class="bg-light border-4 border-top border-light">
-          <p>천재스터디는 여러분의 성장을 온 마음 다해 응원합니다.</p>
+          <p>코드탭는 여러분의 성장을 온 마음 다해 응원합니다.</p>
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="7000">
-        <img src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
+        <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/faaf86c1-5e2a-486d-9631-9e51ea50748f" class="d-block w-100" alt="...">
         <div class="carousel-caption px-md-5">
           <h5>인생에 꼭 필요한 강의</h5>
           <hr class="bg-light border-1 border-top border-light">
-          <p>천재스터디는 여러분의 성장을 온 마음 다해 응원합니다.</p>
+          <p>코드탭은 여러분의 성장을 온 마음 다해 응원합니다.</p>
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="7000">
-        <img src="https://images.pexels.com/photos/933054/pexels-photo-933054.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
+        <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/78b996f3-4649-40dd-a412-34fcc4ff0c63" class="d-block w-100" alt="...">
         <div class="carousel-caption px-md-5">
           <h5>평생 교육에 맞는 강의</h5>
           <hr class="bg-light border-4 border-top border-light">
-          <p>천재스터디는 여러분의 성장을 온 마음 다해 응원합니다.</p>
+          <p>코드탭은 여러분의 성장을 온 마음 다해 응원합니다.</p>
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="7000">
-        <img src="https://images.pexels.com/photos/531602/pexels-photo-531602.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
+        <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/0909d278-bd2c-4da6-acd8-9c94104cb2c2" class="d-block w-100" alt="...">
         <div class="carousel-caption px-md-5">
           <h5>나의 현재를 위한 강의</h5>
           <hr class="bg-light border-4 border-top border-light">
-          <p>천재스터디는 여러분의 성장을 온 마음 다해 응원합니다.</p>
+          <p>코드탭은 여러분의 성장을 온 마음 다해 응원합니다.</p>
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="7000">
-        <img src="https://images.pexels.com/photos/2876511/pexels-photo-2876511.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="...">
+        <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/47b860cb-a4e0-46a5-afbb-8a8f39ba4138" class="d-block w-100" alt="...">
         <div class="carousel-caption px-md-5">
           <h5>나의 미래를 위한 강의</h5>
           <hr class="bg-light border-4 border-top border-light">
-          <p>천재스터디는 여러분의 성장을 온 마음 다해 응원합니다.</p>
+          <p>코드탭은 여러분의 성장을 온 마음 다해 응원합니다.</p>
         </div>
       </div>
     </div>
