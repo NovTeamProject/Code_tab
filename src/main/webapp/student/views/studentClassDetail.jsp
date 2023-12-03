@@ -11,6 +11,7 @@
 <%@ page isELIgnored="false" %>
 <html>
 <head>
+
     <title>학생 - 내 강의 상세 보기</title>
 
     <link href="${pageContext.request.contextPath}/teacher/css/styles.css?ver=1" rel="stylesheet">
@@ -27,6 +28,8 @@
 
 </head>
 <body class="d-flex flex-column">
+<jsp:include page="/common/views/nav.jsp"></jsp:include>
+
 <main class="flex-shrink-0">
     <%--    <section class="py-5 bg-light" id="scroll-target">--%>
     <section class="py-5" style="background-color: #ddf3ff;" id="scroll-target">
@@ -153,6 +156,7 @@
         location.href = '${pageContext.request.contextPath}' + "/board/list.do?classIdx=" + classIdx;
     })
 </script>
+<jsp:include page="/common/views/footer.jsp"></jsp:include>
 </body>
 
 
