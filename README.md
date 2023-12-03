@@ -78,9 +78,7 @@
 
 <details><summary>Usecase</summary>
       
-![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/ae7e646a-550f-4e32-bc0a-336cd1adb2fa)
-
-
+![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/e50f85b9-d8cf-4a43-96d7-4b0497b1bde6)
 
 </details>
 
