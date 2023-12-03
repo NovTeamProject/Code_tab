@@ -80,6 +80,22 @@ public class ClassDAO {
         return classList;
     }
 
+    public List<ClassDTO> getTop3ClassList() {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        List<ClassDTO> classList = classMapper.getTopThreeClassList();
+        sqlSession.close();
+        return classList;
+    }
+
+    public List<ClassDTO> getRecentClassList() {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        List<ClassDTO> classList = classMapper.getRecentClassList();
+        sqlSession.close();
+        return classList;
+    }
+
     // 남원우님 여기 아래부터 작성 시작
     public List<String> rankingClass() {
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
