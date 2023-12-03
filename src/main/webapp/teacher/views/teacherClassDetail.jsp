@@ -102,11 +102,11 @@
                     <c:otherwise>
                         <div class="accordion-item accordion-item-${loop.index + 1}">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${loop.index + 1}" aria-expanded="false" aria-controls="collapse${loop.index + 1}">
                                     ${lesson.lessonName}
                                 </button>
                             </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div id="collapse${loop.index + 1}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <div class="d-flex justify-content-center">
                                         <div style="width: 70%">
