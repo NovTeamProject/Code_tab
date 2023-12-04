@@ -131,13 +131,18 @@
 <br/>
       
 https://github.com/NovTeamProject/Team_Project/assets/145524959/3fd54d42-ac16-4a1f-9944-8bb17cc0a6ab
+
+### [Code](#)
+
 </details>
 
 <details><summary>로그인</summary>
 <br/>
 
 https://github.com/NovTeamProject/Team_Project/assets/145524959/a24ade71-e906-47cc-8d73-bd24eafe6e87
-    
+
+### [Code](#)
+
 </details>
 
 <details><summary>회원가입</summary>
@@ -145,13 +150,15 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/a24ade71-e906-47
 
 https://github.com/NovTeamProject/Team_Project/assets/145524959/ff387b23-14ba-48ab-bd86-27a7925f9765
 
-    
+### [Code](#)    
 </details>
 
 <details><summary>새 강의 등록</summary>
 <br/>
  
 https://github.com/NovTeamProject/Team_Project/assets/145524959/2103cda5-1057-4018-acda-bcb8cdbca6b0
+
+### [Code](#)
 </details>
 
 <details><summary>질의응답게시판
