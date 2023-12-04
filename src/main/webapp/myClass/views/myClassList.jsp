@@ -62,7 +62,7 @@
                     <div class="text-center">
                         <h2 class="fw-bolder">현재 수강 중인 강의가 없습니다.</h2>
                         <p class="lead fw-normal text-muted mb-0">새로운 강의를 수강신청 해보세요.</p><br><br>
-                        <a class="btn btn-lg btn-primary" href="#!">수강 가능한 강의 목록 보기</a>
+                        <a class="btn btn-lg btn-primary" href="${pageContext.request.contextPath}/class/list.do">수강 가능한 강의 목록 보기</a>
                     </div>
                 </c:otherwise>
             </c:choose>
