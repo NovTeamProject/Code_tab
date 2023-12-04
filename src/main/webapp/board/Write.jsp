@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<jsp:include page="/common/views/nav.jsp" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +28,6 @@
     </script>
 </head>
 <body class="d-flex flex-column">
-<jsp:include page="/common/views/nav.jsp"></jsp:include>
 <main class="flex-shrink-0">
     <section class="bg-light py-5">
         <div class="container px-5 my-5">
@@ -76,3 +75,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+<jsp:include page="/common/views/footer.jsp" />
