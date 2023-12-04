@@ -9,6 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isELIgnored="false" %>
+<jsp:include page="/common/views/nav.jsp"></jsp:include>
 <html>
 <head>
 
@@ -28,8 +29,6 @@
 
 </head>
 <body class="d-flex flex-column">
-<jsp:include page="/common/views/nav.jsp"></jsp:include>
-
 <main class="flex-shrink-0">
     <%--    <section class="py-5 bg-light" id="scroll-target">--%>
     <section class="py-5" style="background-color: #ddf3ff;" id="scroll-target">
@@ -175,3 +174,4 @@
     servlet으로 testArr의 값 잘 넘어감
 %>
 --%>
+<jsp:include page="/common/views/footer.jsp" />

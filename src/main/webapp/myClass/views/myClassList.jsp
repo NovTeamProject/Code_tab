@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isELIgnored="false" %>
-<jsp:include page="/common/views/nav.jsp"></jsp:include>
+<jsp:include page="/common/views/nav.jsp"/>
 <html>
 <head>
     <title>나의 강의실</title>
@@ -108,6 +108,6 @@
     })
 </script>
 
-<jsp:include page="/common/views/footer.jsp"></jsp:include>
 </body>
 </html>
+<jsp:include page="/common/views/footer.jsp"/>

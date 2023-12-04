@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<jsp:include page="/common/views/nav.jsp"></jsp:include>
 <html>
 <head>
     <title>선생님 - 내가 등록한 강의 목록</title>
@@ -112,3 +113,4 @@
     })
 </script>
 </html>
+<jsp:include page="/common/views/footer.jsp" />
