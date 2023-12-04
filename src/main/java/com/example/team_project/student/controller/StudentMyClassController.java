@@ -22,8 +22,6 @@ public class StudentMyClassController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //req.getSession().setAttribute("studentIdx", 1);
-
         // 세션에서 학생 idx를 받아옴
         int studentIdx = (Integer) req.getSession().getAttribute("studentIdx");
 

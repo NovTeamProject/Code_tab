@@ -29,15 +29,6 @@ public class StudentClassDetailController extends HttpServlet {
         // 세션 객체 생성
         HttpSession session = req.getSession();
 
-
-//        // 세션에서 학생 인덱스 가져오기
-//        int studentIdx = (Integer) session.getAttribute("student_idx");
-
-
-        // 테스트용으로, 임의의 값 1을 넣어준다
-        //session.setAttribute("student_idx", 1);
-
-
         // 세션에서 학생 인덱스 가져오기
         Object studentIdxObj = session.getAttribute("studentIdx");
 
@@ -48,9 +39,6 @@ public class StudentClassDetailController extends HttpServlet {
         }
 
         int studentIdx = (Integer) studentIdxObj;
-
-
-
 
         // 요청 파라미터에서 강의 인덱스 가져오기
         String classIdx = req.getParameter("classIdx");
@@ -69,13 +57,10 @@ public class StudentClassDetailController extends HttpServlet {
             }
         }
 
-
         // 파라미터 맵 설정
         Map<String, Object> params = new HashMap<>();
         params.put("classIdx", classIdxInt); // 'classIdx' 키를 사용
         params.put("studentIdx", studentIdx); // 'studentIdx' 키를 사용
-
-
 
         // 학생이 신청한 강의인지 확인
         int validCount = classDAO.checkIfSpecificStudentIdxRegisteredSpecificClassIdx(classIdxInt, studentIdx);
@@ -92,7 +77,6 @@ public class StudentClassDetailController extends HttpServlet {
         req.getRequestDispatcher("/student/views/studentClassDetail.jsp")
                 .forward(req, resp);
     }
-
 
     // 메시지 알림과 페이지 이동을 위한 메소드
     private void alertLocation(HttpServletResponse resp, String msg, String url) {
