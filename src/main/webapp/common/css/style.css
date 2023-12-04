@@ -363,14 +363,14 @@ hr.border-light {
     }
 }
 .carousel-caption h5 {
-    font-size: 5em;
+    font-size: 6em;
     text-transform: uppercase;
     font-weight: 900;
-    -webkit-text-stroke: 2px #E2FADB;
-    color: #00000059;
+    color: #fff;
     position: relative;
     width: fit-content;
     padding-right: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .carousel-caption h5:after {
     content: '';
@@ -455,15 +455,19 @@ hr.border-light {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgb(0 0 0 / 40%);
+    background: rgb(0 0 0 / 0%);
     z-index: 99;
 }
 
 .carousel-caption p {
-    font-size: 1.35em;
-    font-weight: 600;
-    text-transform: uppercase;
+    font-size: 2.2em !important;
+    font-weight: bold !important; /* 두껍게 변경 */
+    text-transform: uppercase !important;
+    color: #ffffff !important; /* 하얀색으로 변경 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
+
 .carousel-caption * {
     white-space: nowrap;
 }
