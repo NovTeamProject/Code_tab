@@ -3,6 +3,7 @@ package com.example.team_project.board.dto;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Getter
 @Setter
@@ -19,4 +20,12 @@ public class BoardDTO {
     private String content;
     private int visitcount;
     private LocalDateTime registerDate;
+
+    public String getClassRegisterDateWithYearMonthDayHourMinute() {
+        if (this.registerDate != null) {
+            return this.registerDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+        } else {
+            return "no date available";
+        }
+    }
 }

@@ -99,7 +99,7 @@
                                 </td>
                                 <td>${row.studentName}</td>
                                 <td>${row.visitcount}</td>
-                                <td>${row.registerDate}</td>
+                                <td>${row.classRegisterDateWithYearMonthDayHourMinute}</td>
                             </tr>
                             </c:forEach>
                         </c:otherwise>
