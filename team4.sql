@@ -8,6 +8,7 @@ CREATE TABLE student (
     student_id VARCHAR(100) UNIQUE NOT NULL,
     student_password VARCHAR(100),
     student_name VARCHAR(50),
+    studnet_address VARCHAR(150),
     student_join_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
 
 CREATE TABLE teacher (
@@ -15,6 +16,7 @@ CREATE TABLE teacher (
     teacher_id VARCHAR(100) UNIQUE NOT NULL,
     teacher_password VARCHAR(100) NOT NULL,
     teacher_name VARCHAR(50) NOT NULL,
+    teacher_address VARCHAR(150),
     teacher_join_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
 
 CREATE TABLE class (
