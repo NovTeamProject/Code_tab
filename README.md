@@ -88,18 +88,16 @@
 
 <details><summary>Sequence</summary>
 <br/>
-<details><summary>Sequence(비회원)</summary>
-      
+
+1. 비회원 시퀀스 다이어그램    
 ![비회원시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/6d3a1d4a-547d-4a6b-a564-41de9f142a9e)
 
-</details>
-<details><summary>Sequence(학생)</summary>
 
+2. 학생 시퀀스 다이어그램   
 ![학생시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/0486b20f-5dc1-4e53-a383-5536d939c273)
 
-</details>
-<details><summary>Sequence(선생님)</summary>
-      
+
+3. 선생님 시퀀스 다이어그램        
 ![선생님시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/93d51941-37cf-441f-8d82-c8397f952d3e)
 
     
@@ -111,7 +109,8 @@
 
 <details><summary>Block</summary>
 
-![image](https://github.com/NovTeamProject/Team_Project/assets/145963790/2ecbc7ea-3a3a-4dcd-9844-89222a1e71a2)
+![image](https://github.com/NovTeamProject/Team_Project/assets/145963790/0bf65856-9598-4f8b-bbe8-da8ad4f4d26c)
+
 
     
 </details>

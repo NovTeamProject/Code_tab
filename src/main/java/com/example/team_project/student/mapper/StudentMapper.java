@@ -21,5 +21,5 @@ public interface StudentMapper {
 
 
     // 유지호님 여기 아래부터 작성 시작
-
+    int checkStudentClass(Map<String, Object> map);
 }
