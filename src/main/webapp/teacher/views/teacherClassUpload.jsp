@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:include page="/common/views/nav.jsp"></jsp:include>
 <html>
 <head>
     <title>선생님 - 새로운 강의 등록</title>
@@ -18,9 +19,6 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-
-<jsp:include page="/common/views/nav.jsp"></jsp:include>
-
 <section class="py-5">
     <div class="container px-5">
         <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
@@ -96,3 +94,4 @@
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </html>
+<jsp:include page="/common/views/footer.jsp" />
