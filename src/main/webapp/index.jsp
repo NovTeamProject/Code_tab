@@ -19,7 +19,7 @@
         <div class="carousel-caption px-md-5">
           <h5>진심을 담은 강의</h5>
           <hr class="bg-light border-4 border-top border-light">
-          <p>코드탭는 여러분의 성장을 온 마음 다해 응원합니다.</p>
+          <p>코드탭은 여러분의 성장을 온 마음 다해 응원합니다.</p>
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="7000">
