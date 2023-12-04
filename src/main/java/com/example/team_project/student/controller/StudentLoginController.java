@@ -55,7 +55,7 @@ public class StudentLoginController extends HttpServlet {
         session.setAttribute("personType",2); // 학생이면 2번, 선생0번
 
 //        if(session.isNew())
-        JSFunction.alertLocation(resp, "로그인에 성공했습니다.", req.getContextPath() + "/index.jsp");
+        JSFunction.alertLocation(resp, "로그인에 성공했습니다.", req.getContextPath() + "/redirect_to_index.jsp");
       }
     }
     else {

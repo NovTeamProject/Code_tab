@@ -55,9 +55,9 @@ public class StudentEditController extends HttpServlet {
 
     // 성공 or 실패
     if (result == 1) {
-      JSFunction.alertLocation(resp, "수정에 성공했습니다.",req.getContextPath() + "/index.jsp");
+      JSFunction.alertLocation(resp, "수정에 성공했습니다.",req.getContextPath() + "/redirect_to_index.jsp");
     } else { //실패
-      JSFunction.alertLocation(resp, "수정에 실패했습니다.",req.getContextPath() +"/index.jsp");
+      JSFunction.alertLocation(resp, "수정에 실패했습니다.",req.getContextPath() +"/redirect_to_index.jsp");
     }
   }
 }

@@ -52,7 +52,7 @@ public class TeacherLoginController extends HttpServlet {
         session.setAttribute("name", tDto.getTeacherName());
         session.setAttribute("personType",0); // 학생이면 2번, 선생이면 0번
 //        if(session.isNew())
-        JSFunction.alertLocation(resp, "로그인에 성공했습니다.", req.getContextPath() + "/index.jsp");
+        JSFunction.alertLocation(resp, "로그인에 성공했습니다.", req.getContextPath() + "/redirect_to_index.jsp");
       }
     }
     else {
