@@ -8,7 +8,7 @@ CREATE TABLE student (
     student_id VARCHAR(100) UNIQUE NOT NULL,
     student_password VARCHAR(100),
     student_name VARCHAR(50),
-    studnet_address VARCHAR(150),
+    student_address VARCHAR(150),
     student_join_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
 
 CREATE TABLE teacher (
