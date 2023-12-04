@@ -14,5 +14,6 @@ public class StudentDTO {
     private String studentId;
     private String studentPassword;
     private String studentName;
+    private String studentAddress;
     private LocalDateTime studentJoinDate;
 }

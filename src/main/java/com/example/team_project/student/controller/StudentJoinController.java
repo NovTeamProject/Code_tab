@@ -26,11 +26,19 @@ public class StudentJoinController extends HttpServlet {
     String studentId = req.getParameter("studentId");
     String studentPassword = req.getParameter("studentPassword");
     String studentName = req.getParameter("studentName");
+    String studentAddress= null;
+
+    if (req.getParameter("roadAddr")==null){
+      studentAddress = req.getParameter("roadAddr").concat("/").concat(req.getParameter("detailAddr"));
+    }else {
+      studentAddress = req.getParameter("jibunAddr").concat("/").concat(req.getParameter("detailAddr"));
+    }
 
     StudentDTO sDto = new StudentDTO();
     sDto.setStudentId(studentId);
     sDto.setStudentPassword(Encrypt.getEncrypt(studentPassword));
     sDto.setStudentName(studentName);
+    sDto.setStudentAddress(studentAddress);
 
     StudentDAO sDao = new StudentDAO();
     int result = sDao.joinStudent(sDto);

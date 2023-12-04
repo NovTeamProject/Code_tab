@@ -12,8 +12,8 @@
 
         <!-- 회원가입(학생) -->
     <insert id="joinStudent" parameterType="com.example.team_project.student.dto.StudentDTO">
-    INSERT INTO student (student_id, student_password,student_name )
-    VALUES (  #{studentId}, #{studentPassword}, #{studentName})
+    INSERT INTO student (student_id, student_password,student_name,student_address)
+    VALUES (  #{studentId}, #{studentPassword}, #{studentName}, #{studentAddress})
     </insert>
 
         <!--     로그인(학생)  -->
