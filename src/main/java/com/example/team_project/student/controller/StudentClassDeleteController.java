@@ -28,7 +28,6 @@ public class StudentClassDeleteController extends HttpServlet {
         } else {
             resp.getWriter().write("failure");
         }
-        resp.sendRedirect("/student/myClass/list.do");
     }
 }
 
