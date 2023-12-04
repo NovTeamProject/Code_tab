@@ -18,6 +18,7 @@
 7. [📊 Diagram](#-다이어그램-)
 8. [📹 기능 설명](#-기능-설명-)
 9. [🔨개발 환경](#-개발-환경-)
+10. [⚡AWS](http://3.38.5.180:8080/Team_Project-1.0-SNAPSHOT/index.do)
 
 
 ## 📂 PPT 📂
@@ -147,9 +148,10 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/ff387b23-14ba-48
     
 </details>
 
-<details><summary>강의실
-</summary>
+<details><summary>새 강의 등록</summary>
 <br/>
+ 
+https://github.com/NovTeamProject/Team_Project/assets/145524959/2103cda5-1057-4018-acda-bcb8cdbca6b0
 </details>
 
 <details><summary>질의응답게시판
