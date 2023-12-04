@@ -18,7 +18,7 @@
 07. [📊 Diagram](#-다이어그램-)
 08. [📹 기능 설명](#-기능-설명-)
 09. [🔨개발 환경](#-개발-환경-)
-10. [⚡AWS 배포 주소!](http://3.38.5.180/Team_Project-1.0-SNAPSHOT/index.do)
+10. [⚡주소 모음](#-주소-모음-)
 
 ## 📂 PPT 📂
 
@@ -203,6 +203,8 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/2103cda5-1057-40
 <img src="https://img.shields.io/badge/notion-000000?style=flat-square&logo=notion&logoColor=blue" />  
 </div>
 
+## ⚡ 주소 모음 ⚡
 
-## 📂 노션 주소 📂
-https://bitly.ws/34jw6
+### [AWS](http://3.38.5.180/Team_Project-1.0-SNAPSHOT/index.do)
+
+### [Notion](https://bitly.ws/34jw6)
