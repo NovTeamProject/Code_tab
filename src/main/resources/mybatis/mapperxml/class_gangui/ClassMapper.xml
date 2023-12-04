@@ -84,11 +84,23 @@
     </select>
 
     <select id="getRecentClassList" resultType="com.example.team_project.class_gangui.dto.ClassDTO">
-        select *
+        SELECT *
         from class
         ORDER BY class_idx DESC
         LIMIT 0, 3
     </select>
+
+    <update id="plusOneStudent">
+        UPDATE class
+        SET listen_student = listen_student + 1
+        WHERE class_idx = #{class_idx}
+    </update>
+
+    <update id="minusOneStudent">
+        UPDATE class
+        SET listen_student = listen_student - 1
+        WHERE class_idx = #{class_idx}
+    </update>
 
 
     <!--    남원우님 여기 아래부터 작성 시작-->
