@@ -154,9 +154,16 @@
             url: '${pageContext.request.contextPath}/student/myClass/register.do',
             type: 'get',
             data: { classIdx: '${classDTO.classIdx}' },
-            success: function() {
-                alert('강의가 성공적으로 등록되었습니다.');
-                location.href = '${pageContext.request.contextPath}/student/myClass/list.do';
+            success: function(response) {
+                if(response.trim() == 'success') {
+                    alert('강의가 성공적으로 등록되었습니다.');
+                    location.href = '${pageContext.request.contextPath}/student/myClass/list.do';
+                } else if(response.trim() == 'already_registered') {
+                    alert('이미 수강신청이 완료된 강의입니다.');
+                    location.href = '${pageContext.request.contextPath}/class/list.do';
+                } else {
+                    alert('강의 등록에 실패하였습니다.');
+                }
             },
             error: function() {
                 alert('강의 등록에 실패하였습니다.');
