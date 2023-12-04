@@ -108,6 +108,26 @@
         }).open();
     }
 </script>
+<script>
+    function joinCheck(f){
+
+        var pw = f.studentPassword.value;
+
+        var pwReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%])[A-Za-z\d!@#$%]{8,}$/; // 비밀번호는 소문자,대문자,숫자,특수문자(!@#$%)를 각각 최소 한 개 이상 포함 하며  8글자 이상 이여야 합니다
+
+        if(!pwReg.test(pw)){
+            alert("비밀번호는 소문자,대문자,숫자,특수문자(!@#$%)를 각각 최소 한 개 이상 포함 하며  8글자 이상 이여야 합니다.");
+            f.studentPassword.focus();
+            return false;
+        }
+        if(f.studentPassword.value!=f.studentPassword2.value){
+            alert("비밀번호와 비밀번호 확인이 서로 다릅니다.");
+            f.studentPassword.focus();
+            return false;
+        }
+
+    }
+</script>
 <jsp:include page="/common/views/footer.jsp" />
 </body>
 </html>
