@@ -66,7 +66,7 @@
                                         <button class="btn btn-primary mb-4 questionBtn mr-3" data-link="${item.classIdx}">
                                             질문하기
                                         </button>
-                                        <button class="btn btn-danger mb-4" id="${item.classIdx}">강의 삭제하기</button>
+                                        <button class="btn btn-danger mb-4" id="${item.classIdx}">수강 취소하기</button>
                                     </div>
                                 </div>
                             </div>
