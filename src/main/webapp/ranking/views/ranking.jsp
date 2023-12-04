@@ -48,7 +48,7 @@
                     </li>
              </c:forEach>
                             </ul>
-                            <div class="d-grid"><a class="btn btn-outline-primary" href="#!">강의신청</a></div>
+                            <div class="d-grid"><a class="btn btn-outline-primary" href="${pageContext.request.contextPath}/class/list.do">강의신청</a></div>
                         </div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                                     </li>
                                 </c:forEach>
                             </ul>
-                            <div class="d-grid"><a class="btn btn-primary" href="#!">강의 신청</a></div>
+                            <div class="d-grid"><a class="btn btn-primary" href="${pageContext.request.contextPath}/class/list.do">강의 신청</a></div>
                         </div>
                     </div>
                 </div>

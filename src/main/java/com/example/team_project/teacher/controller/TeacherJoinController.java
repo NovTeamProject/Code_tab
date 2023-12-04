@@ -40,7 +40,6 @@ public class TeacherJoinController extends HttpServlet {
     tDto.setTeacherName(teacherName);
     tDto.setTeacherAddress(teacherAddress);
 
-    System.out.println(tDto);
     TeacherDAO tDao = new TeacherDAO();
     int result = tDao.joinTeacher(tDto);
 

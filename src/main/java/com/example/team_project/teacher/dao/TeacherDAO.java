@@ -33,6 +33,20 @@ public class TeacherDAO {
     sqlSession.close();
     return result;
   }
+  // 정보수정(학생)
+  public int editTeacher(TeacherDTO dto){
+    SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+    TeacherMapper mapper = sqlSession.getMapper(TeacherMapper.class);
+    int result = mapper.editTeacher(dto);
+    if (result == 1) {
+      System.out.println(" Teacher 정보 수정 성공");
+      sqlSession.commit();
+    } else {
+      System.out.println(" Teacher 정보 수정 실패");
+    }
+    sqlSession.close();
+    return result;
+  }
     // 로그인(선생님)
     public boolean loginTeacher(String teacherId, String teacherPassword) {
       Map<String, String> map = new HashMap<>();
