@@ -9,15 +9,16 @@
 ```
 ## 📚 목차 📚
 
-1. [📂 PPT](#-PPT-)
-2. [📖 프로젝트 소개](#-프로젝트-소개)
-3. [💡 기획 의도](#기획-의도)
-4. [🙋‍♀️ Team_Member](#%EF%B8%8F-team_member-%EF%B8%8F)
-5. [📋 개발 일지](#개발-일지)
-6. [📈  요구 명세서](#-요구-명세서-)
-7. [📊 Diagram](#-다이어그램-)
-8. [📹 기능 설명](#-기능-설명-)
-9. [🔨개발 환경](#-개발-환경-)
+01. [📂 PPT](#-PPT-)
+02. [📖 프로젝트 소개](#-프로젝트-소개)
+03. [💡 기획 의도](#기획-의도)
+04. [🙋‍♀️ Team_Member](#%EF%B8%8F-team_member-%EF%B8%8F)
+05. [📋 개발 일지](#개발-일지)
+06. [📈  요구 명세서](#-요구-명세서-)
+07. [📊 Diagram](#-다이어그램-)
+08. [📹 기능 설명](#-기능-설명-)
+09. [🔨개발 환경](#-개발-환경-)
+10. [⚡AWS 배포 주소!](http://3.38.5.180/Team_Project-1.0-SNAPSHOT/index.do)
 
 
 ## 📂 PPT 📂
@@ -78,9 +79,7 @@
 
 <details><summary>Usecase</summary>
       
-![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/ae7e646a-550f-4e32-bc0a-336cd1adb2fa)
-
-
+![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/e50f85b9-d8cf-4a43-96d7-4b0497b1bde6)
 
 </details>
 
@@ -113,6 +112,8 @@
 
 <details><summary>Block</summary>
 
+![image](https://github.com/NovTeamProject/Team_Project/assets/145963790/2ecbc7ea-3a3a-4dcd-9844-89222a1e71a2)
+
     
 </details>
 
@@ -125,16 +126,39 @@
 
 ## 📹 기능 설명 📹
 
-> 클릭시 코드로 이동합니다. 
 
-<details><summary>로그인&회원가입
-</summary>
+<details><summary>메인화면</summary>
 <br/>
+      
+https://github.com/NovTeamProject/Team_Project/assets/145524959/3fd54d42-ac16-4a1f-9944-8bb17cc0a6ab
+
+### [Code](#)
+
 </details>
 
-<details><summary>강의실
-</summary>
+<details><summary>로그인</summary>
 <br/>
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/a24ade71-e906-47cc-8d73-bd24eafe6e87
+
+### [Code](#)
+
+</details>
+
+<details><summary>회원가입</summary>
+<br/>
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/ff387b23-14ba-48ab-bd86-27a7925f9765
+
+### [Code](#)    
+</details>
+
+<details><summary>새 강의 등록</summary>
+<br/>
+ 
+https://github.com/NovTeamProject/Team_Project/assets/145524959/2103cda5-1057-4018-acda-bcb8cdbca6b0
+
+### [Code](#)
 </details>
 
 <details><summary>질의응답게시판
