@@ -97,21 +97,20 @@ public class ClassDAO {
     }
 
     // 남원우님 여기 아래부터 작성 시작
-    public List<String> rankingClass() {
+    public List<Map<String, Object>> rankingClass() {
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
         ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
-        List<String> rankingClass = classMapper.rankingClass();
-        System.out.println(rankingClass);
+        List<Map<String, Object>> maps = classMapper.rankingClass();
         sqlSession.close();
-        return rankingClass;
+        return maps;
 
     }
-    public List<String> uprankingClass() {
+    public List<Map<String, Object>> uprankingClass() {
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
         ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
-        List<String> uprankingClass = classMapper.uprankingClass();
+        List<Map<String, Object>> maps = classMapper.uprankingClass();
         sqlSession.close();
-        return uprankingClass;
+        return maps;
     }
     // 차소영님 여기 아래부터 작성 시작
 

@@ -52,7 +52,7 @@ public class StudentLoginController extends HttpServlet {
         session.setAttribute("studentIdx", sDto.getStudentIdx());
         session.setAttribute("studentId", sDto.getStudentId());
         session.setAttribute("name", sDto.getStudentName());
-        session.setAttribute("personType",2); // 학생이면 2번, 선생
+        session.setAttribute("personType",2); // 학생이면 2번, 선생0번
 
 //        if(session.isNew())
         JSFunction.alertLocation(resp, "로그인에 성공했습니다.", req.getContextPath() + "/index.jsp");

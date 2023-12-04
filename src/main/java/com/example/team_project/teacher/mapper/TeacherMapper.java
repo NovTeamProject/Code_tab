@@ -17,7 +17,7 @@ public interface TeacherMapper {
 
      int joinTeacher (TeacherDTO dto);
      int loginTeacher(Map <String, String> map);
-
+     int editTeacher (TeacherDTO dto);
      TeacherDTO idCheck(String teacherId);
      TeacherDTO infoTeacher(String teacherId);
     // 차소영님 여기 아래부터 작성 시작

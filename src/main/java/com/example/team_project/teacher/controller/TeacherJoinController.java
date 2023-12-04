@@ -26,12 +26,20 @@ public class TeacherJoinController extends HttpServlet {
     String teacherId = req.getParameter("teacherId");
     String teacherPassword = req.getParameter("teacherPassword");
     String teacherName = req.getParameter("teacherName");
+    String teacherAddress = null;
+
+    if (req.getParameter("roadAddr")==null){
+      teacherAddress = req.getParameter("roadAddr").concat("/").concat(req.getParameter("detailAddr"));
+    }else {
+      teacherAddress = req.getParameter("jibunAddr").concat("/").concat(req.getParameter("detailAddr"));
+    }
 
     TeacherDTO tDto = new TeacherDTO();
     tDto.setTeacherId(teacherId);
     tDto.setTeacherPassword(Encrypt.getEncrypt(teacherPassword));
     tDto.setTeacherName(teacherName);
-    System.out.println(tDto);
+    tDto.setTeacherAddress(teacherAddress);
+
     TeacherDAO tDao = new TeacherDAO();
     int result = tDao.joinTeacher(tDto);
 

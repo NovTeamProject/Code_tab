@@ -12,10 +12,14 @@
 
         <!-- 회원가입(학생) -->
     <insert id="joinStudent" parameterType="com.example.team_project.student.dto.StudentDTO">
-    INSERT INTO student (student_id, student_password,student_name )
-    VALUES (  #{studentId}, #{studentPassword}, #{studentName})
+    INSERT INTO student (student_id, student_password,student_name,student_address)
+    VALUES (  #{studentId}, #{studentPassword}, #{studentName}, #{studentAddress})
     </insert>
-
+        <!--정보수정(학생)-->
+    <update id="editStudent" parameterType="com.example.team_project.student.dto.StudentDTO">
+            update student set student_password = #{studentPassword}, student_name = #{studentName}, student_address = #{studentAddress}
+            where student_id = #{studentId}
+    </update>
         <!--     로그인(학생)  -->
     <select id="loginStudent" parameterType="map" resultType="int" >
     select count(*)
@@ -42,5 +46,9 @@
 
     <!--    유지호님 여기 아래부터 작성 시작-->
 
-
+    <select id="checkStudentClass"  parameterType="map" resultType="int">
+        select count(*)
+        from student_class
+        where student_idx = #{studentIdx} and class_idx = #{classIdx}
+    </select>
 </mapper>

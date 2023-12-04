@@ -93,14 +93,14 @@
 
     <!--    남원우님 여기 아래부터 작성 시작-->
   <!-- 인기 강의 -->
-    <select id="rankingClass" resultType="String">
-        SELECT class_name
+    <select id="rankingClass" resultType="map">
+        SELECT class_idx, class_name
         FROM class
         ORDER BY listen_student DESC
     </select>
     <!-- 추천 강의 -->
-    <select id="uprankingClass" resultType="String">
-        SELECT class_name
+    <select id="uprankingClass" resultType="map">
+        SELECT class_idx,class_name
         FROM class
         ORDER BY class_register_date DESC
     </select>

@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="/common/views/nav.jsp"></jsp:include>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,15 +36,15 @@
                 // personType이 2이면 질문하기 버튼을 보여줍니다.
                 $("#questionBtn").show();
             }
+
         });
     </script>
 
 
 </head>
 
-
 <body class="d-flex flex-column">
-
+<jsp:include page="/common/views/nav.jsp"></jsp:include>
 <main class="flex-shrink-0">
     <section class="bg-light py-5">
         <div class="container px-5 my-5">
@@ -61,9 +62,11 @@
                 </select>
                 <input type="text" id="searchWord"  name="searchWord" placeholder="검색어를 입력하세요" value="${not empty map.searchWord ? map.searchWord : ''}" />
                 <input type="submit" value="검색하기"/>
-                <div class="container" style="display: flex; justify-content: flex-end;">
-                    <button type="button" class="btn btn-primary" id="questionBtn">질문하기</button>
-                </div>
+                <c:if test="${map.check == 1}"> <%--map이 1인 경우 수강을 신청한 학생이므로 질문 작성가능--%>
+                    <div class="container" style="display: flex; justify-content: flex-end;">
+                        <button type="button" class="btn btn-primary" id="questionBtn">질문하기</button>
+                    </div>
+                </c:if>
             </form>
             <br />
             <br />
@@ -154,6 +157,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
+<jsp:include page="/common/views/footer.jsp"></jsp:include>
 </body>
 </html>
-<jsp:include page="/common/views/footer.jsp"></jsp:include>
