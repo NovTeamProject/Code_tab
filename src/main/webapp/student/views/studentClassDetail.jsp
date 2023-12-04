@@ -33,10 +33,10 @@
     <%--    <section class="py-5 bg-light" id="scroll-target">--%>
     <section class="py-5" style="background-color: #ddf3ff;" id="scroll-target">
         <div class="container px-5 my-5">
-                <div class="text-center mb-5">
-                    <h1 class="fw-bolder">강의 상세 보기</h1>
-                    <p class="lead fw-normal text-muted mb-0">강의 상세 정보를 확인하세요.</p>
-                </div>
+            <div class="text-center mb-5">
+                <h1 class="fw-bolder">강의 상세 보기</h1>
+                <p class="lead fw-normal text-muted mb-0">강의 상세 정보를 확인하세요.</p>
+            </div>
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-6">
                     <img class="img-fluid rounded mb-5 mb-lg-0"
@@ -79,7 +79,7 @@
             </div>
             <br>
             <div style="text-align: right">
-                <button class="btn btn-lg btn-primary questionBtn" data-link="${item.classIdx}">
+                <button class="btn btn-lg btn-primary questionBtn" data-link="${classDTO.classIdx}">
                     질문 게시판 바로가기
                 </button>
             </div>
@@ -151,7 +151,6 @@
 
     $(".questionBtn").on("click", function () {
         let classIdx = $(this).attr("data-link");
-        console.log(classIdx);
         location.href = '${pageContext.request.contextPath}' + "/board/list.do?classIdx=" + classIdx;
     })
 </script>
