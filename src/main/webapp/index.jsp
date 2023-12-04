@@ -16,7 +16,7 @@
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="7000">
         <img src="https://github.com/wwnoov/wwnoov/assets/145524959/73bcbcfe-93d6-4a1e-b082-9348c6929019" class="d-block w-100" alt="...">
-        <div class="carousel-caption px-md-5">
+        <div class="carousel-caption px-md-5 custom-caption">
           <h5>진심을 담은 강의</h5>
           <hr class="bg-light border-4 border-top border-light">
           <p>코드탭은 여러분의 성장을 온 마음 다해 응원합니다.</p>
