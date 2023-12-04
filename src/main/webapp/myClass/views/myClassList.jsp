@@ -30,24 +30,7 @@
             <c:choose>
                 <c:when test="${ClassList != null and not empty ClassList}">
                     <c:forEach items="${ClassList}" var="item" varStatus="status">
-<%--                        <div class="col-md-6 mb-5">--%>
-<%--                            <div class="card">--%>
-<%--                                <img style="width: 100%; height: 400px;" class="card-img-top"--%>
-<%--                                     src="${pageContext.request.contextPath}/teacher/class-image/${item.classImageSavedFilename}" alt="..." />--%>
-<%--                                <div class="card-body d-flex justify-content-between">--%>
-<%--                                    <div>--%>
-<%--                                        <a class="h3 fw-bolder text-decoration-none link-dark" href="#!">${item.className}</a><br>--%>
-<%--                                        <a class="h5 fw-bolder text-decoration-none link-dark" href="#!">강사: ${item.teacherName}</a>--%>
-<%--                                    </div>--%>
-<%--                                    <div class="d-flex align-items-start">--%>
-<%--                                        <button class="btn btn-primary mb-4 questionBtn mr-3" data-link="${item.classIdx}">--%>
-<%--                                            질문하기--%>
-<%--                                        </button>--%>
-<%--                                        <button class="btn btn-danger mb-4" id="${item.classIdx}">강의 삭제하기</button>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
+
 
                         <div class="col-md-6 mb-5">
                             <div class="card">
@@ -66,7 +49,7 @@
                                         <button class="btn btn-primary mb-4 questionBtn mr-3" data-link="${item.classIdx}">
                                             질문하기
                                         </button>
-                                        <button class="btn btn-danger mb-4" id="${item.classIdx}">강의 삭제하기</button>
+                                        <button class="btn btn-danger mb-4" id="${item.classIdx}">수강 취소하기</button>
                                     </div>
                                 </div>
                             </div>
@@ -79,7 +62,7 @@
                     <div class="text-center">
                         <h2 class="fw-bolder">현재 수강 중인 강의가 없습니다.</h2>
                         <p class="lead fw-normal text-muted mb-0">새로운 강의를 수강신청 해보세요.</p><br><br>
-                        <a class="btn btn-lg btn-primary" href="#!">수강 가능한 강의 목록 보기</a>
+                        <a class="btn btn-lg btn-primary" href="${pageContext.request.contextPath}/class/list.do">수강 가능한 강의 목록 보기</a>
                     </div>
                 </c:otherwise>
             </c:choose>
@@ -100,15 +83,19 @@
         button.addEventListener('click', function(event) {
             var classIdx = event.target.id;
             $.ajax({
-                url: '/student/myClass/delete.do',
+                url: '${pageContext.request.contextPath}/student/myClass/delete.do',
                 type: 'post',
                 data: { classIdx: classIdx },
-                success: function() {
-                    alert('강의가 삭제되었습니다.');
-                    location.reload();
+                success: function(response) {
+                    if(response.trim() == 'success') {
+                        alert('강의가 성공적으로 삭제되었습니다.');
+                        location.href = '${pageContext.request.contextPath}/student/myClass/list.do';
+                    } else {
+                        alert('강의 삭제에 실패하였습니다.');
+                    }
                 },
                 error: function() {
-                    alert('강의 삭제에 실패했습니다.');
+                    alert('강의 삭제에 실패하였습니다.');
                 }
             });
         });
