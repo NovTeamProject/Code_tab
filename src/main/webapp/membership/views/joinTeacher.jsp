@@ -88,6 +88,22 @@
 </script>
 <script>
     function joinCheck(f){
+        var id = f.teacherId.value;
+        var pw = f.teacherPassword.value;
+
+        var idReg = /^.{5,}$/; // 아이디는 최소 5글자 이상
+        var pwReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%])[A-Za-z\d!@#$%]{8,}$/; // 비밀번호는 소문자,대문자,숫자,특수문자(!@#$%)를 각각 최소 한 개 이상 포함 하며  8글자 이상 이여야 합니다
+
+        if(!idReg.test(id)){
+            alert("아이디는 최소 5자 이상이어야 합니다.");
+            f.teacherId.focus();
+            return false;
+        }
+        if(!pwReg.test(pw)){
+            alert("비밀번호는 소문자,대문자,숫자,특수문자(!@#$%)를 각각 최소 한 개 이상 포함 하며  8글자 이상 이여야 합니다.");
+            f.teacherPassword.focus();
+            return false;
+        }
         if(f.teacherPassword.value!=f.teacherPassword2.value){
             alert("비밀번호와 비밀번호 확인이 서로 다릅니다.");
             f.teacherPassword.focus();
@@ -95,7 +111,8 @@
         }
         if(f.idck.value!="yes"){
             alert("아이디 중복 체크를 하지 않으셨습니다.");
-            return false;}
+            return false;
+        }
     }
 </script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
