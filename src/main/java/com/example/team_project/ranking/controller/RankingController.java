@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet("/ranking.do")
 public class RankingController extends HttpServlet {
@@ -24,11 +25,11 @@ public class RankingController extends HttpServlet {
 
     ClassDAO classDAO = new ClassDAO();
 
-    List<String> rankingClass = classDAO.rankingClass();
+    List<Map<String, Object>> rankingClass = classDAO.rankingClass();
 
     req.setAttribute("rankingClass", rankingClass);
 
-    List<String> uprankingClass = classDAO.uprankingClass();
+    List<Map<String, Object>> uprankingClass = classDAO.uprankingClass();
 
     req.setAttribute("uprankingClass", uprankingClass);
 

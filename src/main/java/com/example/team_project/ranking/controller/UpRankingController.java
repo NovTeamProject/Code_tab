@@ -22,14 +22,14 @@ public class UpRankingController extends HttpServlet {
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-    ClassDAO classDAO = new ClassDAO();
-
-    List<String> rankingClass = classDAO.rankingClass();
-    System.out.println(rankingClass);
-    req.setAttribute("rankingClass", rankingClass);
-
-    RequestDispatcher dispatcher = req.getRequestDispatcher("/ranking/views/ranking.jsp");
-
-    dispatcher.forward(req, resp);
+//    ClassDAO classDAO = new ClassDAO();
+//
+//    List<String> rankingClass = classDAO.rankingClass();
+//    System.out.println(rankingClass);
+//    req.setAttribute("rankingClass", rankingClass);
+//
+//    RequestDispatcher dispatcher = req.getRequestDispatcher("/ranking/views/ranking.jsp");
+//
+//    dispatcher.forward(req, resp);
   }
 }
