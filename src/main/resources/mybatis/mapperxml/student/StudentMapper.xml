@@ -46,5 +46,9 @@
 
     <!--    유지호님 여기 아래부터 작성 시작-->
 
-
+    <select id="checkStudentClass"  parameterType="map" resultType="int">
+        select count(*)
+        from student_class
+        where student_idx = #{studentIdx} and class_idx = #{classIdx}
+    </select>
 </mapper>

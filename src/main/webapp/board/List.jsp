@@ -35,6 +35,7 @@
                 // personType이 2이면 질문하기 버튼을 보여줍니다.
                 $("#questionBtn").show();
             }
+
         });
     </script>
 
@@ -61,9 +62,11 @@
                 </select>
                 <input type="text" id="searchWord"  name="searchWord" placeholder="검색어를 입력하세요" value="${not empty map.searchWord ? map.searchWord : ''}" />
                 <input type="submit" value="검색하기"/>
-                <div class="container" style="display: flex; justify-content: flex-end;">
-                    <button type="button" class="btn btn-primary" id="questionBtn">질문하기</button>
-                </div>
+                <c:if test="${map.check == 1}"> <%--map이 1인 경우 수강을 신청한 학생이므로 질문 작성가능--%>
+                    <div class="container" style="display: flex; justify-content: flex-end;">
+                        <button type="button" class="btn btn-primary" id="questionBtn">질문하기</button>
+                    </div>
+                </c:if>
             </form>
             <br />
             <br />
