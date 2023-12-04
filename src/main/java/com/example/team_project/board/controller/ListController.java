@@ -3,6 +3,7 @@ package com.example.team_project.board.controller;
 import com.example.team_project.board.dao.BoardDAO;
 import com.example.team_project.board.dto.BoardDTO;
 import com.example.team_project.class_gangui.dao.ClassDAO;
+import com.example.team_project.student.dao.StudentDAO;
 import com.example.team_project.utils.BoardPage;
 
 import javax.servlet.ServletContext;
@@ -24,6 +25,7 @@ public class ListController extends HttpServlet {
         //DAO 생성
         BoardDAO dao = new BoardDAO();
         ClassDAO classDAO = new ClassDAO();
+        StudentDAO studentDAO = new StudentDAO();
 
         // 뷰에 전달할 매개변수 저장용 맵 생성
         Map<String, Object> map = new HashMap<>();
@@ -38,7 +40,15 @@ public class ListController extends HttpServlet {
             map.put("searchWord", searchWord);  // 검색어 값을 맵에 추가
         } // 처음 null 값이기 때문에 넘어감
 
+
+
+        int studentIdx = (Integer) request.getSession().getAttribute("studentIdx");
+        map.put("studentIdx", studentIdx); // 학생구분을 위한 studentIdx값을 map에 저장
         map.put("classIdx",classIdx); // classIdx -> 1 (key-value 쌍), classIdx를 맵에 저장
+
+
+        int check = studentDAO.checkStudentClass(map);  // 게시판 질문하기 구분을 위해서 studentIdx와 classIdx 값이 존재하는 경우 1을 반환
+        map.put("check", check); // map에 저장
 
         String className = classDAO.getClassNameByClassIdx(classIdx);
         // 강의 이름을 조회하기 위한 class 테이블에서 가져온 값
@@ -46,7 +56,6 @@ public class ListController extends HttpServlet {
         // 강의명을 map에 저장
 
         int personType = (int) request.getSession().getAttribute("personType");
-        //map.put("personType", 2);    //테스트용
         map.put("personType", personType);
 
         int totalCount = dao.selectCount(map); // total board count

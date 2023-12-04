@@ -1,5 +1,7 @@
 package com.example.team_project.student.dao;
 
+import com.example.team_project.board.mapper.BoardMapper;
+import com.example.team_project.class_gangui.mapper.ClassMapper;
 import com.example.team_project.mybatis.factory.MyBatisSessionFactory;
 import com.example.team_project.student.dto.StudentDTO;
 import com.example.team_project.student.mapper.StudentMapper;
@@ -84,5 +86,12 @@ public class StudentDAO {
 
   // 유지호님 여기 아래부터 작성 시작
 
-
+  public int checkStudentClass(Map<String, Object> map) {
+    SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+    StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+    int result = mapper.checkStudentClass(map);
+    sqlSession.close();
+    return result;
+  }
 }
+
