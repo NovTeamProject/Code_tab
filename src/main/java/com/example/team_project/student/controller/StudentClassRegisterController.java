@@ -48,7 +48,7 @@ public class StudentClassRegisterController extends HttpServlet {
 
         if (successfullyRegistered) {
             // 나의 강의실로 보내주고
-            // resp.sendRedirect("/student/class/register.do");
+            resp.sendRedirect("/student/myClass/list.do");
         } else {
             // 전체 강의 리스트로 보내기
             System.out.println("학생 수강신청 실패");

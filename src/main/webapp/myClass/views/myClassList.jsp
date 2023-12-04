@@ -30,24 +30,7 @@
             <c:choose>
                 <c:when test="${ClassList != null and not empty ClassList}">
                     <c:forEach items="${ClassList}" var="item" varStatus="status">
-<%--                        <div class="col-md-6 mb-5">--%>
-<%--                            <div class="card">--%>
-<%--                                <img style="width: 100%; height: 400px;" class="card-img-top"--%>
-<%--                                     src="${pageContext.request.contextPath}/teacher/class-image/${item.classImageSavedFilename}" alt="..." />--%>
-<%--                                <div class="card-body d-flex justify-content-between">--%>
-<%--                                    <div>--%>
-<%--                                        <a class="h3 fw-bolder text-decoration-none link-dark" href="#!">${item.className}</a><br>--%>
-<%--                                        <a class="h5 fw-bolder text-decoration-none link-dark" href="#!">강사: ${item.teacherName}</a>--%>
-<%--                                    </div>--%>
-<%--                                    <div class="d-flex align-items-start">--%>
-<%--                                        <button class="btn btn-primary mb-4 questionBtn mr-3" data-link="${item.classIdx}">--%>
-<%--                                            질문하기--%>
-<%--                                        </button>--%>
-<%--                                        <button class="btn btn-danger mb-4" id="${item.classIdx}">강의 삭제하기</button>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
+
 
                         <div class="col-md-6 mb-5">
                             <div class="card">

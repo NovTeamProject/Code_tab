@@ -148,10 +148,29 @@
     $("#goToStudentLoginBtn").on("click", function() {
         location.href = '${pageContext.request.contextPath}' + "/membership/views/loginStudent.jsp";
     });
+
     $("#classRegisterBtn").on("click", function() {
-        location.href = '${pageContext.request.contextPath}' + "/student/myClass/register.do?classIdx=" + '${classDTO.classIdx}';
+        $.ajax({
+            url: '${pageContext.request.contextPath}/student/myClass/register.do',
+            type: 'get',
+            data: { classIdx: '${classDTO.classIdx}' },
+            success: function() {
+                alert('강의가 성공적으로 등록되었습니다.');
+                location.href = '${pageContext.request.contextPath}/student/myClass/list.do';
+            },
+            error: function() {
+                alert('강의 등록에 실패하였습니다.');
+            }
+        });
     });
 </script>
+
+
+
+
+
+
+
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </html>
