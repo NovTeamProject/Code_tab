@@ -70,7 +70,8 @@
                 <c:choose>
                     <c:when test="${not empty sessionScope.loginMember and not empty sessionScope.personType and sessionScope.personType eq 2}">
                         <div style="text-align: right">
-                            <button type="button" class="btn btn-outline-warning" id="classRegisterBtn">수강 신청하기</button>
+                            <button type="button" class="btn btn-outline-warning" id="classRegisterBtn">수강 신청하기</button><br /><br />
+                            <button type="button" class="btn btn-outline-info" id="classQuestionBtn">이 강의 질문 리스트</button>
                         </div>
                     </c:when>
                     <c:when test="${not empty sessionScope.loginMember and not empty sessionScope.personType and sessionScope.personType eq 0 and sessionScope.teacherIdx eq classDTO.teacherIdx}">
@@ -88,7 +89,7 @@
         </section>
 
         <h3 style="text-align: center; margin-top: 50px;">강의 수업 리스트</h3>
-        <div class="d-flex justify-content-center" style="margin-bottom: 50px;">
+        <div class="d-flex justify-content-center" style="margin-bottom: 100px;">
         <div class="accordion" id="accordionExample" style="width: 70%">
             <c:forEach items="${classDTO.lessonList}" var="lesson" varStatus="loop">
                 <c:choose>
@@ -125,7 +126,8 @@
                                     <div class="d-flex justify-content-center">
                                         <div style="width: 70%">
                                             <p>강의 재생 시간: ${lesson.lessonTime}(초)</p>
-                                            <h4>수강신청 후 전체 강의 동영상을 확인할 수 있어요!</h4>
+                                            <h4 style="color: #df6262">수강신청 후 전체 강의 동영상을 확인할 수 있어요!</h4>
+                                            <h5 style="color: #7cb697">이미 수강신청을 완료했다면, 내 강의실을 통해서 시청할 수 있어요!</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -171,6 +173,10 @@
             }
         });
     });
+
+    $("#classQuestionBtn").on("click", function() {
+        location.href = '${pageContext.request.contextPath}' + "/board/list.do?classIdx=" + '${classDTO.classIdx}';
+    })
 </script>
 
 
