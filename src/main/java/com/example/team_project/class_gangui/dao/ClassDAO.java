@@ -100,6 +100,11 @@ public class ClassDAO {
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
         ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
         int result = classMapper.plusOneStudent(classIdx);
+        if (result == 1) {
+            sqlSession.commit();
+        } else {
+            System.out.println("강의 수강생 1 '증가' 중 오류 발생");
+        }
         sqlSession.close();
         return result;
     }
@@ -108,6 +113,11 @@ public class ClassDAO {
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
         ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
         int result = classMapper.minusOneStudent(classIdx);
+        if (result == 1) {
+            sqlSession.commit();
+        } else {
+            System.out.println("강의 수강생 1 '감소' 중 오류 발생");
+        }
         sqlSession.close();
         return result;
     }
