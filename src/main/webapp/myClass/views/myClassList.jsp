@@ -83,15 +83,19 @@
         button.addEventListener('click', function(event) {
             var classIdx = event.target.id;
             $.ajax({
-                url: '/student/myClass/delete.do',
+                url: '${pageContext.request.contextPath}/student/myClass/delete.do',
                 type: 'post',
                 data: { classIdx: classIdx },
-                success: function() {
-                    alert('강의가 삭제되었습니다.');
-                    location.reload();
+                success: function(response) {
+                    if(response.trim() == 'success') {
+                        alert('강의가 성공적으로 삭제되었습니다.');
+                        location.href = '${pageContext.request.contextPath}/student/myClass/list.do';
+                    } else {
+                        alert('강의 삭제에 실패하였습니다.');
+                    }
                 },
                 error: function() {
-                    alert('강의 삭제에 실패했습니다.');
+                    alert('강의 삭제에 실패하였습니다.');
                 }
             });
         });
