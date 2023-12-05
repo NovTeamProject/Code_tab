@@ -22,7 +22,7 @@
     <div id="formContent">
         <form name="frm1" id="frm1" action="${pageContext.request.contextPath}/studentedit.do" method="post" onsubmit="return joinCheck(this)">
             <label class="fadeIn third"><h2 class="active">학생 정보수정</h2></label>
-            <input type="password" id="studentPassword" class="fadeIn third" name="studentPassword" placeholder="비밀번호" autocomplete="off" required>
+            <input type="password" id="studentPassword" class="fadeIn third" name="studentPassword" placeholder="PW 특수문자(!@#$%)를 포함 및 8글자이상" autocomplete="off" required>
             <input type="password" id="studentPassword2" class="fadeIn third" name="studentPassword2" placeholder="비밀번호 확인" autocomplete="off" required>
             <input type="text" id="name" class="fadeIn third" name="studentName" placeholder="이름" autocomplete="off" required>
             <input type="text" name="postCode" id="sample4_postcode" placeholder="우편번호">
