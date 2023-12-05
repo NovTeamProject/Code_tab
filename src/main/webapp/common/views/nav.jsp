@@ -9,13 +9,27 @@
     <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/common/image/작은로고2.png" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+
     <style>
         .nav-link {
-            font-size: 3.0rem;
+            font-size: 4.0rem;
             font-weight: bold;
             color: black !important;
         }
     </style>
+
+    <style>
+        .navbar-nav .nav-link {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 22px; /* 폰트 크기 변경 */
+            margin-right: 20px; /* 메뉴 사이 간격 설정 */
+        }
+    </style>
+
 </head>
 <jsp:include page="/common/views/register.jsp" />
 <body>
