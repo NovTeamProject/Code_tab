@@ -1,12 +1,5 @@
 console.log("teacherClassModify.js successfully loaded");
 
-$(document).ready(function () {
-
-});
-
-
-
-
 const showThumbnail = (event) => {
     // 사용자가 건들임.
     $("#class-image-modified").attr("value", "true");
@@ -40,19 +33,10 @@ $("#lesson-plus-button").on("click", function(event) {
 
     $("#delete-lesson-" + removeDeleteButtonIndex).remove();
 
-    addLessonElement();   
-    
-    //addMinusButton();
+    addLessonElement();
+
     lessonCountHiddenElement.val(currentLessonCount);
     $("#span-class-total-lesson-count").text(currentLessonCount);
-
-
-    /*
-    *
-    * <button type="button" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
-                                                class="btn btn-warning delete-lesson delete-lesson-${loop.index + 1}"
-                                                name='delete-lesson-${loop.index + 1}' id='delete-lesson-${loop.index + 1}'>마지막 수업 삭제하기</button>
-    * */
 
     let newDeleteBtn = "<button type='button' style='--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;'" +
         "class='btn btn-warning delete-lesson delete-lesson-" + currentLessonCount + "' name='delete-lesson-" + currentLessonCount + "' " +
@@ -108,15 +92,26 @@ $("#class-form").on("click", ".delete-lesson", function(event) {
     $("#lesson__item-" + thisLessonNumber).next().remove(); // <br />태그 제거
     $("#lesson__item-" + thisLessonNumber).remove();
 
-    if (thisLessonNumber == currentLessonCount) {
-        currentLessonCount--;
-        lessonCountHiddenElement.val(currentLessonCount);
-        // 보여지는 강의의 총 수업 개수 감소
-        $("#span-class-total-lesson-count").text(currentLessonCount);
-    } else {
-        //decreaseNumberByOne(thisLessonNumber);
-    }
+    // if (thisLessonNumber == currentLessonCount) {
+    //     currentLessonCount--;
+    //     lessonCountHiddenElement.val(currentLessonCount);
+    //     // 보여지는 강의의 총 수업 개수 감소
+    //     $("#span-class-total-lesson-count").text(currentLessonCount);
+    // } else {
+    //     //decreaseNumberByOne(thisLessonNumber);
+    // }
     //alert("수업이 삭제되었습니다");
+
+    currentLessonCount--;
+    lessonCountHiddenElement.val(currentLessonCount);
+    $("#span-class-total-lesson-count").text(currentLessonCount);
+
+    if (currentLessonCount > 1) {
+        let newDeleteBtn = "<button type='button' style='--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;'" +
+            "class='btn btn-warning delete-lesson delete-lesson-" + currentLessonCount + "' name='delete-lesson-" + currentLessonCount + "' " +
+            "id='delete-lesson-" + currentLessonCount +"'>마지막 수업 삭제하기</button>";
+        $("#div-lesson-time-" + currentLessonCount).after(newDeleteBtn);
+    }
 });
 
 const decreaseNumberByOne = (deleteTargetNum) => {
