@@ -13,6 +13,8 @@
     <link href="${pageContext.request.contextPath}/css/styles.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
             crossorigin="anonymous"></script>
+
+    <%--검색폼에 대한 유효성검사--%>
     <script>
         function validateSearchForm(form) {
             if (form.searchWord.value.trim() === "") {
@@ -29,18 +31,16 @@
             // ${map.personType} 값 확인
             var personType = ${map.personType};
 
-            // personType이 0이면 질문하기 버튼을 숨깁니다.
+            // personType이 0이면 질문하기 버튼을 숨김.
             if(personType === 0) {
                 $("#questionBtn").hide();
             } else if (personType === 2) {
-                // personType이 2이면 질문하기 버튼을 보여줍니다.
+                // personType이 2이면 질문하기 버튼 생김
                 $("#questionBtn").show();
             }
 
         });
     </script>
-
-
 </head>
 
 <body class="d-flex flex-column">
@@ -62,7 +62,7 @@
                 </select>
                 <input type="text" id="searchWord"  name="searchWord" placeholder="검색어를 입력하세요" value="${not empty map.searchWord ? map.searchWord : ''}" />
                 <input type="submit" value="검색하기"/>
-                <c:if test="${map.check == 1}"> <%--map이 1인 경우 수강을 신청한 학생이므로 질문 작성가능--%>
+                <c:if test="${map.check == 1}"> <%--map에 check가 1인 경우 수강을 신청한 학생이므로 질문 작성가능--%>
                     <div class="container" style="display: flex; justify-content: flex-end;">
                         <button type="button" class="btn btn-primary" id="questionBtn">질문하기</button>
                     </div>
@@ -82,7 +82,7 @@
                 </thead>
                 <tbody>
                     <c:choose>
-                        <c:when test="${empty boardLists}">
+                        <c:when test="${empty boardLists}">  <%--해당 값이 비어있으면 출력--%>
                             <tr>
                                 <td colspan="5" align="center">
                                     등록된 질문이 없습니다.

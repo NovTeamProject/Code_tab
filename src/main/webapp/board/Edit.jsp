@@ -7,11 +7,12 @@
     <meta charset="UTF-8">
     <title>게시판 질문</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="${pageContext.request.contextPath}/css/styles.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
             crossorigin="anonymous"></script>
+
+    <%--수정 시 유효성 검사--%>
     <script type="text/javascript">
         function validateForm(form) {  // 필수 항목 입력 확인
             if (form.title.value == "") {
@@ -38,18 +39,18 @@
             </div>
             <br class="row gx-5 justify-content-center">
             <form name="writeFrm" method="post" action="${pageContext.request.contextPath}/board/edit.do" onsubmit="return validateForm(this);">
-                <input type="hidden" name="boardIdx" value="${dto.boardIdx}" />
-                <input type="hidden" name="classIdx" value="${classIdx}" />
+                <input type="hidden" name="boardIdx" value="${dto.boardIdx}" /> <%--boardIdx 값을 보내줌--%>
+                <input type="hidden" name="classIdx" value="${classIdx}" />  <%--classIdx 값을 보내줌--%>
                 <div class="row mb-3">
                     <label for="postTitle" class="col-sm-1 col-form-label">제목</label>
                     <div class="col-sm-8">
-                        <input type="text" name="title" class="form-control" id="postTitle" value="${dto.title}">
+                        <input type="text" name="title" class="form-control" id="postTitle" value="${dto.title}"> <%--수정할 제목을 입력--%>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="postContent" class="col-sm-1 col-form-label">내용</label>
                     <div class="col-sm-10">
-                        <textarea type="hidden" name="content" class="form-control" id="postContent" rows="10"><c:out value="${dto.content}" /></textarea>
+                        <textarea type="hidden" name="content" class="form-control" id="postContent" rows="10"><c:out value="${dto.content}" /></textarea> <%--수정할 내용을 입력--%>
                     </div>
                 </div>
                 <div class="row">
@@ -65,17 +66,10 @@
         </div>
     </section>
 </main>
-<!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
-
-
-
+<%--내용 삭제시 경고창 표시--%>
 <script>
-    /*$("#resetBtn").on("click", function() {
-        $("textarea[name=content]").text("");
-        $("input[name=title]").attr("value", "");
-    })*/
     $(document).ready(function() {
         $("#resetBtn").on("click", function(event) {
             if (!confirm("모든 내용을 지우시겠습니까?")) {
