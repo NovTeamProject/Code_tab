@@ -25,8 +25,8 @@
     <style>
         .navbar-nav .nav-link {
             font-family: 'Noto Sans KR', sans-serif;
-            font-size: 22px; /* 폰트 크기 변경 */
-            margin-right: 20px; /* 메뉴 사이 간격 설정 */
+            font-size: 1.3rem; /* 폰트 크기 변경 */
+            margin-right: 14px; /* 메뉴 사이 간격 설정 */
         }
     </style>
 
