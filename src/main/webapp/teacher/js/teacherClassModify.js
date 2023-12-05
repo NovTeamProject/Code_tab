@@ -57,7 +57,7 @@ const addLessonElement = () => {
     newElement += "<span id='span-lesson-time-" + currentLessonCount + "' class='span-lesson-time span-lesson-time-" + currentLessonCount + "'>0</span>(초)";
     newElement += "</div>";
     newElement += "<input type='hidden' id='lesson-time-" + currentLessonCount + "' class='lesson-time lesson-time-" + currentLessonCount + "' name='lesson-time-" + currentLessonCount + "' />" ;
-    newElement += "<input type='hidden' id='lesson-modified-" + currentLessonCount + "'  value='true' />";
+    newElement += "<input type='hidden' name='lesson-modified-" + currentLessonCount + "' id='lesson-modified-" + currentLessonCount + "'  value='true' />";
     newElement += "</div>";
     afterThis.after(newElement);
 }

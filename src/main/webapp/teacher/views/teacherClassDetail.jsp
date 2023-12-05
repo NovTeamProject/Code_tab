@@ -68,8 +68,8 @@
                     </table>
                 </div>
                 <div style="text-align: right">
-                    <button type="button" class="btn btn-warning" id="classModifyBtn">강의 수정하기</button><br /><br />
-                    <button type="button" class="btn btn-primary" id="classQuestionBtn">이 강의 질문 게시판</button>
+                    <button type="button" class="btn btn-warning" id="classModifyBtn">[선생님] 강의 수정하기</button><br /><br />
+                    <button type="button" class="btn btn-primary" id="classQuestionBtn">현재 강의 질문 게시판</button>
                 </div>
             </div>
         </section>

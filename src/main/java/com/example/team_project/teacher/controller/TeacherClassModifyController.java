@@ -168,7 +168,7 @@ public class TeacherClassModifyController extends HttpServlet {
             }
             lessonDAO.removeUnnecessaryLessons(classIdx, list, originalLessonCount - updatedLessonCount);
         }
-        alertLocation(response, "강의를 성공적으로 수정했습니다", request.getContextPath() + "/");
+        alertLocation(response, "강의를 성공적으로 수정했습니다", request.getContextPath() + "/teacher/class/detail.do?classIdx=" + classIdx);
     }
 
     private void alertLocation(HttpServletResponse resp, String msg, String url) {
