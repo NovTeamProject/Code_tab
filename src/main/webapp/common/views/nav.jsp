@@ -41,9 +41,9 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/class/list.do">전체강의목록</a></li>
-                    <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/ranking.do">명예의전당</a></li>
-                    <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/exam/views/exam.jsp">정답서비스</a></li>
+                    <li class="nav-item"><a class="nav-link dropdown-toggle" href="${pageContext.request.contextPath}/class/list.do">전체강의목록</a></li>
+                    <li class="nav-item"><a class="nav-link dropdown-toggle" href="${pageContext.request.contextPath}/ranking.do">명예의전당</a></li>
+                    <li class="nav-item"><a class="nav-link dropdown-toggle" href="${pageContext.request.contextPath}/exam/views/exam.jsp">정답서비스</a></li>
                     <c:if test="${empty sessionScope.loginMember}">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">로그인</a>
