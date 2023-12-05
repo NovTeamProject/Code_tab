@@ -153,8 +153,8 @@
         let classIdx = $(this).attr("data-link");
         location.href = '${pageContext.request.contextPath}' + "/board/list.do?classIdx=" + classIdx;
     })
+
 </script>
-<jsp:include page="/common/views/footer.jsp"></jsp:include>
 </body>
 
 
