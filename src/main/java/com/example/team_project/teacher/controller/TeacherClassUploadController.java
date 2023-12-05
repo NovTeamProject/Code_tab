@@ -71,7 +71,7 @@ public class TeacherClassUploadController extends HttpServlet {
         String classImageOriginalNameWithoutPath = null;
         String classImageSavedNameWithoutPath = null;
         try {
-            classImageOriginalNameWithoutPath = TeacherFileUtil.uploadLessonVideoFile(request, classImageUploadPath);
+            classImageOriginalNameWithoutPath = TeacherFileUtil.classImageUpload(request, classImageUploadPath);
             classImageSavedNameWithoutPath =
                     TeacherFileUtil.renameFile(classImageUploadPath, classImageOriginalNameWithoutPath);
         } catch (Exception e) {
@@ -108,7 +108,7 @@ public class TeacherClassUploadController extends HttpServlet {
                 int lessonTime = Integer.parseInt(request.getParameter("lesson-time-" + i));
 
                 Part part = request.getPart("lesson-video-" + i);
-                String lessonOriginalFilename = TeacherFileUtil.uploadLessonVideoFile(part, lessonVideoUploadPath);
+                String lessonOriginalFilename = TeacherFileUtil.lessonVideoUpload(part, lessonVideoUploadPath);
                 String lessonSavedFilename = TeacherFileUtil.renameFile(lessonVideoUploadPath, lessonOriginalFilename);
                 LessonDTO lessonDTO = LessonDTO.builder()
                                             .lessonName(lessonName)
