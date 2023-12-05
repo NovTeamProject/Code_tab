@@ -16,6 +16,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 
+
 body{
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
@@ -11466,4 +11467,8 @@ html {
     background-position: center;
     background-repeat: no-repeat;
     min-height: 15rem;
+}
+.exammain section{
+    width: 90%;
+    margin: 0 auto !important;
 }
