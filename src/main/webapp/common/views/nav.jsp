@@ -16,17 +16,15 @@
 
     <style>
         .nav-link {
-            font-size: 4.0rem;
             font-weight: bold;
             color: black !important;
         }
     </style>
-
     <style>
         .navbar-nav .nav-link {
             font-family: 'Noto Sans KR', sans-serif;
-            font-size: 1.3rem; /* 폰트 크기 변경 */
-            margin-right: 14px; /* 메뉴 사이 간격 설정 */
+            font-size: 1.2rem; /* 폰트 크기 변경 */
+            margin-right: 10px; /* 메뉴 사이 간격 설정 */
         }
     </style>
 
