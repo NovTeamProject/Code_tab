@@ -21,15 +21,15 @@ public class CommentController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CommentDAO commentDAO = new CommentDAO();
         CommentDTO commentDTO  = new CommentDTO();
-        int personType = (Integer) req.getSession().getAttribute("personType");
+        int personType = (Integer) req.getSession().getAttribute("personType"); // personType을 세션에서 가져와서 저장
 
         if (personType == 0) {
-            // 선생님
+            // personType가 0이면 선생님, 해당 값에 선생님의 정보를 세션에서 받아와서 저장
             commentDTO.setPersonType(0);
             commentDTO.setPersonIdx((Integer) req.getSession().getAttribute("teacherIdx"));
             commentDTO.setPersonName((String) req.getSession().getAttribute("name"));
         } else if (personType == 2) {
-            // 학생
+            // personType가 2이면 학생, 해당 값에 학생의 정보를 세션에서 받아와서 저장
             commentDTO.setPersonType(2);
            commentDTO.setPersonIdx((Integer) req.getSession().getAttribute("studentIdx"));
            commentDTO.setPersonName((String) req.getSession().getAttribute("name"));
