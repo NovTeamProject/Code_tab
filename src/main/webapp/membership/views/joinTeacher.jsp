@@ -21,10 +21,10 @@
     <div id="formContent">
         <form name="frm1" id="frm1" action="${pageContext.request.contextPath}/teacherjoin.do" method="post" onsubmit="return joinCheck(this)">
             <label class="fadeIn third"><h2 class="active">선생님 회원가입</h2></label>
-            <input type="text" id="login" class="fadeIn second" name="teacherId" placeholder="아이디" autofocus required >
+            <input type="text" id="login" class="fadeIn second" name="teacherId" placeholder="ID 최소 5글자 이상" autofocus required >
             <input type="button" class="fadeIn second" value="아이디 중복 확인"  onclick="idCheck()" >
             <input type="hidden" name="idck" id="idck" value="no">
-            <input type="password" id="teacherPassword" class="fadeIn third" name="teacherPassword" placeholder="비밀번호" autocomplete="off" required>
+            <input type="password" id="teacherPassword" class="fadeIn third" name="teacherPassword" placeholder="PW 특수문자(!@#$%)를 포함 및 8글자이상" autocomplete="off" required>
             <input type="password" id="teacherPassword2" class="fadeIn third" name="teacherPassword2" placeholder="비밀번호 확인" autocomplete="off" required>
             <input type="text" id="name" class="fadeIn third" name="teacherName" placeholder="이름" autocomplete="off" required>
             <input type="text" name="postCode" id="sample4_postcode" placeholder="우편번호">
