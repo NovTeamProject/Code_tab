@@ -18,7 +18,7 @@
     button.mouse{
       background-color: transparent;
       border: 4px #0d0d0d;
-      color: white;
+      color: whitesmoke;
       font-size:3rem;
       position: absolute;
       bottom: 1rem;
@@ -52,7 +52,7 @@
           <hr class="bg-light border-4 border-top border-light">
           <p>코드탭은 여러분의 성장을 온 마음 다해 응원합니다.</p>
         </div>
-        <button class="mouse" onclick="scrollToSection('section-bottom')"><i class="fa-regular fa-circle-down"></i></i></button>
+        <button class="mouse" onclick="scrollToSection('section-bottom')"><i class="fa-regular fa-circle-down"></i></button>
       </div>
       <div class="carousel-item" data-bs-interval="7000">
         <img style="width: 100%; height: 620px;" class="d-block w-100" src="https://github.com/wwnoov/wwnoov/assets/145524959/bc8c1114-4748-4516-9e12-4e5ca970d09f" alt="...">
