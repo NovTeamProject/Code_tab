@@ -94,18 +94,16 @@
   </div>
   </div>
 
-  <section class="py-5">
+  <section class="py-5" style="padding-bottom: 0px!important;">
     <div class="container px-5 my-5">
       <div class="row gx-5 justify-content-center">
         <div class="col-lg-8 col-xl-6">
           <div class="text-center">
             <h2 class="fw-bolder">인기 강의</h2>
-            <p class="lead fw-normal text-muted mb-5">수강 학생이 가장 많은 강의 목록!</p>
+            <p class="lead fw-normal text-muted mb-5">수강 학생이 가장 많은 강의 Top 3!</p>
           </div>
         </div>
       </div>
-
-
         <div class="row gx-5">
           <c:forEach items="${topThreeClassList}" var="item" varStatus="loop">
             <div class="col-lg-4 mb-5">
@@ -138,12 +136,12 @@
   </section>
 
 
-  <section class="py-5">
+  <section class="py-5" style="padding-top: 0px!important;">
     <div class="container px-5 my-5">
       <div class="row gx-5 justify-content-center">
         <div class="col-lg-8 col-xl-6">
           <div class="text-center">
-            <h2 class="fw-bolder">최근에 등록된 강의</h2>
+            <h2 class="fw-bolder">최근 등록된 강의</h2>
             <p class="lead fw-normal text-muted mb-5">누구보다 빠르게 수강신청 해보세요!</p>
           </div>
         </div>

@@ -76,7 +76,8 @@
                     </c:when>
                     <c:when test="${not empty sessionScope.loginMember and not empty sessionScope.personType and sessionScope.personType eq 0 and sessionScope.teacherIdx eq classDTO.teacherIdx}">
                         <div style="text-align: right">
-                            <button type="button" class="btn btn-outline-success" disabled>내가 등록한 강의</button>
+                            <button type="button" class="btn btn-success" disabled>[선생님] 내가 등록한 강의</button><br /><br />
+                            <button type="button" class="btn btn-info classQuestionBtn">이 강의 질문 리스트</button>
                         </div>
                     </c:when>
                     <c:otherwise>
