@@ -111,6 +111,30 @@
         location.href = '${pageContext.request.contextPath}' + "/board/list.do?classIdx=" + classIdx;
     })
 </script>
+<script>
+    window.onscroll = function() {
+        const nav = document.querySelector('.navbar');
+        if (window.pageYOffset > 50) {
+            nav.classList.add('sticky');
+        } else {
+            nav.classList.remove('sticky');
+        }
+        // 페이지 콘텐츠의 높이를 확인하여 footer를 고정
+        const contentHeight = document.body.clientHeight;
+        const windowHeight = window.innerHeight;
+
+        if (contentHeight <= windowHeight) {
+            footer.classList.add('sticky-footer');
+        } else {
+            footer.classList.remove('sticky-footer');
+        }
+    };
+
+    function scrollToSection(id) {
+        const section = document.getElementById(id);
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
 </body>
 </html>
 <jsp:include page="/common/views/footer.jsp"/>

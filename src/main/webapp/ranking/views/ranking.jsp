@@ -83,7 +83,6 @@
     </section>
 </main>
 
-
 </body>
 </html>
 <jsp:include page="/common/views/footer.jsp" />
