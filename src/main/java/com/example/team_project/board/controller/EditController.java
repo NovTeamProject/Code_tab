@@ -15,15 +15,16 @@ import java.io.IOException;
 public class EditController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String boardIdx = req.getParameter("boardIdx");
-        String classIdx = req.getParameter("classIdx");
+        String boardIdx = req.getParameter("boardIdx");  // boardIdx 값을 html로부터 가져옴
+        String classIdx = req.getParameter("classIdx");  // classIdx 값을 html로부터 가져옴
         BoardDAO dao = new BoardDAO();
-        BoardDTO dto = dao.selectView(boardIdx);
-        req.setAttribute("dto", dto);
-        req.setAttribute("classIdx", classIdx);
+        BoardDTO dto = dao.selectView(boardIdx); // dao의 selectView쿼리로 부터 boardIdx값으로 조회해서 dto에 저장
+        req.setAttribute("dto", dto); // dto 값을 request 영역에 저장
+        req.setAttribute("classIdx", classIdx); // classIdx 값을 request 영역에 저장
         req.getRequestDispatcher("/board/Edit.jsp").forward(req, resp);
     }
 
@@ -31,13 +32,11 @@ public class EditController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        // req.getParameter("idx");
 
         // 수정 내용을 매개변수에서 얻어옴
         String boardIdx = req.getParameter("boardIdx");
         int parsedBoardIdx = Integer.parseInt(boardIdx); // 문자열을 정수로 변환
         String classIdx = req.getParameter("classIdx");
-
         String title = req.getParameter("title");
         String content = req.getParameter("content");
 
@@ -51,7 +50,7 @@ public class EditController extends HttpServlet {
         BoardDAO dao = new BoardDAO();
         int result = dao.updatePost(dto);
 
-        // 성공 or 실패?
+        // 성공 or 실패
         if (result == 1) {  // 수정 성공
             resp.sendRedirect("../board/view.do?classIdx=" + classIdx + "&boardIdx=" + boardIdx);
         }
