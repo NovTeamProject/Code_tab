@@ -82,7 +82,7 @@ CREATE TABLE comment (
     register_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
 
 CREATE TABLE exam (
-                      exam_id int NOT NULL,
-                      exam_num int,
-                      exam_answer int
+    exam_id int NOT NULL,
+    exam_num int,
+    exam_answer int
 );
