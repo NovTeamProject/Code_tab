@@ -80,3 +80,9 @@ CREATE TABLE comment (
     person_name VARCHAR(100), # 학생 or 선생의 이름
     content VARCHAR(500),
     register_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+
+CREATE TABLE exam (
+                      exam_id int NOT NULL,
+                      exam_num int,
+                      exam_answer int
+);
