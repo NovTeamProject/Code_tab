@@ -90,15 +90,18 @@
 <br/>
 
 1. 비회원 시퀀스 다이어그램    
-![비회원시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/6d3a1d4a-547d-4a6b-a564-41de9f142a9e)
+![비회원시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/166fdbd3-ce41-4a98-a44a-37714a465a3b)
+
 
 
 2. 학생 시퀀스 다이어그램   
-![학생시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/0486b20f-5dc1-4e53-a383-5536d939c273)
+![학생시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/596656a8-3a36-4a63-9c6c-ed9efab58222)
+
 
 
 3. 선생님 시퀀스 다이어그램        
-![선생님시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/93d51941-37cf-441f-8d82-c8397f952d3e)
+![선생님시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/b96161d2-32fb-4485-abb9-c58a20d3cb7a)
+
 
     
 </details>
