@@ -460,11 +460,12 @@ hr.border-light {
 }
 
 .carousel-caption p {
-    font-size: 2.2em !important;
-    font-weight: bold !important; /* 두껍게 변경 */
+    font-size: 4.0em !important;
+    /*font-weight:  !important; !* 두껍게 변경 *!*/
     text-transform: uppercase !important;
     color: #ffffff !important; /* 하얀색으로 변경 */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'Nanum Pen Script', cursive;
 }
 
 
