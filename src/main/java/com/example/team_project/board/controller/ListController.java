@@ -40,15 +40,14 @@ public class ListController extends HttpServlet {
             map.put("searchWord", searchWord);  // 검색어 값을 맵에 추가
         } // 처음 null 값이기 때문에 넘어감
 
-
-
-        int studentIdx = (Integer) request.getSession().getAttribute("studentIdx");
-        map.put("studentIdx", studentIdx); // 학생구분을 위한 studentIdx값을 map에 저장
         map.put("classIdx",classIdx); // classIdx -> 1 (key-value 쌍), classIdx를 맵에 저장
 
-
-        int check = studentDAO.checkStudentClass(map);  // 게시판 질문하기 구분을 위해서 studentIdx와 classIdx 값이 존재하는 경우 1을 반환
-        map.put("check", check); // map에 저장
+        if (request.getSession().getAttribute("studentIdx") != null) {
+            int studentIdx = (Integer) request.getSession().getAttribute("studentIdx");
+            map.put("studentIdx", studentIdx); // 학생구분을 위한 studentIdx값을 map에 저장
+            int check = studentDAO.checkStudentClass(map);  // 게시판 질문하기 구분을 위해서 studentIdx와 classIdx 값이 존재하는 경우 1을 반환
+            map.put("check", check); // map에 저장
+        }
 
         String className = classDAO.getClassNameByClassIdx(classIdx);
         // 강의 이름을 조회하기 위한 class 테이블에서 가져온 값
@@ -84,7 +83,7 @@ public class ListController extends HttpServlet {
 
         // 뷰에 전달할 매개변수 추가
         String pagingImg = BoardPage.pagingStr(totalCount, pageSize,
-                blockPage, pageNum, "../board/list.do", classIdx);  // 바로가기 영역 HTML 문자열
+                blockPage, pageNum, request.getContextPath() + "/board/list.do", classIdx);  // 바로가기 영역 HTML 문자열
         map.put("pagingImg", pagingImg);
         map.put("totalCount", totalCount);
         map.put("pageSize", pageSize);

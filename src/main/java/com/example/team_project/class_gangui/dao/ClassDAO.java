@@ -96,6 +96,32 @@ public class ClassDAO {
         return classList;
     }
 
+    public int plusOneStudent(int classIdx) {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        int result = classMapper.plusOneStudent(classIdx);
+        if (result == 1) {
+            sqlSession.commit();
+        } else {
+            System.out.println("강의 수강생 1 '증가' 중 오류 발생");
+        }
+        sqlSession.close();
+        return result;
+    }
+
+    public int minusOneStudent(int classIdx) {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        int result = classMapper.minusOneStudent(classIdx);
+        if (result == 1) {
+            sqlSession.commit();
+        } else {
+            System.out.println("강의 수강생 1 '감소' 중 오류 발생");
+        }
+        sqlSession.close();
+        return result;
+    }
+
     // 남원우님 여기 아래부터 작성 시작
     public List<Map<String, Object>> rankingClass() {
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();

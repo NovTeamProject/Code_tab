@@ -3765,15 +3765,35 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: space-between;
 }
-.navbar-brand {
+/*.navbar-brand {*/
+/*  padding-top: var(--bs-navbar-brand-padding-y);*/
+/*  padding-bottom: var(--bs-navbar-brand-padding-y);*/
+/*  margin-right: var(--bs-navbar-brand-margin-end);*/
+/*  !*font-size: var(--bs-navbar-brand-font-size);*!*/
+/*  font-size: 1.5rem;*/
+/*  font-weight: bold;*/
+/*  color: var(--bs-navbar-brand-color);*/
+/*  text-decoration: none;*/
+/*  white-space: nowrap;*/
+/*}*/
+
+.nav-link {
+  font-size: 3.0rem; /* 글자 크기를 1.5배로 늘립니다 */
+  font-weight: bold; /* 글자를 두껍게 만듭니다 */
+  color: black !important; /* 글자 색을 검정색으로 변경합니다 */
+}
+
+.navbar .navbar-brand {
   padding-top: var(--bs-navbar-brand-padding-y);
   padding-bottom: var(--bs-navbar-brand-padding-y);
   margin-right: var(--bs-navbar-brand-margin-end);
-  font-size: var(--bs-navbar-brand-font-size);
+  font-size: 1.5rem !important; /* 글자 크기를 원하는 대로 조절하세요. */
+  font-weight: bold !important; /* 글자를 두껍게 만듭니다. */
   color: var(--bs-navbar-brand-color);
   text-decoration: none;
   white-space: nowrap;
 }
+
 .navbar-brand:hover, .navbar-brand:focus {
   color: var(--bs-navbar-brand-hover-color);
 }

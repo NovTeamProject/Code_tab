@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="/common/views/nav.jsp" />
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,6 +44,7 @@
 </head>
 
 <body class="d-flex flex-column">
+<jsp:include page="/common/views/nav.jsp"></jsp:include>
 <main class="flex-shrink-0">
     <section class="bg-light py-5">
         <div class="container px-5 my-5">
@@ -97,7 +99,7 @@
                                 </td>
                                 <td>${row.studentName}</td>
                                 <td>${row.visitcount}</td>
-                                <td>${row.registerDate}</td>
+                                <td>${row.classRegisterDateWithYearMonthDayHourMinute}</td>
                             </tr>
                             </c:forEach>
                         </c:otherwise>
@@ -155,6 +157,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
+<jsp:include page="/common/views/footer.jsp"></jsp:include>
 </body>
 </html>
-<jsp:include page="/common/views/footer.jsp" />

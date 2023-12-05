@@ -26,19 +26,35 @@ public class TeacherClassUploadController extends HttpServlet {
     private LessonDAO lessonDAO = new LessonDAO();
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         log.info("TeacherClassUploadController doGet 호출");
 
         // 테스트 용으로 teacher_idx 값을 세션에 저장
-        HttpSession session = req.getSession();
-        session.setAttribute("teacher_idx", 1);
+//        HttpSession session = req.getSession();
+//        session.setAttribute("teacher_idx", 1);
 
-        req.getRequestDispatcher("/teacher/views/teacherClassUpload.jsp").forward(req, resp);
+        boolean check = TeacherLoginCheck.checkIfTeacherLogined(request);
+        if (check == false) {
+            alertLocation(response, "선생님으로 로그인 후 이용할 수 있습니다",
+                    request.getContextPath() + "/membership/loginTeacher.jsp");
+            return;
+        }
+
+        request.getRequestDispatcher("/teacher/views/teacherClassUpload.jsp")
+                .forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         log.info("TeacherClassUploadController doPost 호출");
+
+        boolean check = TeacherLoginCheck.checkIfTeacherLogined(request);
+        if (check == false) {
+            alertLocation(response, "선생님으로 로그인 후 이용할 수 있습니다",
+                    request.getContextPath() + "/membership/loginTeacher.jsp");
+            return;
+        }
+
         // 테스트 용으로 teacher_idx 값을 세션에 저장
         HttpSession session = request.getSession();
         //session.setAttribute("teacher_idx", 1);
