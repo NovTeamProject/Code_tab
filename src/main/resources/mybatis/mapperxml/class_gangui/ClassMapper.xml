@@ -102,6 +102,24 @@
         WHERE class_idx = #{class_idx}
     </update>
 
+    <update id="updateClassWithClassImage" parameterType="com.example.team_project.class_gangui.dto.ClassDTO">
+        UPDATE class
+        SET class_name = #{className}, class_explain = #{classExplain},
+            class_total_time = #{classTotalTime},
+            class_total_lesson_count = #{classTotalLessonCount},
+            class_image_original_filename = #{classImageOriginalFilename},
+            class_image_saved_filename = #{classImageSavedFilename}
+        WHERE class_idx = #{classIdx}
+    </update>
+
+    <update id="updateClassWithoutClassImage" parameterType="com.example.team_project.class_gangui.dto.ClassDTO">
+        UPDATE class
+        SET class_name = #{className}, class_explain = #{classExplain},
+            class_total_time = #{classTotalTime},
+            class_total_lesson_count = #{classTotalLessonCount}
+        WHERE class_idx = #{classIdx}
+    </update>
+
 
     <!--    남원우님 여기 아래부터 작성 시작-->
   <!-- 인기 강의 -->
