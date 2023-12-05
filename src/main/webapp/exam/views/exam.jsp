@@ -6,6 +6,11 @@
     <link href="${pageContext.request.contextPath}/exam/css/style.css?ver=1" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+
     <title>정답 서비스</title>
     <style>
         table {
@@ -27,6 +32,10 @@
 
         td {
             text-align: center;
+        }
+
+        h3 {
+            font-family: 'Noto Sans KR', sans-serif;
         }
     </style>
 </head>
