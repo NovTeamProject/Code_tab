@@ -112,7 +112,7 @@
 
 <details><summary>Block</summary>
 
-![image](https://github.com/NovTeamProject/Team_Project/assets/145963790/0bf65856-9598-4f8b-bbe8-da8ad4f4d26c)
+![image](https://github.com/NovTeamProject/Team_Project/assets/145963790/9d167256-abeb-4056-8f2b-1515affe0681)
 
 
     
@@ -120,7 +120,7 @@
 
 <details><summary>ERD</summary>
       
-![image](https://github.com/NovTeamProject/Team_Project/assets/145963790/0cdc6afc-4c69-4d78-b539-5bd9d740ba1f)
+![image](https://github.com/NovTeamProject/Team_Project/assets/145963790/28ea304e-af0e-4809-ad74-59fd76712b97)
 
     
 </details>
