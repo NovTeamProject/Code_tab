@@ -7,6 +7,10 @@
 ```bash
 프로젝트 기간 2023년 11월 13일 ~ 2023년 12월 08일
 ```
+
+## 배포 주소
+http://codetab.kro.kr/
+
 ## 📚 목차 📚
 
 01. [📂 PPT](#-PPT-)
@@ -207,6 +211,6 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/2103cda5-1057-40
 
 ## ⚡ 주소 모음 ⚡
 
-### [AWS](http://3.38.5.180/Team_Project-1.0-SNAPSHOT/index.do)
+### [AWS](http://codetab.kro.kr/)
 
 ### [Notion](https://bitly.ws/34jw6)
