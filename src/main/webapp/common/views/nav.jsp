@@ -17,9 +17,9 @@
         }
     </style>
 </head>
-
+<jsp:include page="/common/views/register.jsp" />
 <body>
-<div>
+<div class="navbar1">
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container px-5">
             <a class="navbar-brand" href="${pageContext.request.contextPath}/redirect_to_index.jsp">
@@ -70,7 +70,8 @@
             </div>
         </div>
     </nav>
-</div>
+    </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
 </body>
 </html>
