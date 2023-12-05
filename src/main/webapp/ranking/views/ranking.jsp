@@ -5,13 +5,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>index.html</title>
     <link href="${pageContext.request.contextPath}/common/css/style.css?ver=1" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>명예의 전당</title>
-
-
 </head>
 <body class="d-flex flex-column h-100">
 <main class="flex-shrink-0">

@@ -154,6 +154,7 @@
         console.log(classIdx);
         location.href = '${pageContext.request.contextPath}' + "/board/list.do?classIdx=" + classIdx;
     })
+
 </script>
 </body>
 
