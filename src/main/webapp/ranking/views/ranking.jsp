@@ -5,13 +5,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>index.html</title>
     <link href="${pageContext.request.contextPath}/common/css/style.css?ver=1" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>명예의 전당</title>
-
-
 </head>
 <body class="d-flex flex-column h-100">
 <main class="flex-shrink-0">
@@ -26,7 +23,7 @@
 <%-- 인기강의--%>
                 <div class="col-lg-6 col-xl-4">
                     <div class="card mb-5 mb-xl-0">
-                        <div class="card-body p-5">
+                        <div class="card-body p-2">
                             <div class="small text-uppercase fw-bold text-muted" align="center" >
                                 <h3><i class="bi bi-star-fill text-warning"></i> 인기강의</h3></div>
 
@@ -55,7 +52,7 @@
 <%--추천강의--%>
                 <div class="col-lg-6 col-xl-4">
                     <div class="card mb-5 mb-xl-0">
-                        <div class="card-body p-5">
+                        <div class="card-body p-2">
                             <div class="small text-uppercase fw-bold text-muted" align="center" >
                                 <h3><img width="32" height="32" src="https://img.icons8.com/external-nawicon-flat-nawicon/64/external-Quality-ecommerce-nawicon-flat-nawicon.png" alt="external-Quality-ecommerce-nawicon-flat-nawicon"/> 추천강의</h3></div>
 
@@ -85,7 +82,6 @@
         </div>
     </section>
 </main>
-
 
 </body>
 </html>

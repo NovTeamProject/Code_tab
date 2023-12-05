@@ -9,17 +9,29 @@
     <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/common/image/작은로고2.png" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+
     <style>
         .nav-link {
-            font-size: 3.0rem;
             font-weight: bold;
             color: black !important;
         }
     </style>
-</head>
+    <style>
+        .navbar-nav .nav-link {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 1.2rem; /* 폰트 크기 변경 */
+            margin-right: 10px; /* 메뉴 사이 간격 설정 */
+        }
+    </style>
 
+</head>
+<jsp:include page="/common/views/register.jsp" />
 <body>
-<div>
+<div class="navbar1">
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container px-5">
             <a class="navbar-brand" href="${pageContext.request.contextPath}/redirect_to_index.jsp">
@@ -27,9 +39,9 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/class/list.do">전체강의목록</a></li>
-                    <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/ranking.do">명예의전당</a></li>
-                    <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/exam/views/exam.jsp">모의채점</a></li>
+                    <li class="nav-item"><a class="nav-link dropdown-toggle" href="${pageContext.request.contextPath}/class/list.do">전체강의목록</a></li>
+                    <li class="nav-item"><a class="nav-link dropdown-toggle" href="${pageContext.request.contextPath}/ranking.do">명예의전당</a></li>
+                    <li class="nav-item"><a class="nav-link dropdown-toggle" href="${pageContext.request.contextPath}/exam/views/exam.jsp">정답서비스</a></li>
                     <c:if test="${empty sessionScope.loginMember}">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">로그인</a>
@@ -70,7 +82,8 @@
             </div>
         </div>
     </nav>
-</div>
+    </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
 </body>
 </html>

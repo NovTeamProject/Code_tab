@@ -21,10 +21,10 @@
     <div id="formContent">
         <form name="frm1" id="frm1" action="${pageContext.request.contextPath}/teacherjoin.do" method="post" onsubmit="return joinCheck(this)">
             <label class="fadeIn third"><h2 class="active">선생님 회원가입</h2></label>
-            <input type="text" id="login" class="fadeIn second" name="teacherId" placeholder="아이디" autofocus required >
+            <input type="text" id="login" class="fadeIn second" name="teacherId" placeholder="ID 최소 5글자 이상" autofocus required >
             <input type="button" class="fadeIn second" value="아이디 중복 확인"  onclick="idCheck()" >
             <input type="hidden" name="idck" id="idck" value="no">
-            <input type="password" id="teacherPassword" class="fadeIn third" name="teacherPassword" placeholder="비밀번호" autocomplete="off" required>
+            <input type="password" id="teacherPassword" class="fadeIn third" name="teacherPassword" placeholder="PW 특수문자(!@#$%)를 포함 및 8글자이상" autocomplete="off" required>
             <input type="password" id="teacherPassword2" class="fadeIn third" name="teacherPassword2" placeholder="비밀번호 확인" autocomplete="off" required>
             <input type="text" id="name" class="fadeIn third" name="teacherName" placeholder="이름" autocomplete="off" required>
             <input type="text" name="postCode" id="sample4_postcode" placeholder="우편번호">
@@ -92,7 +92,7 @@
         var pw = f.teacherPassword.value;
 
         var idReg = /^.{5,}$/; // 아이디는 최소 5글자 이상
-        var pwReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%])[A-Za-z\d!@#$%]{8,}$/; // 비밀번호는 소문자,대문자,숫자,특수문자(!@#$%)를 각각 최소 한 개 이상 포함 하며  8글자 이상 이여야 합니다
+        var pwReg = /^(?=.*\d)(?=.*[!@#$%])[A-Za-z\d!@#$%]{8,}$/; // 비밀번호는 숫자,특수문자(!@#$%)를 각각 최소 한 개 이상 포함 하며  8글자 이상 이여야 합니다
 
         if(!idReg.test(id)){
             alert("아이디는 최소 5자 이상이어야 합니다.");
@@ -100,7 +100,7 @@
             return false;
         }
         if(!pwReg.test(pw)){
-            alert("비밀번호는 소문자,대문자,숫자,특수문자(!@#$%)를 각각 최소 한 개 이상 포함 하며  8글자 이상 이여야 합니다.");
+            alert("비밀번호는 숫자,특수문자(!@#$%)를 각각 최소 한 개 이상 포함 하며  8글자 이상 이여야 합니다.");
             f.teacherPassword.focus();
             return false;
         }

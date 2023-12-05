@@ -15,7 +15,7 @@ public class DeleteController extends HttpServlet {
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String boardIdx = req.getParameter("boardIdx");
-        String classIdx = req.getParameter("classIdx");
+        /*String classIdx = req.getParameter("classIdx");*/
 
         BoardDAO dao = new BoardDAO();
         int result = dao.deletePost(boardIdx);

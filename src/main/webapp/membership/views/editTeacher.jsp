@@ -22,7 +22,7 @@
     <div id="formContent">
         <form name="frm1" id="frm1" action="${pageContext.request.contextPath}/teacheredit.do" method="post" onsubmit="return joinCheck(this)">
             <label class="fadeIn third"><h2 class="active">선생님 정보수정</h2></label>
-            <input type="password" id="teacherPassword" class="fadeIn third" name="studentPassword" placeholder="비밀번호" autocomplete="off" required>
+            <input type="password" id="teacherPassword" class="fadeIn third" name="studentPassword" placeholder="PW 특수문자(!@#$%)를 포함 및 8글자이상" autocomplete="off" required>
             <input type="password" id="teacherPassword2" class="fadeIn third" name="studentPassword2" placeholder="비밀번호 확인" autocomplete="off" required>
             <input type="text" id="name" class="fadeIn third" name="teacherName" placeholder="이름" autocomplete="off" required>
             <input type="text" name="postCode" id="sample4_postcode" placeholder="우편번호">
@@ -113,10 +113,10 @@
 
         var pw = f.teacherPassword.value;
 
-        var pwReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%])[A-Za-z\d!@#$%]{8,}$/; // 비밀번호는 소문자,대문자,숫자,특수문자(!@#$%)를 각각 최소 한 개 이상 포함 하며  8글자 이상 이여야 합니다
+        var pwReg = /^(?=.*\d)(?=.*[!@#$%])[A-Za-z\d!@#$%]{8,}$/; // 비밀번호는 숫자,특수문자(!@#$%)를 각각 최소 한 개 이상 포함 하며  8글자 이상 이여야 합니다
 
         if(!pwReg.test(pw)){
-            alert("비밀번호는 소문자,대문자,숫자,특수문자(!@#$%)를 각각 최소 한 개 이상 포함 하며  8글자 이상 이여야 합니다.");
+            alert("비밀번호는 숫자,특수문자(!@#$%)를 각각 최소 한 개 이상 포함 하며  8글자 이상 이여야 합니다.");
             f.teacherPassword.focus();
             return false;
         }

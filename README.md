@@ -48,7 +48,7 @@
 | **남원우** | **변재혁** | **유지호** | **차소영** |
 | :------: |  :------: | :------: | :------: | 
 | [<img src="https://avatars.githubusercontent.com/u/145524959?v=4" height=150 width=150> <br/> @wwnoov](https://github.com/wwnoov) | [<img src="https://avatars.githubusercontent.com/u/145942491?v=4" height=150 width=150> <br/> @jaehyukpyon2](https://github.com/jaehyukpyon2) | [<img src="https://avatars.githubusercontent.com/u/145963790?v=4" height=150 width=150> <br/> @jiho-96](https://github.com/jiho-96) | [<img src="https://avatars.githubusercontent.com/u/145963611?v=4" height=150 width=150> <br/> @Eumnya415](https://github.com/Eumnya415) |
-| 로그인<br>회원가입<br>명예의전당<br>기능 구현 | DB 구축 및 Query 작성  <br> 학생 강의 시스템 <br> 선생님 강의 시스템 <br> 기능 구현  |  Query 작성<br> 질의응답 게시판<br>기능 구현 | 나의 강의실<br> 마이페이지<br> 기능 구현<br>노션 관리 | 
+| 로그인<br>회원가입<br>명예의전당<br>정답서비스<br>기능 구현 | DB 구축 및 Query 작성 <br> MyBatis구축 <br> 학생 강의 시스템 <br> 선생님 강의 시스템 <br> 기능 구현 |  Query 작성<br> 질의응답 게시판<br>기능 구현<br>발표자료준비<br>프로젝트관리 | 나의 강의실<br> 마이페이지<br> 기능 구현<br>노션 관리 <br>웹 디자인 설계 <br>| 
 
 </div>
 
@@ -78,7 +78,7 @@
 
 <details><summary>Usecase</summary>
       
-![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/e50f85b9-d8cf-4a43-96d7-4b0497b1bde6)
+![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/6cde0c8d-ec47-446e-87b2-777cbdbfeb63)
 
 </details>
 
@@ -90,15 +90,18 @@
 <br/>
 
 1. 비회원 시퀀스 다이어그램    
-![비회원시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/6d3a1d4a-547d-4a6b-a564-41de9f142a9e)
+![비회원시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/166fdbd3-ce41-4a98-a44a-37714a465a3b)
+
 
 
 2. 학생 시퀀스 다이어그램   
-![학생시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/0486b20f-5dc1-4e53-a383-5536d939c273)
+![학생시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/596656a8-3a36-4a63-9c6c-ed9efab58222)
+
 
 
 3. 선생님 시퀀스 다이어그램        
-![선생님시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/93d51941-37cf-441f-8d82-c8397f952d3e)
+![선생님시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/b96161d2-32fb-4485-abb9-c58a20d3cb7a)
+
 
     
 </details>

@@ -22,10 +22,10 @@
     <div id="formContent">
         <form name="frm1" id="frm1" action="${pageContext.request.contextPath}/studentjoin.do" method="post" onsubmit="return joinCheck(this)">
             <label class="fadeIn third"><h2 class="active">학생 회원가입</h2></label>
-            <input type="text" id="login" class="fadeIn second" name="studentId" placeholder="아이디" autofocus required >
+            <input type="text" id="login" class="fadeIn second" name="studentId" placeholder="ID 최소 5글자 이상" autofocus required >
             <input type="button" class="fadeIn second" value="아이디 중복 확인"  onclick="idCheck()" >
             <input type="hidden" name="idck" id="idck" value="no">
-            <input type="password" id="studentPassword" class="fadeIn third" name="studentPassword" placeholder="비밀번호" autocomplete="off" required>
+            <input type="password" id="studentPassword" class="fadeIn third" name="studentPassword" placeholder="PW 특수문자(!@#$%)를 포함 및 8글자이상" autocomplete="off" required>
             <input type="password" id="studentPassword2" class="fadeIn third" name="studentPassword2" placeholder="비밀번호 확인" autocomplete="off" required>
             <input type="text" id="name" class="fadeIn third" name="studentName" placeholder="이름" autocomplete="off" required>
             <input type="text" name="postCode" id="sample4_postcode" placeholder="우편번호">
@@ -93,7 +93,7 @@
         var pw = f.studentPassword.value;
 
         var idReg = /^.{5,}$/; // 아이디는 최소 5글자 이상
-        var pwReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%])[A-Za-z\d!@#$%]{8,}$/; // 비밀번호는 소문자,대문자,숫자,특수문자(!@#$%)를 각각 최소 한 개 이상 포함 하며  8글자 이상 이여야 합니다
+        var pwReg = /^(?=.*\d)(?=.*[!@#$%])[A-Za-z\d!@#$%]{8,}$/; // 비밀번호는 숫자,특수문자(!@#$%)를 각각 최소 한 개 이상 포함 하며  8글자 이상 이여야 합니다
 
         if(!idReg.test(id)){
             alert("아이디는 최소 5자 이상이어야 합니다.");
@@ -101,7 +101,7 @@
             return false;
         }
         if(!pwReg.test(pw)){
-            alert("비밀번호는 소문자,대문자,숫자,특수문자(!@#$%)를 각각 최소 한 개 이상 포함 하며  8글자 이상 이여야 합니다.");
+            alert("비밀번호는 숫자,특수문자(!@#$%)를 각각 최소 한 개 이상 포함 하며  8글자 이상 이여야 합니다.");
             f.studentPassword.focus();
             return false;
         }
