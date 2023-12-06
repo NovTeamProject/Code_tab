@@ -282,13 +282,15 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/0a4d58d7-c5ef-42
 
 ## ⚡ 주소 모음 ⚡
 
+<details><summary>주소모음</summary>
+<br/>
+
 ### [AWS](http://codetab.kro.kr/)
 
 ### [Notion](https://bitly.ws/34jw6)
 
-<details><summary>카카오톡</summary>
-<br/>
-      
-![카톡QR](https://github.com/NovTeamProject/Team_Project/assets/145524959/1955dd1c-aa06-40a5-9f8f-6ed7fcfc7a66)
-      
+### [카카오톡](https://open.kakao.com/o/gbi0rjWf)
+<img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/1955dd1c-aa06-40a5-9f8f-6ed7fcfc7a66" width="300px" height="300px">
+
 </details>
+
