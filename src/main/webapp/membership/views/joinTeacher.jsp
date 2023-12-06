@@ -92,15 +92,10 @@
     function joinCheck(f){
         var id = f.teacherId.value;
         var pw = f.teacherPassword.value;
-        var checkteacher = f.checkteacher.value;
         var idReg = /^.{5,}$/; // 아이디는 최소 5글자 이상
         var pwReg = /^(?=.*\d)(?=.*[!@#$%])[A-Za-z\d!@#$%]{8,}$/; // 비밀번호는 숫자,특수문자(!@#$%)를 각각 최소 한 개 이상 포함 하며  8글자 이상 이여야 합니다
 
-        if(checkteacher === ""){
-            alert("승인번호를 입력해주세요.");
-            f.checkteacher.focus();
-            return false;
-        }
+
 
         if(!idReg.test(id)){
             alert("아이디는 최소 5자 이상이어야 합니다.");
