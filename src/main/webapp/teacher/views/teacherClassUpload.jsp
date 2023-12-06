@@ -71,7 +71,7 @@
                                     <input type="hidden" id="lesson-time-1" class="lesson-time lesson-time-1" name="lesson-time-1" />
                                 </div>
                                 <br>
-                                <button type="button" class="btn btn-outline-primary lesson-plus-button" name="lesson-plus-button" id="lesson-plus-button">
+                                <button type="button" class="btn btn-info lesson-plus-button" name="lesson-plus-button" id="lesson-plus-button">
                                     수업 추가하기</button>
                             </div>
                         </div>

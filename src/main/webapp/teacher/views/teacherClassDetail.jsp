@@ -68,14 +68,14 @@
                     </table>
                 </div>
                 <div style="text-align: right">
-                    <button type="button" class="btn btn-outline-warning" id="classModifyBtn">강의 수정하기</button><br /><br />
-                    <button type="button" class="btn btn-outline-primary" id="classQuestionBtn">이 강의 질문 게시판</button>
+                    <button type="button" class="btn btn-warning" id="classModifyBtn">[선생님] 강의 수정하기</button><br /><br />
+                    <button type="button" class="btn btn-primary" id="classQuestionBtn">현재 강의 질문 게시판</button>
                 </div>
             </div>
         </section>
 
         <h3 style="text-align: center; margin-top: 50px;">강의 수업 리스트</h3>
-        <div class="d-flex justify-content-center" style="margin-bottom: 50px;">
+        <div class="d-flex justify-content-center" style="margin-bottom: 150px;">
         <div class="accordion" id="accordionExample" style="width: 70%">
             <c:forEach items="${classDTO.lessonList}" var="lesson" varStatus="loop">
                 <c:choose>

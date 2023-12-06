@@ -52,7 +52,7 @@ const addLessonElement = () => {
 const addMinusButton = () => {
     let afterThis = $("#div-lesson-time-" + currentLessonCount);
     let newElement = "<br /><button type='button' style='--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;' " +
-        "class='btn btn-outline-warning delete-lesson delete-lesson-" + currentLessonCount + "' name='delete-lesson-" + currentLessonCount + "' id='delete-lesson-" + currentLessonCount + "'>수업 삭제하기</button><br>";
+        "class='btn btn-warning delete-lesson delete-lesson-" + currentLessonCount + "' name='delete-lesson-" + currentLessonCount + "' id='delete-lesson-" + currentLessonCount + "'>수업 삭제하기</button><br>";
     afterThis.after(newElement);
 }
 

@@ -14,6 +14,27 @@
                #{lessonTime}, #{lessonOriginalFilename}, #{lessonSavedFilename})
     </insert>
 
+    <update id="updateLessonWithNewVideo" parameterType="com.example.team_project.lesson_sueop.dto.LessonDTO">
+        UPDATE lesson
+        SET lesson_name = #{lessonName}, lesson_time = #{lessonTime}
+            lesson_original_filename = #{lessonOriginalFilename},
+            lesson_saved_filename = #{lessonSavedFilename}
+        WHERE class_idx = #{classIdx} and lesson_sequence = #{lessonSequence}
+    </update>
+
+    <update id="updateLessonWithoutNewVideo" parameterType="com.example.team_project.lesson_sueop.dto.LessonDTO">
+        UPDATE lesson
+        SET lesson_name = #{lessonName}
+        WHERE class_idx = #{classIdx} and lesson_sequence = #{lessonSequence}
+    </update>
+
+    <delete id="removeUnnecessaryLessons" parameterType="java.util.Map">
+        DELETE
+        FROM lesson
+        WHERE class_idx = #{classIdx}
+        AND lesson_sequence IN
+        (<foreach collection="list" item="item" index="index" separator=",">#{item}</foreach>)
+    </delete>
 
     <!--    남원우님 여기 아래부터 작성 시작-->
 

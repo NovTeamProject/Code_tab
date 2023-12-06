@@ -79,7 +79,7 @@
                     <!-- 게시글 내용 -->
                     <h2 class="fw-bolder">${dto.title}</h2>  <%--dto에 저장된 title 값을 가져옴--%>
                     <br>
-                    <p>작성자: ${dto.studentName} | 작성일: ${dto.registerDate} | 조회수: ${dto.visitcount}</p> <%--dto에서 해당 값을 불러옴--%>
+                    <p>작성자: ${dto.studentName} | 작성일: ${dto.classRegisterDateWithYearMonthDayHourMinute} | 조회수: ${dto.visitcount}</p> <%--dto에서 해당 값을 불러옴--%>
                     <p class="lead">
                         ${dto.content}
                     </p>
@@ -109,20 +109,27 @@
 
                                 <c:choose>
                                     <c:when test="${comments.size() < 5}">  <%--comments 사이즈가 5보다 작을 경우에만 아래 내용을 실행--%>
-                                        <!-- 답변 입력 폼 -->
-                                        <div class="mt-5">
-                                            <h3 class="fw-bolder">답변하기</h3>
-                                            <form method="post" action="${pageContext.request.contextPath}/board/comment.do"  onsubmit="return validateCommentForm(this);">
-                                                <input type="hidden" name="boardIdx" value="${boardIdx}" /> <%--boardIdx 값을 전송--%>
-                                                <input type="hidden" name="classIdx" value="${classIdx}" /> <%--classIdx 값을 전송--%>
-                                                <div class="mb-3">
-                                                    <textarea class="form-control" id="commentContent" name="commentContent" rows="4" placeholder="답변을 작성해주세요"></textarea>
-                                                </div>
-                                                <div class="d-flex justify-content-end">
-                                                    <button type="submit" class="btn btn-primary">답변저장</button>
-                                                </div>
-                                            </form>
-                                        </div>
+                                        <c:if test="${sessionScope.personType != null and sessionScope.loginMember != null}">
+                                            <!-- 답변 입력 폼 -->
+                                            <div class="mt-5">
+                                                <h3 class="fw-bolder">답변하기</h3>
+                                                <form method="post" action="${pageContext.request.contextPath}/board/comment.do"  onsubmit="return validateCommentForm(this);">
+                                                    <input type="hidden" name="boardIdx" value="${boardIdx}" /> <%--boardIdx 값을 전송--%>
+                                                    <input type="hidden" name="classIdx" value="${classIdx}" /> <%--classIdx 값을 전송--%>
+                                                    <div class="mb-3">
+                                                        <textarea class="form-control" id="commentContent" name="commentContent" rows="4" placeholder="답변을 작성해주세요"></textarea>
+                                                    </div>
+                                                    <div class="d-flex justify-content-end">
+                                                        <button type="submit" class="btn btn-primary">답변저장</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </c:if>
+                                        <c:if test="${sessionScope.personType eq null and sessionScope.loginMember eq null}">
+                                            <div class="mt-5">
+                                                <h4 style="color: black;" class="fw-bolder">로그인 후 답변을 작성할 수 있습니다</h4>
+                                            </div>
+                                        </c:if>
                                     </c:when>
                                     <c:otherwise>  <%--답변의 개수가 5번이 넘을 경우 답변을 달 수 없도록 구현, 답변이 너무 길어지지 않도록 새로운 질문을 하도록--%>
                                         <br/>

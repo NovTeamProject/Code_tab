@@ -122,6 +122,34 @@ public class ClassDAO {
         return result;
     }
 
+    public int updateClassWithClassImage(ClassDTO classDTO) {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        int result = classMapper.updateClassWithClassImage(classDTO);
+        if (result == 1) {
+            System.out.println("강의 수정 완료.");
+            sqlSession.commit();
+        } else {
+            System.out.println("강의 수정 '실패'");
+        }
+        sqlSession.close();
+        return result;
+    }
+
+    public int updateClassWithoutClassImage(ClassDTO classDTO) {
+        SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
+        ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+        int result = classMapper.updateClassWithoutClassImage(classDTO);
+        if (result == 1) {
+            System.out.println("강의 수정 완료.");
+            sqlSession.commit();
+        } else {
+            System.out.println("강의 수정 '실패'");
+        }
+        sqlSession.close();
+        return result;
+    }
+
     // 남원우님 여기 아래부터 작성 시작
     public List<Map<String, Object>> rankingClass() {
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();

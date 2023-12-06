@@ -7,6 +7,10 @@
 ```bash
 프로젝트 기간 2023년 11월 13일 ~ 2023년 12월 08일
 ```
+
+## 배포 주소
+http://codetab.kro.kr/
+
 ## 📚 목차 📚
 
 01. [📂 PPT](#-PPT-)
@@ -30,16 +34,16 @@
 ## 📖 프로젝트 소개📖
 
 - 코드탭 - 코드를 배우고 싶은 사람들을 위한 인터넷 강의사이트
-- 코드를 배우고 싶어하는 누구든지 두드리면서 배워나가자는 의미로 코드탭이라는 이름을 지음
-- 선생님은 강의를 올릴 수 있고 코드 학습에 필요한 질문을 할 수 있도록 게시판을 구현.
+- 코드를 배우고 싶어하는 누구든지 두드리면서 함께 배워나가자는 의미로 코드탭이라는 이름을 지음
+- 선생님은 강의를 올릴 수 있고 코드 학습에 필요한 질문을 할 수 있도록 게시판을 구현
 - 각 강의마다 게시판을 구현하면서 선생님과 학생간의 커뮤니케이션을 할 수 있도록 구현
 
 ## 💡기획 의도💡
 
-- 천재교육은 주로 초중고 학생들을 위한 강의를 만들고 있음 하지만 현재 학생 수가 점차 감소하고 있음
-- 따라서 새로운 시장을 개척할 필요성을 느낌 (천재교육의 디지털 트레이닝 사업 등)
-- 코로나 이후 온라인 플랫폼 시장이 활성화되었음
-- 앞으로 코딩을 할 수 있는 사람과 못하는 사람으로 나뉠 것으로 예상하면서 학생들은 물론 성인들도 배울 수 있는 강의 및 양방향 커뮤니케이션을 할 수 있는 사이트를 만들게 됨
+- 코로나 이후 온라인 플랫폼 시장이 크게 성장함
+- 2025년부터 초중학교의 코딩교육이 의무화 됨에 따라 교육분야에서 관심이 높아짐
+- 초중고 학생의 수가 감소하는 추세에 따라 전 연령층을 대상으로하는 교육이 필요
+- 코딩이 일상적으로 사용되는 시대에 맞춰 학생 뿐만 아니라 성인들도 배울 수 있는 강의와 양방향 커뮤니케이션을 할 수 있는 사이트를 제작
 
 ## 🙋‍♀️ Team_Member 🙋‍♀️
 
@@ -78,7 +82,7 @@
 
 <details><summary>Usecase</summary>
       
-![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/e50f85b9-d8cf-4a43-96d7-4b0497b1bde6)
+![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/6cde0c8d-ec47-446e-87b2-777cbdbfeb63)
 
 </details>
 
@@ -90,15 +94,18 @@
 <br/>
 
 1. 비회원 시퀀스 다이어그램    
-![비회원시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/6d3a1d4a-547d-4a6b-a564-41de9f142a9e)
+![비회원시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/166fdbd3-ce41-4a98-a44a-37714a465a3b)
+
 
 
 2. 학생 시퀀스 다이어그램   
-![학생시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/0486b20f-5dc1-4e53-a383-5536d939c273)
+![학생시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/596656a8-3a36-4a63-9c6c-ed9efab58222)
+
 
 
 3. 선생님 시퀀스 다이어그램        
-![선생님시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/93d51941-37cf-441f-8d82-c8397f952d3e)
+![선생님시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/b96161d2-32fb-4485-abb9-c58a20d3cb7a)
+
 
     
 </details>
@@ -109,7 +116,7 @@
 
 <details><summary>Block</summary>
 
-![image](https://github.com/NovTeamProject/Team_Project/assets/145963790/0bf65856-9598-4f8b-bbe8-da8ad4f4d26c)
+![image](https://github.com/NovTeamProject/Team_Project/assets/145963790/9d167256-abeb-4056-8f2b-1515affe0681)
 
 
     
@@ -117,7 +124,7 @@
 
 <details><summary>ERD</summary>
       
-![image](https://github.com/NovTeamProject/Team_Project/assets/145963790/0cdc6afc-4c69-4d78-b539-5bd9d740ba1f)
+![image](https://github.com/NovTeamProject/Team_Project/assets/145963790/28ea304e-af0e-4809-ad74-59fd76712b97)
 
     
 </details>
@@ -204,6 +211,6 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/2103cda5-1057-40
 
 ## ⚡ 주소 모음 ⚡
 
-### [AWS](http://3.38.5.180/Team_Project-1.0-SNAPSHOT/index.do)
+### [AWS](http://codetab.kro.kr/)
 
 ### [Notion](https://bitly.ws/34jw6)

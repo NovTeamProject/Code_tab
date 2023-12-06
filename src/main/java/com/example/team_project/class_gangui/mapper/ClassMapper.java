@@ -27,6 +27,8 @@ public interface ClassMapper {
     List<ClassDTO> getRecentClassList();
     int plusOneStudent(int classIdx);
     int minusOneStudent(int classIdx);
+    int updateClassWithClassImage(ClassDTO classDTO);
+    int updateClassWithoutClassImage(ClassDTO classDTO);
 
     // 남원우님 여기 아래부터 작성 시작
     List<Map<String, Object>> rankingClass();
