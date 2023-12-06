@@ -39,14 +39,10 @@
 <main class="flex-shrink-0">
       <section class="py-3">
         <div class="container px-5 my-5">
-            <div class="text-center mb-5">
-                <h1 class="fw-bolder">정답 확인</h1>
-                <p class="lead fw-normal text-muted mb-0">각종 시험의 정답을 확인 할 수 있습니다.</p>
-            </div>
             <div class="exammain">
             <div class="row gx-5">
                 <div class="col-xl-8">
-                    <h2 class="fw-bolder mb-3">2023년 국가 기술 시험</h2>
+                    <h2 class="fw-bolder mb-3">각종 시험의 정답을 확인 할 수 있습니다.</h2>
                     <div style="text-align: center;">
                     </div>
                     <div class="accordion mb-5" id="accordionExample">
