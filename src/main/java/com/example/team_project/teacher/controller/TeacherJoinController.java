@@ -36,7 +36,7 @@ public class TeacherJoinController extends HttpServlet {
     }
     System.out.println(checkTeacher);
     if(checkTeacher == null || !checkTeacher.equals("teacher")){
-      JSFunction.alertBack(resp, "승인번호를 입력하지 않으셨거나 틀렸습니다..");
+      JSFunction.alertBack(resp, "승인번호를 잘못입력하셨습니다. 관리자에세 문의주세요");
       return;
     }
 
