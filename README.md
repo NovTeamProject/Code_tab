@@ -242,7 +242,16 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/0a4d58d7-c5ef-42
 ### [Code](#)      
 </details>
 
- 
+<details><summary>비밀번호 암호화</summary>
+<br/>
+
+![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/8412591f-cf2b-4b8a-8990-33994af9a71e)
+
+    
+### [Code](#)      
+</details>
+
+
 
 
 ## 🔨 개발 환경 🔨
