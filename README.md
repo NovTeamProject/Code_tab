@@ -72,7 +72,7 @@ http://codetab.kro.kr/
 
 <details><summary>요구 명세서</summary>
       
-![요구사항](https://github.com/NovTeamProject/Team_Project/assets/145524959/6c25935e-e78a-45af-88e0-d0e4be82cdc4)
+![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/517e1850-b230-4ef8-b521-b428b9245e41)
 
       
 </details>
