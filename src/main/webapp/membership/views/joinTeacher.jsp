@@ -38,6 +38,7 @@
             <input type="text" id="checkTeacher" class="fadeIn second" name="checkTeacher" placeholder="승인번호를 입력하세요">
             <input type="submit" class="submit-button" value="회원가입">
             <input type="reset" class="fadeIn fourth" value="취소">
+            <br/><br/><br/><br/>
         </form>
     </div>
 </div>
