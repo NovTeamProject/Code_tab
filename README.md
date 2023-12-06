@@ -134,8 +134,8 @@ http://codetab.kro.kr/
 
 <details><summary>메인화면</summary>
 <br/>
-      
-https://github.com/NovTeamProject/Team_Project/assets/145524959/3fd54d42-ac16-4a1f-9944-8bb17cc0a6ab
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/506a9e4e-71b8-4072-8a95-cd954fea215e
 
 ### [Code](#)
 
@@ -144,7 +144,7 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/3fd54d42-ac16-4a
 <details><summary>로그인</summary>
 <br/>
 
-https://github.com/NovTeamProject/Team_Project/assets/145524959/a24ade71-e906-47cc-8d73-bd24eafe6e87
+https://github.com/NovTeamProject/Team_Project/assets/145524959/c26d468e-2da1-4310-8325-a83cff4bba20
 
 ### [Code](#)
 
@@ -153,32 +153,93 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/a24ade71-e906-47
 <details><summary>회원가입</summary>
 <br/>
 
-https://github.com/NovTeamProject/Team_Project/assets/145524959/ff387b23-14ba-48ab-bd86-27a7925f9765
+https://github.com/NovTeamProject/Team_Project/assets/145524959/3dc13eac-2342-4cbe-bf40-672a653f5e30
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/21eaa843-b469-44ba-9011-04a819514617
 
 ### [Code](#)    
 </details>
 
-<details><summary>새 강의 등록</summary>
+<details><summary>선생님 승인테스트</summary>
 <br/>
- 
-https://github.com/NovTeamProject/Team_Project/assets/145524959/2103cda5-1057-4018-acda-bcb8cdbca6b0
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/ae0d3691-afdd-4798-9d94-a9a362915f9f
 
 ### [Code](#)
 </details>
 
-<details><summary>질의응답게시판
-</summary>
+<details><summary>전체 강의 목록</summary>
 <br/>
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/eb04da5a-d46a-49a4-a73e-0c3cc6ce450c
+
+### [Code](#)
 </details>
 
-<details><summary>명예의전당
-</summary>
+<details><summary>새 강의 등록</summary>
 <br/>
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/ac8f624a-e0ff-43dd-9fb1-c0bf3e3fa9d5
+
+### [Code](#)
 </details>
 
-<details><summary>나의강의실
-</summary>
+<details><summary>강의 수정</summary>
 <br/>
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/1b4ab9ad-60c6-43b6-9069-0e7b389a42e1
+
+### [Code](#)
+</details>
+
+<details><summary>수강등록</summary>
+<br/>
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/89bf72f1-320b-4336-9b3f-fb34bacff7e3
+
+### [Code](#)
+</details>
+
+<details><summary>학생질문하기</summary>
+<br/>
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/be9b279a-62fd-4381-96fa-5c8ffc48739d
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/b1f5ed85-95c9-457a-be3a-59a0fdcad3dc
+
+### [Code](#)
+</details>
+
+<details><summary>선생님답변하기</summary>
+<br/>
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/7aad637d-e790-4d20-b3ca-e905b4fa1830
+
+### [Code](#)  
+</details>
+
+<details><summary>명예의전당</summary>
+<br/>
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/36ee0f3e-2062-4ed5-adec-0785f29e274a
+
+### [Code](#)      
+</details>
+
+
+<details><summary>정답서비스</summary>
+<br/>
+      
+https://github.com/NovTeamProject/Team_Project/assets/145524959/44ee29cc-996b-4bdf-9ed6-1818ae39bbc8
+
+### [Code](#)
+</details>
+<details><summary>정보변경</summary>
+<br/>
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/0a4d58d7-c5ef-4201-89a1-61c36856afb1
+    
+### [Code](#)      
 </details>
 
  
