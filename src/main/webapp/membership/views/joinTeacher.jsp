@@ -35,7 +35,7 @@
             <input type="text" name="detailAddr" id="sample4_detailAddress" placeholder="상세주소"  size="60"><br>
             <input type="hidden" id="sample4_extraAddress" placeholder="참고항목"  size="60">
             <input type="hidden" id="sample4_engAddress" placeholder="영문주소"  size="60" ><br><br>
-            <input type="text" id="checkteacher" class="fadeIn second" name="checkteacher" placeholder="승인번호를 입력하세요">
+            <input type="text" id="checkTeacher" class="fadeIn second" name="checkTeacher" placeholder="승인번호를 입력하세요">
             <input type="submit" class="submit-button" value="회원가입">
             <input type="reset" class="fadeIn fourth" value="취소">
         </form>
@@ -92,14 +92,11 @@
         var id = f.teacherId.value;
         var pw = f.teacherPassword.value;
         var checkteacher = f.checkteacher.value;
-        var checkteacherReg = "teacher";
         var idReg = /^.{5,}$/; // 아이디는 최소 5글자 이상
         var pwReg = /^(?=.*\d)(?=.*[!@#$%])[A-Za-z\d!@#$%]{8,}$/; // 비밀번호는 숫자,특수문자(!@#$%)를 각각 최소 한 개 이상 포함 하며  8글자 이상 이여야 합니다
 
-
-
-        if(checkteacher !== checkteacherReg){
-            alert("승인번호가 올바르지 않습니다.");
+        if(checkteacher === ""){
+            alert("승인번호를 입력해주세요.");
             f.checkteacher.focus();
             return false;
         }
