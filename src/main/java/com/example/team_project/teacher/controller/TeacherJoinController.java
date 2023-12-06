@@ -26,12 +26,18 @@ public class TeacherJoinController extends HttpServlet {
     String teacherId = req.getParameter("teacherId");
     String teacherPassword = req.getParameter("teacherPassword");
     String teacherName = req.getParameter("teacherName");
+    String checkTeacher = req.getParameter("checkTeacher");
     String teacherAddress = null;
 
     if (req.getParameter("roadAddr")==null){
       teacherAddress = req.getParameter("roadAddr").concat("/").concat(req.getParameter("detailAddr"));
     }else {
       teacherAddress = req.getParameter("jibunAddr").concat("/").concat(req.getParameter("detailAddr"));
+    }
+    System.out.println(checkTeacher);
+    if(checkTeacher == null || !checkTeacher.equals("teacher")){
+      JSFunction.alertBack(resp, "승인번호를 입력하지 않으셨거나 틀렸습니다..");
+      return;
     }
 
     TeacherDTO tDto = new TeacherDTO();
