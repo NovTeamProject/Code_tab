@@ -285,3 +285,6 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/0a4d58d7-c5ef-42
 ### [AWS](http://codetab.kro.kr/)
 
 ### [Notion](https://bitly.ws/34jw6)
+
+
+![카톡QR](https://github.com/NovTeamProject/Team_Project/assets/145524959/1955dd1c-aa06-40a5-9f8f-6ed7fcfc7a66)
