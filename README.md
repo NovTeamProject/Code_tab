@@ -7,9 +7,21 @@
 ```bash
 프로젝트 기간 2023년 11월 27일 ~ 2023년 12월 11일
 ```
+## ⚡ 주소 모음 ⚡
 
-## 배포 주소
-http://codetab.kro.kr/
+<details><summary>주소모음</summary>
+<br/>
+
+### AWS [http://codetab.kro.kr](http://codetab.kro.kr/)
+<img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/79c2022f-57c0-4c7b-acda-ca3d73e89103" width="300px" height="300px">
+
+### Notion [https://bitly.ws/34jw6](https://bitly.ws/34jw6)
+
+### [카카오톡](https://open.kakao.com/o/gbi0rjWf)
+<img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/1955dd1c-aa06-40a5-9f8f-6ed7fcfc7a66" width="300px" height="300px">
+
+</details>
+
 
 ## 📚 목차 📚
 
@@ -261,10 +273,11 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/0a4d58d7-c5ef-42
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=fff"/>
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=fff"/>
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=000"/>
+     
 <br>
 <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=MySQL&logoColor=white" />
 <img src="https://img.shields.io/badge/MariaDB-003545?style=flat&logo=MariaDB&logoColor=white" />
-<img src="https://img.shields.io/badge/MyBatis-000000?style=flat-square&logo=MyBatis&logoColor=blue" />
+<img src="https://img.shields.io/badge/Mybatis-000000?style=flat&logo=Fluentd&logoColor=white"/>
 <br>
 <img src="https://img.shields.io/badge/IntelliJ-000000?style=flat-square&logo=intellijidea&logoColor=white" />
 <img src="https://img.shields.io/badge/amazonaws-232F3E?style=flat-square&logo=amazonaws&logoColor=blue" />
@@ -280,17 +293,5 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/0a4d58d7-c5ef-42
 <img src="https://img.shields.io/badge/notion-000000?style=flat-square&logo=notion&logoColor=blue" />  
 </div>
 
-## ⚡ 주소 모음 ⚡
 
-<details><summary>주소모음</summary>
-<br/>
-
-### [AWS](http://codetab.kro.kr/)
-
-### [Notion](https://bitly.ws/34jw6)
-
-### [카카오톡](https://open.kakao.com/o/gbi0rjWf)
-<img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/1955dd1c-aa06-40a5-9f8f-6ed7fcfc7a66" width="300px" height="300px">
-
-</details>
 
