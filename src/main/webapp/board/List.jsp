@@ -114,9 +114,8 @@
 
     </section>
 </main>
-
     <script>
-        $(".page-link").on('click', function (event) {
+        $(".move-page").on('click', function (event) {
             event.preventDefault(); // a 태그의 기본 동작을 하지 마라.
             //console.log($(this).attr('href'));
             let destination = $(this).attr('href');
@@ -128,31 +127,6 @@
             location.href = '${pageContext.request.contextPath}' + "/board/write.do?classIdx=" + '${param.classIdx}';
         })
     </script>
-
-<script>
-    $(document).ready(function (){
-        // 첫 번째 페이지의 1번 페이징을 선택하고 클릭 이벤트를 막고 경고창을 표시합니다.
-        $(".page-item:first-child .page-link").on('click', function(event) {
-            event.preventDefault(); // 기본 클릭 동작을 막습니다.
-            alert('첫 번째 페이지입니다.'); // 경고창을 표시합니다.
-        });
-    });
-</script>
-
-
-<script>
-    $(document).ready(function() {
-        $(".page-item:last-child .page-link").on('click', function(event) {
-            event.preventDefault(); // 기본 클릭 동작을 막습니다.
-            alert('마지막 페이지입니다.'); // 경고창을 표시합니다.
-        });
-    });
-
-</script>
-
-
-
-
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
