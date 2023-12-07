@@ -27,7 +27,6 @@ public class StudentEditController extends HttpServlet {
     // 정보 수정 (학생)
 
     String studentPassword = req.getParameter("studentPassword");
-    String studentName = req.getParameter("studentName");
     String studentAddress= null;
 
     if (req.getParameter("roadAddr")==null){
@@ -39,14 +38,12 @@ public class StudentEditController extends HttpServlet {
     StudentDTO sDto = new StudentDTO();
     sDto.setStudentId((String) req.getSession().getAttribute("studentId"));
     sDto.setStudentPassword(Encrypt.getEncrypt(studentPassword));
-    sDto.setStudentName(studentName);
     sDto.setStudentAddress(studentAddress);
 
     HttpSession session = req.getSession();
     session.setAttribute("loginMember", sDto);
     session.setAttribute("studentIdx", sDto.getStudentIdx());
     session.setAttribute("studentId", sDto.getStudentId());
-    session.setAttribute("name", sDto.getStudentName());
     session.setAttribute("personType",2); // 학생이면 2번, 선생 0번
 
 

@@ -28,7 +28,6 @@ public class TeacherEditController extends HttpServlet {
     // 정보 수정 (선생님)
 
     String teacherPassword = req.getParameter("teacherPassword");
-    String teacherName = req.getParameter("teacherName");
     String teacherAddress= null;
 
     if (req.getParameter("roadAddr")==null){
@@ -40,14 +39,12 @@ public class TeacherEditController extends HttpServlet {
     TeacherDTO tDto = new TeacherDTO();
     tDto.setTeacherId((String) req.getSession().getAttribute("teacherId"));
     tDto.setTeacherPassword(Encrypt.getEncrypt(teacherPassword));
-    tDto.setTeacherName(teacherName);
     tDto.setTeacherAddress(teacherAddress);
 
     HttpSession session = req.getSession();
     session.setAttribute("loginMember", tDto);
     session.setAttribute("teacherIdx", tDto.getTeacherIdx());
     session.setAttribute("teacherId", tDto.getTeacherId());
-    session.setAttribute("name", tDto.getTeacherName());
     session.setAttribute("personType",0); // 학생이면 2번, 선생 0번
 
     TeacherDAO tDao = new TeacherDAO();

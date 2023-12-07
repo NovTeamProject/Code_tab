@@ -7,7 +7,7 @@ public class Encrypt {
   public static String getEncrypt(String pwd) {
 
     String result = "";
-    String salt = "";
+    String salt = "codetab";
     try {
       // SHA256 알고리즘 객체 생성
       MessageDigest md = MessageDigest.getInstance("SHA-256");
