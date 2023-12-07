@@ -231,7 +231,9 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/be9b279a-62fd-43
 
 https://github.com/NovTeamProject/Team_Project/assets/145524959/b1f5ed85-95c9-457a-be3a-59a0fdcad3dc
 
-### [Code](#)
+### [Controller](https://github.com/NovTeamProject/Team_Project/blob/22f54acaaad585f495930f0e74eb2704d1bea297/src/main/java/com/example/team_project/board/controller/WriteController.java#L29C6-L47C1)
+### [DAO](https://github.com/NovTeamProject/Team_Project/blob/22f54acaaad585f495930f0e74eb2704d1bea297/src/main/java/com/example/team_project/board/dao/BoardDAO.java#L29C1-L41C6)
+### [View](https://github.com/NovTeamProject/Team_Project/blob/22f54acaaad585f495930f0e74eb2704d1bea297/src/main/webapp/board/Write.jsp#L39C12-L55C87)
 </details>
 
 <details><summary>선생님답변하기</summary>
@@ -239,7 +241,9 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/b1f5ed85-95c9-45
 
 https://github.com/NovTeamProject/Team_Project/assets/145524959/7aad637d-e790-4d20-b3ca-e905b4fa1830
 
-### [Code](#)  
+### [Controller](https://github.com/NovTeamProject/Team_Project/blob/22f54acaaad585f495930f0e74eb2704d1bea297/src/main/java/com/example/team_project/comment/controller/CommentController.java#L38C9-L47C59)  
+### [DAO](https://github.com/NovTeamProject/Team_Project/blob/22f54acaaad585f495930f0e74eb2704d1bea297/src/main/java/com/example/team_project/comment/dao/CommentDAO.java#L23C1-L35C6)
+### [View](https://github.com/NovTeamProject/Team_Project/blob/22f54acaaad585f495930f0e74eb2704d1bea297/src/main/webapp/board/View.jsp#L102C32-L108C45)
 </details>
 
 <details><summary>명예의전당</summary>
