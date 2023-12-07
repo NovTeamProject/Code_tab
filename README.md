@@ -5,14 +5,27 @@
 
 #  💻 에듀테크 풀스택 3기 4조 CODE TAB💻
 ```bash
-프로젝트 기간 2023년 11월 13일 ~ 2023년 12월 08일
+프로젝트 기간 2023년 11월 27일 ~ 2023년 12월 11일
 ```
+## ⚡ 주소 모음 ⚡
 
-## 배포 주소
-http://codetab.kro.kr/
+<details><summary>주소모음</summary>
+<br/>
+
+### AWS [http://codetab.kro.kr](http://codetab.kro.kr/)
+<img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/79c2022f-57c0-4c7b-acda-ca3d73e89103" width="300px" height="300px">
+
+### Notion [https://bitly.ws/34jw6](https://bitly.ws/34jw6)
+
+### [카카오톡](https://open.kakao.com/o/gbi0rjWf)
+<img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/1955dd1c-aa06-40a5-9f8f-6ed7fcfc7a66" width="300px" height="300px">
+
+</details>
+
 
 ## 📚 목차 📚
 
+00. [⚡주소 모음](#-주소-모음-)
 01. [📂 PPT](#-PPT-)
 02. [📖 프로젝트 소개](#-프로젝트-소개)
 03. [💡 기획 의도](#기획-의도)
@@ -22,7 +35,7 @@ http://codetab.kro.kr/
 07. [📊 Diagram](#-다이어그램-)
 08. [📹 기능 설명](#-기능-설명-)
 09. [🔨개발 환경](#-개발-환경-)
-10. [⚡주소 모음](#-주소-모음-)
+
 
 ## 📂 PPT 📂
 
@@ -60,7 +73,8 @@ http://codetab.kro.kr/
 ## 📋개발 일지📋
 <details><summary>개발 일지</summary>
    
-![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/ad4a3bb9-919a-4fe7-a0d2-0df6863c4bcf)
+![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/345f6381-e893-41c0-9f98-2660e580e1ed)
+
 
 
 </details>
@@ -72,7 +86,7 @@ http://codetab.kro.kr/
 
 <details><summary>요구 명세서</summary>
       
-![요구사항](https://github.com/NovTeamProject/Team_Project/assets/145524959/6c25935e-e78a-45af-88e0-d0e4be82cdc4)
+![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/517e1850-b230-4ef8-b521-b428b9245e41)
 
       
 </details>
@@ -134,8 +148,8 @@ http://codetab.kro.kr/
 
 <details><summary>메인화면</summary>
 <br/>
-      
-https://github.com/NovTeamProject/Team_Project/assets/145524959/3fd54d42-ac16-4a1f-9944-8bb17cc0a6ab
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/506a9e4e-71b8-4072-8a95-cd954fea215e
 
 ### [Code](#)
 
@@ -144,7 +158,7 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/3fd54d42-ac16-4a
 <details><summary>로그인</summary>
 <br/>
 
-https://github.com/NovTeamProject/Team_Project/assets/145524959/a24ade71-e906-47cc-8d73-bd24eafe6e87
+https://github.com/NovTeamProject/Team_Project/assets/145524959/c26d468e-2da1-4310-8325-a83cff4bba20
 
 ### [Code](#)
 
@@ -153,35 +167,105 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/a24ade71-e906-47
 <details><summary>회원가입</summary>
 <br/>
 
-https://github.com/NovTeamProject/Team_Project/assets/145524959/ff387b23-14ba-48ab-bd86-27a7925f9765
+https://github.com/NovTeamProject/Team_Project/assets/145524959/3dc13eac-2342-4cbe-bf40-672a653f5e30
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/21eaa843-b469-44ba-9011-04a819514617
 
 ### [Code](#)    
 </details>
 
-<details><summary>새 강의 등록</summary>
+<details><summary>선생님 승인테스트</summary>
 <br/>
- 
-https://github.com/NovTeamProject/Team_Project/assets/145524959/2103cda5-1057-4018-acda-bcb8cdbca6b0
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/ae0d3691-afdd-4798-9d94-a9a362915f9f
 
 ### [Code](#)
 </details>
 
-<details><summary>질의응답게시판
-</summary>
+<details><summary>전체 강의 목록</summary>
 <br/>
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/eb04da5a-d46a-49a4-a73e-0c3cc6ce450c
+
+### [Code](#)
 </details>
 
-<details><summary>명예의전당
-</summary>
+<details><summary>새 강의 등록</summary>
 <br/>
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/ac8f624a-e0ff-43dd-9fb1-c0bf3e3fa9d5
+
+### [Code](#)
 </details>
 
-<details><summary>나의강의실
-</summary>
+<details><summary>강의 수정</summary>
 <br/>
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/1b4ab9ad-60c6-43b6-9069-0e7b389a42e1
+
+### [Code](#)
 </details>
 
- 
+<details><summary>수강등록</summary>
+<br/>
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/89bf72f1-320b-4336-9b3f-fb34bacff7e3
+
+### [Code](#)
+</details>
+
+<details><summary>학생질문하기</summary>
+<br/>
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/be9b279a-62fd-4381-96fa-5c8ffc48739d
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/b1f5ed85-95c9-457a-be3a-59a0fdcad3dc
+
+### [Code](#)
+</details>
+
+<details><summary>선생님답변하기</summary>
+<br/>
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/7aad637d-e790-4d20-b3ca-e905b4fa1830
+
+### [Code](#)  
+</details>
+
+<details><summary>명예의전당</summary>
+<br/>
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/36ee0f3e-2062-4ed5-adec-0785f29e274a
+
+### [Code](#)      
+</details>
+
+
+<details><summary>정답서비스</summary>
+<br/>
+      
+https://github.com/NovTeamProject/Team_Project/assets/145524959/44ee29cc-996b-4bdf-9ed6-1818ae39bbc8
+
+### [Code](#)
+</details>
+<details><summary>정보변경</summary>
+<br/>
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/0a4d58d7-c5ef-4201-89a1-61c36856afb1
+    
+### [Code](#)      
+</details>
+
+<details><summary>비밀번호 암호화</summary>
+<br/>
+
+![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/8412591f-cf2b-4b8a-8990-33994af9a71e)
+
+    
+### [Code](#)      
+</details>
+
+
 
 
 ## 🔨 개발 환경 🔨
@@ -190,10 +274,11 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/2103cda5-1057-40
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=fff"/>
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=fff"/>
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=000"/>
+     
 <br>
 <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=MySQL&logoColor=white" />
 <img src="https://img.shields.io/badge/MariaDB-003545?style=flat&logo=MariaDB&logoColor=white" />
-<img src="https://img.shields.io/badge/MyBatis-000000?style=flat-square&logo=MyBatis&logoColor=blue" />
+<img src="https://img.shields.io/badge/Mybatis-000000?style=flat&logo=Fluentd&logoColor=white"/>
 <br>
 <img src="https://img.shields.io/badge/IntelliJ-000000?style=flat-square&logo=intellijidea&logoColor=white" />
 <img src="https://img.shields.io/badge/amazonaws-232F3E?style=flat-square&logo=amazonaws&logoColor=blue" />
@@ -209,8 +294,5 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/2103cda5-1057-40
 <img src="https://img.shields.io/badge/notion-000000?style=flat-square&logo=notion&logoColor=blue" />  
 </div>
 
-## ⚡ 주소 모음 ⚡
 
-### [AWS](http://codetab.kro.kr/)
 
-### [Notion](https://bitly.ws/34jw6)
