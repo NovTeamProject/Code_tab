@@ -13,10 +13,8 @@
 
 
 
-
-| **AWS** | **KaKaoTalk** | **Notion** |
+| **![awsaws](https://github.com/NovTeamProject/Team_Project/assets/145963611/c33a2433-81d8-4137-88d6-c7c7c350a030)** | **![kakao](https://github.com/NovTeamProject/Team_Project/assets/145963611/ed61908a-6f7c-43f1-b56a-287fc8f6ab8c)** | **![notion2](https://github.com/NovTeamProject/Team_Project/assets/145963611/8e1e720e-e202-4ad8-9767-0befe6dcf529)** |
 | :------: |  :------: | :------: |
-| ![awsaws](https://github.com/NovTeamProject/Team_Project/assets/145963611/c33a2433-81d8-4137-88d6-c7c7c350a030) | ![kakao](https://github.com/NovTeamProject/Team_Project/assets/145963611/ed61908a-6f7c-43f1-b56a-287fc8f6ab8c) | ![notion2](https://github.com/NovTeamProject/Team_Project/assets/145963611/8e1e720e-e202-4ad8-9767-0befe6dcf529) |
 |  http://codetab.kro.kr/  |  https://open.kakao.com/o/gbi0rjWf  |  https://bit.ly/3R7ybFH |
  |   <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/79c2022f-57c0-4c7b-acda-ca3d73e89103" width="150px" height="150px">  |  <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/1955dd1c-aa06-40a5-9f8f-6ed7fcfc7a66" width="150px" height="150px">  |   <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/0d6e1c04-a919-40c7-8bac-119282a7c9a7" width="150px" height="150px"> | 
 
@@ -94,13 +92,14 @@
 
 <details><summary>Usecase</summary>
       
-![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/6cde0c8d-ec47-446e-87b2-777cbdbfeb63)
+![스크린샷 2023-12-06 142455](https://github.com/NovTeamProject/Team_Project/assets/145963611/b943fdb3-2e12-4aae-b0c6-42545e25c6d7)
 
 </details>
 
 <details><summary>Class</summary>
 
-![image (1)](https://github.com/NovTeamProject/Team_Project/assets/145524959/257ab4f3-1aa9-431c-acab-04e354a0c1e1)
+![스크린샷 2023-12-07 200019](https://github.com/NovTeamProject/Team_Project/assets/145963611/861330c6-9d0e-4451-a69a-63bbc7758082)
+
 
 </details>
 
