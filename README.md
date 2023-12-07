@@ -140,7 +140,6 @@
 
 https://github.com/NovTeamProject/Team_Project/assets/145524959/506a9e4e-71b8-4072-8a95-cd954fea215e
 
-### [Code](#)
 
 </details>
 
@@ -149,7 +148,9 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/506a9e4e-71b8-40
 
 https://github.com/NovTeamProject/Team_Project/assets/145524959/c26d468e-2da1-4310-8325-a83cff4bba20
 
-### [Code](#)
+### [로그인 Code](https://github.com/NovTeamProject/Team_Project/blob/c431c8cf1b65235d922cd6ea7fdba3a699816c18/src/main/java/com/example/team_project/teacher/controller/TeacherJoinController.java#L25C5-L59C2)
+
+### [주소API Code](https://github.com/NovTeamProject/Team_Project/blob/c431c8cf1b65235d922cd6ea7fdba3a699816c18/src/main/webapp/membership/views/joinTeacher.jsp#L119C1-L178C10)
 
 </details>
 
@@ -160,16 +161,36 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/3dc13eac-2342-4c
 
 https://github.com/NovTeamProject/Team_Project/assets/145524959/21eaa843-b469-44ba-9011-04a819514617
 
-### [Code](#)    
+### [회원가입 Code](https://github.com/NovTeamProject/Team_Project/blob/c431c8cf1b65235d922cd6ea7fdba3a699816c18/src/main/java/com/example/team_project/teacher/controller/TeacherJoinController.java#L25C5-L59C2)    
+
 </details>
 
-<details><summary>선생님 승인테스트</summary>
+<details><summary>유효성검사</summary>
 <br/>
 
 https://github.com/NovTeamProject/Team_Project/assets/145524959/ae0d3691-afdd-4798-9d94-a9a362915f9f
 
-### [Code](#)
+### [유효성검사 Code](https://github.com/NovTeamProject/Team_Project/blob/c431c8cf1b65235d922cd6ea7fdba3a699816c18/src/main/webapp/membership/views/joinTeacher.jsp#L46C1-L117C6)
+
 </details>
+
+<details><summary>정보변경</summary>
+<br/>
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/0a4d58d7-c5ef-4201-89a1-61c36856afb1
+    
+### [정보변경 Code](https://github.com/NovTeamProject/Team_Project/blob/c431c8cf1b65235d922cd6ea7fdba3a699816c18/src/main/java/com/example/team_project/teacher/controller/TeacherEditController.java#L28C1-L51C41)      
+</details>
+
+<details><summary>비밀번호 암호화</summary>
+<br/>
+
+![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/8412591f-cf2b-4b8a-8990-33994af9a71e)
+
+    
+### [암호화 Code](https://github.com/NovTeamProject/Team_Project/blob/c431c8cf1b65235d922cd6ea7fdba3a699816c18/src/main/java/com/example/team_project/utils/Encrypt.java#L9C3-L30C19)    
+</details>
+
 
 <details><summary>전체 강의 목록</summary>
 <br/>
@@ -226,33 +247,17 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/7aad637d-e790-4d
 
 https://github.com/NovTeamProject/Team_Project/assets/145524959/36ee0f3e-2062-4ed5-adec-0785f29e274a
 
-### [Code](#)      
+### [명예의전당 Code](https://github.com/NovTeamProject/Team_Project/blob/c431c8cf1b65235d922cd6ea7fdba3a699816c18/src/main/resources/mybatis/mapperxml/class_gangui/ClassMapper.xml#L125C1-L136C14)      
 </details>
-
 
 <details><summary>정답서비스</summary>
 <br/>
       
 https://github.com/NovTeamProject/Team_Project/assets/145524959/44ee29cc-996b-4bdf-9ed6-1818ae39bbc8
 
-### [Code](#)
-</details>
-<details><summary>정보변경</summary>
-<br/>
-
-https://github.com/NovTeamProject/Team_Project/assets/145524959/0a4d58d7-c5ef-4201-89a1-61c36856afb1
-    
-### [Code](#)      
+### [정답서비스 Code](https://github.com/NovTeamProject/Team_Project/blob/c431c8cf1b65235d922cd6ea7fdba3a699816c18/src/main/java/com/example/team_project/exam/controller/ExamController.java#L32C1-L40C6)
 </details>
 
-<details><summary>비밀번호 암호화</summary>
-<br/>
-
-![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/8412591f-cf2b-4b8a-8990-33994af9a71e)
-
-    
-### [Code](#)      
-</details>
 
 
 
