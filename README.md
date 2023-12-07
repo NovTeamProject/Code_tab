@@ -1,31 +1,20 @@
-# CODE TAB
+#  💻 CODE TAB 💻
+```bash
+에듀테크 풀스택 3기 4조
+프로젝트 기간 2023년 11월 27일 ~ 2023년 12월 11일
+```
 
 ![256컬러](https://github.com/NovTeamProject/Team_Project/assets/145524959/3298851f-7534-4304-99b3-55106605b887)
 
+| **AWS** | **KaKaoTalk** | **Notion** |
+| :------: |  :------: | :------: |
+|  http://codetab.kro.kr/  |  https://open.kakao.com/o/gbi0rjWf  |  https://bit.ly/3R7ybFH |
+ |   <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/79c2022f-57c0-4c7b-acda-ca3d73e89103" width="150px" height="150px">  |  <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/1955dd1c-aa06-40a5-9f8f-6ed7fcfc7a66" width="150px" height="150px">  |   <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/0d6e1c04-a919-40c7-8bac-119282a7c9a7" width="150px" height="150px"> | 
 
-#  💻 에듀테크 풀스택 3기 4조 CODE TAB💻
-```bash
-프로젝트 기간 2023년 11월 27일 ~ 2023년 12월 11일
-```
-## ⚡ 주소 모음 ⚡
-
-<details><summary>주소모음</summary>
-<br/>
-
-### AWS [http://codetab.kro.kr](http://codetab.kro.kr/)
-<img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/79c2022f-57c0-4c7b-acda-ca3d73e89103" width="300px" height="300px">
-
-### Notion [https://bitly.ws/34jw6](https://bitly.ws/34jw6)
-
-### [카카오톡](https://open.kakao.com/o/gbi0rjWf)
-<img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/1955dd1c-aa06-40a5-9f8f-6ed7fcfc7a66" width="300px" height="300px">
-
-</details>
 
 
 ## 📚 목차 📚
 
-00. [⚡주소 모음](#-주소-모음-)
 01. [📂 PPT](#-PPT-)
 02. [📖 프로젝트 소개](#-프로젝트-소개)
 03. [💡 기획 의도](#기획-의도)
@@ -151,7 +140,6 @@
 
 https://github.com/NovTeamProject/Team_Project/assets/145524959/506a9e4e-71b8-4072-8a95-cd954fea215e
 
-### [Code](#)
 
 </details>
 
@@ -160,7 +148,9 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/506a9e4e-71b8-40
 
 https://github.com/NovTeamProject/Team_Project/assets/145524959/c26d468e-2da1-4310-8325-a83cff4bba20
 
-### [Code](#)
+### [로그인 Code](https://github.com/NovTeamProject/Team_Project/blob/c431c8cf1b65235d922cd6ea7fdba3a699816c18/src/main/java/com/example/team_project/teacher/controller/TeacherJoinController.java#L25C5-L59C2)
+
+### [주소API Code](https://github.com/NovTeamProject/Team_Project/blob/c431c8cf1b65235d922cd6ea7fdba3a699816c18/src/main/webapp/membership/views/joinTeacher.jsp#L119C1-L178C10)
 
 </details>
 
@@ -171,16 +161,36 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/3dc13eac-2342-4c
 
 https://github.com/NovTeamProject/Team_Project/assets/145524959/21eaa843-b469-44ba-9011-04a819514617
 
-### [Code](#)    
+### [회원가입 Code](https://github.com/NovTeamProject/Team_Project/blob/c431c8cf1b65235d922cd6ea7fdba3a699816c18/src/main/java/com/example/team_project/teacher/controller/TeacherJoinController.java#L25C5-L59C2)    
+
 </details>
 
-<details><summary>선생님 승인테스트</summary>
+<details><summary>유효성검사</summary>
 <br/>
 
 https://github.com/NovTeamProject/Team_Project/assets/145524959/ae0d3691-afdd-4798-9d94-a9a362915f9f
 
-### [Code](#)
+### [유효성검사 Code](https://github.com/NovTeamProject/Team_Project/blob/c431c8cf1b65235d922cd6ea7fdba3a699816c18/src/main/webapp/membership/views/joinTeacher.jsp#L46C1-L117C6)
+
 </details>
+
+<details><summary>정보변경</summary>
+<br/>
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/0a4d58d7-c5ef-4201-89a1-61c36856afb1
+    
+### [정보변경 Code](https://github.com/NovTeamProject/Team_Project/blob/c431c8cf1b65235d922cd6ea7fdba3a699816c18/src/main/java/com/example/team_project/teacher/controller/TeacherEditController.java#L28C1-L51C41)      
+</details>
+
+<details><summary>비밀번호 암호화</summary>
+<br/>
+
+![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/8412591f-cf2b-4b8a-8990-33994af9a71e)
+
+    
+### [암호화 Code](https://github.com/NovTeamProject/Team_Project/blob/c431c8cf1b65235d922cd6ea7fdba3a699816c18/src/main/java/com/example/team_project/utils/Encrypt.java#L9C3-L30C19)    
+</details>
+
 
 <details><summary>전체 강의 목록</summary>
 <br/>
@@ -221,7 +231,9 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/be9b279a-62fd-43
 
 https://github.com/NovTeamProject/Team_Project/assets/145524959/b1f5ed85-95c9-457a-be3a-59a0fdcad3dc
 
-### [Code](#)
+### [Controller](https://github.com/NovTeamProject/Team_Project/blob/22f54acaaad585f495930f0e74eb2704d1bea297/src/main/java/com/example/team_project/board/controller/WriteController.java#L29C6-L47C1)
+### [DAO](https://github.com/NovTeamProject/Team_Project/blob/22f54acaaad585f495930f0e74eb2704d1bea297/src/main/java/com/example/team_project/board/dao/BoardDAO.java#L29C1-L41C6)
+### [View](https://github.com/NovTeamProject/Team_Project/blob/22f54acaaad585f495930f0e74eb2704d1bea297/src/main/webapp/board/Write.jsp#L39C12-L55C87)
 </details>
 
 <details><summary>선생님답변하기</summary>
@@ -229,7 +241,9 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/b1f5ed85-95c9-45
 
 https://github.com/NovTeamProject/Team_Project/assets/145524959/7aad637d-e790-4d20-b3ca-e905b4fa1830
 
-### [Code](#)  
+### [Controller](https://github.com/NovTeamProject/Team_Project/blob/22f54acaaad585f495930f0e74eb2704d1bea297/src/main/java/com/example/team_project/comment/controller/CommentController.java#L38C9-L47C59)  
+### [DAO](https://github.com/NovTeamProject/Team_Project/blob/22f54acaaad585f495930f0e74eb2704d1bea297/src/main/java/com/example/team_project/comment/dao/CommentDAO.java#L23C1-L35C6)
+### [View](https://github.com/NovTeamProject/Team_Project/blob/22f54acaaad585f495930f0e74eb2704d1bea297/src/main/webapp/board/View.jsp#L102C32-L108C45)
 </details>
 
 <details><summary>명예의전당</summary>
@@ -237,33 +251,17 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/7aad637d-e790-4d
 
 https://github.com/NovTeamProject/Team_Project/assets/145524959/36ee0f3e-2062-4ed5-adec-0785f29e274a
 
-### [Code](#)      
+### [명예의전당 Code](https://github.com/NovTeamProject/Team_Project/blob/c431c8cf1b65235d922cd6ea7fdba3a699816c18/src/main/resources/mybatis/mapperxml/class_gangui/ClassMapper.xml#L125C1-L136C14)      
 </details>
-
 
 <details><summary>정답서비스</summary>
 <br/>
       
 https://github.com/NovTeamProject/Team_Project/assets/145524959/44ee29cc-996b-4bdf-9ed6-1818ae39bbc8
 
-### [Code](#)
-</details>
-<details><summary>정보변경</summary>
-<br/>
-
-https://github.com/NovTeamProject/Team_Project/assets/145524959/0a4d58d7-c5ef-4201-89a1-61c36856afb1
-    
-### [Code](#)      
+### [정답서비스 Code](https://github.com/NovTeamProject/Team_Project/blob/c431c8cf1b65235d922cd6ea7fdba3a699816c18/src/main/java/com/example/team_project/exam/controller/ExamController.java#L32C1-L40C6)
 </details>
 
-<details><summary>비밀번호 암호화</summary>
-<br/>
-
-![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/8412591f-cf2b-4b8a-8990-33994af9a71e)
-
-    
-### [Code](#)      
-</details>
 
 
 
@@ -272,26 +270,31 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/0a4d58d7-c5ef-42
 <div>
 <img src="https://img.shields.io/badge/JAVA-C01818?style=flat-square&logo=coffeescript&logoColor=white" />
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=fff"/>
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=fff"/>
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=000"/>
      
 <br>
+<img src="https://img.shields.io/badge/bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white"/>
+<img src="https://img.shields.io/badge/jquery-0769AD?style=flat&logo=jquery&logoColor=white"/>
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=fff"/>
+<br>
+
 <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=MySQL&logoColor=white" />
 <img src="https://img.shields.io/badge/MariaDB-003545?style=flat&logo=MariaDB&logoColor=white" />
 <img src="https://img.shields.io/badge/Mybatis-000000?style=flat&logo=Fluentd&logoColor=white"/>
 <br>
 <img src="https://img.shields.io/badge/IntelliJ-000000?style=flat-square&logo=intellijidea&logoColor=white" />
-<img src="https://img.shields.io/badge/amazonaws-232F3E?style=flat-square&logo=amazonaws&logoColor=blue" />
+<img src="https://img.shields.io/badge/bitly-EE6123?style=flat-square&logo=bitly&logoColor=blue" />  
 <img src="https://img.shields.io/badge/StarUML-E25A1C?style=flat-square&logo=apachespark&logoColor=white" />
+<br>
+<img src="https://img.shields.io/badge/Slack-4A154B?style=flat-square&logo=slack&logoColor=white" />
+<img src="https://img.shields.io/badge/notion-000000?style=flat-square&logo=notion&logoColor=blue" />  
+
+<img src="https://img.shields.io/badge/amazonaws-232F3E?style=flat-square&logo=amazonaws&logoColor=blue" />
 <br>
 <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white" />
 <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" />
 <img src="https://img.shields.io/badge/Sourcetree-0052CC?style=flat-square&logo=Sourcetree&logoColor=blue" />
 <img src="https://img.shields.io/badge/gitkraken-179287?style=flat-square&logo=gitkraken&logoColor=white">
-<br>
-<img src="https://img.shields.io/badge/Slack-4A154B?style=flat-square&logo=slack&logoColor=white" />
-
-<img src="https://img.shields.io/badge/notion-000000?style=flat-square&logo=notion&logoColor=blue" />  
 </div>
 
 
