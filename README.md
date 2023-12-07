@@ -36,8 +36,27 @@
 ## 📂 PPT 📂
 
 <details><summary>PPT</summary>
+<div align="center">
 
+| **![1](https://github.com/NovTeamProject/Team_Project/assets/145963611/b2ccef9a-8a9a-4bbd-8206-165c79ccc079)** | **![2](https://github.com/NovTeamProject/Team_Project/assets/145963611/22f935e1-2b74-4bf7-8199-847d77cfc3da)** |
+| :------: |  :------: |
+| ![3](https://github.com/NovTeamProject/Team_Project/assets/145963611/67cbd8f7-b088-4103-ada3-0f3276191087) | ![4](https://github.com/NovTeamProject/Team_Project/assets/145963611/8a637e73-8004-44c4-a6f6-85faa1e74cc5) |
+| ![5](https://github.com/NovTeamProject/Team_Project/assets/145963611/6a2a4d59-39fc-4ea6-a355-549e4be7ee7c) | ![6](https://github.com/NovTeamProject/Team_Project/assets/145963611/c1f41687-7c21-4146-ab4f-94169229d6e5) |
+| ![7](https://github.com/NovTeamProject/Team_Project/assets/145963611/93f0e0a3-b937-411d-937d-e9e6a1776982) | ![8](https://github.com/NovTeamProject/Team_Project/assets/145963611/c1dc32a9-b2bb-42c4-a62d-92762005535d) |
+| ![9](https://github.com/NovTeamProject/Team_Project/assets/145963611/08efc9a4-1381-46fa-abf2-5f7d980df36a) | ![10](https://github.com/NovTeamProject/Team_Project/assets/145963611/4f77661a-2fc6-4fa3-8e08-515d8c4ba135) |
+| ![11](https://github.com/NovTeamProject/Team_Project/assets/145963611/438a0c8d-2b14-44f3-b9fd-fbde5e699efa) | ![12](https://github.com/NovTeamProject/Team_Project/assets/145963611/59aee7c3-dd46-4d3e-a1a2-18d7527d1a82) |
+| ![13](https://github.com/NovTeamProject/Team_Project/assets/145963611/47f8156a-c4d4-4337-85df-480832a774b5) | ![14](https://github.com/NovTeamProject/Team_Project/assets/145963611/86f4bed6-ad14-4cef-98b2-d906b1cdf947) |
+| ![15](https://github.com/NovTeamProject/Team_Project/assets/145963611/fd1d2f54-b99a-4c0e-a6db-55552ae29de0) | ![16](https://github.com/NovTeamProject/Team_Project/assets/145963611/c12472d9-6fbc-41f7-a720-372c218c7cbd) |
+| ![17](https://github.com/NovTeamProject/Team_Project/assets/145963611/f9f574a5-4301-4386-8ee3-b91d84131067) | ![18](https://github.com/NovTeamProject/Team_Project/assets/145963611/770daa4f-832b-41c4-8c23-e4e1ca1645eb) |
+| ![19](https://github.com/NovTeamProject/Team_Project/assets/145963611/db1d1a2c-e9bc-4d18-8be6-d4684e2af4e8) | ![20](https://github.com/NovTeamProject/Team_Project/assets/145963611/117d87c9-1f64-44ef-81bb-f02d31a51dce) |
+| ![21](https://github.com/NovTeamProject/Team_Project/assets/145963611/0cbd067e-a693-4e50-8241-6a0cf525a5b6) | ![22](https://github.com/NovTeamProject/Team_Project/assets/145963611/be1a27d2-9052-4fd9-83ef-a93e0e9917a2) |
+| ![23](https://github.com/NovTeamProject/Team_Project/assets/145963611/109ac0a8-00a1-4bd6-a2e0-4ed602e5c7e0) | ![24](https://github.com/NovTeamProject/Team_Project/assets/145963611/15b34c61-7e26-4ba6-ba4e-6f578fb3eff9) |
+| ![25](https://github.com/NovTeamProject/Team_Project/assets/145963611/78cbd018-8cb2-4170-bb9a-3b2f9328c718) | ![26](https://github.com/NovTeamProject/Team_Project/assets/145963611/46db2fb4-bf34-487c-a1ad-1cfe4bbd36e9) |
+| ![27](https://github.com/NovTeamProject/Team_Project/assets/145963611/c4a92c0b-259a-42ea-be3d-ff309a20c127) | ![28](https://github.com/NovTeamProject/Team_Project/assets/145963611/76b906c1-c560-4cd7-9328-9b15f86c9d73) |
+| ![29](https://github.com/NovTeamProject/Team_Project/assets/145963611/945c44d4-8cca-4e78-ab6d-d404d1eb61d6) | ![30](https://github.com/NovTeamProject/Team_Project/assets/145963611/71aff316-6986-4dc5-a60a-ee02fadd8b7f) |
+| ![31](https://github.com/NovTeamProject/Team_Project/assets/145963611/24763bd7-6ec8-4587-b060-d6cc345322c9) | ![33](https://github.com/NovTeamProject/Team_Project/assets/145963611/45bf9c66-872a-4be3-82db-1885a90e56d6) |
 
+</div>
 </details>
       
 ## 📖 프로젝트 소개📖
