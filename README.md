@@ -90,7 +90,9 @@
 </details>
 
 <details><summary>Class</summary>
-  
+
+![image (1)](https://github.com/NovTeamProject/Team_Project/assets/145524959/257ab4f3-1aa9-431c-acab-04e354a0c1e1)
+
 </details>
 
 <details><summary>Sequence</summary>
@@ -110,9 +112,6 @@
 ![선생님시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/b96161d2-32fb-4485-abb9-c58a20d3cb7a)
 
 
-    
-</details>
-    
 </details>
 
 
