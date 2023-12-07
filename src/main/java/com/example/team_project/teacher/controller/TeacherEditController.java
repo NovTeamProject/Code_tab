@@ -27,19 +27,25 @@ public class TeacherEditController extends HttpServlet {
 
     // 정보 수정 (선생님)
 
-    String teacherPassword = req.getParameter("teacherPassword");
-    String teacherAddress= null;
+    String teacherPassword = req.getParameter("teacherPassword");       // teacherPassword의 파라미터 값을 가져옴
+    String teacherAddress= null;                                              // teacherAddress 객체 선언
 
+    // 주소 입력
     if (req.getParameter("roadAddr")==null){
+      // 주소가 도로명 주소일 경우
       teacherAddress = req.getParameter("roadAddr").concat("/").concat(req.getParameter("detailAddr"));
     }else {
+      // 주소가 지번 주소일 경우
       teacherAddress = req.getParameter("jibunAddr").concat("/").concat(req.getParameter("detailAddr"));
     }
 
-    TeacherDTO tDto = new TeacherDTO();
-    tDto.setTeacherId((String) req.getSession().getAttribute("teacherId"));
-    tDto.setTeacherPassword(Encrypt.getEncrypt(teacherPassword));
-    tDto.setTeacherAddress(teacherAddress);
+    TeacherDTO tDto = new TeacherDTO();                                                       // TeacherDTO 객체 생성
+    tDto.setTeacherId((String) req.getSession().getAttribute("teacherId"));             // teacherId에 세션에서 부여받은 teacherId 저장
+    tDto.setTeacherPassword(Encrypt.getEncrypt(teacherPassword));                             // TeacherDTO 객체에 암호화된 teacherPassword 저장
+    tDto.setTeacherAddress(teacherAddress);                                                   // TeacherDTO 객체에 teacherAddress 저장
+
+
+    // 로그인과 마찬가지로 각각의 값들을 세션에 저장한다.
 
     HttpSession session = req.getSession();
     session.setAttribute("loginMember", tDto);

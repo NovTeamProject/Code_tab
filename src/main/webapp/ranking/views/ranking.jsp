@@ -20,7 +20,7 @@
                 <p class="lead fw-normal text-muted mb-0">인기강의와 추천강의를 볼 수 있습니다.</p>
             </div>
             <div class="row gx-5 justify-content-center">
-<%-- 인기강의--%>
+            <%-- 인기강의--%>
                 <div class="col-lg-6 col-xl-4">
                     <div class="card mb-5 mb-xl-0">
                         <div class="card-body p-2">
@@ -28,11 +28,12 @@
                                 <h3><i class="bi bi-star-fill text-warning"></i> 인기강의</h3></div>
 
                             <ul class="list-unstyled mb-4">
-
+            <%--  rankingClass아이템을 만들고 loop를 통해 반복하여 인기강의를 출력한다.   --%>
              <c:forEach items="${rankingClass}" var="className" varStatus="loop" end="9">
                  <c:set var="index" value="${loop.index}" />
                     <li class="mb-2">
                      <p>
+            <%--   조건문을 통해서 인덱스가 0이면 1등으로 표시하고 아니면 순위를 표시한다. (1등을 강조하기 위해서)--%>
                          <c:choose>
                            <c:when test="${index == 0}">
                                <a href="${pageContext.request.contextPath}/class/detail.do?classIdx=${className.class_idx}"> <span class="display-6 fw-bold"><img width="32" height="32" src="https://img.icons8.com/cotton/64/crown--v1.png" alt="crown--v1"/></i>  ${className.class_name}</span></a>
@@ -49,7 +50,7 @@
                         </div>
                     </div>
                 </div>
-<%--추천강의--%>
+            <%--  추천강의  --%>
                 <div class="col-lg-6 col-xl-4">
                     <div class="card mb-5 mb-xl-0">
                         <div class="card-body p-2">

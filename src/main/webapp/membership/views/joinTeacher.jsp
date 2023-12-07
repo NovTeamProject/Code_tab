@@ -23,6 +23,7 @@
             <label class="fadeIn third"><h2 class="active">선생님 회원가입</h2></label>
             <input type="text" id="login" class="fadeIn second" name="teacherId" placeholder="ID 최소 5글자 이상" autofocus required >
             <input type="button" class="fadeIn second" value="아이디 중복 확인"  onclick="idCheck()" >
+            <%-- input type을 히든으로 선택하여 사용자는 보이지 않지만 idck라는 이름의 값을 서버에 전송합니다. --%>
             <input type="hidden" name="idck" id="idck" value="no">
             <input type="password" id="teacherPassword" class="fadeIn third" name="teacherPassword" placeholder="PW 특수문자(!@#$%)를 포함 및 8글자이상" autocomplete="off" required>
             <input type="password" id="teacherPassword2" class="fadeIn third" name="teacherPassword2" placeholder="비밀번호 확인" autocomplete="off" required>
@@ -35,7 +36,7 @@
             <input type="text" name="detailAddr" id="sample4_detailAddress" placeholder="상세주소"  size="60"><br>
             <input type="hidden" id="sample4_extraAddress" placeholder="참고항목"  size="60">
             <input type="hidden" id="sample4_engAddress" placeholder="영문주소"  size="60" ><br><br>
-            <input type="text" id="checkTeacher" class="fadeIn second" name="checkTeacher" placeholder="승인번호를 입력하세요">
+            <input type="text" id="checkTeacher" class="fadeIn second" name="checkTeacher" placeholder="승인코드를 입력">
             <input type="submit" class="submit-button" value="회원가입">
             <input type="reset" class="fadeIn fourth" value="취소">
             <br/><br/><br/><br/>
@@ -44,6 +45,7 @@
 </div>
 
 <script>
+    /*  html문서의 로딩이 다 끝나면 실행*/
     $(document).ready(function(){
         $("#login").keyup(function(){
             $("#idck").val("no");
@@ -55,22 +57,30 @@
             }
         });
     });
+    /*  ID 유효성체크 */
     function idCheck(){
-
+        // input text login에 입력된 아이디를 가져와서 teacherId에 저장
         var teacherId = document.getElementById('login').value;
-
+        // 아이디가 입력되지 않았다면 경고 메시지를 출력하고 함수를 종료합니다.
         if(teacherId =="") {
             alert("아이디를 입력하지 않았습니다.");
             return;
         }
+        // 아이디를 서버에 전송하기 위해 객체를 생성합니다.
         var params = { teacherId : teacherId }
 
         $.ajax({
+            // 서버에 전송할 URL을 설정합니다.
             url:"${pageContext.request.contextPath}/IdCheckTeacher.do",
+            // HTTP 요청 방식을 설정합니다. 이 경우에는 POST 방식입니다.
             type:"post",
+            // 서버로부터 반환받을 데이터의 형식을 설정합니다. 이 경우에는 JSON 형식입니다.
             dataType:"json",
+            // 서버에 전송할 데이터를 설정합니다.
             data:params,
+            // 서버로부터 성공적으로 데이터를 받아왔을 경우의 동작을 설정합니다.
             success:function(data){
+                // 서버로부터 받은 데이터에서 result 값을 가져옵니다.
                 var idPass = data.result
                 if(idPass == false){
                     idck = "no";
