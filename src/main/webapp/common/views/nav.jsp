@@ -29,6 +29,7 @@
     </style>
 
 </head>
+<%--back 이벤트 일 경우 글작성 후 back키 입력시 데이터가 남아있던 오류 수정하는 JSP--%>
 <jsp:include page="/common/views/register.jsp" />
 <body>
 <div class="navbar1">
@@ -42,7 +43,9 @@
                     <li class="nav-item"><a class="nav-link dropdown-toggle" href="${pageContext.request.contextPath}/class/list.do">전체강의목록</a></li>
                     <li class="nav-item"><a class="nav-link dropdown-toggle" href="${pageContext.request.contextPath}/ranking.do">명예의전당</a></li>
                     <li class="nav-item"><a class="nav-link dropdown-toggle" href="${pageContext.request.contextPath}/exam/views/exam.jsp">정답서비스</a></li>
+                    <%--  세션에 값(loginMember)에 따라 학생,선생님,비회원의 메뉴를 보여준다.--%>
                     <c:if test="${empty sessionScope.loginMember}">
+                        <%--dropdonw메뉴--%>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">로그인</a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
@@ -62,6 +65,7 @@
                     <c:if test="${not empty sessionScope.loginMember}">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdownMypage" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <%--로그인한 사람이 학생인지 선생님인지 확인하는 메뉴 (학생은 2 선생님은 0으로 지정)--%>
                                 ${sessionScope.personType eq 0 ? "[선생님]" : "[학생]"}
                                 ${sessionScope.name} 님!
                             </a>

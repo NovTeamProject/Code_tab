@@ -54,7 +54,8 @@
                                 <input type="hidden" name="examId" value="정보처리기사" />
                                 <div class="accordion-collapse collapse show" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                     <div class="accordion-body score">
-                                      <table border="1" cellspacing="0">
+                                       <%-- 정답을 입력받는 테이블--%>
+                                      <table class="table table-striped" border="1" cellspacing="0">
                                         <tr>
                                             <th>번호</th>
                                             <th>&nbsp;&nbsp;&nbsp;정답</th>
@@ -130,7 +131,9 @@
                                 <input type="hidden" name="examId" value="SQL 개발자" />
                                  <div class="accordion-collapse collapse"  id="collapseTwo" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                      <div class="accordion-body score">
-                                            <table border="1" cellspacing="0">
+                                         <%-- 정답을 입력받는 테이블--%>
+
+                                         <table border="1" cellspacing="0">
                                                 <tr>
                                                     <th>번호</th>
                                                     <th>&nbsp;&nbsp;&nbsp;정답</th>
@@ -212,18 +215,19 @@
     <br/><br/><br/><br/><br/>
 </main>
 <script>
+   /* 유효성 검사 부분입니다.*/
     function validateInputs(form) {
-        var isValid = true;
-        var regex = /^[1-4]$/;
+        var isValid = true; // 유효성 검사 통과 여부를 저장하는 변수, 초기값은 true
+        var regex = /^[1-4]$/; // 유효성 검사에 사용할 정규 표현식, 1부터 4까지의 숫자만 허용
 
-        var inputs = form.querySelectorAll('input[name^="answer"]');
-        var invalidInputs = [];
+        var inputs = form.querySelectorAll('input[name^="answer"]'); // 'answer'로 시작하는 name을 가진 모든 input 요소를 선택
+        var invalidInputs = []; // 유효성 검사를 통과하지 못한 input 요소를 저장할 배열
 
         inputs.forEach(function(input) {
-            var value = input.value.trim();
-            if (!regex.test(value)) {
-                isValid = false;
-                invalidInputs.push(input);
+            var value = input.value.trim();     // input 요소의 값을 공백 제거 후 가져옴
+            if (!regex.test(value)) {       // 값이 정규 표현식에 맞지 않으면 (즉, 1~4가 아니면)
+                isValid = false;                // 유효성 검사 통과 여부를 false로 설정
+                invalidInputs.push(input);       // 유효성 검사를 통과하지 못한 input 요소를 배열에 추가
             }
         });
 
