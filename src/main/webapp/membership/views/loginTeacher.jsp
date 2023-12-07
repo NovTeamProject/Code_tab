@@ -21,6 +21,7 @@
 <div class="wrapper fadeInDown">
     <div id="formContent">
         <label class="fadeIn third"><h2 class="active">선생님 로그인</h2></label>
+        <%-- input 값을 받아서 loginteacher.do로 보내줍니다. --%>
         <form action="${pageContext.request.contextPath}/loginteacher.do" method="post">
             <input type="text" id="login"  name="teacherId" placeholder="아이디" />
             <input type="password" id="password" name="teacherPassword" placeholder="비밀번호" autocomplete="off" />
