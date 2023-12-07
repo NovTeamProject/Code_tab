@@ -6,8 +6,8 @@
   <link href="${pageContext.request.contextPath}/common/css/style.css?ver=1" rel="stylesheet">
 </head>
 <body>
-<div class="footer">
-<footer class="bg-dark py-3 mt-auto footersize">
+<div class="footer2">
+<footer class="bg-dark py-3 mt-auto" >
   <div class="container px-3">
     <div class="row align-items-center justify-content-between flex-column flex-sm-row">
       <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; CODE TAB 2023</div></div>
