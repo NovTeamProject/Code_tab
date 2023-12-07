@@ -1,31 +1,19 @@
-# CODE TAB
-
-![256컬러](https://github.com/NovTeamProject/Team_Project/assets/145524959/3298851f-7534-4304-99b3-55106605b887)
-
-
 #  💻 에듀테크 풀스택 3기 4조 CODE TAB💻
 ```bash
 프로젝트 기간 2023년 11월 27일 ~ 2023년 12월 11일
 ```
-## ⚡ 주소 모음 ⚡
 
-<details><summary>주소모음</summary>
-<br/>
+![256컬러](https://github.com/NovTeamProject/Team_Project/assets/145524959/3298851f-7534-4304-99b3-55106605b887)
 
-### AWS [http://codetab.kro.kr](http://codetab.kro.kr/)
-<img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/79c2022f-57c0-4c7b-acda-ca3d73e89103" width="300px" height="300px">
+| **AWS** | **KaKaoTalk** | **Notion** |
+| :------: |  :------: | :------: |
+|  http://codetab.kro.kr/  |  https://open.kakao.com/o/gbi0rjWf  |  https://bit.ly/3R7ybFH |
+ |   <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/79c2022f-57c0-4c7b-acda-ca3d73e89103" width="150px" height="150px">  |  <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/1955dd1c-aa06-40a5-9f8f-6ed7fcfc7a66" width="150px" height="150px">  |   <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/0d6e1c04-a919-40c7-8bac-119282a7c9a7" width="150px" height="150px"> | 
 
-### Notion [https://bitly.ws/34jw6](https://bitly.ws/34jw6)
-
-### [카카오톡](https://open.kakao.com/o/gbi0rjWf)
-<img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/1955dd1c-aa06-40a5-9f8f-6ed7fcfc7a66" width="300px" height="300px">
-
-</details>
 
 
 ## 📚 목차 📚
 
-00. [⚡주소 모음](#-주소-모음-)
 01. [📂 PPT](#-PPT-)
 02. [📖 프로젝트 소개](#-프로젝트-소개)
 03. [💡 기획 의도](#기획-의도)
