@@ -246,6 +246,19 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/7aad637d-e790-4d
 ### [View](https://github.com/NovTeamProject/Team_Project/blob/22f54acaaad585f495930f0e74eb2704d1bea297/src/main/webapp/board/View.jsp#L102C32-L108C45)
 </details>
 
+<details><summary>나의 강의실</summary>
+<br/>
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/00faefff-f91a-4f37-a2a7-fb8f2d493159
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/e4a82356-c569-4784-9a74-b2597c4e31e5
+
+
+### [학생 나의 강의실 Code]()
+### [선생님 강의실 Code]()
+
+</details>
+
 <details><summary>명예의전당</summary>
 <br/>
 
