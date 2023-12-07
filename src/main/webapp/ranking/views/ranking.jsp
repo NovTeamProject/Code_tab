@@ -68,7 +68,7 @@
                                                     <a href="${pageContext.request.contextPath}/class/detail.do?classIdx=${upclassName.class_idx}"><span class="display-6 fw-bold"><img width="32" height="32" src="https://img.icons8.com/cotton/64/crown--v1.png" alt="crown--v1"/></i>  ${upclassName.class_name}</span></a>
                                                 </c:when>
                                                 <c:otherwise>
-                                                    <a href="${pageContext.request.contextPath}/class/detail.do?classIdx=${className.class_idx}">  <img width="16" height="16" src="https://img.icons8.com/pastel-glyph/64/thumb-up--v2.png" alt="thumb-up--v2"/> ${index + 1} &nbsp ${upclassName.class_name}</a>
+                                                    <a href="${pageContext.request.contextPath}/class/detail.do?classIdx=${upclassName.class_idx}">  <img width="16" height="16" src="https://img.icons8.com/pastel-glyph/64/thumb-up--v2.png" alt="thumb-up--v2"/> ${index + 1} &nbsp ${upclassName.class_name}</a>
                                                 </c:otherwise>
                                             </c:choose>
                                         </p>
