@@ -26,6 +26,9 @@ public class ClassDTO {
 
     private List<LessonDTO> lessonList;
 
+//    추가
+    private String teacherName;
+
     public String getClassRegisterDateWithYearMonthDay() {
         if (this.classRegisterDate != null) {
             return this.classRegisterDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));

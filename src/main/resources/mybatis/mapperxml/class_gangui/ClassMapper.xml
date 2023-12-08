@@ -40,6 +40,8 @@
         <result column="class_image_original_filename" jdbcType="VARCHAR" property="classImageOriginalFilename" />
         <result column="class_image_saved_filename" jdbcType="VARCHAR" property="classImageSavedFilename" />
         <result column="listen_student" jdbcType="INTEGER" property="listenStudent" />
+<!--        추가-->
+        <result column="teacher_name" jdbcType="VARCHAR" property="teacherName" />
         <collection property="lessonList" ofType="com.example.team_project.lesson_sueop.dto.LessonDTO">
             <id column="lesson_idx" jdbcType="INTEGER" property="lessonIdx" />
             <result column="lesson_name" jdbcType="VARCHAR" property="lessonName" />
@@ -55,6 +57,7 @@
         SELECT *
         FROM class c INNER JOIN lesson l
             ON c.class_idx = l.class_idx
+            INNER JOIN teacher t ON c.teacher_idx = t.teacher_idx
         WHERE c.class_idx = #{classIdx}
     </select>
 
