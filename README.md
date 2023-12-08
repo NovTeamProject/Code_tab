@@ -85,18 +85,15 @@
 ## 📋개발 일지📋
 <details><summary>개발 일지</summary>
    
-![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/23443b30-a945-4b64-9e9e-d7534dfcaf63)
+![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/98c68f24-d8dd-4d63-bfeb-3aaac34fad82)
 
 </details>
-
-
-
 
 ## 📈 요구 명세서 📈
 
 <details><summary>요구 명세서</summary>
       
-![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/517e1850-b230-4ef8-b521-b428b9245e41)
+![2023-12-08 09 36 26](https://github.com/NovTeamProject/Team_Project/assets/145963611/e8ec2fb7-9680-4603-8470-39389275448c)
 
       
 </details>
