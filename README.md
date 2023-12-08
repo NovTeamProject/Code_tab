@@ -85,12 +85,9 @@
 ## 📋개발 일지📋
 <details><summary>개발 일지</summary>
    
-![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/23443b30-a945-4b64-9e9e-d7534dfcaf63)
+![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/98c68f24-d8dd-4d63-bfeb-3aaac34fad82)
 
 </details>
-
-
-
 
 ## 📈 요구 명세서 📈
 
