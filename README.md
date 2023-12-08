@@ -1,8 +1,5 @@
 #  💻 CODE TAB 💻
-```bash
-에듀테크 풀스택 3기 4조
-프로젝트 기간 2023년 11월 27일 ~ 2023년 12월 11일
-```
+
 
 <!--![256컬러](https://github.com/NovTeamProject/Team_Project/assets/145524959/3298851f-7534-4304-99b3-55106605b887)-->
 <div align="center">
@@ -54,7 +51,7 @@
 | ![25](https://github.com/NovTeamProject/Team_Project/assets/145963611/78cbd018-8cb2-4170-bb9a-3b2f9328c718) | ![26](https://github.com/NovTeamProject/Team_Project/assets/145963611/46db2fb4-bf34-487c-a1ad-1cfe4bbd36e9) |
 | ![27](https://github.com/NovTeamProject/Team_Project/assets/145963611/c4a92c0b-259a-42ea-be3d-ff309a20c127) | ![28](https://github.com/NovTeamProject/Team_Project/assets/145963611/76b906c1-c560-4cd7-9328-9b15f86c9d73) |
 | ![29](https://github.com/NovTeamProject/Team_Project/assets/145963611/945c44d4-8cca-4e78-ab6d-d404d1eb61d6) | ![30](https://github.com/NovTeamProject/Team_Project/assets/145963611/71aff316-6986-4dc5-a60a-ee02fadd8b7f) |
-| ![31](https://github.com/NovTeamProject/Team_Project/assets/145963611/24763bd7-6ec8-4587-b060-d6cc345322c9) | ![33](https://github.com/NovTeamProject/Team_Project/assets/145963611/45bf9c66-872a-4be3-82db-1885a90e56d6) |
+| ![31](https://github.com/NovTeamProject/Team_Project/assets/145963611/24763bd7-6ec8-4587-b060-d6cc345322c9) | ![CODE TAB](https://github.com/NovTeamProject/Team_Project/assets/145963611/bfd28af3-5938-4673-a5ac-ba92657866b0) |
 
 </div>
 </details>
@@ -80,7 +77,7 @@
 | **남원우** | **변재혁** | **유지호** | **차소영** |
 | :------: |  :------: | :------: | :------: | 
 | [<img src="https://avatars.githubusercontent.com/u/145524959?v=4" height=150 width=150> <br/> @wwnoov](https://github.com/wwnoov) | [<img src="https://avatars.githubusercontent.com/u/145942491?v=4" height=150 width=150> <br/> @jaehyukpyon2](https://github.com/jaehyukpyon2) | [<img src="https://avatars.githubusercontent.com/u/145963790?v=4" height=150 width=150> <br/> @jiho-96](https://github.com/jiho-96) | [<img src="https://avatars.githubusercontent.com/u/145963611?v=4" height=150 width=150> <br/> @Eumnya415](https://github.com/Eumnya415) |
-| 로그인, 회원가입<br>명예의 전당<br>정답 서비스<br>기능 구현<br>Git Hub 관리 | DB 구축 및 Query 작성 <br> MyBatis구축 <br> 학생, 선생님 강의 시스템 <br> 기능 구현 <br> AWS 배포 |  Query 작성<br> 질의 응답 게시판<br>기능 구현<br>발표 자료 준비<br>프로젝트 관리 | 나의 강의실<br> 강의 상세 페이지<br> 기능 구현<br>웹 디자인 설계 <br>노션 관리 <br>| 
+| 로그인, 회원가입<br>명예의 전당<br>정답 서비스<br>기능 구현<br>Git Hub 관리 | DB 설계 및 Query 작성 <br> MyBatis구축 <br> 학생, 선생님 강의 시스템 <br> 기능 구현 <br> AWS 배포 |  Query 작성<br> 질의 응답 게시판<br>기능 구현<br>발표 자료 준비<br>DB 관리 | 나의 강의실<br> 강의 상세 페이지<br> 기능 구현<br>웹 디자인 설계 <br>노션 관리 <br>| 
 
 </div>
 
@@ -88,9 +85,7 @@
 ## 📋개발 일지📋
 <details><summary>개발 일지</summary>
    
-![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/345f6381-e893-41c0-9f98-2660e580e1ed)
-
-
+![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/23443b30-a945-4b64-9e9e-d7534dfcaf63)
 
 </details>
 
