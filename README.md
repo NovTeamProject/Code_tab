@@ -1,8 +1,5 @@
 #  💻 CODE TAB 💻
-```bash
-에듀테크 풀스택 3기 4조
-프로젝트 기간 2023년 11월 27일 ~ 2023년 12월 11일
-```
+
 
 <!--![256컬러](https://github.com/NovTeamProject/Team_Project/assets/145524959/3298851f-7534-4304-99b3-55106605b887)-->
 <div align="center">
@@ -80,7 +77,7 @@
 | **남원우** | **변재혁** | **유지호** | **차소영** |
 | :------: |  :------: | :------: | :------: | 
 | [<img src="https://avatars.githubusercontent.com/u/145524959?v=4" height=150 width=150> <br/> @wwnoov](https://github.com/wwnoov) | [<img src="https://avatars.githubusercontent.com/u/145942491?v=4" height=150 width=150> <br/> @jaehyukpyon2](https://github.com/jaehyukpyon2) | [<img src="https://avatars.githubusercontent.com/u/145963790?v=4" height=150 width=150> <br/> @jiho-96](https://github.com/jiho-96) | [<img src="https://avatars.githubusercontent.com/u/145963611?v=4" height=150 width=150> <br/> @Eumnya415](https://github.com/Eumnya415) |
-| 로그인, 회원가입<br>명예의 전당<br>정답 서비스<br>기능 구현<br>Git Hub 관리 | DB 구축 및 Query 작성 <br> MyBatis구축 <br> 학생, 선생님 강의 시스템 <br> 기능 구현 <br> AWS 배포 |  Query 작성<br> 질의 응답 게시판<br>기능 구현<br>발표 자료 준비<br>프로젝트 관리 | 나의 강의실<br> 강의 상세 페이지<br> 기능 구현<br>웹 디자인 설계 <br>노션 관리 <br>| 
+| 로그인, 회원가입<br>명예의 전당<br>정답 서비스<br>기능 구현<br>Git Hub 관리 | DB 설계 및 Query 작성 <br> MyBatis구축 <br> 학생, 선생님 강의 시스템 <br> 기능 구현 <br> AWS 배포 |  Query 작성<br> 질의 응답 게시판<br>기능 구현<br>발표 자료 준비<br>DB 관리 | 나의 강의실<br> 강의 상세 페이지<br> 기능 구현<br>웹 디자인 설계 <br>노션 관리 <br>| 
 
 </div>
 
