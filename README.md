@@ -51,7 +51,7 @@
 | ![25](https://github.com/NovTeamProject/Team_Project/assets/145963611/78cbd018-8cb2-4170-bb9a-3b2f9328c718) | ![26](https://github.com/NovTeamProject/Team_Project/assets/145963611/46db2fb4-bf34-487c-a1ad-1cfe4bbd36e9) |
 | ![27](https://github.com/NovTeamProject/Team_Project/assets/145963611/c4a92c0b-259a-42ea-be3d-ff309a20c127) | ![28](https://github.com/NovTeamProject/Team_Project/assets/145963611/76b906c1-c560-4cd7-9328-9b15f86c9d73) |
 | ![29](https://github.com/NovTeamProject/Team_Project/assets/145963611/945c44d4-8cca-4e78-ab6d-d404d1eb61d6) | ![30](https://github.com/NovTeamProject/Team_Project/assets/145963611/71aff316-6986-4dc5-a60a-ee02fadd8b7f) |
-| ![31](https://github.com/NovTeamProject/Team_Project/assets/145963611/24763bd7-6ec8-4587-b060-d6cc345322c9) | ![33](https://github.com/NovTeamProject/Team_Project/assets/145963611/45bf9c66-872a-4be3-82db-1885a90e56d6) |
+| ![31](https://github.com/NovTeamProject/Team_Project/assets/145963611/24763bd7-6ec8-4587-b060-d6cc345322c9) | ![CODE TAB](https://github.com/NovTeamProject/Team_Project/assets/145963611/bfd28af3-5938-4673-a5ac-ba92657866b0) |
 
 </div>
 </details>
