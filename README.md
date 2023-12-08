@@ -93,7 +93,7 @@
 
 <details><summary>요구 명세서</summary>
       
-![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/517e1850-b230-4ef8-b521-b428b9245e41)
+![2023-12-08 09 36 26](https://github.com/NovTeamProject/Team_Project/assets/145963611/e8ec2fb7-9680-4603-8470-39389275448c)
 
       
 </details>
