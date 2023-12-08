@@ -32,8 +32,13 @@
 
 ## 📂 PPT 📂
 
-<details><summary>PPT</summary>            
-<div align="center">            
+
+
+<details><summary>PPT</summary>     
+
+### [PPT링크](https://www.canva.com/design/DAF1bF8O3K4/o3hvGmrF9Yobsmu2Vh_Nzg/view?utm_content=DA[…]3K4&utm_campaign=designshare&utm_medium=link&utm_source=editor)
+       
+<div align="center">          
 
 | **![1](https://github.com/NovTeamProject/Team_Project/assets/145963611/b2ccef9a-8a9a-4bbd-8206-165c79ccc079)** | **![2](https://github.com/NovTeamProject/Team_Project/assets/145963611/22f935e1-2b74-4bf7-8199-847d77cfc3da)** |
 | :------: |  :------: |
