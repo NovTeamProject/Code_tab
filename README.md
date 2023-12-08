@@ -115,7 +115,7 @@
 
 <details><summary>Class</summary>
 
-![스크린샷 2023-12-07 200019](https://github.com/NovTeamProject/Team_Project/assets/145963611/861330c6-9d0e-4451-a69a-63bbc7758082)
+![클래스다이어그램](https://github.com/NovTeamProject/Team_Project/assets/145524959/486e1e58-677c-4171-bd4d-27857887b0fd)
 
 
 </details>
