@@ -52,6 +52,11 @@
                                 <th scope="row">등록일시</th>
                                 <td><c:out value="${classDTO.classRegisterDateWithYearMonthDayHourMinute}" /></td>
                             </tr>
+<%--                            추가--%>
+                            <tr>
+                                <th scope="row">선생님이름</th>
+                                <td><c:out value="${classDTO.teacherName}" /></td>
+                            </tr>
                             <tr>
                                 <th scope="row">강의길이</th>
                                 <td><c:out value="${classDTO.classTotalTime} (초)" /></td>
