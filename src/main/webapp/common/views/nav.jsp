@@ -72,7 +72,7 @@
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMypage">
                                 <c:if test="${not empty sessionScope.personType and sessionScope.personType eq 2}">
                                     <li><a class="dropdown-item" href="${pageContext.request.contextPath}/membership/views/editStudent.jsp">회원정보수정</a></li>
-                                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/student/myClass/list.do">나의강의실</a></li>
+                                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/student/myClass/list.do">내 강의실</a></li>
                                 </c:if>
                                 <c:if test="${not empty sessionScope.personType and sessionScope.personType eq 0}">
                                     <li><a class="dropdown-item" href="${pageContext.request.contextPath}/membership/views/editTeacher.jsp">회원정보수정</a></li>

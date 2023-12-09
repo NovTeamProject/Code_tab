@@ -1,5 +1,6 @@
 package com.example.team_project.lesson_sueop.dto;
 
+import com.example.team_project.utils.TimeConverter;
 import lombok.*;
 
 @Getter @Setter
@@ -15,4 +16,8 @@ public class LessonDTO {
     private int lessonTime;
     private String lessonOriginalFilename;
     private String lessonSavedFilename;
+
+    public String getHourMinSec() {
+        return TimeConverter.convertTime(this.lessonTime);
+    }
 }

@@ -108,7 +108,12 @@
 <script>
     $("#goto-upload-class-btn").on("click", function() {
         location.href = '${pageContext.request.contextPath}' + "/teacher/class/upload.do";
-    })
+    });
+
+    $("a.page-link").on("click", function(e) {
+        e.preventDefault();
+        location.href = '${pageContext.request.contextPath}' + "/teacher/class/list.do?pageNum=" + $(this).attr("href");
+    });
 </script>
 </html>
 <jsp:include page="/common/views/footer.jsp" />

@@ -1,6 +1,8 @@
 package com.example.team_project.class_gangui.dto;
 
 import com.example.team_project.lesson_sueop.dto.LessonDTO;
+import com.example.team_project.teacher.dto.TeacherDTO;
+import com.example.team_project.utils.TimeConverter;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -23,11 +25,14 @@ public class ClassDTO {
     private String classImageOriginalFilename;
     private String classImageSavedFilename;
     private int listenStudent;
-
+//    1 대 다 관계
     private List<LessonDTO> lessonList;
+//    다 대 1 관계
+    private TeacherDTO teacher;
 
-//    추가
-    private String teacherName;
+    public String getHourMinSec() {
+        return TimeConverter.convertTime(this.classTotalTime);
+    }
 
     public String getClassRegisterDateWithYearMonthDay() {
         if (this.classRegisterDate != null) {
