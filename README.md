@@ -275,6 +275,8 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/7aad637d-e790-4d
 
 https://github.com/NovTeamProject/Team_Project/assets/145524959/00faefff-f91a-4f37-a2a7-fb8f2d493159
 
+https://github.com/NovTeamProject/Team_Project/assets/145963611/757078d8-211d-4241-996a-8fb15cf3aff6
+
 ### [Controller](https://github.com/NovTeamProject/Team_Project/blob/5150f94280872456f8426fbbfa5bcaf5ff2722b1/src/main/java/com/example/team_project/student/controller/StudentMyClassController.java#L19-L68)
 ### [DAO](https://github.com/NovTeamProject/Team_Project/blob/5dfc9762cb3ee584199fb8d333a6cec18c902a81/src/main/java/com/example/team_project/class_gangui/dao/ClassDAO.java#L171C5-L293C6)
 ### [View(강의 목록)](https://github.com/NovTeamProject/Team_Project/blob/5dfc9762cb3ee584199fb8d333a6cec18c902a81/src/main/webapp/myClass/views/myClassList.jsp#L32C1-L82C11)
