@@ -1,4 +1,6 @@
-// 작성자 : 차소영
+//        Created by IntelliJ IDEA.
+//        작성자: 차소영
+//        최종 수정일 : 2023-12-11
 
 package com.example.team_project.student.controller;
 
