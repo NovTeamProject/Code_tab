@@ -16,8 +16,8 @@ import java.io.PrintWriter;
 
 @WebServlet(name = "TeacherClassUploadController", value = "/teacher/class/upload.do")
 @MultipartConfig(
-        maxFileSize = 1024 * 1024 * 50,
-        maxRequestSize = 1024 * 1024 * 100
+        maxFileSize = 1024 * 1024 * 500,
+        maxRequestSize = 1024 * 1024 * 500
 )
 @Slf4j
 public class TeacherClassUploadController extends HttpServlet {

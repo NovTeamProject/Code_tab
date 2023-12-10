@@ -1,17 +1,21 @@
 #  💻 CODE TAB 💻
-```bash
-에듀테크 풀스택 3기 4조
-프로젝트 기간 2023년 11월 27일 ~ 2023년 12월 11일
-```
 
-![256컬러](https://github.com/NovTeamProject/Team_Project/assets/145524959/3298851f-7534-4304-99b3-55106605b887)
 
-| **AWS** | **KaKaoTalk** | **Notion** |
+<!--![256컬러](https://github.com/NovTeamProject/Team_Project/assets/145524959/3298851f-7534-4304-99b3-55106605b887)-->
+<div align="center">
+
+ ![title001](https://github.com/NovTeamProject/Team_Project/assets/145963611/c9aa4e57-dd0e-456a-8631-ace01e80288e)
+
+
+
+
+
+| **![awsaws](https://github.com/NovTeamProject/Team_Project/assets/145963611/c33a2433-81d8-4137-88d6-c7c7c350a030)** | **![kakao](https://github.com/NovTeamProject/Team_Project/assets/145963611/ed61908a-6f7c-43f1-b56a-287fc8f6ab8c)** | **![notion2](https://github.com/NovTeamProject/Team_Project/assets/145963611/8e1e720e-e202-4ad8-9767-0befe6dcf529)** |
 | :------: |  :------: | :------: |
 |  http://codetab.kro.kr/  |  https://open.kakao.com/o/gbi0rjWf  |  https://bit.ly/3R7ybFH |
  |   <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/79c2022f-57c0-4c7b-acda-ca3d73e89103" width="150px" height="150px">  |  <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/1955dd1c-aa06-40a5-9f8f-6ed7fcfc7a66" width="150px" height="150px">  |   <img src="https://github.com/NovTeamProject/Team_Project/assets/145524959/0d6e1c04-a919-40c7-8bac-119282a7c9a7" width="150px" height="150px"> | 
 
-
+</div>
 
 ## 📚 목차 📚
 
@@ -28,10 +32,35 @@
 
 ## 📂 PPT 📂
 
-<details><summary>PPT</summary>
 
 
-</details>
+<details><summary>PPT</summary>     
+
+### [PPT링크](https://www.canva.com/design/DAF1bF8O3K4/o3hvGmrF9Yobsmu2Vh_Nzg/view?utm_content=DA[…]3K4&utm_campaign=designshare&utm_medium=link&utm_source=editor)
+       
+<div align="center">          
+
+| **![1](https://github.com/NovTeamProject/Team_Project/assets/145524959/48aeac2a-f3ba-4cc4-92b7-3abfe5b2b07f)** | **![2](https://github.com/NovTeamProject/Team_Project/assets/145524959/99c3afa6-9296-4f72-8e71-aa9c18b49b46)** |
+| :------: |  :------: |
+|  ![3](https://github.com/NovTeamProject/Team_Project/assets/145524959/c5cca349-5b02-4beb-b3e5-0bec8168e3cf) | ![4](https://github.com/NovTeamProject/Team_Project/assets/145524959/51548346-94c7-42ab-879c-f54e58726b04) |
+| ![5](https://github.com/NovTeamProject/Team_Project/assets/145524959/fabfac83-ca73-45e9-af1a-cfd44ad06325) | ![6](https://github.com/NovTeamProject/Team_Project/assets/145524959/de6daaea-7c34-4d9c-9a01-a0d7c1aeab0a)  |
+|  ![7](https://github.com/NovTeamProject/Team_Project/assets/145524959/39a6c918-5a80-4e1c-a2e7-639d1063425b) |  ![8](https://github.com/NovTeamProject/Team_Project/assets/145524959/3f27d306-3381-4827-bcb9-1944f5243037)  |
+|  ![9](https://github.com/NovTeamProject/Team_Project/assets/145524959/9ec61b5c-94d3-491b-b0d0-70329a6684d8)  |  ![10](https://github.com/NovTeamProject/Team_Project/assets/145524959/34c87fb2-5b27-4b9b-8c93-cc0ec8f5c003) |  
+| ![11](https://github.com/NovTeamProject/Team_Project/assets/145524959/b038f427-4b26-4dc2-bfad-0f8dec993e39)  | ![12](https://github.com/NovTeamProject/Team_Project/assets/145524959/4cf2135c-5c42-4a97-8db6-9dfebd6031d1)  |
+| ![13](https://github.com/NovTeamProject/Team_Project/assets/145524959/87bed763-162a-4262-8e63-d72ba2b28134) |  ![14](https://github.com/NovTeamProject/Team_Project/assets/145524959/0eb4ca61-5108-4f14-afc1-0cafd04fb108)  |
+| ![15](https://github.com/NovTeamProject/Team_Project/assets/145524959/b8d941f0-2000-49e0-8689-5a6b6808ffd3) |  ![16](https://github.com/NovTeamProject/Team_Project/assets/145524959/0ba7ae6f-ff8e-41b4-81f7-3fea5ab57774)  |
+| ![17](https://github.com/NovTeamProject/Team_Project/assets/145524959/9b7c4f8e-73b3-4434-8ec7-cf39c3489e1c) |  ![18](https://github.com/NovTeamProject/Team_Project/assets/145524959/4dd7eebf-b04c-4c3b-9636-5bd820c1fdbf)  |
+| ![19](https://github.com/NovTeamProject/Team_Project/assets/145524959/5fc78ea9-fef1-41ca-9654-d0c4a936cf23) |  ![20](https://github.com/NovTeamProject/Team_Project/assets/145524959/986255d9-eb93-41a6-819d-77e1514057ee)  |
+| ![21](https://github.com/NovTeamProject/Team_Project/assets/145524959/ad06925b-9563-4dde-9eb6-e17ac648c4f2) |  ![22](https://github.com/NovTeamProject/Team_Project/assets/145524959/f83dc490-7abf-484f-a9b5-a7495089861f)  |
+| ![23](https://github.com/NovTeamProject/Team_Project/assets/145524959/f0f7fbdf-9a7b-4a61-9dd0-8a401ad89400)  | ![24](https://github.com/NovTeamProject/Team_Project/assets/145524959/1a1d22fe-17db-409e-aabb-3d3afec3199d)  |
+| ![25](https://github.com/NovTeamProject/Team_Project/assets/145524959/f5553253-112b-4f8a-a182-f9ced0b8cdc7) | ![26](https://github.com/NovTeamProject/Team_Project/assets/145524959/1938033e-0a16-4b1d-aff3-27e4bac7e262)  |
+| ![27](https://github.com/NovTeamProject/Team_Project/assets/145524959/4feb532e-1845-4d2c-b336-d95efc60d7e9) | ![28](https://github.com/NovTeamProject/Team_Project/assets/145524959/5d3ea8b6-391d-4e87-b222-76e453861e97)  |
+|  ![29](https://github.com/NovTeamProject/Team_Project/assets/145524959/bb4e118c-7c50-401c-85c1-3bcfdd91daed)  | ![30](https://github.com/NovTeamProject/Team_Project/assets/145524959/dfe02839-85d8-4b1d-b8cf-eb233de681cf)  |
+|  ![31](https://github.com/NovTeamProject/Team_Project/assets/145524959/aed8b835-592d-48b0-84f4-71d4008c52e7)  |  ![32](https://github.com/NovTeamProject/Team_Project/assets/145524959/51a3f0ce-5882-49e8-89c9-37616d797c18)  |
+|  ![33](https://github.com/NovTeamProject/Team_Project/assets/145524959/5e741260-768e-430c-ad68-0adc846b658a)  |  ![35](https://github.com/NovTeamProject/Team_Project/assets/145524959/972d51e1-51d0-48ed-bfb7-dc076e2c0acf)   |
+
+</div>            
+</details>            
       
 ## 📖 프로젝트 소개📖
 
@@ -54,7 +83,7 @@
 | **남원우** | **변재혁** | **유지호** | **차소영** |
 | :------: |  :------: | :------: | :------: | 
 | [<img src="https://avatars.githubusercontent.com/u/145524959?v=4" height=150 width=150> <br/> @wwnoov](https://github.com/wwnoov) | [<img src="https://avatars.githubusercontent.com/u/145942491?v=4" height=150 width=150> <br/> @jaehyukpyon2](https://github.com/jaehyukpyon2) | [<img src="https://avatars.githubusercontent.com/u/145963790?v=4" height=150 width=150> <br/> @jiho-96](https://github.com/jiho-96) | [<img src="https://avatars.githubusercontent.com/u/145963611?v=4" height=150 width=150> <br/> @Eumnya415](https://github.com/Eumnya415) |
-| 로그인<br>회원가입<br>명예의전당<br>정답서비스<br>기능 구현 | DB 구축 및 Query 작성 <br> MyBatis구축 <br> 학생 강의 시스템 <br> 선생님 강의 시스템 <br> 기능 구현 |  Query 작성<br> 질의응답 게시판<br>기능 구현<br>발표자료준비<br>프로젝트관리 | 나의 강의실<br> 마이페이지<br> 기능 구현<br>노션 관리 <br>웹 디자인 설계 <br>| 
+| 로그인, 회원가입<br>명예의 전당<br>정답 서비스<br>기능 구현<br>Git Hub 관리 | DB 설계 및 Query 작성 <br> MyBatis구축 <br> 학생, 선생님 강의 시스템 <br> 기능 구현 <br> AWS 배포 |  Query 작성<br> 질의 응답 게시판<br>기능 구현<br>발표 자료 준비<br>DB 관리 | 나의 강의실<br> 강의 상세 페이지<br> 기능 구현<br>웹 디자인 설계 <br>노션 관리 <br>| 
 
 </div>
 
@@ -62,20 +91,15 @@
 ## 📋개발 일지📋
 <details><summary>개발 일지</summary>
    
-![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/345f6381-e893-41c0-9f98-2660e580e1ed)
-
-
+![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/98c68f24-d8dd-4d63-bfeb-3aaac34fad82)
 
 </details>
-
-
-
 
 ## 📈 요구 명세서 📈
 
 <details><summary>요구 명세서</summary>
       
-![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/517e1850-b230-4ef8-b521-b428b9245e41)
+![2023-12-08 09 36 26](https://github.com/NovTeamProject/Team_Project/assets/145963611/e8ec2fb7-9680-4603-8470-39389275448c)
 
       
 </details>
@@ -85,12 +109,15 @@
 
 <details><summary>Usecase</summary>
       
-![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/6cde0c8d-ec47-446e-87b2-777cbdbfeb63)
+![스크린샷 2023-12-06 142455](https://github.com/NovTeamProject/Team_Project/assets/145963611/b943fdb3-2e12-4aae-b0c6-42545e25c6d7)
 
 </details>
 
 <details><summary>Class</summary>
-  
+
+![클래스다이어그램](https://github.com/NovTeamProject/Team_Project/assets/145524959/486e1e58-677c-4171-bd4d-27857887b0fd)
+
+
 </details>
 
 <details><summary>Sequence</summary>
@@ -110,9 +137,6 @@
 ![선생님시퀀스](https://github.com/NovTeamProject/Team_Project/assets/145524959/b96161d2-32fb-4485-abb9-c58a20d3cb7a)
 
 
-    
-</details>
-    
 </details>
 
 
@@ -188,7 +212,7 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/0a4d58d7-c5ef-42
 ![image](https://github.com/NovTeamProject/Team_Project/assets/145524959/8412591f-cf2b-4b8a-8990-33994af9a71e)
 
     
-### [암호화 Code](https://github.com/NovTeamProject/Team_Project/blob/c431c8cf1b65235d922cd6ea7fdba3a699816c18/src/main/java/com/example/team_project/utils/Encrypt.java#L9C3-L30C19)    
+### [암호화 Code](https://github.com/NovTeamProject/Team_Project/blob/1efd4c1a62baa5839587f4be174ccc67b2e7eafb/src/main/java/com/example/team_project/utils/Encrypt.java#L9C4-L26C6)    
 </details>
 
 
@@ -244,6 +268,19 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/7aad637d-e790-4d
 ### [Controller](https://github.com/NovTeamProject/Team_Project/blob/22f54acaaad585f495930f0e74eb2704d1bea297/src/main/java/com/example/team_project/comment/controller/CommentController.java#L38C9-L47C59)  
 ### [DAO](https://github.com/NovTeamProject/Team_Project/blob/22f54acaaad585f495930f0e74eb2704d1bea297/src/main/java/com/example/team_project/comment/dao/CommentDAO.java#L23C1-L35C6)
 ### [View](https://github.com/NovTeamProject/Team_Project/blob/22f54acaaad585f495930f0e74eb2704d1bea297/src/main/webapp/board/View.jsp#L102C32-L108C45)
+</details>
+
+<details><summary>나의 강의실</summary>
+<br/>
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/00faefff-f91a-4f37-a2a7-fb8f2d493159
+
+https://github.com/NovTeamProject/Team_Project/assets/145524959/e4a82356-c569-4784-9a74-b2597c4e31e5
+
+
+### [학생 나의 강의실 Code]()
+### [선생님 강의실 Code]()
+
 </details>
 
 <details><summary>명예의전당</summary>
