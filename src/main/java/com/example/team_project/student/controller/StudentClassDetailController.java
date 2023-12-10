@@ -1,3 +1,5 @@
+// 작성자 : 차소영
+
 package com.example.team_project.student.controller;
 
 import com.example.team_project.class_gangui.dao.ClassDAO;
@@ -20,7 +22,7 @@ import static com.example.team_project.utils.JSFunction.alertLocation;
 @Slf4j
 public class StudentClassDetailController extends HttpServlet {
 
-    // 학새이 수강신청한 한 개의 강의의 상세 페이지(뷰)
+    // 학생이 수강신청한 한 개의 강의의 상세 페이지(뷰)
 
     private ClassDAO classDAO = new ClassDAO();
 
