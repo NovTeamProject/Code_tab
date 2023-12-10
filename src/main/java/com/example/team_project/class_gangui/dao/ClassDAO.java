@@ -170,6 +170,8 @@ public class ClassDAO {
     public List<Map<String, Object>> getRegisteredClasses(int studentIdx) { // 학생이 등록한 클래스 목록을 가져오는 메서드
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
         ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+
+        //classMapper를 사용하여 학생이 등록한 강의 목록을 가져옴. 이 때 studentIdx를 매개변수로 전달
         List<Map<String, Object>> classList = classMapper.getRegisteredClasses(studentIdx);
         sqlSession.close();
         return classList;
@@ -188,25 +190,38 @@ public class ClassDAO {
     public boolean checkIfStudentRegisteredClass(int classIdx, int studentIdx) { // 학생이 이미 수강 신청 했는지 확인하는 메서드
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
         ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+
+        // 강의 ID와 학생 ID를 담은 Map 객체를 생성, 이 Map 객체는 SQL 쿼리에 매개변수로 전달됨
         Map<String, Integer> map = new HashMap<>();
         map.put("classIdx", classIdx);
         map.put("studentIdx", studentIdx);
+
+        // 학생이 해당 강의를 이미 수강 신청했는지 확인. 결과는 0 또는 1
         int result = classMapper.checkIfStudentRegisteredClass(map);
         sqlSession.close();
+
+        // 결과가 0보다 크면 true를 반환하고, 그렇지 않으면 false를 반환
+        // 즉, 학생이 이미 수강 신청했으면 true, 그렇지 않으면 false를 반환
         return result > 0;
     }
 
     public int getStudentRegisteredClassCount(int studentIdx) {
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
         ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
+
+        // 학생이 등록한 강의의 개수를 가져옴. 이때 studentIdx(학생의 ID)를 매개변수로 전달
         int studentRegisteredClassCount = classMapper.getStudentRegisteredClassCount(studentIdx);
         sqlSession.close();
+
+        // 학생이 등록한 강의의 개수를 반환
         return studentRegisteredClassCount;
     }
 
     // 특정 학생이 특정 강의를 등록했는지 확인하는 메서드
     public int checkIfSpecificStudentIdxRegisteredSpecificClassIdx(int classIdxInt, int studentIdx) {
+
         // 파라미터를 Map으로 묶기
+        // 강의 ID와 학생 ID를 담은 Map 객체를 생성, 이 Map 객체는 SQL 쿼리에 매개변수로 전달
         Map<String, Object> params = new HashMap<>();
         params.put("classIdx", classIdxInt);
         params.put("studentIdx", studentIdx);
@@ -215,8 +230,11 @@ public class ClassDAO {
         ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
 
         // Map 파라미터를 메서드에 전달
+        // 특정 학생이 특정 강의를 등록했는지 확인. 결과는 0 또는 1
         int validCount = classMapper.checkIfSpecificStudentIdxRegisteredSpecificClassIdx(params);
         sqlSession.close();
+
+        // 결과를 반환. 결과가 1이면 학생이 해당 강의를 등록했음을 의미하고, 0이면 등록하지 않았음을 의미
         return validCount;
     }
 

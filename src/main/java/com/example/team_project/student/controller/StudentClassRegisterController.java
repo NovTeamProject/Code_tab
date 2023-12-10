@@ -20,9 +20,15 @@ public class StudentClassRegisterController extends HttpServlet {
         int studentIdx = (Integer)req.getSession().getAttribute("studentIdx");
         int classIdx = Integer.parseInt(req.getParameter("classIdx"));
 
+        // 학생이 이미 해당 클래스를 등록했는지 확인
+        // 이미 등록했으면 true를, 그렇지 않으면 false를 반환
         boolean isAlreadyRegistered = classDAO.checkIfStudentRegisteredClass(classIdx, studentIdx);
+
+        // 클래스를 등록하는 결과를 저장할 변수
+        // 클래스 등록이 성공하면 true를, 실패하면 false를 저장
         boolean successfullyRegistered = false;
 
+        // 학생이 이미 해당 클래스를 등록했는지 확인
         if (isAlreadyRegistered) {
             resp.getWriter().write("already_registered");
             return;
@@ -30,6 +36,7 @@ public class StudentClassRegisterController extends HttpServlet {
             successfullyRegistered = classDAO.registerClass(classIdx, studentIdx);
         }
 
+        // 클래스 등록이 성공했는지 확인
         if (successfullyRegistered) {
             resp.getWriter().write("success");
         } else {

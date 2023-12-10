@@ -18,11 +18,19 @@ public class StudentClassDeleteController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        // 세션에서 "studentIdx"라는 이름의 속성 값을 가져와서 정수로 변환
+        // 이 값은 로그인한 학생의 ID
         int studentIdx = (Integer)req.getSession().getAttribute("studentIdx");
+
+        // 요청 파라미터에서 "classIdx"라는 이름의 값을 가져와서 정수로 변환
+        // 이 값은 삭제할 클래스의 ID
         int classIdx = Integer.parseInt(req.getParameter("classIdx"));
 
+        // 클래스를 삭제합니다. 성공하면 true를, 실패하면 false를 반환
         boolean successfullyDeleted = classDAO.deleteClass(classIdx, studentIdx);
 
+        // 클래스 삭제가 성공했는지 여부에 따라 응답
         if (successfullyDeleted) {
             resp.getWriter().write("success");
         } else {
@@ -32,6 +40,9 @@ public class StudentClassDeleteController extends HttpServlet {
 }
 
 
+
+
+// 이전 코드
 
 //@WebServlet(name = "StudentClassDeleteController", value = "/student/myClass/delete.do")
 //public class StudentClassDeleteController extends HttpServlet {
