@@ -21,10 +21,10 @@ public class BoardPage {
         int blockCount = 1;
         while (blockCount <= blockPage && pageTemp <= totalPages) {
             if (pageTemp == pageNum) {
-                pagingStr.append("<li class='page-item'><a class='page-link'>")
-                        .append(pageTemp).append("</li>");
+                pagingStr.append("<li class='page-item active' aria-current='page'><span class='page-link'>")
+                        .append(pageTemp).append("</span></li>");
             } else {
-                pagingStr.append("<li class='page-item'><a class='page-link' href='")
+                pagingStr.append("<li class='page-item'><a class='page-link move-page' href='")
                         .append(reqUrl).append("?pageNum=").append(pageTemp).append("&classIdx=")
                         .append(classIdx).append("'>").append(pageTemp).append("</a></li>");
             }

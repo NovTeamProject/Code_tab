@@ -75,7 +75,7 @@
                     </tr>
                     <tr>
                         <th scope="row">총 강의 시간</th>
-                        <td><c:out value="${classDTO.classTotalTime} (초)" /></td>
+                        <td><c:out value="${classDTO.hourMinSec}" /></td>
                     </tr>
                     <tr>
                         <th scope="row">수업 개수</th>
@@ -107,7 +107,7 @@
                     <c:when test="${loop.index + 1 == 1}">  <!-- 첫 번째 수업일 경우 -->
                         <div class="accordion-item accordion-item-${loop.index + 1}">  <%-- 아코디언 아이템을 생성하고, 'accordion-item- ${loop.index + 1}' 클래스를 추가--%>
                             <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <button style="font-weight: bolder; font-size: 18px" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                         ${lesson.lessonName}
                                 </button>
                             </h2>
@@ -115,7 +115,7 @@
                                 <div class="accordion-body">
                                     <div class="d-flex justify-content-center">
                                         <div style="width: 70%">
-                                            <p>강의 재생 시간: ${lesson.lessonTime}(초)</p>
+                                            <p style="font-size: 20px;">수업 재생 시간: ${lesson.hourMinSec}</p>
                                             <video id="lesson-video-${loop.index + 1}" playsinline controls data-poster="">
                                                 <source src="${pageContext.request.contextPath}/teacher/lesson-video/${lesson.lessonSavedFilename}" type="video/mp4" />
                                             </video>
@@ -128,15 +128,15 @@
                     <c:otherwise> <!-- 첫 번째 수업이 아닌 경우 -->
                         <div class="accordion-item accordion-item-${loop.index + 1}">  <%-- 아코디언 아이템을 생성하고, 'accordion-item-${loop.index + 1}' 클래스를 추가 --%>
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <button style="font-weight: bolder; font-size: 18px" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${loop.index + 1}" aria-expanded="false" aria-controls="collapseTwo">
                                         ${lesson.lessonName}
                                 </button>
                             </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div id="collapse${loop.index + 1}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <div class="d-flex justify-content-center">
                                         <div style="width: 70%">
-                                            <p>강의 재생 시간: ${lesson.lessonTime}(초)</p>
+                                            <p style="font-size: 20px;">수업 재생 시간: ${lesson.hourMinSec}</p>
                                             <video id="lesson-video-${loop.index + 1}" playsinline controls data-poster="">
                                                 <source src="${pageContext.request.contextPath}/teacher/lesson-video/${lesson.lessonSavedFilename}" type="video/mp4" />
                                             </video>
@@ -162,6 +162,22 @@
         let classIdx = $(this).attr("data-link"); // data-link 속성에서 classIdx 값을 가져옴.
         location.href = '${pageContext.request.contextPath}' + "/board/list.do?classIdx=" + classIdx; // 게시판 페이지로 이동
     })
+
+</script>
+<script>
+    window.onscroll = function() {
+        const nav = document.querySelector('.navbar');
+        if (window.pageYOffset > 50) {
+            nav.classList.add('sticky');
+        } else {
+            nav.classList.remove('sticky');
+        }
+    };
+
+    function scrollToSection(id) {
+        const section = document.getElementById(id);
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
 </script>
 </body>
 

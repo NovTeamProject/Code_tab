@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.team_project.exam.mapper.ExamMapper">
+
+    <!--    변재혁님 여기 아래부터 작성 시작-->
+
+
+    <!--    남원우님 여기 아래부터 작성 시작-->
+<select id="answerTable" resultType="int"  parameterType="int">
+    select count(*)
+    from exam
+    where exam_id = #{examId} and  exam_num = #{examNum}  and exam_answer = #{examAnswer}
+</select>
+
+    <!--    차소영님 여기 아래부터 작성 시작-->
+
+
+    <!--    유지호님 여기 아래부터 작성 시작-->
+
+
+</mapper>

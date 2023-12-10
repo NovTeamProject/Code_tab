@@ -19,7 +19,7 @@ import java.util.Locale;
 
 public class TeacherFileUtil {
     // 일반 사진 파일 업로드
-    public static String uploadLessonVideoFile(HttpServletRequest req, String sDirectory)
+    public static String classImageUpload(HttpServletRequest req, String sDirectory)
             throws ServletException, IOException {
         // 이 경로가 없으면 만들어줌. 상위 directory까지 전부...
         Path saveDirectoryPath = Paths.get(sDirectory);
@@ -41,7 +41,7 @@ public class TeacherFileUtil {
         return originalFileName;
     }
 
-    public static String uploadLessonVideoFile(Part part, String sDirectory)
+    public static String lessonVideoUpload(Part part, String sDirectory)
             throws ServletException, IOException {
         // 이 경로가 없으면 만들어줌. 상위 directory까지 전부...
         Path saveDirectoryPath = Paths.get(sDirectory);

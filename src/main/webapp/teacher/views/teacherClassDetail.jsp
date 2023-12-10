@@ -54,7 +54,7 @@
                             </tr>
                             <tr>
                                 <th scope="row">강의길이</th>
-                                <td><c:out value="${classDTO.classTotalTime} (초)" /></td>
+                                <td><c:out value="${classDTO.hourMinSec}" /></td>
                             </tr>
                             <tr>
                                 <th scope="row">수업개수</th>
@@ -68,21 +68,21 @@
                     </table>
                 </div>
                 <div style="text-align: right">
-                    <button type="button" class="btn btn-outline-warning" id="classModifyBtn">강의 수정하기</button><br /><br />
-                    <button type="button" class="btn btn-outline-primary" id="classQuestionBtn">이 강의 질문 게시판</button>
+                    <button type="button" class="btn btn-warning" id="classModifyBtn">[선생님] 강의 수정하기</button><br /><br />
+                    <button type="button" class="btn btn-primary" id="classQuestionBtn">현재 강의 질문 게시판</button>
                 </div>
             </div>
         </section>
 
         <h3 style="text-align: center; margin-top: 50px;">강의 수업 리스트</h3>
-        <div class="d-flex justify-content-center" style="margin-bottom: 50px;">
+        <div class="d-flex justify-content-center" style="margin-bottom: 150px;">
         <div class="accordion" id="accordionExample" style="width: 70%">
             <c:forEach items="${classDTO.lessonList}" var="lesson" varStatus="loop">
                 <c:choose>
                     <c:when test="${loop.index + 1 == 1}">
                         <div class="accordion-item accordion-item-${loop.index + 1}">
                             <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <button style="font-weight: bolder; font-size: 18px" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     ${lesson.lessonName}
                                 </button>
                             </h2>
@@ -90,7 +90,7 @@
                                 <div class="accordion-body">
                                     <div class="d-flex justify-content-center">
                                         <div style="width: 70%">
-                                            <p>강의 재생 시간: ${lesson.lessonTime}(초)</p>
+                                            <p style="font-size: 20px;">수업 재생 시간: ${lesson.hourMinSec}</p>
                                             <video id="lesson-video-${loop.index + 1}" playsinline controls data-poster="">
                                                 <source src="${pageContext.request.contextPath}/teacher/lesson-video/${lesson.lessonSavedFilename}" type="video/mp4" />
                                             </video>
@@ -103,7 +103,7 @@
                     <c:otherwise>
                         <div class="accordion-item accordion-item-${loop.index + 1}">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${loop.index + 1}" aria-expanded="false" aria-controls="collapse${loop.index + 1}">
+                                <button style="font-weight: bolder; font-size: 18px" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${loop.index + 1}" aria-expanded="false" aria-controls="collapse${loop.index + 1}">
                                     ${lesson.lessonName}
                                 </button>
                             </h2>
@@ -111,7 +111,7 @@
                                 <div class="accordion-body">
                                     <div class="d-flex justify-content-center">
                                         <div style="width: 70%">
-                                            <p>강의 재생 시간: ${lesson.lessonTime}(초)</p>
+                                            <p style="font-size: 20px;">수업 재생 시간: ${lesson.hourMinSec}</p>
                                             <video id="lesson-video-${loop.index + 1}" playsinline controls data-poster="">
                                                 <source src="${pageContext.request.contextPath}/teacher/lesson-video/${lesson.lessonSavedFilename}" type="video/mp4" />
                                             </video>
@@ -133,6 +133,21 @@
         playerList["lesson-video-" + (index++)] = new Plyr("#lesson-video-${loop.index + 1}");
     </c:forEach>
 </script>
+    <script>
+        window.onscroll = function() {
+            const nav = document.querySelector('.navbar');
+            if (window.pageYOffset > 50) {
+                nav.classList.add('sticky');
+            } else {
+                nav.classList.remove('sticky');
+            }
+        };
+
+        function scrollToSection(id) {
+            const section = document.getElementById(id);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 <script>
     $("#classModifyBtn").on("click", function() {

@@ -3,10 +3,22 @@ console.log("teacherClassUpload.js successfully loaded");
 const showThumbnail = (event) => {
     const reader = new FileReader();
     reader.onload = (event) => {
+        console.log("thumbnail onload 실행!!!")
         const imgTag = $("#class-image-thumbnail");
         imgTag.attr("src", event.target.result);
         //alert("강의 대표 사진 등록");
     }
+    console.log("showThumbnail event! --------------")
+    console.log(event.target.files[0]);
+    console.log(event.target);
+    console.log(event.target.files[0].type.includes("image"));
+    if (event.target.files[0].type.includes("image") != true) {
+        alert("강의 대표 사진은 이미지 파일만 가능합니다\n이미지 파일을 등록해주세요");
+        $(event.target).attr("value", "");
+        $(event.target).val("");
+        return;
+    }
+    console.log("showThumbnail event! --------------")
     reader.readAsDataURL(event.target.files[0]);
 }
 
@@ -40,7 +52,7 @@ const addLessonElement = () => {
 const addMinusButton = () => {
     let afterThis = $("#div-lesson-time-" + currentLessonCount);
     let newElement = "<br /><button type='button' style='--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;' " +
-        "class='btn btn-outline-warning delete-lesson delete-lesson-" + currentLessonCount + "' name='delete-lesson-" + currentLessonCount + "' id='delete-lesson-" + currentLessonCount + "'>수업 삭제하기</button><br>";
+        "class='btn btn-warning delete-lesson delete-lesson-" + currentLessonCount + "' name='delete-lesson-" + currentLessonCount + "' id='delete-lesson-" + currentLessonCount + "'>수업 삭제하기</button><br>";
     afterThis.after(newElement);
 }
 

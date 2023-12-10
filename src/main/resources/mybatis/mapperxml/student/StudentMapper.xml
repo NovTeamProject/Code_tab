@@ -17,7 +17,7 @@
     </insert>
         <!--정보수정(학생)-->
     <update id="editStudent" parameterType="com.example.team_project.student.dto.StudentDTO">
-            update student set student_password = #{studentPassword}, student_name = #{studentName}, student_address = #{studentAddress}
+            update student set student_password = #{studentPassword}, student_address = #{studentAddress}
             where student_id = #{studentId}
     </update>
         <!--     로그인(학생)  -->

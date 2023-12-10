@@ -42,6 +42,8 @@ public class StudentClassRegisterController extends HttpServlet {
 
         // 클래스 등록이 성공했는지 확인
         if (successfullyRegistered) {
+            // 수강신청한 학생수 +1
+            int result = classDAO.plusOneStudent(classIdx);
             resp.getWriter().write("success");
         } else {
             resp.getWriter().write("failure");

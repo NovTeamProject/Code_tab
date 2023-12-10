@@ -22,9 +22,8 @@
     <div id="formContent">
         <form name="frm1" id="frm1" action="${pageContext.request.contextPath}/studentedit.do" method="post" onsubmit="return joinCheck(this)">
             <label class="fadeIn third"><h2 class="active">학생 정보수정</h2></label>
-            <input type="password" id="studentPassword" class="fadeIn third" name="studentPassword" placeholder="비밀번호" autocomplete="off" required>
+            <input type="password" id="studentPassword" class="fadeIn third" name="studentPassword" placeholder="PW 특수문자(!@#$%)를 포함 및 8글자이상" autocomplete="off" required>
             <input type="password" id="studentPassword2" class="fadeIn third" name="studentPassword2" placeholder="비밀번호 확인" autocomplete="off" required>
-            <input type="text" id="name" class="fadeIn third" name="studentName" placeholder="이름" autocomplete="off" required>
             <input type="text" name="postCode" id="sample4_postcode" placeholder="우편번호">
             <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
             <input type="text" name="roadAddr" id="sample4_roadAddress" placeholder="도로명주소" size="60" ><br>
@@ -106,6 +105,26 @@
                 }
             }
         }).open();
+    }
+</script>
+<script>
+    function joinCheck(f){
+
+        var pw = f.studentPassword.value;
+
+        var pwReg = /^(?=.*\d)(?=.*[!@#$%])[A-Za-z\d!@#$%]{8,}$/; // 비밀번호는 숫자,특수문자(!@#$%)를 각각 최소 한 개 이상 포함 하며  8글자 이상 이여야 합니다
+
+        if(!pwReg.test(pw)){
+            alert("비밀번호는 소문자,대문자,숫자,특수문자(!@#$%)를 각각 최소 한 개 이상 포함 하며  8글자 이상 이여야 합니다.");
+            f.studentPassword.focus();
+            return false;
+        }
+        if(f.studentPassword.value!=f.studentPassword2.value){
+            alert("비밀번호와 비밀번호 확인이 서로 다릅니다.");
+            f.studentPassword.focus();
+            return false;
+        }
+
     }
 </script>
 <jsp:include page="/common/views/footer.jsp" />

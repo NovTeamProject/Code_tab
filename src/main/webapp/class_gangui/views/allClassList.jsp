@@ -86,15 +86,31 @@
                 </nav>
             </c:if>
         </section>
+        <br/><br/><br/><br/><br/>
     </main>
+    <script>
+        window.onscroll = function() {
+            const nav = document.querySelector('.navbar');
+            if (window.pageYOffset > 50) {
+                nav.classList.add('sticky');
+            } else {
+                nav.classList.remove('sticky');
+            }
+        };
+
+        function scrollToSection(id) {
+            const section = document.getElementById(id);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    $("a.page-item").on("click", function(e) {
+    $("a.page-link").on("click", function(e) {
         e.preventDefault();
         location.href = '${pageContext.request.contextPath}' + "/class/list.do?pageNum=" + $(this).attr("href");
     });
 </script>
-</html>
 <jsp:include page="/common/views/footer.jsp" />
+</html>

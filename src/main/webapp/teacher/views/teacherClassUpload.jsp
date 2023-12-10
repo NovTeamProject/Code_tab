@@ -71,7 +71,7 @@
                                     <input type="hidden" id="lesson-time-1" class="lesson-time lesson-time-1" name="lesson-time-1" />
                                 </div>
                                 <br>
-                                <button type="button" class="btn btn-outline-primary lesson-plus-button" name="lesson-plus-button" id="lesson-plus-button">
+                                <button type="button" class="btn btn-info lesson-plus-button" name="lesson-plus-button" id="lesson-plus-button">
                                     수업 추가하기</button>
                             </div>
                         </div>
@@ -88,10 +88,25 @@
         </div>
     </div>
 </section> <%--end </section>--%>
+<script>
+    window.onscroll = function() {
+        const nav = document.querySelector('.navbar');
+        if (window.pageYOffset > 50) {
+            nav.classList.add('sticky');
+        } else {
+            nav.classList.remove('sticky');
+        }
+    };
+
+    function scrollToSection(id) {
+        const section = document.getElementById(id);
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
 </body>
 <!-- custom js-->
 <script src="${pageContext.request.contextPath}/teacher/js/teacherClassUpload.js?ver=1"></script>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-</html>
 <jsp:include page="/common/views/footer.jsp" />
+</html>

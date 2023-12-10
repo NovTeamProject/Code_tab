@@ -34,6 +34,8 @@
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6">
                     <form name="class-form" id="class-form" method="post" action="${pageContext.request.contextPath}/teacher/class/modify.do" enctype="multipart/form-data">
+                        <input type="hidden" name="class-idx" value="${classDTO.classIdx}" />
+                        <input type="hidden" name="original-lesson-count" value="${classDTO.lessonList.size()}" />
                         <div class="class-information">
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="class-name" name="class-name" type="text" value='<c:out value="${classDTO.className}" />' /><!--서버 전송 강의 제목-->
@@ -48,7 +50,7 @@
                                 <p>강의 대표 사진을 선택하세요</p>
                                 <!--서버 전송 강의 대표 사진-->
                                 <input class="form-control" id="class-image" name="class-image" value="${classDTO.classImageOriginalFilename}" type="file" id="class-image" onchange="showThumbnail(event);">
-                                <input type="hidden" class="class-image-modified" id="class-image-modified" value="false" />
+                                <input type="hidden" class="class-image-modified" id="class-image-modified" name="class-image-modified" value="false" />
                                 <br />
                                 <img id="class-image-thumbnail" width="100%" height="300px" style="border: 1px dashed grey" src="${pageContext.request.contextPath}/teacher/class-image/${classDTO.classImageSavedFilename}"/>
                             </div>
@@ -79,12 +81,13 @@
                                         <!--보여질 한 개 수업의 동영상 길이 초-->
                                         <span id="span-lesson-time-${loop.index + 1}" class="span-lesson-time span-lesson-time-${loop.index + 1}">${item.lessonTime}</span>(초)
                                         <c:if test="${loop.index + 1 >= 2}">
-                                            </div><br />
+                                            </div>
+                                            <c:if test="${loop.index + 1 eq classDTO.lessonList.size()}">
                                             <button type="button" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
-                                                class="btn btn-outline-warning delete-lesson delete-lesson-${loop.index + 1}"
-                                                name='delete-lesson-${loop.index + 1}' id='delete-lesson-${loop.index + 1}'>수업 삭제하기</button><br>
+                                                class="btn btn-warning delete-lesson delete-lesson-${loop.index + 1}"
+                                                name='delete-lesson-${loop.index + 1}' id='delete-lesson-${loop.index + 1}'>마지막 수업 삭제하기</button>
+                                            </c:if>
                                         </c:if>
-                                        <br />
                                         <!--서버에 전송될 한 개 수업의 동영상 길이 초-->
                                         <input type="hidden" id="lesson-time-${loop.index + 1}" class="lesson-time lesson-time-${loop.index + 1}" name="lesson-time-${loop.index + 1}" value="${item.lessonTime}" />
                                         <%--수업이 변경됐는지 확인--%>
@@ -92,14 +95,14 @@
                                     </div>
                                     <br>
                                 </c:forEach>
-                                <button type="button" class="btn btn-outline-primary lesson-plus-button" name="lesson-plus-button" id="lesson-plus-button">
+                                <button type="button" class="btn btn-primary lesson-plus-button" name="lesson-plus-button" id="lesson-plus-button">
                                     수업 추가하기</button>
                             </div>
                         </div>
                         <br />
                         <div>
                             <div class="d-flex flex-row-reverse bd-highlight">
-                                <button type="button" class="btn btn-primary" id="submit-button">강의 등록하기</button>
+                                <button type="button" class="btn btn-info" id="submit-button">강의 수정하기</button>
                             </div>
                         </div>
                     </form>
@@ -109,6 +112,21 @@
         </div>
     </div>
 </section> <%--end </section>--%>
+<script>
+    window.onscroll = function() {
+        const nav = document.querySelector('.navbar');
+        if (window.pageYOffset > 50) {
+            nav.classList.add('sticky');
+        } else {
+            nav.classList.remove('sticky');
+        }
+    };
+
+    function scrollToSection(id) {
+        const section = document.getElementById(id);
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
 </body>
 <!-- custom js-->
 <script>
@@ -117,5 +135,5 @@
 <script src="${pageContext.request.contextPath}/teacher/js/teacherClassModify.js?ver=1"></script>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-</html>
 <jsp:include page="/common/views/footer.jsp" />
+</html>

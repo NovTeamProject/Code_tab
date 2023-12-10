@@ -16,6 +16,19 @@
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 
+/* 네비게이션 바를 고정하는 스타일 */
+.navbar1 {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+/* 고정 스타일 클래스 */
+.sticky {
+    position: fixed !important;
+    width: 100%;
+    top: 0;
+}
 body{
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
@@ -363,14 +376,14 @@ hr.border-light {
     }
 }
 .carousel-caption h5 {
-    font-size: 5em;
+    font-size: 6em;
     text-transform: uppercase;
     font-weight: 900;
-    -webkit-text-stroke: 2px #E2FADB;
-    color: #00000059;
+    color: #fff;
     position: relative;
     width: fit-content;
     padding-right: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .carousel-caption h5:after {
     content: '';
@@ -455,15 +468,20 @@ hr.border-light {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgb(0 0 0 / 40%);
+    background: rgb(0 0 0 / 0%);
     z-index: 99;
 }
 
 .carousel-caption p {
-    font-size: 1.35em;
-    font-weight: 600;
-    text-transform: uppercase;
+    font-size: 4.0em !important;
+    /*font-weight:  !important; !* 두껍게 변경 *!*/
+    text-transform: uppercase !important;
+    color: #ffffff !important; /* 하얀색으로 변경 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'Nanum Pen Script', cursive;
 }
+
+
 .carousel-caption * {
     white-space: nowrap;
 }

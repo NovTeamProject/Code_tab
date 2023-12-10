@@ -52,9 +52,14 @@
                                 <th scope="row">등록일시</th>
                                 <td><c:out value="${classDTO.classRegisterDateWithYearMonthDayHourMinute}" /></td>
                             </tr>
+<%--                            추가--%>
+                            <tr>
+                                <th scope="row">선생님이름</th>
+                                <td><c:out value="${classDTO.teacher.teacherName}" /></td>
+                            </tr>
                             <tr>
                                 <th scope="row">강의길이</th>
-                                <td><c:out value="${classDTO.classTotalTime} (초)" /></td>
+                                <td><c:out value="${classDTO.hourMinSec}" /></td>
                             </tr>
                             <tr>
                                 <th scope="row">수업개수</th>
@@ -70,17 +75,20 @@
                 <c:choose>
                     <c:when test="${not empty sessionScope.loginMember and not empty sessionScope.personType and sessionScope.personType eq 2}">
                         <div style="text-align: right">
-                            <button type="button" class="btn btn-outline-warning" id="classRegisterBtn">수강 신청하기</button>
+                            <button type="button" class="btn btn-primary" id="classRegisterBtn">수강 신청하기</button><br /><br />
+                            <button type="button" class="btn btn-info classQuestionBtn">이 강의 질문 리스트</button>
                         </div>
                     </c:when>
                     <c:when test="${not empty sessionScope.loginMember and not empty sessionScope.personType and sessionScope.personType eq 0 and sessionScope.teacherIdx eq classDTO.teacherIdx}">
                         <div style="text-align: right">
-                            <button type="button" class="btn btn-outline-success" disabled>내가 등록한 강의</button>
+                            <button type="button" class="btn btn-success" disabled>[선생님] 내가 등록한 강의</button><br /><br />
+                            <button type="button" class="btn btn-info classQuestionBtn">이 강의 질문 리스트</button>
                         </div>
                     </c:when>
                     <c:otherwise>
                         <div style="text-align: right">
-                            <button type="button" class="btn btn-outline-danger" id="goToStudentLoginBtn">학생으로 로그인 후 수강신청할 수 있어요!</button>
+                            <button type="button" class="btn btn-warning" id="goToStudentLoginBtn">학생으로 로그인 후 수강신청할 수 있어요!</button><br /><br />
+                            <button type="button" class="btn btn-info classQuestionBtn">이 강의 질문 리스트</button>
                         </div>
                     </c:otherwise>
                 </c:choose>
@@ -88,14 +96,14 @@
         </section>
 
         <h3 style="text-align: center; margin-top: 50px;">강의 수업 리스트</h3>
-        <div class="d-flex justify-content-center" style="margin-bottom: 50px;">
+        <div class="d-flex justify-content-center" style="margin-bottom: 100px;">
         <div class="accordion" id="accordionExample" style="width: 70%">
             <c:forEach items="${classDTO.lessonList}" var="lesson" varStatus="loop">
                 <c:choose>
                     <c:when test="${loop.index + 1 == 1}">
                         <div class="accordion-item accordion-item-${loop.index + 1}">
                             <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <button style="font-weight: bolder; font-size: 18px" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     ${lesson.lessonName}
                                 </button>
                             </h2>
@@ -103,7 +111,7 @@
                                 <div class="accordion-body">
                                     <div class="d-flex justify-content-center">
                                         <div style="width: 70%">
-                                            <p>강의 재생 시간: ${lesson.lessonTime}(초)</p>
+                                            <p style="font-size: 20px;">수업 재생 시간: ${lesson.hourMinSec}</p>
                                             <video id="lesson-video-${loop.index + 1}" playsinline controls data-poster="">
                                                 <source src="${pageContext.request.contextPath}/teacher/lesson-video/${lesson.lessonSavedFilename}" type="video/mp4" />
                                             </video>
@@ -116,7 +124,7 @@
                     <c:otherwise>
                         <div class="accordion-item accordion-item-${loop.index + 1}">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${loop.index + 1}" aria-expanded="false" aria-controls="collapse${loop.index + 1}">
+                                <button style="font-weight: bolder; font-size: 18px" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${loop.index + 1}" aria-expanded="false" aria-controls="collapse${loop.index + 1}">
                                     ${lesson.lessonName}
                                 </button>
                             </h2>
@@ -124,8 +132,9 @@
                                 <div class="accordion-body">
                                     <div class="d-flex justify-content-center">
                                         <div style="width: 70%">
-                                            <p>강의 재생 시간: ${lesson.lessonTime}(초)</p>
-                                            <h4>수강신청 후 전체 강의 동영상을 확인할 수 있어요!</h4>
+                                            <p style="font-size: 20px;">수업 재생 시간: ${lesson.hourMinSec}</p>
+                                            <h2 style="color: #df6262">수강신청 후 전체 강의 동영상을 확인할 수 있어요!</h2>
+                                            <h2 style="color: #7cb697">이미 수강신청을 완료했다면, 내 강의실을 통해서 시청할 수 있어요!</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -144,6 +153,21 @@
         playerList["lesson-video-" + (index++)] = new Plyr("#lesson-video-${loop.index + 1}");
     </c:forEach>
 </script>
+    <script>
+        window.onscroll = function() {
+            const nav = document.querySelector('.navbar');
+            if (window.pageYOffset > 50) {
+                nav.classList.add('sticky');
+            } else {
+                nav.classList.remove('sticky');
+            }
+        };
+
+        function scrollToSection(id) {
+            const section = document.getElementById(id);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 <script>
     $("#goToStudentLoginBtn").on("click", function() {
@@ -171,6 +195,10 @@
             }
         });
     });
+
+    $(".classQuestionBtn").on("click", function() {
+        location.href = '${pageContext.request.contextPath}' + "/board/list.do?classIdx=" + '${classDTO.classIdx}';
+    })
 </script>
 
 
@@ -181,7 +209,6 @@
 
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-</html>
 <%--
 <%
     request.setAttribute("testAttr", "Hello World!");
@@ -190,3 +217,4 @@
 %>
 --%>
 <jsp:include page="/common/views/footer.jsp" />
+</html>

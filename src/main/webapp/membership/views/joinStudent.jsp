@@ -22,12 +22,13 @@
     <div id="formContent">
         <form name="frm1" id="frm1" action="${pageContext.request.contextPath}/studentjoin.do" method="post" onsubmit="return joinCheck(this)">
             <label class="fadeIn third"><h2 class="active">학생 회원가입</h2></label>
-            <input type="text" id="login" class="fadeIn second" name="studentId" placeholder="아이디" autofocus required >
+            <input type="text" id="login" class="fadeIn second" name="studentId" placeholder="ID 최소 5글자 이상" autofocus required >
             <input type="button" class="fadeIn second" value="아이디 중복 확인"  onclick="idCheck()" >
+            <%-- input type을 히든으로 선택하여 사용자는 보이지 않지만 idck라는 이름의 값을 서버에 전송합니다. --%>
             <input type="hidden" name="idck" id="idck" value="no">
-            <input type="password" id="studentPassword" class="fadeIn third" name="studentPassword" placeholder="비밀번호" autocomplete="off" required>
+            <input type="password" id="studentPassword" class="fadeIn third" name="studentPassword" placeholder="PW 특수문자(!@#$%)를 포함 및 8글자이상" autocomplete="off" required>
             <input type="password" id="studentPassword2" class="fadeIn third" name="studentPassword2" placeholder="비밀번호 확인" autocomplete="off" required>
-            <input type="text" id="name" class="fadeIn third" name="studentName" placeholder="이름" autocomplete="off" required>
+            <input type="text" id="name" class="fadeIn third" name="studentName" placeholder="이름(실명 입력)" autocomplete="off" required>
             <input type="text" name="postCode" id="sample4_postcode" placeholder="우편번호">
             <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
             <input type="text" name="roadAddr" id="sample4_roadAddress" placeholder="도로명주소" size="60" ><br>
@@ -38,11 +39,13 @@
             <input type="hidden" id="sample4_engAddress" placeholder="영문주소"  size="60" ><br><br>
             <input type="submit" class="submit-button" value="회원가입">
             <input type="reset" class="fadeIn fourth" value="취소">
+            <br/><br/><br/><br/>
         </form>
     </div>
 </div>
 
 <script>
+   /*  html문서의 로딩이 다 끝나면 실행*/
     $(document).ready(function(){
         $("#login").keyup(function(){
             $("#idck").val("no");
@@ -54,22 +57,31 @@
             }
         });
     });
+  /*  ID 유효성체크 */
     function idCheck(){
-
+        // input text login에 입력된 아이디를 가져와서 studentId에 저장
         var studentId = document.getElementById('login').value;
 
+        // 아이디가 입력되지 않았다면 경고 메시지를 출력하고 함수를 종료합니다.
         if(studentId =="") {
             alert("아이디를 입력하지 않았습니다.");
             return;
         }
+        // 아이디를 서버에 전송하기 위해 객체를 생성합니다.
         var params = { studentId : studentId }
 
         $.ajax({
+            // 서버에 전송할 URL을 설정합니다.
             url:"${pageContext.request.contextPath}/IdCheckStudent.do",
+            // HTTP 요청 방식을 설정합니다. 이 경우에는 POST 방식입니다.
             type:"post",
+            // 서버로부터 반환받을 데이터의 형식을 설정합니다. 이 경우에는 JSON 형식입니다.
             dataType:"json",
+            // 서버에 전송할 데이터를 설정합니다.
             data:params,
+            // 서버로부터 성공적으로 데이터를 받아왔을 경우의 동작을 설정합니다.
             success:function(data){
+                // 서버로부터 받은 데이터에서 result 값을 가져옵니다.
                 var idPass = data.result
                 if(idPass == false){
                     idck = "no";
@@ -89,6 +101,22 @@
 </script>
 <script>
     function joinCheck(f){
+        var id = f.studentId.value;
+        var pw = f.studentPassword.value;
+
+        var idReg = /^.{5,}$/; // 아이디는 최소 5글자 이상
+        var pwReg = /^(?=.*\d)(?=.*[!@#$%])[A-Za-z\d!@#$%]{8,}$/; // 비밀번호는 숫자,특수문자(!@#$%)를 각각 최소 한 개 이상 포함 하며  8글자 이상 이여야 합니다
+
+        if(!idReg.test(id)){
+            alert("아이디는 최소 5자 이상이어야 합니다.");
+            f.studentId.focus();
+            return false;
+        }
+        if(!pwReg.test(pw)){
+            alert("비밀번호는 숫자,특수문자(!@#$%)를 각각 최소 한 개 이상 포함 하며  8글자 이상 이여야 합니다.");
+            f.studentPassword.focus();
+            return false;
+        }
         if(f.studentPassword.value!=f.studentPassword2.value){
             alert("비밀번호와 비밀번호 확인이 서로 다릅니다.");
             f.studentPassword.focus();
@@ -96,9 +124,11 @@
         }
         if(f.idck.value!="yes"){
             alert("아이디 중복 체크를 하지 않으셨습니다.");
-            return false;}
+            return false;
+        }
     }
 </script>
+     <%--주소 API--%>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.

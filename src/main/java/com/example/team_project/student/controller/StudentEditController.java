@@ -23,30 +23,30 @@ public class StudentEditController extends HttpServlet {
   }
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-    System.out.println("test");
     // 정보 수정 (학생)
 
-    String studentPassword = req.getParameter("studentPassword");
-    String studentName = req.getParameter("studentName");
-    String studentAddress= null;
+    String studentPassword = req.getParameter("studentPassword");      // studentPassword 파라미터 값을 가져옴
+    String studentAddress= null;                                             // teacherAddress 객체 선언
 
+    // 주소 입력
     if (req.getParameter("roadAddr")==null){
+      // 주소가 도로명 주소일 경우
       studentAddress = req.getParameter("roadAddr").concat("/").concat(req.getParameter("detailAddr"));
     }else {
+      // 주소가 지번 주소일 경우
       studentAddress = req.getParameter("jibunAddr").concat("/").concat(req.getParameter("detailAddr"));
     }
 
-    StudentDTO sDto = new StudentDTO();
-    sDto.setStudentId((String) req.getSession().getAttribute("studentId"));
-    sDto.setStudentPassword(Encrypt.getEncrypt(studentPassword));
-    sDto.setStudentName(studentName);
-    sDto.setStudentAddress(studentAddress);
+    StudentDTO sDto = new StudentDTO();                                                       // StudentDTO 객체 생성
+    sDto.setStudentId((String) req.getSession().getAttribute("studentId"));             // studentId 세션에서 부여받은 studentId 저장
+    sDto.setStudentPassword(Encrypt.getEncrypt(studentPassword));                             // StudentDTO 객체에 암호화된 studentPassword 저장
+    sDto.setStudentAddress(studentAddress);                                                   // StudentDTO 객체에 studentAddress 저장
 
+    // 로그인과 마찬가지로 각각의 값들을 세션에 저장한다.
     HttpSession session = req.getSession();
     session.setAttribute("loginMember", sDto);
     session.setAttribute("studentIdx", sDto.getStudentIdx());
     session.setAttribute("studentId", sDto.getStudentId());
-    session.setAttribute("name", sDto.getStudentName());
     session.setAttribute("personType",2); // 학생이면 2번, 선생 0번
 
 
@@ -55,9 +55,9 @@ public class StudentEditController extends HttpServlet {
 
     // 성공 or 실패
     if (result == 1) {
-      JSFunction.alertLocation(resp, "수정에 성공했습니다.",req.getContextPath() + "/index.jsp");
+      JSFunction.alertLocation(resp, "수정에 성공했습니다.",req.getContextPath() + "/redirect_to_index.jsp");
     } else { //실패
-      JSFunction.alertLocation(resp, "수정에 실패했습니다.",req.getContextPath() +"/index.jsp");
+      JSFunction.alertLocation(resp, "수정에 실패했습니다.",req.getContextPath() +"/redirect_to_index.jsp");
     }
   }
 }
