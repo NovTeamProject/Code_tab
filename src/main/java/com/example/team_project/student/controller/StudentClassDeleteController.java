@@ -16,6 +16,7 @@ public class StudentClassDeleteController extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private ClassDAO classDAO = new ClassDAO();
 
+    //수강취소
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int studentIdx = (Integer)req.getSession().getAttribute("studentIdx");

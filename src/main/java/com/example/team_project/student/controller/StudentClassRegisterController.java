@@ -15,6 +15,7 @@ public class StudentClassRegisterController extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private ClassDAO classDAO = new ClassDAO();
 
+    // 수강신청 (학생)
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int studentIdx = (Integer)req.getSession().getAttribute("studentIdx");

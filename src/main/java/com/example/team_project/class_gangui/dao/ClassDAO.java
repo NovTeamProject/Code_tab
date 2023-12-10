@@ -50,6 +50,7 @@ public class ClassDAO {
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
         ClassMapper classMapper = sqlSession.getMapper(ClassMapper.class);
         ClassDTO result = classMapper.getOneClassInformationWithRelatedLessons(classIdx);
+        // 디버깅할때 쓰려고 log 사용
         log.info("한 개의 Class에 대한 information 조회. class_idx: ({})", result.getClassIdx());
         log.info("강의 번호 ({}) 에 대한 수업의 개수: ({})", result.getClassIdx(), result.getLessonList().size());
         sqlSession.close();
