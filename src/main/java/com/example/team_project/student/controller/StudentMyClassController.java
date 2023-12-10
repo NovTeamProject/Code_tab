@@ -1,3 +1,7 @@
+//        Created by IntelliJ IDEA.
+//        작성자: 차소영
+//        최종 수정일 : 2023-12-11
+
 package com.example.team_project.student.controller;
 
 import com.example.team_project.class_gangui.dao.ClassDAO;
@@ -38,17 +42,29 @@ public class StudentMyClassController extends HttpServlet {
         map.put("pageSize", PAGE_SIZE);
 
         List<Map<String, Object>> registeredClassList = classDAO.getRegisteredClasses(studentIdx);
+        // ClassDAO 객체를 사용하여 학생이 등록한 강의 목록을 가져오는 코드
+        // registeredClassList 변수에는 강의 정보가 담긴 Map의 리스트가 저장
 
         // 총 페이지 수를 계산
         int totalCount = classDAO.getStudentRegisteredClassCount(studentIdx);
-        int totalPage = (totalCount % PAGE_SIZE == 0) ? totalCount / PAGE_SIZE : totalCount / PAGE_SIZE + 1;
+        // ClassDAO 객체를 사용하여 학생이 등록한 강의의 전체 개수를 가져오는 코드
+        // totalCount 변수에는 강의의 총 개수가 저장
 
-        // JSP에서 사용할 수 있도록 request attribute에 저장
+        int totalPage = (totalCount % PAGE_SIZE == 0) ? totalCount / PAGE_SIZE : totalCount / PAGE_SIZE + 1;
+        // 총 페이지 수를 계산하는 코드
+        // PAGE_SIZE를 한 페이지에 보여줄 강의 수로 설정하고, 강의의 총 개수에 따라 총 페이지 수를 계산
+        // totalCount가 PAGE_SIZE로 나누어 떨어지면 totalCount / PAGE_SIZE 값이 총 페이지 수가 되고,
+        // 그렇지 않은 경우에는 totalCount / PAGE_SIZE + 1 값이 총 페이지 수가 됨
+
+        // JSP 페이지에서 사용하기 위해 registeredClassList를 request attribute에 저장하는 코드
         req.setAttribute("ClassList", registeredClassList);
+
+
         req.setAttribute("totalPage", totalPage);
         req.setAttribute("pageNo", pageNo);
 
-        // 나의 강의실 페이지로 forward
+        // forward를 사용하여 request와 response 객체를 /myClass/views/myClassList.jsp로 전달하는 코드
+        // 이 코드를 통해 나의 강의실 페이지로 이동
         req.getRequestDispatcher("/myClass/views/myClassList.jsp").forward(req, resp);
     }
 }
