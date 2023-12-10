@@ -278,7 +278,7 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/00faefff-f91a-4f
 https://github.com/NovTeamProject/Team_Project/assets/145524959/e4a82356-c569-4784-9a74-b2597c4e31e5
 
 
-### [학생 나의 강의실 Code]()
+### [학생 나의 강의실 Controller Code](https://github.com/NovTeamProject/Team_Project/blob/5150f94280872456f8426fbbfa5bcaf5ff2722b1/src/main/java/com/example/team_project/student/controller/StudentMyClassController.java#L19-L68)
 ### [선생님 강의실 Code]()
 
 </details>
