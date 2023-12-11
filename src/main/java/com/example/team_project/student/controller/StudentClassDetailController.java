@@ -1,3 +1,7 @@
+//        Created by IntelliJ IDEA.
+//        작성자: 차소영
+//        최종 수정일 : 2023-12-11
+
 package com.example.team_project.student.controller;
 
 import com.example.team_project.class_gangui.dao.ClassDAO;
@@ -20,7 +24,7 @@ import static com.example.team_project.utils.JSFunction.alertLocation;
 @Slf4j
 public class StudentClassDetailController extends HttpServlet {
 
-    // 학새이 수강신청한 한 개의 강의의 상세 페이지(뷰)
+    // 학생이 수강신청한 한 개의 강의의 상세 페이지(뷰)
 
     private ClassDAO classDAO = new ClassDAO();
 
@@ -29,22 +33,24 @@ public class StudentClassDetailController extends HttpServlet {
         // 세션 객체 생성
         HttpSession session = req.getSession();
 
-        // 세션에서 학생 인덱스 가져오기
         Object studentIdxObj = session.getAttribute("studentIdx");
 
         // 학생 인덱스 유효성 검사
+        // 학생 ID가 세션에 없으면 로그인이 필요하다는 메시지를 출력하고 로그인 페이지로 리다이렉트함
         if (studentIdxObj == null) {
             alertLocation(resp, "로그인이 필요한 서비스입니다.", req.getContextPath() + "/student/login.do");
             return;
         }
 
+        // 학생 ID를 정수로 변환
         int studentIdx = (Integer) studentIdxObj;
+
 
         // 요청 파라미터에서 강의 인덱스 가져오기
         String classIdx = req.getParameter("classIdx");
         int classIdxInt = -1;
 
-        // 강의 인덱스 유효성 검사
+        // 클래스 ID가 유효한지 확인. 유효하지 않으면 에러 메시지를 출력하고 클래스 목록 페이지로 리다이렉트
         if (classIdx == null || classIdx.isEmpty()) {
             alertLocation(resp, "올바르지 않은 강의 번호입니다", req.getContextPath() + "/class/list.do");
             return;
@@ -56,6 +62,7 @@ public class StudentClassDetailController extends HttpServlet {
                 return;
             }
         }
+
 
         // 파라미터 맵 설정
         Map<String, Object> params = new HashMap<>();
@@ -78,11 +85,19 @@ public class StudentClassDetailController extends HttpServlet {
                 .forward(req, resp);
     }
 
+
     // 메시지 알림과 페이지 이동을 위한 메소드
     private void alertLocation(HttpServletResponse resp, String msg, String url) {
         try {
+
+            // 응답 컨텐츠 타입을 HTML로 설정
             resp.setContentType("text/html;charset=UTF-8");
+
+            // 응답 객체로부터 PrintWriter를 가져옴
+            // 이를 통해 클라이언트에게 HTML을 출력
             PrintWriter writer = resp.getWriter();
+
+            // 메시지를 출력하고 지정한 URL로 리다이렉트하는 자바스크립트 코드를 생성
             String script = "<script>"
                     + "    alert('" + msg + "');"
                     + "    location.href='" + url + "';"
