@@ -28,6 +28,7 @@
 07. [📊 Diagram](#-다이어그램-)
 08. [📹 기능 설명](#-기능-설명-)
 09. [🔨개발 환경](#-개발-환경-)
+10. [🤐개선 사항](#-개선-사항-)
 
 
 ## 📂 PPT 📂
@@ -307,7 +308,7 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/44ee29cc-996b-4b
 ### [정답서비스 Code](https://github.com/NovTeamProject/Team_Project/blob/c431c8cf1b65235d922cd6ea7fdba3a699816c18/src/main/java/com/example/team_project/exam/controller/ExamController.java#L32C1-L40C6)
 </details>
 
-## 개선사항
+## 🤐 개선사항 🤐
 
 <details><summary>개선사항</summary>
 <br/>
