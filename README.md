@@ -307,9 +307,23 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/44ee29cc-996b-4b
 ### [정답서비스 Code](https://github.com/NovTeamProject/Team_Project/blob/c431c8cf1b65235d922cd6ea7fdba3a699816c18/src/main/java/com/example/team_project/exam/controller/ExamController.java#L32C1-L40C6)
 </details>
 
+## 개선사항
 
+<details><summary>개선사항</summary>
+<br/>
+ 
+1. 유효성 검사 (프론트, 백 동일하게 적용)
+2. 보안
+3. 문서화 (한 사람이 한 것 처럼 → 코딩)
+4. 성능 (데이터 문자 → 숫자 / sort X → Index)
+5. select * 를 사용하지 말 것 → 필드명을 명확히 할 것
+6. 오류 시 쿼리가 보이는 것 문제 해결
+7. 상호 개발에 대해서 직접 확인할 것
+8. 모바일 지원 (Grid, Flex)
+9. 사용 이력 남도록 하기 (동영상 시청 기록)
+10. 반응형 웹 보완 (마우스 호버 효과가 화면 줄이면 제대로 작동 안하는 현상..)
 
-
+</details>
 
 ## 🔨 개발 환경 🔨
 <div>
