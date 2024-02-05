@@ -12,7 +12,7 @@
 
 | **![awsaws](https://github.com/NovTeamProject/Team_Project/assets/145963611/c33a2433-81d8-4137-88d6-c7c7c350a030)** | **![kakao](https://github.com/NovTeamProject/Team_Project/assets/145963611/ed61908a-6f7c-43f1-b56a-287fc8f6ab8c)** | **![notion2](https://github.com/NovTeamProject/Team_Project/assets/145963611/8e1e720e-e202-4ad8-9767-0befe6dcf529)** |
 | :------: |  :------: | :------: |
-| 만료  |  만료  |  만료 |
+| [주소](http://15.164.36.58/Team_Project-1.0-SNAPSHOT/index.do)  |  만료  |  만료 |
 
 
 </div>
