@@ -236,11 +236,8 @@ https://github.com/NovTeamProject/Team_Project/assets/145524959/ac8f624a-e0ff-43
 <details><summary>강의 수정</summary>
 <br/>
 
-
 https://github.com/NovTeamProject/Code_tab/assets/145942491/f090eb50-da0b-40d0-8b92-d40f02d5f050
 
-<!--
-https://github.com/NovTeamProject/Team_Project/assets/145524959/1b4ab9ad-60c6-43b6-9069-0e7b389a42e1 -->
 
 ### [Code](#)
 </details>
