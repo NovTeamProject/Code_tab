@@ -25,10 +25,10 @@ public class ClassDTO {
     private String classImageOriginalFilename;
     private String classImageSavedFilename;
     private int listenStudent;
-//    1 대 다 관계
-    private List<LessonDTO> lessonList;
-//    다 대 1 관계
-    private TeacherDTO teacher;
+
+    private List<LessonDTO> lessonList; //  1 대 다 관계
+
+    private TeacherDTO teacher; //  다 대 1 관계
 
     public String getHourMinSec() {
         return TimeConverter.convertTime(this.classTotalTime);

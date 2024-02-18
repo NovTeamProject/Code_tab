@@ -26,6 +26,7 @@ public class RedirectToIndexController extends HttpServlet {
         req.setAttribute("topThreeClassList", topThreeClassList);
         req.setAttribute("recentClassList", recentClassList);
 
+        System.out.println("--------------------------------------------------");
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
     }
 }

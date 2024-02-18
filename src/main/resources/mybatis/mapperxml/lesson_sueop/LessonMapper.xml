@@ -16,7 +16,7 @@
 
     <update id="updateLessonWithNewVideo" parameterType="com.example.team_project.lesson_sueop.dto.LessonDTO">
         UPDATE lesson
-        SET lesson_name = #{lessonName}, lesson_time = #{lessonTime}
+        SET lesson_name = #{lessonName}, lesson_time = #{lessonTime},
             lesson_original_filename = #{lessonOriginalFilename},
             lesson_saved_filename = #{lessonSavedFilename}
         WHERE class_idx = #{classIdx} and lesson_sequence = #{lessonSequence}

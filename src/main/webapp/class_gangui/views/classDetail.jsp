@@ -104,7 +104,7 @@
                         <div class="accordion-item accordion-item-${loop.index + 1}">
                             <h2 class="accordion-header">
                                 <button style="font-weight: bolder; font-size: 18px" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    ${lesson.lessonName}
+                                    <c:out value="${lesson.lessonName}" />
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
